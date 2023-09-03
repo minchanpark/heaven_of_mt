@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 
 import '../Game_Over.dart';
+import '../main.dart';
 import 'Candidate_choi.dart';
 import '../card.dart';
 
@@ -20,10 +21,10 @@ class ChoiGame extends StatefulWidget {
 }
 
 class _ChoiGamePageState extends State<ChoiGame> {
+  int currentCardIndex = 10; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
   String setNumber = '';
-  bool _isDone = false;
   @override
   void initState() {
     super.initState();
@@ -54,8 +55,6 @@ class _ChoiGamePageState extends State<ChoiGame> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.white, elevation: 0, leading: IconButton(onPressed: (){Navigator.of(context).pop();},
-      icon: Icon(Icons.door_back_door_outlined, color: Colors.black,)),),
       body: SafeArea(
         child: Container(
           color: Colors.white,
@@ -86,10 +85,10 @@ class _ChoiGamePageState extends State<ChoiGame> {
                     ),
                     Flexible(
                       child: CardSwiper(
-                        isDisabled: true,
+                        duration: const Duration(milliseconds: 0),
                         controller: controller,
                         cardsCount: cards.length,
-                        numberOfCardsDisplayed: 3,
+                        numberOfCardsDisplayed: 2,
                         backCardOffset: const Offset(40, 40),
                         padding: const EdgeInsets.all(24.0),
                         cardBuilder: (
@@ -97,14 +96,11 @@ class _ChoiGamePageState extends State<ChoiGame> {
                           index,
                           horizontalThresholdPercentage,
                           verticalThresholdPercentage,
-                        ) => cards[index],
-                        onSwipe: (previousIndex, currentIndex, direction) {
-                          setState(() {
-                            _isDone = (currentIndex == 9);
-                          });
-                          return true;
+                        ) {
+                          currentCardIndex = index;
+                          return cards[index];
                         },
-                        
+                        isDisabled: true,
                       ),
                     ),
                   ],
@@ -112,21 +108,22 @@ class _ChoiGamePageState extends State<ChoiGame> {
               ),
               IconButton(
                 onPressed: () {
-                  if (_isDone) {
+                  if (currentCardIndex == 0) {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) =>
-                            GameOver(id: widget.id), // Beauty 이미지에 대한 페이지
+                            GameOver(id: widget.id), // 새로운 페이지 위젯을 여기에 추가
                       ),
                     );
                   } else {
-                    controller.swipeLeft();
+                    controller
+                        .swipeLeft(); // 현재 카드의 인덱스가 10이 아니면 swipeLeft() 호출
                   }
                 },
                 color: Colors.black,
                 icon: Icon(Icons.keyboard_arrow_right),
                 iconSize: 50, // 아이콘 크기 조절
-              ),
+              )
             ],
           ),
         ),
