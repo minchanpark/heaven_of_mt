@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:testes/choi/Gamepage_choi.dart';
 import 'package:testes/choi/SetPage_choi.dart';
 import 'package:testes/main.dart';
 

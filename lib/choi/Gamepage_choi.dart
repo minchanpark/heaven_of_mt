@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 
-import '../GameOver.dart';
+import '../Game_Over.dart';
 import 'Candidate_choi.dart';
 import '../card.dart';
 
