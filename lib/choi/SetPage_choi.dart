@@ -63,12 +63,12 @@ class CustomImageWidget extends StatefulWidget {
   const CustomImageWidget({required this.number, Key? key}) : super(key: key);
 
   @override
-  _CustomImageWidgetState createState() => _CustomImageWidgetState();
+  State<CustomImageWidget> createState() => _CustomImageWidgetState();
 }
 
 class _CustomImageWidgetState extends State<CustomImageWidget> {
   double _opacity = 0.5;
-  Color _backgroundColor = Colors.white;
+  final Color _backgroundColor = Colors.white;
   bool _isMouseOver = false;
 
   @override

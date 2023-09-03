@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'choi/Gamepage_choi.dart';
 import 'choi/SetPage_choi.dart';
 
 void main() {
@@ -48,12 +47,12 @@ class CustomImageWidget extends StatefulWidget {
       : super(key: key);
 
   @override
-  _CustomImageWidgetState createState() => _CustomImageWidgetState();
+  State<CustomImageWidget> createState() => _CustomImageWidgetState();
 }
 
 class _CustomImageWidgetState extends State<CustomImageWidget> {
   double _opacity = 0.5;
-  Color _backgroundColor = Colors.white;
+  final Color _backgroundColor = Colors.white;
   bool _isMouseOver = false;
 
   @override
