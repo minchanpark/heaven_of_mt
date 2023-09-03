@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testes/choi/Gamepage_choi.dart';
+import 'package:testes/choi/SetPage_choi.dart';
 import 'package:testes/main.dart';
 
 class GameOver extends StatefulWidget {
@@ -39,7 +40,7 @@ class _GameOverState extends State<GameOver> {
             onPressed: (){Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) =>
-                            ChoiGame(id: widget.id), // Beauty 이미지에 대한 페이지
+                            ChoiPage(), // Beauty 이미지에 대한 페이지
                       ));},
             child: Text('Play Again'),
           ),
