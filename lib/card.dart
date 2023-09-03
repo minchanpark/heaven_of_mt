@@ -38,7 +38,7 @@ class GameCard extends StatelessWidget {
             ],
           ),
           alignment: Alignment.center,
-          child: Container(
+          child: SizedBox(
             height: 500,
             child: Text(
               candidate.name,

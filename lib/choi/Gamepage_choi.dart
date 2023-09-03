@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 
+import '../GameOver.dart';
 import 'Candidate_choi.dart';
 import '../card.dart';
 
@@ -22,6 +23,7 @@ class _ChoiGamePageState extends State<ChoiGame> {
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
   String setNumber = '';
+  bool _isDone = false;
   @override
   void initState() {
     super.initState();
@@ -52,6 +54,8 @@ class _ChoiGamePageState extends State<ChoiGame> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(backgroundColor: Colors.white, elevation: 0, leading: IconButton(onPressed: (){Navigator.of(context).pop();},
+      icon: Icon(Icons.door_back_door_outlined, color: Colors.black,)),),
       body: SafeArea(
         child: Container(
           color: Colors.white,
@@ -82,6 +86,7 @@ class _ChoiGamePageState extends State<ChoiGame> {
                     ),
                     Flexible(
                       child: CardSwiper(
+                        isDisabled: true,
                         controller: controller,
                         cardsCount: cards.length,
                         numberOfCardsDisplayed: 3,
@@ -92,15 +97,32 @@ class _ChoiGamePageState extends State<ChoiGame> {
                           index,
                           horizontalThresholdPercentage,
                           verticalThresholdPercentage,
-                        ) =>
-                            cards[index],
+                        ) => cards[index],
+                        onSwipe: (previousIndex, currentIndex, direction) {
+                          setState(() {
+                            _isDone = (currentIndex == 9);
+                          });
+                          return true;
+                        },
+                        
                       ),
                     ),
                   ],
                 ),
               ),
               IconButton(
-                onPressed: controller.swipeLeft,
+                onPressed: () {
+                  if (_isDone) {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            GameOver(id: widget.id), // Beauty 이미지에 대한 페이지
+                      ),
+                    );
+                  } else {
+                    controller.swipeLeft();
+                  }
+                },
                 color: Colors.black,
                 icon: Icon(Icons.keyboard_arrow_right),
                 iconSize: 50, // 아이콘 크기 조절
