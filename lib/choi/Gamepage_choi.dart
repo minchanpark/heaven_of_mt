@@ -64,8 +64,8 @@ class _ChoiGamePageState extends State<ChoiGame> {
               IconButton(
                 onPressed: controller.undo,
                 color: Colors.black,
-                icon: Icon(
-                  Icons.keyboard_arrow_left,
+                icon: ImageIcon(
+                  AssetImage('assets/images/icon_chevron_left.png'),
                 ),
                 iconSize: 50, // 아이콘 크기 조절
               ),
