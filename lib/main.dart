@@ -102,19 +102,20 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                           builder: (context) => ChoiPage(), // PC 이미지에 대한 페이지
                         ),
                       );
-                    } else if (widget.imagePath == 'assets/images/Paris.jpeg') {
+                    } else if (widget.imagePath ==
+                        'assets/images/Beauty.jpeg') {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => BrandPage(), // PC 이미지에 대한 페이지
                         ),
                       );
-                    } else if (widget.imagePath == 'assets/images/Paris.jpeg') {
+                    } else if (widget.imagePath == 'assets/images/Peace.jpeg') {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => BrandPage(), // PC 이미지에 대한 페이지
                         ),
                       );
-                    } else if (widget.imagePath == 'assets/images/Paris.jpeg') {
+                    } else if (widget.imagePath == 'assets/images/SW.jpeg') {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => BrandPage(), // PC 이미지에 대한 페이지
