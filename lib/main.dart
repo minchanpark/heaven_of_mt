@@ -1,15 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'choi/setpage_choi.dart';
+import 'choi/Gamepage_choi.dart';
+import 'choi/SetPage_choi.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MyHome(
-      ),
-    ),
+    const MaterialApp(debugShowCheckedModeBanner: false, home: MyHome()),
   );
 }
 

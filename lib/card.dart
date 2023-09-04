@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'choi/candidate_choi.dart';
+import 'choi/Candidate_choi.dart';
 
 class GameCard extends StatelessWidget {
   final ChoiCandidateModel candidate;
@@ -25,7 +25,7 @@ class GameCard extends StatelessWidget {
               fontSize: 36,
             ),
           ),
-          SizedBox(
+          Container(
             height: 286,
             child: Transform.translate(
               offset: Offset(0, -40), // 위로 이동할 양을 조정하십시오.
