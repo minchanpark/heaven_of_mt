@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'Gamepage_choi.dart';
+import 'gamepage_choi.dart';
 
 class ChoiPage extends StatefulWidget {
   const ChoiPage({Key? key}) : super(key: key);
@@ -131,7 +131,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                     ),
                     padding: EdgeInsets.symmetric(horizontal: 20),
                   ),
-                  child: Container(
+                  child: SizedBox(
                     width: 100,
                     height: 45,
                     child: Center(

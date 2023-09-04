@@ -2,10 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-
-import '../Game_Over.dart';
-import '../main.dart';
-import 'Candidate_choi.dart';
+import 'candidate_choi.dart';
+import '../gameover.dart';
 import '../card.dart';
 
 class ChoiGame extends StatefulWidget {
@@ -21,7 +19,7 @@ class ChoiGame extends StatefulWidget {
 }
 
 class _ChoiGamePageState extends State<ChoiGame> {
-  int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
+  int currentCardIndex = 10; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
   String setNumber = '';
@@ -30,23 +28,24 @@ class _ChoiGamePageState extends State<ChoiGame> {
     super.initState();
 
     // widget.id 값에 따라 cards 변수에 값을 할당
-    if (widget.id == '1') {
-      cards = candidates1.map(GameCard.new).toList();
-    } else if (widget.id == '2') {
-      cards = candidates2.map(GameCard.new).toList();
-    } else if (widget.id == '3') {
-      cards = candidates3.map(GameCard.new).toList();
-    } else if (widget.id == '4') {
-      cards = candidates4.map(GameCard.new).toList();
-    } else if (widget.id == '5') {
-      cards = candidates5.map(GameCard.new).toList();
-    } else {
-      cards = candidates5.map(GameCard.new).toList();
-    }
+    // widget.id 값에 따라 cards 변수에 값을 할당
+if (widget.id == '1') {
+  cards = candidates1.map((dynamic item) => GameCard(item)).toList();
+} else if (widget.id == '2') {
+  cards = candidates2.map((dynamic item) => GameCard(item)).toList();
+} else if (widget.id == '3') {
+  cards = candidates3.map((dynamic item) => GameCard(item)).toList();
+} else if (widget.id == '4') {
+  cards = candidates4.map((dynamic item) => GameCard(item)).toList();
+} else if (widget.id == '5') {
+  cards = candidates5.map((dynamic item) => GameCard(item)).toList();
+} else {
+  cards = candidates5.map((dynamic item) => GameCard(item)).toList();
+}
+
     setNumber = widget.id;
   }
 
-  bool isUndoButtonVisible = true;
   @override
   void dispose() {
     controller.dispose();
@@ -58,63 +57,30 @@ class _ChoiGamePageState extends State<ChoiGame> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          color: Color.fromRGBO(14, 25, 62, 1),
+          color: Colors.white,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(width: 50),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  SizedBox(height: 90),
-                  IconButton(
-                    onPressed: () {},
-                    color: Colors.white,
-                    icon: ImageIcon(
-                      AssetImage('assets/images/Exit.png'),
-                    ),
-                    iconSize: 90,
-                  ),
-                  SizedBox(height: 155),
-                  isUndoButtonVisible
-                      ? IconButton(
-                          onPressed: controller.undo,
-                          color: Colors.transparent,
-                          icon: ImageIcon(
-                            AssetImage('assets/images/icon_chevron_left.png'),
-                          ),
-                          iconSize: 90, // 아이콘 크기 조절
-                        )
-                      : IconButton(
-                          onPressed: () {
-                            controller.undo();
-                            if (currentCardIndex == 1) {
-                              setState(() {
-                                isUndoButtonVisible = true; // undo 버튼을 숨김
-                              });
-                            }
-                          },
-                          color: Colors.transparent,
-                          icon: ImageIcon(
-                            AssetImage(
-                                'assets/images/icon_chevron_left_white.png'),
-                          ),
-                          iconSize: 90, // 아이콘 크기 조절
-                        ),
-                ],
+              IconButton(
+                onPressed: controller.undo,
+                color:  Colors.black,
+                icon: Icon(
+                  Icons.keyboard_arrow_left,
+                ),
+                iconSize: 50, // 아이콘 크기 조절
               ),
               Container(
-                width: 1128,
+                width: 1280,
                 height: 832,
-                margin: EdgeInsets.only(top: 113),
+                margin: EdgeInsets.only(top: 10),
                 child: Column(
                   children: [
                     Text(
                       'SET $setNumber',
                       style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 60,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 100,
                       ),
                     ),
                     Flexible(
@@ -122,7 +88,9 @@ class _ChoiGamePageState extends State<ChoiGame> {
                         duration: const Duration(milliseconds: 0),
                         controller: controller,
                         cardsCount: cards.length,
-                        numberOfCardsDisplayed: 1,
+                        numberOfCardsDisplayed: 2,
+                        backCardOffset: const Offset(40, 40),
+                        padding: const EdgeInsets.all(24.0),
                         cardBuilder: (
                           context,
                           index,
@@ -140,8 +108,7 @@ class _ChoiGamePageState extends State<ChoiGame> {
               ),
               IconButton(
                 onPressed: () {
-                  print(currentCardIndex);
-                  if (currentCardIndex == 9) {
+                  if (currentCardIndex == 0) {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) =>
@@ -151,21 +118,12 @@ class _ChoiGamePageState extends State<ChoiGame> {
                   } else {
                     controller
                         .swipeLeft(); // 현재 카드의 인덱스가 10이 아니면 swipeLeft() 호출
-
-                    if (currentCardIndex != 1) {
-                      setState(() {
-                        isUndoButtonVisible = false; // undo 버튼을 숨김
-                      });
-                    }
                   }
                 },
-                color: Colors.transparent,
-                icon: ImageIcon(
-                  AssetImage('assets/images/icon_chevron_right.png'),
-                ),
-                iconSize: 90,
-              ),
-              SizedBox(width: 50),
+                color: Colors.black,
+                icon: Icon(Icons.keyboard_arrow_right),
+                iconSize: 50, // 아이콘 크기 조절
+              )
             ],
           ),
         ),

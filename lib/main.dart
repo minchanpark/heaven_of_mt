@@ -1,16 +1,13 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'Game_Over.dart';
-import 'choi/Gamepage_choi.dart';
-import 'choi/SetPage_choi.dart';
+import 'choi/setpage_choi.dart';
 
 void main() {
   runApp(
     const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ChoiGame(
-        id: '1',
+      home: MyHome(
       ),
     ),
   );
