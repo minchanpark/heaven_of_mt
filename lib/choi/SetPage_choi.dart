@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'gamepage_choi.dart';
 
 class ChoiPage extends StatefulWidget {
-  const ChoiPage({Key? key}) : super(key: key);
+  const ChoiPage({super.key});
 
   @override
   State<ChoiPage> createState() => _ChoiPageState();
