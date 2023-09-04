@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 
-import '../gameover.dart';
 import '../candidate_choi.dart';
+import '../gameover.dart';
 import '../card.dart';
 
 class ChoiGame extends StatefulWidget {
@@ -31,17 +31,15 @@ class _ChoiGamePageState extends State<ChoiGame> {
 
     // widget.id 값에 따라 cards 변수에 값을 할당
     if (widget.id == '1') {
-      cards = candidates1.map(GameCard.new).toList();
+      cards = candidates1.map((candidate) => GameCard(candidate: candidate)).toList();
     } else if (widget.id == '2') {
-      cards = candidates2.map(GameCard.new).toList();
+      cards = candidates2.map((candidate) => GameCard(candidate: candidate)).toList();
     } else if (widget.id == '3') {
-      cards = candidates3.map(GameCard.new).toList();
+      cards = candidates3.map((candidate) => GameCard(candidate: candidate)).toList();
     } else if (widget.id == '4') {
-      cards = candidates4.map(GameCard.new).toList();
-    } else if (widget.id == '5') {
-      cards = candidates5.map(GameCard.new).toList();
+      cards = candidates4.map((candidate) => GameCard(candidate: candidate)).toList();
     } else {
-      cards = candidates5.map(GameCard.new).toList();
+      cards = candidates5.map((candidate) => GameCard(candidate: candidate)).toList();
     }
     setNumber = widget.id;
   }
