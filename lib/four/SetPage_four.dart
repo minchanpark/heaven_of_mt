@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'Gamepage_choi.dart';
+import 'Gamepage_four.dart';
 
 class fourPage extends StatefulWidget {
   const fourPage({Key? key}) : super(key: key);
