@@ -28,7 +28,6 @@ class _ChoiGamePageState extends State<ChoiGame> {
     super.initState();
 
     // widget.id 값에 따라 cards 변수에 값을 할당
-    // widget.id 값에 따라 cards 변수에 값을 할당
 if (widget.id == '1') {
   cards = candidates1.map((dynamic item) => GameCard(item)).toList();
 } else if (widget.id == '2') {
