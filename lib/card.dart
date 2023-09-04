@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 import 'choi/Candidate_choi.dart';
@@ -12,45 +14,33 @@ class GameCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          '${candidate.index} / 10',
-          style: const TextStyle(
-            color: Colors.grey,
-            fontWeight: FontWeight.bold,
-            fontSize: 50,
-          ),
-        ),
-        const SizedBox(height: 10),
-        Container(
-          clipBehavior: Clip.hardEdge,
-          decoration: BoxDecoration(
-            borderRadius: const BorderRadius.all(Radius.circular(10)),
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.transparent,
-                spreadRadius: 3,
-                blurRadius: 7,
-                offset: const Offset(0, 3),
-              )
-            ],
-          ),
-          alignment: Alignment.center,
-          child: SizedBox(
-            height: 500,
-            child: Text(
-              candidate.name,
-              style: const TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 300,
-              ),
+    return Center(
+      child: Column(
+        children: [
+          Text(
+            '${candidate.index} / 10',
+            style: const TextStyle(
+              color: Color.fromRGBO(255, 98, 211, 1),
+              fontWeight: FontWeight.w400,
+              fontSize: 36,
             ),
           ),
-        ),
-      ],
+          Container(
+            height: 286,
+            child: Transform.translate(
+              offset: Offset(0, -40), // 위로 이동할 양을 조정하십시오.
+              child: Text(
+                candidate.name,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 240,
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
