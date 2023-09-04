@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'choi/Candidate_choi.dart';
+import 'candidate_choi.dart';
 
 class GameCard extends StatelessWidget {
   final ChoiCandidateModel candidate;

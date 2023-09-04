@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'choi/Gamepage_choi.dart';
+import 'package:testes/brand/SetPage_brand.dart';
 import 'choi/SetPage_choi.dart';
 
 void main() {
@@ -100,6 +100,30 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => ChoiPage(), // PC 이미지에 대한 페이지
+                        ),
+                      );
+                    } else if (widget.imagePath == 'assets/images/Paris.jpeg') {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => BrandPage(), // PC 이미지에 대한 페이지
+                        ),
+                      );
+                    } else if (widget.imagePath == 'assets/images/Paris.jpeg') {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => BrandPage(), // PC 이미지에 대한 페이지
+                        ),
+                      );
+                    } else if (widget.imagePath == 'assets/images/Paris.jpeg') {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => BrandPage(), // PC 이미지에 대한 페이지
+                        ),
+                      );
+                    } else {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => BrandPage(), // PC 이미지에 대한 페이지
                         ),
                       );
                     }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:testes/choi/SetPage_choi.dart';
 import 'package:testes/main.dart';
 
 class GameOver extends StatefulWidget {
@@ -25,11 +24,11 @@ class _GameOverState extends State<GameOver> {
     return Scaffold(
         body: SafeArea(
       child: Container(
-        color: Color.fromRGBO(14, 25, 62, 1),
+        color: const Color.fromRGBO(14, 25, 62, 1),
         width: double.infinity,
         child: Column(
           children: [
-            SizedBox(height: 106),
+            const SizedBox(height: 106),
             Text(
               'SET $setNumber',
               style: const TextStyle(
@@ -46,7 +45,7 @@ class _GameOverState extends State<GameOver> {
                 fontSize: 48,
               ),
             ),
-            SizedBox(height: 195),
+            const SizedBox(height: 195),
             MouseRegion(
               cursor: SystemMouseCursors.click, // 마우스 커서를 클릭 스타일로 설정
               onEnter: (_) {
@@ -61,21 +60,20 @@ class _GameOverState extends State<GameOver> {
               },
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: isMouseOver
+                  backgroundColor: isMouseOver
                       ? Colors.transparent // 마우스를 올렸을 때 배경 색상을 투명하게 설정
-                      : Color.fromRGBO(14, 25, 62, 1), // 기본 배경 색상
-                  onPrimary: Color.fromRGBO(14, 25, 62, 1), // 기본 배경 색상
-                  disabledBackgroundColor: Color.fromRGBO(14, 25, 62, 1),
+                      : const Color.fromRGBO(14, 25, 62, 1), // 기본 배경 색상
+                  
+                  disabledBackgroundColor: const Color.fromRGBO(14, 25, 62, 1),
                   shadowColor: Colors.transparent,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(11),
                   ),
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                 ),
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => ChoiPage(), // Beauty 이미지에 대한 페이지
-                  ));
+                  Navigator.of(context).pop();
+                  Navigator.of(context).pop();
                 },
                 child: Text(
                   'Play Again',
@@ -89,7 +87,7 @@ class _GameOverState extends State<GameOver> {
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             MouseRegion(
               cursor: SystemMouseCursors.click, // 마우스 커서를 클릭 스타일로 설정
               onEnter: (_) {
@@ -104,16 +102,16 @@ class _GameOverState extends State<GameOver> {
               },
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: isMouseOver1
+                  backgroundColor: isMouseOver1
                       ? Colors.transparent // 마우스를 올렸을 때 배경 색상을 투명하게 설정
-                      : Color.fromRGBO(14, 25, 62, 1), // 기본 배경 색상
-                  onPrimary: Color.fromRGBO(14, 25, 62, 1), // 기본 배경 색상
-                  disabledBackgroundColor: Color.fromRGBO(14, 25, 62, 1),
+                      : const Color.fromRGBO(14, 25, 62, 1), // 기본 배경 색상
+                  
+                  disabledBackgroundColor: const Color.fromRGBO(14, 25, 62, 1),
                   shadowColor: Colors.transparent,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(11),
                   ),
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                 ),
                 onPressed: () {
                   Navigator.of(context).push(

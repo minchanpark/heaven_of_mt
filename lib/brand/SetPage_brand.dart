@@ -2,16 +2,16 @@
 
 import 'package:flutter/material.dart';
 
-import 'Gamepage_choi.dart';
+import 'Gamepage_brand.dart';
 
-class ChoiPage extends StatefulWidget {
-  const ChoiPage({Key? key}) : super(key: key);
+class BrandPage extends StatefulWidget {
+  const BrandPage({super.key});
 
   @override
-  State<ChoiPage> createState() => _ChoiPageState();
+  State<BrandPage> createState() => _BrandPageState();
 }
 
-class _ChoiPageState extends State<ChoiPage> {
+class _BrandPageState extends State<BrandPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +30,7 @@ class _ChoiPageState extends State<ChoiPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  '초성게임',
+                  '브랜드 퀴즈',
                   style: TextStyle(
                     fontFamily: 'Pretendard',
                     color: Colors.black,
@@ -119,7 +119,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) =>
-                            ChoiGame(id: widget.number), // Beauty 이미지에 대한 페이지
+                            BrandGame(id: widget.number), // Beauty 이미지에 대한 페이지
                       ),
                     );
                   },

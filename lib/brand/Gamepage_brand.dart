@@ -7,20 +7,20 @@ import '../gameover.dart';
 import '../candidate_choi.dart';
 import '../card.dart';
 
-class ChoiGame extends StatefulWidget {
+class BrandGame extends StatefulWidget {
   final String id;
 
-  const ChoiGame({
+  const BrandGame({
     super.key,
     required this.id,
     
   });
 
   @override
-  State<ChoiGame> createState() => _ChoiGamePageState();
+  State<BrandGame> createState() => _BrandGameState();
 }
 
-class _ChoiGamePageState extends State<ChoiGame> {
+class _BrandGameState extends State<BrandGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
@@ -140,6 +140,7 @@ class _ChoiGamePageState extends State<ChoiGame> {
               ),
               IconButton(
                 onPressed: () {
+                  print(currentCardIndex);
                   if (currentCardIndex == 9) {
                     Navigator.of(context).push(
                       MaterialPageRoute(
