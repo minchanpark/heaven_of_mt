@@ -2,10 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:testes/brand/SetPage_brand.dart';
 import 'choi/SetPage_choi.dart';
+import 'four/SetPage_choi.dart';
 
 void main() {
   runApp(
-    const MaterialApp(debugShowCheckedModeBanner: false, home: MyHome()),
+    const MaterialApp(debugShowCheckedModeBanner: false, home: fourPage()),
   );
 }
 
@@ -111,7 +112,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                     } else if (widget.imagePath == 'assets/images/Peace.jpeg') {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => BrandPage(), // PC 이미지에 대한 페이지
+                          builder: (context) => fourPage(), // PC 이미지에 대한 페이지
                         ),
                       );
                     } else if (widget.imagePath == 'assets/images/SW.jpeg') {
