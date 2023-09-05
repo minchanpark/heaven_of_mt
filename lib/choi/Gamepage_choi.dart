@@ -65,6 +65,21 @@ class _ChoiGamePageState extends State<ChoiGame> {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 100,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          color: Colors.white,
+          icon: ImageIcon(
+            AssetImage('assets/images/Exit.png'),
+          ),
+          iconSize: 90,
+        ),
+        backgroundColor: Color.fromRGBO(14, 25, 62, 1),
+        elevation: 0,
+      ),
       body: SafeArea(
         child: Container(
             color: Color.fromRGBO(14, 25, 62, 1),
@@ -120,24 +135,24 @@ class _ChoiGamePageState extends State<ChoiGame> {
                           ),
                     SizedBox(
                       width: width * 0.77,
-                      height: height * 0.4,
-                      child: CardSwiper(
-                        duration: const Duration(milliseconds: 0),
-                        controller: controller,
-                        cardsCount: cards.length,
-                        numberOfCardsDisplayed: 1,
-                        cardBuilder: (
-                          context,
-                          index,
-                          horizontalThresholdPercentage,
-                          verticalThresholdPercentage,
-                        ) {
-                          currentCardIndex = index;
-                          return cards[index];
-                        },
-                        isDisabled: true,
-                        onSwipe: _onSwipe, // 이 부분을 추가하세요.
-                        onUndo: _onUndo, // 이 부분을 추가하세요.
+                      height: height * 0.45,
+                      child: Flexible(
+                        child: CardSwiper(
+                          duration: const Duration(milliseconds: 0),
+                          controller: controller,
+                          cardsCount: cards.length,
+                          numberOfCardsDisplayed: 1,
+                          cardBuilder: (
+                            context,
+                            index,
+                            horizontalThresholdPercentage,
+                            verticalThresholdPercentage,
+                          ) {
+                            currentCardIndex = index;
+                            return cards[index];
+                          },
+                          isDisabled: true,
+                        ),
                       ),
                     ),
                     IconButton(
@@ -180,12 +195,9 @@ class _ChoiGamePageState extends State<ChoiGame> {
     int? currentIndex,
     CardSwiperDirection direction,
   ) {
-    setState(() {
-      currentCardIndex = currentIndex ?? 0; // currentIndex가 null인 경우 기본값 0으로 설정
-    });
-    // debugPrint(
-    //   'The card $previousIndex was swiped to the ${direction.name}. Now the card $currentIndex is on top',
-    // );
+    debugPrint(
+      'The card $previousIndex was swiped to the ${direction.name}. Now the card $currentIndex is on top',
+    );
     return true;
   }
 
@@ -194,12 +206,9 @@ class _ChoiGamePageState extends State<ChoiGame> {
     int currentIndex,
     CardSwiperDirection direction,
   ) {
-    setState(() {
-      currentCardIndex = currentIndex ?? 0; // currentIndex가 null인 경우 기본값 0으로 설정
-    });
-    // debugPrint(
-    //   'The card $currentIndex was undod from the ${direction.name}',
-    // );
+    debugPrint(
+      'The card $currentIndex was undod from the ${direction.name}',
+    );
     return true;
   }
 }
