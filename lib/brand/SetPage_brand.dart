@@ -19,7 +19,8 @@ class _BrandPageState extends State<BrandPage> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(14, 25, 62, 1),
       body: Container(
-        padding: EdgeInsets.only(left: width*0.075, top: height*0.073, right: width*0.11),
+        padding: EdgeInsets.only(
+            left: width * 0.075, top: height * 0.073, right: width * 0.11),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,30 +33,48 @@ class _BrandPageState extends State<BrandPage> {
               icon: ImageIcon(AssetImage('assets/images/home.png')),
               iconSize: 39,
             ),
-            SizedBox(height: height*0.1),
+            SizedBox(height: height * 0.1),
             Row(
               crossAxisAlignment: CrossAxisAlignment.baseline,
               textBaseline: TextBaseline.alphabetic,
               children: [
-                Text(
-                  '브랜드퀴즈',
-                  style: TextStyle(
-                    fontFamily: 'Pretendard',
-                    color: Colors.white,
-                    fontSize: 60,
-                    fontWeight: FontWeight.bold,
+                Center(
+                  child: ShaderMask(
+                    shaderCallback: (Rect bounds) {
+                      return LinearGradient(
+                        colors: <Color>[
+                          Color.fromRGBO(255, 0, 142, 1),
+                          Color.fromRGBO(255, 235, 90, 1)
+                        ],
+                        begin: Alignment.topCenter, // 그라데이션 시작 위치 (위쪽 중앙)
+                        end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
+                      ).createShader(bounds);
+                    },
+                    child: Text(
+                      '브랜드 퀴즈',
+                      style: TextStyle(
+                        fontFamily: 'Pretendard',
+                        color: Colors.white,
+                        fontSize: 60,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
                   ),
                 ),
-                SizedBox(width: width*0.015),
+                SizedBox(width: width * 0.015),
                 TextButton(
-                  onPressed: (){},
-                  style: ButtonStyle(overlayColor: MaterialStateProperty.all(Colors.transparent)),
-                  child: RichText(
-                    text: TextSpan(text: "설명보기",
-                    style: TextStyle(fontSize: 24,
-                    color: Colors.white, decoration: TextDecoration.underline)),
-                  )
-                ),
+                    onPressed: () {},
+                    style: ButtonStyle(
+                        overlayColor:
+                            MaterialStateProperty.all(Colors.transparent)),
+                    child: RichText(
+                      text: TextSpan(
+                          text: "설명보기",
+                          style: TextStyle(
+                              fontSize: 24,
+                              color: Colors.white,
+                              decoration: TextDecoration.underline)),
+                    )),
               ],
             ),
             SizedBox(height: 50),
