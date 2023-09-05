@@ -171,23 +171,26 @@ class _BrandGameState extends State<BrandGame> {
                           isDisabled: true,
                         ),
                       ),
-                      IconButton(
-                        onPressed: () {
-                          if (currentCardIndex == 9) {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    GameOver(id: widget.id), // 새로운 페이지 위젯을 여기에 추가
-                              ),
-                            );
-                          } else {
-                            controller
-                                .swipeLeft(); // 현재 카드의 인덱스가 10이 아니면 swipeLeft() 호출
-                            if (currentCardIndex != 1) {
-                              setState(() {
-                                isUndoButtonVisible = false; // undo 버튼을 숨김
-                              });
-                            }
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        if (currentCardIndex == 9) {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => GameOver(
+                                id: widget.id,
+                                gameName: 'brand',
+                              ), // 새로운 페이지 위젯을 여기에 추가
+                            ),
+                          );
+                        } else {
+                          controller
+                              .swipeLeft(); // 현재 카드의 인덱스가 10이 아니면 swipeLeft() 호출
+                          if (currentCardIndex != 1) {
+                            setState(() {
+                              isUndoButtonVisible = false; // undo 버튼을 숨김
+                            });
+
                           }
                         },
                         color: Colors.transparent,

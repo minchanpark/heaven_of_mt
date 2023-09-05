@@ -39,7 +39,7 @@ class _ChoiPageState extends State<ChoiPage> {
               textBaseline: TextBaseline.alphabetic,
               children: [
                 Text(
-                  '브랜드퀴즈',
+                  '초성 퀴즈',
                   style: TextStyle(
                     fontFamily: 'Pretendard',
                     color: Colors.white,
