@@ -49,7 +49,9 @@ class _ChoiPageState extends State<ChoiPage> {
                 ),
                 SizedBox(width: width * 0.015),
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      _showDeleteConfirmationDialog(context);
+                    },
                     style: ButtonStyle(
                         overlayColor:
                             MaterialStateProperty.all(Colors.transparent)),
@@ -79,6 +81,52 @@ class _ChoiPageState extends State<ChoiPage> {
           ],
         ),
       ),
+    );
+  }
+
+  void _showDeleteConfirmationDialog(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shadowColor: Colors.transparent,
+          contentPadding: EdgeInsets.all(0), // padding을 0으로 설정
+          insetPadding: EdgeInsets.all(16), // 화면 주변 padding 설정
+          backgroundColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          content: Stack(
+            children: [
+              SizedBox(
+                  width: width * 0.75, // 원하는 가로 길이 설정
+                  height: height * 0.65, // 원하는 세로 길이 설정
+                  child: Center(
+                    child: Image.asset(
+                      'assets/images/modal_choi.png',
+                      fit: BoxFit.cover,
+                    ),
+                  )),
+              Positioned(
+                top: 47, // 상단으로부터의 거리 조절
+                right: 196, // 오른쪽으로부터의 거리 조절
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Container(
+                    width: 40, // 버튼의 너비 설정
+                    height: 40, // 버튼의 높이 설정
+                    color: Colors.transparent, // 버튼의 배경색을 투명으로 만듭니다.
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
