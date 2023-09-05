@@ -19,7 +19,8 @@ class _FourPageState extends State<FourPage> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(14, 25, 62, 1),
       body: Container(
-        padding: EdgeInsets.only(left: width*0.075, top: height*0.073, right: width*0.11),
+        padding: EdgeInsets.only(
+            left: width * 0.075, top: height * 0.073, right: width * 0.11),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,30 +33,50 @@ class _FourPageState extends State<FourPage> {
               icon: ImageIcon(AssetImage('assets/images/home.png')),
               iconSize: 39,
             ),
-            SizedBox(height: height*0.1),
+            SizedBox(height: height * 0.1),
             Row(
               crossAxisAlignment: CrossAxisAlignment.baseline,
               textBaseline: TextBaseline.alphabetic,
               children: [
-                Text(
-                  '네 글자 퀴즈',
-                  style: TextStyle(
-                    fontFamily: 'Pretendard',
-                    color: Colors.white,
-                    fontSize: 60,
-                    fontWeight: FontWeight.bold,
+                Center(
+                  child: ShaderMask(
+                    shaderCallback: (Rect bounds) {
+                      return LinearGradient(
+                        colors: <Color>[
+                          Color.fromRGBO(255, 0, 142, 1),
+                          Color.fromRGBO(255, 235, 90, 1)
+                        ],
+                        begin: Alignment.topCenter, // 그라데이션 시작 위치 (위쪽 중앙)
+                        end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
+                      ).createShader(bounds);
+                    },
+                    child: Text(
+                      '네 글자 퀴즈',
+                      style: TextStyle(
+                        fontFamily: 'Pretendard',
+                        color: Colors.white,
+                        fontSize: 60,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
                   ),
                 ),
-                SizedBox(width: width*0.015),
+                SizedBox(width: width * 0.015),
                 TextButton(
-                  onPressed: (){},
-                  style: ButtonStyle(overlayColor: MaterialStateProperty.all(Colors.transparent)),
-                  child: RichText(
-                    text: TextSpan(text: "설명보기",
-                    style: TextStyle(fontSize: 24,
-                    color: Colors.white, decoration: TextDecoration.underline)),
-                  )
-                ),
+                    onPressed: () {
+                      _showDeleteConfirmationDialog(context);
+                    },
+                    style: ButtonStyle(
+                        overlayColor:
+                            MaterialStateProperty.all(Colors.transparent)),
+                    child: RichText(
+                      text: TextSpan(
+                          text: "설명보기",
+                          style: TextStyle(
+                              fontSize: 24,
+                              color: Colors.white,
+                              decoration: TextDecoration.underline)),
+                    )),
               ],
             ),
             SizedBox(height: 50),
@@ -74,6 +95,52 @@ class _FourPageState extends State<FourPage> {
           ],
         ),
       ),
+    );
+  }
+
+  void _showDeleteConfirmationDialog(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shadowColor: Colors.transparent,
+          contentPadding: EdgeInsets.all(0), // padding을 0으로 설정
+          insetPadding: EdgeInsets.all(16), // 화면 주변 padding 설정
+          backgroundColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          content: Stack(
+            children: [
+              SizedBox(
+                  width: width * 0.75, // 원하는 가로 길이 설정
+                  height: height * 0.65, // 원하는 세로 길이 설정
+                  child: Center(
+                    child: Image.asset(
+                      'assets/images/modal_four.png',
+                      fit: BoxFit.cover,
+                    ),
+                  )),
+              Positioned(
+                top: 47, // 상단으로부터의 거리 조절
+                right: 196, // 오른쪽으로부터의 거리 조절
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Container(
+                    width: 40, // 버튼의 너비 설정
+                    height: 40, // 버튼의 높이 설정
+                    color: Colors.transparent, // 버튼의 배경색을 투명으로 만듭니다.
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
