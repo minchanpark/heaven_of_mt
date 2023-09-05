@@ -7,11 +7,8 @@ import 'four/SetPage_four.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: ChoiGame(
-          id: '1',
-        )),
+    const MaterialApp(debugShowCheckedModeBanner: false, home: MyHome()),
+
   );
 }
 
@@ -27,17 +24,28 @@ class _MyHomeState extends State<MyHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            CustomImageWidget(imagePath: 'assets/images/PC.png'),
-            CustomImageWidget(imagePath: 'assets/images/Beauty.jpeg'),
-            CustomImageWidget(imagePath: 'assets/images/Peace.jpeg'),
-            CustomImageWidget(imagePath: 'assets/images/SW.jpeg'),
-            CustomImageWidget(imagePath: 'assets/images/Paris.jpeg'),
-          ],
-        ),
+      body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/gif.gif'),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              CustomImageWidget(imagePath: 'assets/images/PC.png'),
+              CustomImageWidget(imagePath: 'assets/images/Beauty.jpeg'),
+              CustomImageWidget(imagePath: 'assets/images/Peace.jpeg'),
+              CustomImageWidget(imagePath: 'assets/images/SW.jpeg'),
+              CustomImageWidget(imagePath: 'assets/images/Paris.jpeg'),
+            ],
+          ),
+        ),]
       ),
     );
   }

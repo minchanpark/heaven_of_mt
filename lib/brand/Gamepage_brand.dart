@@ -80,12 +80,27 @@ class _BrandGameState extends State<BrandGame> {
       //   backgroundColor: Color.fromRGBO(14, 25, 62, 1),
       //   elevation: 0,
       // ),
+      backgroundColor: Color.fromRGBO(14, 25, 62, 1),
       body: SafeArea(
         child: Container(
-            color: Color.fromRGBO(14, 25, 62, 1),
+            padding: EdgeInsets.only(left: width*0.075, top: height*0.073, right: width*0.0797),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      color: Colors.white,
+                      icon: ImageIcon(AssetImage('assets/images/Exit.png')),
+                      iconSize: 39,
+                    ),
+                  ],
+                ),
                 Text(
                   setNumber,
                   style: const TextStyle(
@@ -103,40 +118,41 @@ class _BrandGameState extends State<BrandGame> {
                     fontSize: 36,
                   ),
                 ),
-                SizedBox(height: height * 0.1),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    isUndoButtonVisible
-                        ? IconButton(
-                            onPressed: controller.undo,
-                            color: Colors.transparent,
-                            icon: ImageIcon(
-                              AssetImage('assets/images/icon_chevron_left.png'),
+                //SizedBox(height: height * 0.11),
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      isUndoButtonVisible
+                          ? IconButton(
+                              onPressed: controller.undo,
+                              color: Colors.transparent,
+                              icon: ImageIcon(
+                                AssetImage('assets/images/icon_chevron_left.png'),
+                              ),
+                              iconSize: 90, // 아이콘 크기 조절
+                            )
+                          : IconButton(
+                              onPressed: () {
+                                controller.undo();
+                                if (currentCardIndex == 1) {
+                                  setState(() {
+                                    isUndoButtonVisible = true; // undo 버튼을 숨김
+                                  });
+                                }
+                              },
+                              color: Colors.transparent,
+                              icon: ImageIcon(
+                                AssetImage(
+                                    'assets/images/icon_chevron_left_white.png'),
+                              ),
+                              iconSize: 90, // 아이콘 크기 조절
                             ),
-                            iconSize: 90, // 아이콘 크기 조절
-                          )
-                        : IconButton(
-                            onPressed: () {
-                              controller.undo();
-                              if (currentCardIndex == 1) {
-                                setState(() {
-                                  isUndoButtonVisible = true; // undo 버튼을 숨김
-                                });
-                              }
-                            },
-                            color: Colors.transparent,
-                            icon: ImageIcon(
-                              AssetImage(
-                                  'assets/images/icon_chevron_left_white.png'),
-                            ),
-                            iconSize: 90, // 아이콘 크기 조절
-                          ),
-                    SizedBox(
-                      width: width * 0.77,
-                      height: height * 0.4,
-                      child: Flexible(
+                      Container(
+                        width: width * 0.4,
+                        height: height * 0.28,
+                        color: Colors.black38,
                         child: CardSwiper(
                           duration: const Duration(milliseconds: 0),
                           controller: controller,
@@ -149,38 +165,39 @@ class _BrandGameState extends State<BrandGame> {
                             verticalThresholdPercentage,
                           ) {
                             currentCardIndex = index;
+                            print(currentCardIndex);
                             return cards[index];
                           },
                           isDisabled: true,
                         ),
                       ),
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        if (currentCardIndex == 9) {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  GameOver(id: widget.id), // 새로운 페이지 위젯을 여기에 추가
-                            ),
-                          );
-                        } else {
-                          controller
-                              .swipeLeft(); // 현재 카드의 인덱스가 10이 아니면 swipeLeft() 호출
-                          if (currentCardIndex != 1) {
-                            setState(() {
-                              isUndoButtonVisible = false; // undo 버튼을 숨김
-                            });
+                      IconButton(
+                        onPressed: () {
+                          if (currentCardIndex == 9) {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    GameOver(id: widget.id), // 새로운 페이지 위젯을 여기에 추가
+                              ),
+                            );
+                          } else {
+                            controller
+                                .swipeLeft(); // 현재 카드의 인덱스가 10이 아니면 swipeLeft() 호출
+                            if (currentCardIndex != 1) {
+                              setState(() {
+                                isUndoButtonVisible = false; // undo 버튼을 숨김
+                              });
+                            }
                           }
-                        }
-                      },
-                      color: Colors.transparent,
-                      icon: ImageIcon(
-                        AssetImage('assets/images/icon_chevron_right.png'),
+                        },
+                        color: Colors.transparent,
+                        icon: ImageIcon(
+                          AssetImage('assets/images/icon_chevron_right.png'),
+                        ),
+                        iconSize: 90,
                       ),
-                      iconSize: 90,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             )),
