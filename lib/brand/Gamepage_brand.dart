@@ -149,10 +149,9 @@ class _BrandGameState extends State<BrandGame> {
                               ),
                               iconSize: 90, // 아이콘 크기 조절
                             ),
-                      Container(
+                      SizedBox(
                         width: width * 0.4,
-                        height: height * 0.28,
-                        color: Colors.black38,
+                        height: height * 0.4,
                         child: CardSwiper(
                           duration: const Duration(milliseconds: 0),
                           controller: controller,
@@ -165,32 +164,30 @@ class _BrandGameState extends State<BrandGame> {
                             verticalThresholdPercentage,
                           ) {
                             currentCardIndex = index;
-                            print(currentCardIndex);
                             return cards[index];
                           },
                           isDisabled: true,
+                          onSwipe: _onSwipe,
+                          onUndo: _onUndo,
                         ),
                       ),
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        if (currentCardIndex == 9) {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => GameOver(
-                                id: widget.id,
-                                gameName: 'brand',
-                              ), // 새로운 페이지 위젯을 여기에 추가
-                            ),
-                          );
-                        } else {
-                          controller
-                              .swipeLeft(); // 현재 카드의 인덱스가 10이 아니면 swipeLeft() 호출
-                          if (currentCardIndex != 1) {
-                            setState(() {
-                              isUndoButtonVisible = false; // undo 버튼을 숨김
-                            });
-
+                      IconButton(
+                        onPressed: () {
+                          if (currentCardIndex == 9) {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    GameOver(id: widget.id, gameName: "brand"), // 새로운 페이지 위젯을 여기에 추가
+                              ),
+                            );
+                          } else {
+                            controller
+                                .swipeLeft(); // 현재 카드의 인덱스가 10이 아니면 swipeLeft() 호출
+                            if (currentCardIndex != 1) {
+                              setState(() {
+                                isUndoButtonVisible = false; // undo 버튼을 숨김
+                              });
+                            }
                           }
                         },
                         color: Colors.transparent,
@@ -213,9 +210,9 @@ class _BrandGameState extends State<BrandGame> {
     int? currentIndex,
     CardSwiperDirection direction,
   ) {
-    debugPrint(
-      'The card $previousIndex was swiped to the ${direction.name}. Now the card $currentIndex is on top',
-    );
+    setState(() {
+      currentCardIndex = currentIndex ?? 0; // currentIndex가 null인 경우 기본값 0으로 설정
+    });
     return true;
   }
 
@@ -224,9 +221,9 @@ class _BrandGameState extends State<BrandGame> {
     int currentIndex,
     CardSwiperDirection direction,
   ) {
-    debugPrint(
-      'The card $currentIndex was undod from the ${direction.name}',
-    );
+    setState(() {
+      currentCardIndex = currentIndex ?? 0; // currentIndex가 null인 경우 기본값 0으로 설정
+    });
     return true;
   }
 }

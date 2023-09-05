@@ -67,10 +67,24 @@ class _ChoiGamePageState extends State<ChoiGame> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-            color: Color.fromRGBO(14, 25, 62, 1),
+            padding: EdgeInsets.only(left: width*0.075, top: height*0.073, right: width*0.0797),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      color: Colors.white,
+                      icon: ImageIcon(AssetImage('assets/images/Exit.png')),
+                      iconSize: 39,
+                    ),
+                  ],
+                ),
                 Text(
                   setNumber,
                   style: const TextStyle(

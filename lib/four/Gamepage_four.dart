@@ -65,19 +65,19 @@ class _FourGameState extends State<FourGame> {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 100,
-        leading: IconButton(
-          onPressed: () {},
-          color: Colors.white,
-          icon: ImageIcon(
-            AssetImage('assets/images/Exit.png'),
-          ),
-          iconSize: 90,
-        ),
-        backgroundColor: Color.fromRGBO(14, 25, 62, 1),
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+      //   toolbarHeight: 100,
+      //   leading: IconButton(
+      //     onPressed: () {},
+      //     color: Colors.white,
+      //     icon: ImageIcon(
+      //       AssetImage('assets/images/Exit.png'),
+      //     ),
+      //     iconSize: 90,
+      //   ),
+      //   backgroundColor: Color.fromRGBO(14, 25, 62, 1),
+      //   elevation: 0,
+      // ),
       body: SafeArea(
         child: Container(
             color: Color.fromRGBO(14, 25, 62, 1),
