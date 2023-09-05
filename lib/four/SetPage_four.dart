@@ -17,33 +17,32 @@ class _fourPageState extends State<fourPage> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(14, 25, 62, 1),
       body: Container(
-        margin: EdgeInsets.all(80),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        margin: EdgeInsets.only(left: 131),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Text(
+              '네 ',
+              style: TextStyle(
+                fontFamily: 'Pretendard',
+                color: Colors.white,
+                fontSize: 100,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 50),
+            Row(
               children: [
-                Text(
-                  '초성게임',
-                  style: TextStyle(
-                    fontFamily: 'Pretendard',
-                    color: Colors.white,
-                    fontSize: 100,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 50),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    CustomImageWidget(number: 'SET1'),
-                    CustomImageWidget(number: 'SET2'),
-                    CustomImageWidget(number: 'SET3'),
-                    CustomImageWidget(number: 'SET4'),
-                    CustomImageWidget(number: 'SET5'),
-                  ],
-                ),
+                CustomImageWidget(number: 'SET 1'),
+                SizedBox(width: 108),
+                CustomImageWidget(number: 'SET 2'),
+                SizedBox(width: 108),
+                CustomImageWidget(number: 'SET 3'),
+                SizedBox(width: 108),
+                CustomImageWidget(number: 'SET 4'),
+                SizedBox(width: 108),
+                CustomImageWidget(number: 'SET 5'),
               ],
             ),
           ],
@@ -64,7 +63,6 @@ class CustomImageWidget extends StatefulWidget {
 
 class _CustomImageWidgetState extends State<CustomImageWidget> {
   double _opacity = 0.5;
-  final Color _backgroundColor = Colors.white;
   bool _isMouseOver = false;
 
   @override
@@ -86,14 +84,13 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
         alignment: Alignment.center,
         children: [
           AnimatedContainer(
-            margin: EdgeInsets.only(left: 60),
             duration: Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
             decoration: BoxDecoration(
-              color: Colors.transparent, // 배경색을 지정합니다.
+              color: Colors.transparent,
               borderRadius: BorderRadius.circular(20.0), // 원하는 반지름 값으로 조절
             ),
-            width: 120,
-            height: 48,
+            width: 136,
+            height: 133,
             child: Center(
               child: Text(
                 widget.number,
@@ -109,7 +106,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
           Positioned(
             bottom: 0,
             child: AnimatedOpacity(
-              duration: Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
+              duration: Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
               opacity: _opacity == 0 ? 1.0 : 0.0,
               child: ElevatedButton(
                   onPressed: () {
@@ -121,15 +118,43 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    disabledBackgroundColor: Colors.grey,
+                    backgroundColor:
+                        const Color.fromRGBO(14, 25, 62, 1), // 기본 배경 색상
+                    disabledBackgroundColor:
+                        const Color.fromRGBO(14, 25, 62, 1), // 기본 배경 색상
+                    foregroundColor:
+                        const Color.fromRGBO(14, 25, 62, 1), // 기본 배경 색상
+                    shadowColor: Colors.transparent,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(11),
                     ),
-                    padding: EdgeInsets.symmetric(horizontal: 20),
                   ),
-                  child:
-                      Center(child: Image.asset('assets/images/pink_up.png'))),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                          width: 25,
+                          height: 31,
+                          child: Image.asset('assets/images/pink_up.png')),
+                      SizedBox(height: 8),
+                      Container(
+                        color: Color.fromRGBO(255, 98, 211, 1),
+                        child: Text(
+                          widget.number,
+                          style: TextStyle(
+                            fontFamily: 'Pretendard',
+                            color: Colors.white,
+                            fontSize: 48,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 8),
+                      SizedBox(
+                          width: 25,
+                          height: 31,
+                          child: Image.asset('assets/images/pink_down.png')),
+                    ],
+                  )),
             ),
           ),
         ],

@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:testes/brand/SetPage_brand.dart';
 import 'choi/SetPage_choi.dart';
-import 'four/SetPage_choi.dart';
+import 'four/SetPage_four.dart';
 
 void main() {
   runApp(

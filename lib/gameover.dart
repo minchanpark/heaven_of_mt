@@ -63,7 +63,7 @@ class _GameOverState extends State<GameOver> {
                   backgroundColor: isMouseOver
                       ? Colors.transparent // 마우스를 올렸을 때 배경 색상을 투명하게 설정
                       : const Color.fromRGBO(14, 25, 62, 1), // 기본 배경 색상
-                  
+
                   disabledBackgroundColor: const Color.fromRGBO(14, 25, 62, 1),
                   shadowColor: Colors.transparent,
                   shape: RoundedRectangleBorder(
@@ -78,8 +78,9 @@ class _GameOverState extends State<GameOver> {
                 child: Text(
                   'Play Again',
                   style: TextStyle(
-                    color:
-                        isMouseOver ? Colors.pink : Colors.white, // 텍스트 색상 변경
+                    color: isMouseOver
+                        ? Color.fromRGBO(255, 98, 211, 1)
+                        : Colors.white, // 텍스트 색상 변경
                     fontWeight: isMouseOver
                         ? FontWeight.bold
                         : FontWeight.normal, // 텍스트 두께 변경
@@ -105,7 +106,7 @@ class _GameOverState extends State<GameOver> {
                   backgroundColor: isMouseOver1
                       ? Colors.transparent // 마우스를 올렸을 때 배경 색상을 투명하게 설정
                       : const Color.fromRGBO(14, 25, 62, 1), // 기본 배경 색상
-                  
+
                   disabledBackgroundColor: const Color.fromRGBO(14, 25, 62, 1),
                   shadowColor: Colors.transparent,
                   shape: RoundedRectangleBorder(
