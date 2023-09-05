@@ -160,8 +160,10 @@ class _BrandGameState extends State<BrandGame> {
                         if (currentCardIndex == 9) {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) =>
-                                  GameOver(id: widget.id), // 새로운 페이지 위젯을 여기에 추가
+                              builder: (context) => GameOver(
+                                id: widget.id,
+                                gameName: 'brand',
+                              ), // 새로운 페이지 위젯을 여기에 추가
                             ),
                           );
                         } else {

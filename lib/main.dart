@@ -4,14 +4,11 @@ import 'package:testes/brand/SetPage_brand.dart';
 import 'choi/Gamepage_choi.dart';
 import 'choi/SetPage_choi.dart';
 import 'four/SetPage_four.dart';
+import 'gameover.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: ChoiGame(
-          id: '1',
-        )),
+    const MaterialApp(debugShowCheckedModeBanner: false, home: MyHome()),
   );
 }
 
