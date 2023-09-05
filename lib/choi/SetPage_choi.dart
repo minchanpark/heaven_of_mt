@@ -19,7 +19,8 @@ class _ChoiPageState extends State<ChoiPage> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(14, 25, 62, 1),
       body: Container(
-        padding: EdgeInsets.only(left: width*0.075, top: height*0.073, right: width*0.11),
+        padding: EdgeInsets.only(
+            left: width * 0.075, top: height * 0.073, right: width * 0.11),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,13 +33,13 @@ class _ChoiPageState extends State<ChoiPage> {
               icon: ImageIcon(AssetImage('assets/images/home.png')),
               iconSize: 39,
             ),
-            SizedBox(height: height*0.1),
+            SizedBox(height: height * 0.1),
             Row(
               crossAxisAlignment: CrossAxisAlignment.baseline,
               textBaseline: TextBaseline.alphabetic,
               children: [
                 Text(
-                  '액션초성게임',
+                  '브랜드퀴즈',
                   style: TextStyle(
                     fontFamily: 'Pretendard',
                     color: Colors.white,
@@ -46,16 +47,20 @@ class _ChoiPageState extends State<ChoiPage> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(width: width*0.015),
+                SizedBox(width: width * 0.015),
                 TextButton(
-                  onPressed: (){},
-                  style: ButtonStyle(overlayColor: MaterialStateProperty.all(Colors.transparent)),
-                  child: RichText(
-                    text: TextSpan(text: "설명보기",
-                    style: TextStyle(fontSize: 24,
-                    color: Colors.white, decoration: TextDecoration.underline)),
-                  )
-                ),
+                    onPressed: () {},
+                    style: ButtonStyle(
+                        overlayColor:
+                            MaterialStateProperty.all(Colors.transparent)),
+                    child: RichText(
+                      text: TextSpan(
+                          text: "설명보기",
+                          style: TextStyle(
+                              fontSize: 24,
+                              color: Colors.white,
+                              decoration: TextDecoration.underline)),
+                    )),
               ],
             ),
             SizedBox(height: 50),
