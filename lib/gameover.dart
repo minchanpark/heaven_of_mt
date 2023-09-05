@@ -30,7 +30,7 @@ class _GameOverState extends State<GameOver> {
           children: [
             const SizedBox(height: 106),
             Text(
-              'SET $setNumber',
+              setNumber,
               style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w400,
@@ -79,7 +79,7 @@ class _GameOverState extends State<GameOver> {
                   'Play Again',
                   style: TextStyle(
                     color: isMouseOver
-                        ? Color.fromRGBO(255, 98, 211, 1)
+                        ? const Color.fromRGBO(255, 98, 211, 1)
                         : Colors.white, // 텍스트 색상 변경
                     fontWeight: isMouseOver
                         ? FontWeight.bold

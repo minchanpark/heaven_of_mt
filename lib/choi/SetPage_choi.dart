@@ -14,41 +14,62 @@ class ChoiPage extends StatefulWidget {
 class _ChoiPageState extends State<ChoiPage> {
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        shadowColor: Colors.transparent,
-        iconTheme: IconThemeData(color: Colors.black),
-      ),
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromRGBO(14, 25, 62, 1),
       body: Container(
-        margin: EdgeInsets.all(80),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        padding: EdgeInsets.only(left: width*0.075, top: height*0.073, right: width*0.11),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+            IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              color: Colors.white,
+              icon: ImageIcon(AssetImage('assets/images/home.png')),
+              iconSize: 39,
+            ),
+            SizedBox(height: height*0.1),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.baseline,
+              textBaseline: TextBaseline.alphabetic,
               children: [
                 Text(
-                  '초성게임',
+                  '액션초성게임',
                   style: TextStyle(
                     fontFamily: 'Pretendard',
-                    color: Colors.black,
-                    fontSize: 100,
+                    color: Colors.white,
+                    fontSize: 60,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(width: width*0.015),
+                TextButton(
+                  onPressed: (){},
+                  style: ButtonStyle(overlayColor: MaterialStateProperty.all(Colors.transparent)),
+                  child: RichText(
+                    text: TextSpan(text: "설명보기",
+                    style: TextStyle(fontSize: 24,
+                    color: Colors.white, decoration: TextDecoration.underline)),
+                  )
+                ),
               ],
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CustomImageWidget(number: '1'),
-                CustomImageWidget(number: '2'),
-                CustomImageWidget(number: '3'),
-                CustomImageWidget(number: '4'),
-                CustomImageWidget(number: '5'),
-              ],
+            SizedBox(height: 50),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CustomImageWidget(number: 'SET 1'),
+                  CustomImageWidget(number: 'SET 2'),
+                  CustomImageWidget(number: 'SET 3'),
+                  CustomImageWidget(number: 'SET 4'),
+                  CustomImageWidget(number: 'SET 5'),
+                ],
+              ),
             ),
           ],
         ),
@@ -68,7 +89,6 @@ class CustomImageWidget extends StatefulWidget {
 
 class _CustomImageWidgetState extends State<CustomImageWidget> {
   double _opacity = 0.5;
-  final Color _backgroundColor = Colors.white;
   bool _isMouseOver = false;
 
   @override
@@ -92,27 +112,27 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
           AnimatedContainer(
             duration: Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
             decoration: BoxDecoration(
-              color: Colors.lightBlueAccent, // 배경색을 지정합니다.
+              color: Colors.transparent, // 배경색을 지정합니다.
               borderRadius: BorderRadius.circular(20.0), // 원하는 반지름 값으로 조절
             ),
-            width: 400,
-            height: 100,
+            width: 136,
+            height: 133,
             child: Center(
               child: Text(
                 widget.number,
                 style: TextStyle(
                   fontFamily: 'Pretendard',
                   color: Colors.white,
-                  fontSize: 100,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 48,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ),
           ),
           Positioned(
-            right: 10,
+            bottom: 0,
             child: AnimatedOpacity(
-              duration: Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
+              duration: Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
               opacity: _opacity == 0 ? 1.0 : 0.0,
               child: ElevatedButton(
                   onPressed: () {
@@ -124,27 +144,42 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    disabledBackgroundColor: Colors.grey,
+                    backgroundColor:
+                        const Color.fromRGBO(14, 25, 62, 1), // 기본 배경 색상
+                    disabledBackgroundColor:
+                        const Color.fromRGBO(14, 25, 62, 1), // 기본 배경 색상
+                    foregroundColor:
+                        const Color.fromRGBO(14, 25, 62, 1), // 기본 배경 색상
+                    shadowColor: Colors.transparent,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(11),
                     ),
-                    padding: EdgeInsets.symmetric(horizontal: 20),
                   ),
-                  child: SizedBox(
-                    width: 100,
-                    height: 45,
-                    child: Center(
-                      child: Text(
-                        '시작하기',
-                        style: TextStyle(
-                          fontFamily: 'Pretendard',
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                          width: 25,
+                          height: 31,
+                          child: Image.asset('assets/images/pink_up.png')),
+                      SizedBox(height: 8),
+                      Container(
+                        color: Color.fromRGBO(255, 98, 211, 1),
+                        child: Text(
+                          widget.number,
+                          style: TextStyle(
+                            fontFamily: 'Pretendard',
+                            color: Colors.white,
+                            fontSize: 48,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
-                    ),
+                      SizedBox(height: 8),
+                      SizedBox(
+                          width: 25,
+                          height: 31,
+                          child: Image.asset('assets/images/pink_down.png')),
+                    ],
                   )),
             ),
           ),

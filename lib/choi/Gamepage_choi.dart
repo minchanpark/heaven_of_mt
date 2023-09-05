@@ -108,7 +108,7 @@ class _ChoiGamePageState extends State<ChoiGame> {
                 child: Column(
                   children: [
                     Text(
-                      'SET $setNumber',
+                      setNumber,
                       style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w400,

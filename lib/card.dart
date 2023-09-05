@@ -16,7 +16,7 @@ class GameCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Transform.translate(
-        offset: Offset(0, -40), // 위로 이동할 양을 조정하십시오.
+        offset: Offset(0, -45), // 위로 이동할 양을 조정하십시오.
         child: Text(
           candidate.name,
           style: const TextStyle(

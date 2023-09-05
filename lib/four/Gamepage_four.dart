@@ -7,19 +7,19 @@ import '../gameover.dart';
 import '../candidate_choi.dart';
 import '../card.dart';
 
-class fourGame extends StatefulWidget {
+class FourGame extends StatefulWidget {
   final String id;
 
-  const fourGame({
+  const FourGame({
     super.key,
     required this.id,
   });
 
   @override
-  State<fourGame> createState() => _fourGamePageState();
+  State<FourGame> createState() => _FourGameState();
 }
 
-class _fourGamePageState extends State<fourGame> {
+class _FourGameState extends State<FourGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
@@ -85,7 +85,7 @@ class _fourGamePageState extends State<fourGame> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'SET $setNumber',
+                  setNumber,
                   style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w400,

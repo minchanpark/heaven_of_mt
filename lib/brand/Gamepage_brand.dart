@@ -65,19 +65,21 @@ class _BrandGameState extends State<BrandGame> {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 100,
-        leading: IconButton(
-          onPressed: () {},
-          color: Colors.white,
-          icon: ImageIcon(
-            AssetImage('assets/images/Exit.png'),
-          ),
-          iconSize: 90,
-        ),
-        backgroundColor: Color.fromRGBO(14, 25, 62, 1),
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+      //   toolbarHeight: 100,
+      //   leading: IconButton(
+      //     onPressed: () {
+      //       Navigator.of(context).pop();
+      //     },
+      //     color: Colors.white,
+      //     icon: ImageIcon(
+      //       AssetImage('assets/images/Exit.png'),
+      //     ),
+      //     iconSize: 90,
+      //   ),
+      //   backgroundColor: Color.fromRGBO(14, 25, 62, 1),
+      //   elevation: 0,
+      // ),
       body: SafeArea(
         child: Container(
             color: Color.fromRGBO(14, 25, 62, 1),
@@ -85,7 +87,7 @@ class _BrandGameState extends State<BrandGame> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'SET $setNumber',
+                  setNumber,
                   style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w400,
@@ -133,7 +135,7 @@ class _BrandGameState extends State<BrandGame> {
                           ),
                     SizedBox(
                       width: width * 0.77,
-                      height: height * 0.45,
+                      height: height * 0.4,
                       child: Flexible(
                         child: CardSwiper(
                           duration: const Duration(milliseconds: 0),

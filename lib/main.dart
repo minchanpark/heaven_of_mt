@@ -6,7 +6,7 @@ import 'four/SetPage_four.dart';
 
 void main() {
   runApp(
-    const MaterialApp(debugShowCheckedModeBanner: false, home: fourPage()),
+    const MaterialApp(debugShowCheckedModeBanner: false, home: BrandPage()),
   );
 }
 
@@ -112,7 +112,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                     } else if (widget.imagePath == 'assets/images/Peace.jpeg') {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => fourPage(), // PC 이미지에 대한 페이지
+                          builder: (context) => FourPage(), // PC 이미지에 대한 페이지
                         ),
                       );
                     } else if (widget.imagePath == 'assets/images/SW.jpeg') {

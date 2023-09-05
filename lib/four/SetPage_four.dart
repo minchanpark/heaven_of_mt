@@ -4,46 +4,72 @@ import 'package:flutter/material.dart';
 
 import 'Gamepage_four.dart';
 
-class fourPage extends StatefulWidget {
-  const fourPage({Key? key}) : super(key: key);
+class FourPage extends StatefulWidget {
+  const FourPage({super.key});
 
   @override
-  State<fourPage> createState() => _fourPageState();
+  State<FourPage> createState() => _FourPageState();
 }
 
-class _fourPageState extends State<fourPage> {
+class _FourPageState extends State<FourPage> {
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color.fromRGBO(14, 25, 62, 1),
       body: Container(
-        margin: EdgeInsets.only(left: 131),
+        padding: EdgeInsets.only(left: width*0.075, top: height*0.073, right: width*0.11),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              '네 ',
-              style: TextStyle(
-                fontFamily: 'Pretendard',
-                color: Colors.white,
-                fontSize: 100,
-                fontWeight: FontWeight.bold,
-              ),
+            IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              color: Colors.white,
+              icon: ImageIcon(AssetImage('assets/images/home.png')),
+              iconSize: 39,
+            ),
+            SizedBox(height: height*0.1),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.baseline,
+              textBaseline: TextBaseline.alphabetic,
+              children: [
+                Text(
+                  '네 글자 퀴즈',
+                  style: TextStyle(
+                    fontFamily: 'Pretendard',
+                    color: Colors.white,
+                    fontSize: 60,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(width: width*0.015),
+                TextButton(
+                  onPressed: (){},
+                  style: ButtonStyle(overlayColor: MaterialStateProperty.all(Colors.transparent)),
+                  child: RichText(
+                    text: TextSpan(text: "설명보기",
+                    style: TextStyle(fontSize: 24,
+                    color: Colors.white, decoration: TextDecoration.underline)),
+                  )
+                ),
+              ],
             ),
             SizedBox(height: 50),
-            Row(
-              children: [
-                CustomImageWidget(number: 'SET 1'),
-                SizedBox(width: 108),
-                CustomImageWidget(number: 'SET 2'),
-                SizedBox(width: 108),
-                CustomImageWidget(number: 'SET 3'),
-                SizedBox(width: 108),
-                CustomImageWidget(number: 'SET 4'),
-                SizedBox(width: 108),
-                CustomImageWidget(number: 'SET 5'),
-              ],
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CustomImageWidget(number: 'SET 1'),
+                  CustomImageWidget(number: 'SET 2'),
+                  CustomImageWidget(number: 'SET 3'),
+                  CustomImageWidget(number: 'SET 4'),
+                  CustomImageWidget(number: 'SET 5'),
+                ],
+              ),
             ),
           ],
         ),
@@ -55,7 +81,7 @@ class _fourPageState extends State<fourPage> {
 class CustomImageWidget extends StatefulWidget {
   final String number;
 
-  const CustomImageWidget({required this.number, Key? key}) : super(key: key);
+  const CustomImageWidget({super.key, required this.number});
 
   @override
   State<CustomImageWidget> createState() => _CustomImageWidgetState();
@@ -113,7 +139,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) =>
-                            fourGame(id: widget.number), // Beauty 이미지에 대한 페이지
+                            FourGame(id: widget.number), // Beauty 이미지에 대한 페이지
                       ),
                     );
                   },
