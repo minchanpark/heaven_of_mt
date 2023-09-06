@@ -28,23 +28,23 @@ class _ChoiGamePageState extends State<ChoiGame> {
 
     // widget.id 값에 따라 cards 변수에 값을 할당
     if (widget.id == '1') {
-      cards = candidates1
+      cards = choi1
           .map((candidate) => GameCard(candidate: candidate))
           .toList();
     } else if (widget.id == '2') {
-      cards = candidates2
+      cards = choi2
           .map((candidate) => GameCard(candidate: candidate))
           .toList();
     } else if (widget.id == '3') {
-      cards = candidates3
+      cards = choi3
           .map((candidate) => GameCard(candidate: candidate))
           .toList();
     } else if (widget.id == '4') {
-      cards = candidates4
+      cards = choi4
           .map((candidate) => GameCard(candidate: candidate))
           .toList();
     } else {
-      cards = candidates5
+      cards = choi5
           .map((candidate) => GameCard(candidate: candidate))
           .toList();
     }
