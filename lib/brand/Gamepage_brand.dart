@@ -209,7 +209,7 @@ class _BrandGameState extends State<BrandGame> {
     CardSwiperDirection direction,
   ) {
     setState(() {
-      currentCardIndex = currentIndex ?? 0; // currentIndex가 null인 경우 기본값 0으로 설정
+      currentCardIndex = currentIndex; // currentIndex가 null인 경우 기본값 0으로 설정
     });
     return true;
   }

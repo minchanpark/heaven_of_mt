@@ -1,10 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
-import 'package:testes/brand/SetPage_brand.dart';
-import 'choi/Gamepage_choi.dart';
-import 'choi/SetPage_choi.dart';
-import 'four/SetPage_four.dart';
-import 'gameover.dart';
 
 void main() {
   runApp(
@@ -41,14 +36,14 @@ class _MyHomeState extends State<MyHome> {
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             SizedBox(height: height * 0.15),
             Text("서비스 이름", style: TextStyle(fontSize: 96, color: Colors.white)),
-            SizedBox(height: height*0.16),
+            SizedBox(height: height * 0.16),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: List.generate(5, (index) {
                 return Column(
                   children: [
                     GameList(index: "${index + 1}", name: gameName[index]),
-                    SizedBox(height: height*0.025)
+                    SizedBox(height: height * 0.025)
                   ],
                 );
               }),
@@ -90,40 +85,39 @@ class _GameListState extends State<GameList> {
         children: [
           Container(
             padding: const EdgeInsets.only(bottom: 4),
-
             width: 360,
             height: 64,
             child: Visibility(
               visible: !_isMouseOver,
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.baseline,
-                textBaseline: TextBaseline.alphabetic,
-                children: [
-                Text(
-                  widget.index,
-                  style: TextStyle(
-                    fontFamily: 'Pretendard',
-                    color: Colors.white,
-                    fontSize: 45,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                SizedBox(width: 34),
-                Text(
-                  widget.name,
-                  style: TextStyle(
-                    fontFamily: 'Pretendard',
-                    color: Colors.white,
-                    fontSize: 45,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ]),
+                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                  textBaseline: TextBaseline.alphabetic,
+                  children: [
+                    Text(
+                      widget.index,
+                      style: TextStyle(
+                        fontFamily: 'Pretendard',
+                        color: Colors.white,
+                        fontSize: 45,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    SizedBox(width: 34),
+                    Text(
+                      widget.name,
+                      style: TextStyle(
+                        fontFamily: 'Pretendard',
+                        color: Colors.white,
+                        fontSize: 45,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ]),
             ),
           ),
           Container(
             padding: const EdgeInsets.only(bottom: 4),
-            width: 360,
+            width: 390,
             height: 64,
             child: Visibility(
               visible: _isMouseOver,
@@ -147,17 +141,15 @@ class _GameListState extends State<GameList> {
                           child: Image.asset('assets/images/gameover.png')),
                       SizedBox(width: 31),
                       Container(
+                        padding: EdgeInsets.only(left: 24, right: 24),
                         color: Color.fromRGBO(255, 98, 211, 1),
-                        child: Padding(
-                          padding: const EdgeInsets.only(bottom: 5),
-                          child: Text(
-                            widget.name,
-                            style: TextStyle(
-                              fontFamily: 'Pretendard',
-                              color: Colors.white,
-                              fontSize: 45,
-                              fontWeight: FontWeight.w400,
-                            ),
+                        child: Text(
+                          widget.name,
+                          style: TextStyle(
+                            fontFamily: 'Pretendard',
+                            color: Colors.white,
+                            fontSize: 45,
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
                       ),
