@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-import '../candidate.dart';
+import '../gamecontents.dart';
 import '../gameover.dart';
 import '../card.dart';
 
