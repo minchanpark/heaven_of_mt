@@ -38,26 +38,24 @@ class _BrandPageState extends State<BrandPage> {
               crossAxisAlignment: CrossAxisAlignment.baseline,
               textBaseline: TextBaseline.alphabetic,
               children: [
-                Center(
-                  child: ShaderMask(
-                    shaderCallback: (Rect bounds) {
-                      return LinearGradient(
-                        colors: <Color>[
-                          Color.fromRGBO(255, 0, 142, 1),
-                          Color.fromRGBO(255, 235, 90, 1)
-                        ],
-                        begin: Alignment.topCenter, // 그라데이션 시작 위치 (위쪽 중앙)
-                        end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
-                      ).createShader(bounds);
-                    },
-                    child: Text(
-                      '브랜드 퀴즈',
-                      style: TextStyle(
-                        fontFamily: 'Pretendard',
-                        color: Colors.white,
-                        fontSize: 60,
-                        fontWeight: FontWeight.w400,
-                      ),
+                ShaderMask(
+                  shaderCallback: (Rect bounds) {
+                    return LinearGradient(
+                      colors: <Color>[
+                        Color.fromRGBO(255, 0, 142, 1),
+                        Color.fromRGBO(255, 235, 90, 1)
+                      ],
+                      begin: Alignment.topCenter, // 그라데이션 시작 위치 (위쪽 중앙)
+                      end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
+                    ).createShader(bounds);
+                  },
+                  child: Text(
+                    '브랜드 퀴즈',
+                    style: TextStyle(
+                      fontFamily: 'Pretendard',
+                      color: Colors.white,
+                      fontSize: 60,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                 ),
