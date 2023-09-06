@@ -1,5 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
+import 'package:testes/brand/SetPage_brand.dart';
+import 'package:testes/four/SetPage_four.dart';
+
+import 'choi/SetPage_choi.dart';
 
 void main() {
   runApp(
@@ -36,14 +40,14 @@ class _MyHomeState extends State<MyHome> {
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             SizedBox(height: height * 0.15),
             Text("서비스 이름", style: TextStyle(fontSize: 96, color: Colors.white)),
-            SizedBox(height: height * 0.16),
+            SizedBox(height: height * 0.13),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: List.generate(5, (index) {
                 return Column(
                   children: [
                     GameList(index: "${index + 1}", name: gameName[index]),
-                    SizedBox(height: height * 0.025)
+                    SizedBox(height: height * 0.01)
                   ],
                 );
               }),
@@ -122,7 +126,26 @@ class _GameListState extends State<GameList> {
             child: Visibility(
               visible: _isMouseOver,
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    switch (widget.index) {
+                      case '1':
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ChoiPage()));
+                        break;
+                      case '2':
+                        break;
+                      case '3':
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => FourPage()));
+                        break;
+                      case '4':
+                        break;
+                        case '5':
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => BrandPage()));
+                        break;
+                    }
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
                     disabledBackgroundColor: Colors.transparent,
