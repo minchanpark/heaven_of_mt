@@ -155,6 +155,8 @@ class _BrandGameState extends State<BrandGame> {
                           return cards[index];
                         },
                         isDisabled: true,
+                        onSwipe: _onSwipe,
+                        onUndo: _onUndo,
                       ),
                     ),
                     IconButton(
@@ -201,6 +203,7 @@ class _BrandGameState extends State<BrandGame> {
     setState(() {
       currentCardIndex = currentIndex ?? 0; // currentIndex가 null인 경우 기본값 0으로 설정
     });
+
     return true;
   }
 

@@ -155,6 +155,8 @@ class _FourGameState extends State<FourGame> {
                           return cards[index];
                         },
                         isDisabled: true,
+                        onSwipe: _onSwipe,
+                        onUndo: _onUndo,
                       ),
                     ),
                     IconButton(
@@ -201,6 +203,7 @@ class _FourGameState extends State<FourGame> {
     setState(() {
       currentCardIndex = currentIndex ?? 0; // currentIndex가 null인 경우 기본값 0으로 설정
     });
+
     return true;
   }
 
@@ -210,7 +213,7 @@ class _FourGameState extends State<FourGame> {
     CardSwiperDirection direction,
   ) {
     setState(() {
-      currentCardIndex = currentIndex ?? 0; // currentIndex가 null인 경우 기본값 0으로 설정
+      currentCardIndex = currentIndex; // currentIndex가 null인 경우 기본값 0으로 설정
     });
     return true;
   }
