@@ -166,7 +166,7 @@ class _FourGameState extends State<FourGame> {
                             MaterialPageRoute(
                               builder: (context) => GameOver(
                                 id: widget.id,
-                                gameName: 'brand',
+                                gameName: 'four',
                               ),
                             ),
                           );
