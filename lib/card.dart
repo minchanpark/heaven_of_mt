@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'candidate.dart';
 
 class GameCard extends StatelessWidget {
-  final ChoiCandidateModel candidate;
+  final GameContents candidate;
 
   const GameCard({
     super.key,
