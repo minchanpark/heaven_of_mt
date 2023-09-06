@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+import '../gamecontents.dart';
 import '../gameover.dart';
-import '../candidate.dart';
 import '../card.dart';
 
 class BrandGame extends StatefulWidget {
@@ -28,25 +28,15 @@ class _BrandGameState extends State<BrandGame> {
 
     // widget.id 값에 따라 cards 변수에 값을 할당
     if (widget.id == '1') {
-      cards = choi1
-          .map((candidate) => GameCard(candidate: candidate))
-          .toList();
+      cards = choi1.map((candidate) => GameCard(candidate: candidate)).toList();
     } else if (widget.id == '2') {
-      cards = choi2
-          .map((candidate) => GameCard(candidate: candidate))
-          .toList();
+      cards = choi2.map((candidate) => GameCard(candidate: candidate)).toList();
     } else if (widget.id == '3') {
-      cards = choi3
-          .map((candidate) => GameCard(candidate: candidate))
-          .toList();
+      cards = choi3.map((candidate) => GameCard(candidate: candidate)).toList();
     } else if (widget.id == '4') {
-      cards = choi4
-          .map((candidate) => GameCard(candidate: candidate))
-          .toList();
+      cards = choi4.map((candidate) => GameCard(candidate: candidate)).toList();
     } else {
-      cards = choi5
-          .map((candidate) => GameCard(candidate: candidate))
-          .toList();
+      cards = choi5.map((candidate) => GameCard(candidate: candidate)).toList();
     }
     setNumber = widget.id;
   }
