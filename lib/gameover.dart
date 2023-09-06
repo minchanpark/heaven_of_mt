@@ -1,11 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:testes/four/Gamepage_four.dart';
 import 'package:testes/main.dart';
 
 import 'brand/SetPage_brand.dart';
-import 'choi/Gamepage_choi.dart';
 import 'choi/SetPage_choi.dart';
 import 'four/SetPage_four.dart';
 
@@ -32,6 +30,7 @@ class _GameOverState extends State<GameOver> {
   bool _isMouseOver1 = false;
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return Scaffold(
         body: SafeArea(
       child: Container(
@@ -39,16 +38,16 @@ class _GameOverState extends State<GameOver> {
         width: double.infinity,
         child: Column(
           children: [
-            const SizedBox(height: 106),
+            SizedBox(height: height*0.191),
             Text(
-              'SET ${setNumber}',
+              setNumber,
               style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w400,
                 fontSize: 48,
               ),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: height*0.048),
             const Text(
               '모든 문제를 완료했어요!',
               style: TextStyle(
@@ -57,7 +56,7 @@ class _GameOverState extends State<GameOver> {
                 fontSize: 48,
               ),
             ),
-            const SizedBox(height: 141),
+            SizedBox(height: height*0.1695),
             MouseRegion(
               cursor: SystemMouseCursors.click, // 마우스 커서를 클릭 스타일로 설정
               onEnter: (_) {
@@ -170,7 +169,7 @@ class _GameOverState extends State<GameOver> {
                 ],
               ),
             ),
-            const SizedBox(height: 40),
+            SizedBox(height: height*0.048),
             MouseRegion(
               cursor: SystemMouseCursors.click, // 마우스 커서를 클릭 스타일로 설정
               onEnter: (_) {

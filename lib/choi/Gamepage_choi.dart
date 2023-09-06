@@ -82,10 +82,28 @@ class _ChoiGamePageState extends State<ChoiGame> {
       ),
       body: SafeArea(
         child: Container(
+            padding: EdgeInsets.only(
+                left: width * 0.075,
+                top: height * 0.073,
+                right: width * 0.0797),
             color: Color.fromRGBO(14, 25, 62, 1),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      color: Colors.white,
+                      icon: ImageIcon(AssetImage('assets/images/Exit.png')),
+                      iconSize: 39,
+                    ),
+                  ],
+                ),
                 Text(
                   setNumber,
                   style: const TextStyle(
@@ -135,24 +153,24 @@ class _ChoiGamePageState extends State<ChoiGame> {
                           ),
                     SizedBox(
                       width: width * 0.77,
-                      height: height * 0.45,
-                      child: Flexible(
-                        child: CardSwiper(
-                          duration: const Duration(milliseconds: 0),
-                          controller: controller,
-                          cardsCount: cards.length,
-                          numberOfCardsDisplayed: 1,
-                          cardBuilder: (
-                            context,
-                            index,
-                            horizontalThresholdPercentage,
-                            verticalThresholdPercentage,
-                          ) {
-                            currentCardIndex = index;
-                            return cards[index];
-                          },
-                          isDisabled: true,
-                        ),
+                      height: height * 0.4,
+                      child: CardSwiper(
+                        duration: const Duration(milliseconds: 0),
+                        controller: controller,
+                        cardsCount: cards.length,
+                        numberOfCardsDisplayed: 1,
+                        cardBuilder: (
+                          context,
+                          index,
+                          horizontalThresholdPercentage,
+                          verticalThresholdPercentage,
+                        ) {
+                          currentCardIndex = index;
+                          return cards[index];
+                        },
+                        isDisabled: true,
+                        onSwipe: _onSwipe, // 이 부분을 추가하세요.
+                        onUndo: _onUndo, // 이 부분을 추가하세요.
                       ),
                     ),
                     IconButton(
