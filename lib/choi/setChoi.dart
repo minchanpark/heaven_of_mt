@@ -1,15 +1,16 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'Gamepage_brand.dart';
+import '../main.dart';
+import 'gameChoi.dart';
 
-class BrandPage extends StatefulWidget {
-  const BrandPage({super.key});
+class ChoiPage extends StatefulWidget {
+  const ChoiPage({Key? key}) : super(key: key);
 
   @override
-  State<BrandPage> createState() => _BrandPageState();
+  State<ChoiPage> createState() => _ChoiPageState();
 }
 
-class _BrandPageState extends State<BrandPage> {
+class _ChoiPageState extends State<ChoiPage> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -25,7 +26,11 @@ class _BrandPageState extends State<BrandPage> {
           children: [
             IconButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => MyHome(), // Beauty 이미지에 대한 페이지
+                  ),
+                );
               },
               color: Colors.white,
               icon: ImageIcon(AssetImage('assets/images/home.png')),
@@ -36,30 +41,34 @@ class _BrandPageState extends State<BrandPage> {
               crossAxisAlignment: CrossAxisAlignment.baseline,
               textBaseline: TextBaseline.alphabetic,
               children: [
-                ShaderMask(
-                  shaderCallback: (Rect bounds) {
-                    return LinearGradient(
-                      colors: <Color>[
-                        Color.fromRGBO(255, 0, 142, 1),
-                        Color.fromRGBO(255, 235, 90, 1)
-                      ],
-                      begin: Alignment.topCenter, // 그라데이션 시작 위치 (위쪽 중앙)
-                      end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
-                    ).createShader(bounds);
-                  },
-                  child: Text(
-                    '브랜드 퀴즈',
-                    style: TextStyle(
-                      fontFamily: 'Pretendard',
-                      color: Colors.white,
-                      fontSize: 60,
-                      fontWeight: FontWeight.w400,
+                Center(
+                  child: ShaderMask(
+                    shaderCallback: (Rect bounds) {
+                      return LinearGradient(
+                        colors: <Color>[
+                          Color.fromRGBO(255, 0, 142, 1),
+                          Color.fromRGBO(255, 235, 90, 1)
+                        ],
+                        begin: Alignment.topCenter, // 그라데이션 시작 위치 (위쪽 중앙)
+                        end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
+                      ).createShader(bounds);
+                    },
+                    child: Text(
+                      '초성 퀴즈',
+                      style: TextStyle(
+                        fontFamily: 'Pretendard',
+                        color: Colors.white,
+                        fontSize: 60,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                   ),
                 ),
                 SizedBox(width: width * 0.015),
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      _showDeleteConfirmationDialog(context);
+                    },
                     style: ButtonStyle(
                         overlayColor:
                             MaterialStateProperty.all(Colors.transparent)),
@@ -89,6 +98,52 @@ class _BrandPageState extends State<BrandPage> {
           ],
         ),
       ),
+    );
+  }
+
+  void _showDeleteConfirmationDialog(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shadowColor: Colors.transparent,
+          contentPadding: EdgeInsets.all(0), // padding을 0으로 설정
+          insetPadding: EdgeInsets.all(16), // 화면 주변 padding 설정
+          backgroundColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          content: Stack(
+            children: [
+              SizedBox(
+                  width: width * 0.75, // 원하는 가로 길이 설정
+                  height: height * 0.65, // 원하는 세로 길이 설정
+                  child: Center(
+                    child: Image.asset(
+                      'assets/images/modal_choi.png',
+                      fit: BoxFit.cover,
+                    ),
+                  )),
+              Positioned(
+                top: 47, // 상단으로부터의 거리 조절
+                right: 196, // 오른쪽으로부터의 거리 조절
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Container(
+                    width: 40, // 버튼의 너비 설정
+                    height: 40, // 버튼의 높이 설정
+                    color: Colors.transparent, // 버튼의 배경색을 투명으로 만듭니다.
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
@@ -154,7 +209,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) =>
-                            BrandGame(id: widget.number), // Beauty 이미지에 대한 페이지
+                            ChoiGame(id: widget.number), // Beauty 이미지에 대한 페이지
                       ),
                     );
                   },

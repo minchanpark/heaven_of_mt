@@ -1,23 +1,23 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-import '../gamecontents.dart';
-import '../gameover.dart';
+import '../gameOver.dart';
+import '../gameContents.dart';
 import '../card.dart';
 
-class ChoiGame extends StatefulWidget {
+class FourGame extends StatefulWidget {
   final String id;
 
-  const ChoiGame({
+  const FourGame({
     super.key,
     required this.id,
   });
 
   @override
-  State<ChoiGame> createState() => _ChoiGamePageState();
+  State<FourGame> createState() => _FourGameState();
 }
 
-class _ChoiGamePageState extends State<ChoiGame> {
+class _FourGameState extends State<FourGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
@@ -164,7 +164,7 @@ class _ChoiGamePageState extends State<ChoiGame> {
                             MaterialPageRoute(
                               builder: (context) => GameOver(
                                 id: widget.id,
-                                gameName: 'choi',
+                                gameName: 'four',
                               ),
                             ),
                           );
