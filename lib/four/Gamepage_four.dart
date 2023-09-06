@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import '../gameover.dart';
-import '../candidate.dart';
+import '../gamecontents.dart';
 import '../card.dart';
 
 class FourGame extends StatefulWidget {
