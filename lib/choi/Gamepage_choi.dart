@@ -82,7 +82,11 @@ class _ChoiGamePageState extends State<ChoiGame> {
       ),
       body: SafeArea(
         child: Container(
-            padding: EdgeInsets.only(left: width*0.075, top: height*0.073, right: width*0.0797),
+            padding: EdgeInsets.only(
+                left: width * 0.075,
+                top: height * 0.073,
+                right: width * 0.0797),
+            color: Color.fromRGBO(14, 25, 62, 1),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
