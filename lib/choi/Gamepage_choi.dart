@@ -84,7 +84,6 @@ class _ChoiGamePageState extends State<ChoiGame> {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-
                     color: Colors.white,
                     icon: ImageIcon(AssetImage('assets/images/Exit.png')),
                     iconSize: 39,
@@ -156,6 +155,8 @@ class _ChoiGamePageState extends State<ChoiGame> {
                           return cards[index];
                         },
                         isDisabled: true,
+                        onSwipe: _onSwipe,
+                        onUndo: _onUndo,
                       ),
                     ),
                     IconButton(
@@ -199,9 +200,10 @@ class _ChoiGamePageState extends State<ChoiGame> {
     int? currentIndex,
     CardSwiperDirection direction,
   ) {
-    debugPrint(
-      'The card $previousIndex was swiped to the ${direction.name}. Now the card $currentIndex is on top',
-    );
+    setState(() {
+      currentCardIndex = currentIndex ?? 0; // currentIndex가 null인 경우 기본값 0으로 설정
+    });
+
     return true;
   }
 
@@ -210,9 +212,9 @@ class _ChoiGamePageState extends State<ChoiGame> {
     int currentIndex,
     CardSwiperDirection direction,
   ) {
-    debugPrint(
-      'The card $currentIndex was undod from the ${direction.name}',
-    );
+    setState(() {
+      currentCardIndex = currentIndex; // currentIndex가 null인 경우 기본값 0으로 설정
+    });
     return true;
   }
 }
