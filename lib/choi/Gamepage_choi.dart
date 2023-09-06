@@ -153,24 +153,24 @@ class _ChoiGamePageState extends State<ChoiGame> {
                           ),
                     SizedBox(
                       width: width * 0.77,
-                      height: height * 0.45,
-                      child: Flexible(
-                        child: CardSwiper(
-                          duration: const Duration(milliseconds: 0),
-                          controller: controller,
-                          cardsCount: cards.length,
-                          numberOfCardsDisplayed: 1,
-                          cardBuilder: (
-                            context,
-                            index,
-                            horizontalThresholdPercentage,
-                            verticalThresholdPercentage,
-                          ) {
-                            currentCardIndex = index;
-                            return cards[index];
-                          },
-                          isDisabled: true,
-                        ),
+                      height: height * 0.4,
+                      child: CardSwiper(
+                        duration: const Duration(milliseconds: 0),
+                        controller: controller,
+                        cardsCount: cards.length,
+                        numberOfCardsDisplayed: 1,
+                        cardBuilder: (
+                          context,
+                          index,
+                          horizontalThresholdPercentage,
+                          verticalThresholdPercentage,
+                        ) {
+                          currentCardIndex = index;
+                          return cards[index];
+                        },
+                        isDisabled: true,
+                        onSwipe: _onSwipe, // 이 부분을 추가하세요.
+                        onUndo: _onUndo, // 이 부분을 추가하세요.
                       ),
                     ),
                     IconButton(

@@ -68,9 +68,7 @@ class _FourGameState extends State<FourGame> {
       appBar: AppBar(
         toolbarHeight: 100,
         leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
+          onPressed: () {},
           color: Colors.white,
           icon: ImageIcon(
             AssetImage('assets/images/Exit.png'),
