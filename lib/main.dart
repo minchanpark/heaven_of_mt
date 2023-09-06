@@ -26,7 +26,8 @@ class _MyHomeState extends State<MyHome> {
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Stack(children: [
+      body: Stack(
+        children: [
         Container(
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -39,7 +40,27 @@ class _MyHomeState extends State<MyHome> {
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             SizedBox(height: height * 0.15),
-            Text("서비스 이름", style: TextStyle(fontSize: 96, color: Colors.white)),
+            ShaderMask(
+                  shaderCallback: (Rect bounds) {
+                    return LinearGradient(
+                      colors: <Color>[
+                        Color.fromRGBO(255, 0, 142, 1),
+                        Color.fromRGBO(255, 235, 90, 1)
+                      ],
+                      begin: Alignment.topCenter, // 그라데이션 시작 위치 (위쪽 중앙)
+                      end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
+                    ).createShader(bounds);
+                  },
+                  child: Text(
+                    '서비스 이름',
+                    style: TextStyle(
+                      fontFamily: 'Pretendard',
+                      color: Colors.white,
+                      fontSize: 96,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
             SizedBox(height: height * 0.13),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -140,7 +161,7 @@ class _GameListState extends State<GameList> {
                         break;
                       case '4':
                         break;
-                        case '5':
+                      case '5':
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => BrandPage()));
                         break;
