@@ -65,27 +65,26 @@ class _ChoiGamePageState extends State<ChoiGame> {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 100,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          color: Colors.white,
-          icon: ImageIcon(
-            AssetImage('assets/images/Exit.png'),
-          ),
-          iconSize: 90,
-        ),
-        backgroundColor: Color.fromRGBO(14, 25, 62, 1),
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+      //   toolbarHeight: 100,
+      //   leading: IconButton(
+      //     onPressed: () {
+      //       Navigator.of(context).pop();
+      //     },
+      //     color: Colors.white,
+      //     icon: ImageIcon(
+      //       AssetImage('assets/images/Exit.png'),
+      //     ),
+      //     iconSize: 90,
+      //   ),
+      //   backgroundColor: Color.fromRGBO(14, 25, 62, 1),
+      //   elevation: 0,
+      // ),
       body: SafeArea(
         child: Container(
             padding: EdgeInsets.only(
-                left: width * 0.075,
-                top: height * 0.073,
-                right: width * 0.0797),
+              top: height * 0.0015,
+            ),
             color: Color.fromRGBO(14, 25, 62, 1),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
