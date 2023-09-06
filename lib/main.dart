@@ -24,7 +24,8 @@ class _MyHomeState extends State<MyHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Stack(children: [
+      body: Stack(
+        children: [
         Container(
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -34,16 +35,43 @@ class _MyHomeState extends State<MyHome> {
           ),
         ),
         Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              CustomImageWidget(imagePath: 'assets/images/PC.png'),
-              CustomImageWidget(imagePath: 'assets/images/Beauty.jpeg'),
-              CustomImageWidget(imagePath: 'assets/images/Peace.jpeg'),
-              CustomImageWidget(imagePath: 'assets/images/SW.jpeg'),
-              CustomImageWidget(imagePath: 'assets/images/Paris.jpeg'),
-            ],
-          ),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            SizedBox(height: height * 0.15),
+            ShaderMask(
+                  shaderCallback: (Rect bounds) {
+                    return LinearGradient(
+                      colors: <Color>[
+                        Color.fromRGBO(255, 0, 142, 1),
+                        Color.fromRGBO(255, 235, 90, 1)
+                      ],
+                      begin: Alignment.topCenter, // 그라데이션 시작 위치 (위쪽 중앙)
+                      end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
+                    ).createShader(bounds);
+                  },
+                  child: Text(
+                    '서비스 이름',
+                    style: TextStyle(
+                      fontFamily: 'Pretendard',
+                      color: Colors.white,
+                      fontSize: 96,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+            SizedBox(height: height * 0.13),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: List.generate(5, (index) {
+                return Column(
+                  children: [
+                    GameList(index: "${index + 1}", name: gameName[index]),
+                    SizedBox(height: height * 0.01)
+                  ],
+                );
+              }),
+            ),
+          ]),
         ),
       ]),
     );
@@ -108,37 +136,23 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
               opacity: _opacity == 0 ? 1.0 : 0.0,
               child: ElevatedButton(
                   onPressed: () {
-                    if (widget.imagePath == 'assets/images/PC.png') {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => ChoiPage(), // PC 이미지에 대한 페이지
-                        ),
-                      );
-                    } else if (widget.imagePath ==
-                        'assets/images/Beauty.jpeg') {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => BrandPage(), // PC 이미지에 대한 페이지
-                        ),
-                      );
-                    } else if (widget.imagePath == 'assets/images/Peace.jpeg') {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => FourPage(), // PC 이미지에 대한 페이지
-                        ),
-                      );
-                    } else if (widget.imagePath == 'assets/images/SW.jpeg') {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => BrandPage(), // PC 이미지에 대한 페이지
-                        ),
-                      );
-                    } else {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => BrandPage(), // PC 이미지에 대한 페이지
-                        ),
-                      );
+                    switch (widget.index) {
+                      case '1':
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ChoiPage()));
+                        break;
+                      case '2':
+                        break;
+                      case '3':
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => FourPage()));
+                        break;
+                      case '4':
+                        break;
+                      case '5':
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => BrandPage()));
+                        break;
                     }
                   },
                   style: ElevatedButton.styleFrom(
