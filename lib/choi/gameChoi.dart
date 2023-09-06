@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-import '../gamecontents.dart';
-import '../gameover.dart';
+import '../gameContents.dart';
+import '../gameOver.dart';
 import '../card.dart';
 
 class ChoiGame extends StatefulWidget {

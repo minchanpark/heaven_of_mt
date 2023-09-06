@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
-import 'package:testes/brand/SetPage_brand.dart';
-import 'package:testes/four/SetPage_four.dart';
-import 'choi/SetPage_choi.dart';
+import 'package:testes/brand/setBrand.dart';
+import 'package:testes/four/setFour.dart';
+import 'choi/setChoi.dart';
 
 void main() {
   runApp(
