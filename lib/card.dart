@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-
 import 'package:flutter/material.dart';
-
-import 'candidate_choi.dart';
+import 'candidate.dart';
 
 class GameCard extends StatelessWidget {
   final ChoiCandidateModel candidate;
