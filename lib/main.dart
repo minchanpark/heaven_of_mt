@@ -1,10 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:testes/brand/SetPage_brand.dart';
-import 'choi/Gamepage_choi.dart';
+import 'package:testes/four/SetPage_four.dart';
 import 'choi/SetPage_choi.dart';
-import 'four/SetPage_four.dart';
-import 'gameover.dart';
 
 void main() {
   runApp(
@@ -20,12 +18,14 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
+  List<String> gameName = ["액션초성게임", "인물퀴즈", "네 글자 퀴즈", "텔레파시", "랜덤게임"];
+
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Stack(
-        children: [
+      body: Stack(children: [
         Container(
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -39,26 +39,26 @@ class _MyHomeState extends State<MyHome> {
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             SizedBox(height: height * 0.15),
             ShaderMask(
-                  shaderCallback: (Rect bounds) {
-                    return LinearGradient(
-                      colors: <Color>[
-                        Color.fromRGBO(255, 0, 142, 1),
-                        Color.fromRGBO(255, 235, 90, 1)
-                      ],
-                      begin: Alignment.topCenter, // 그라데이션 시작 위치 (위쪽 중앙)
-                      end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
-                    ).createShader(bounds);
-                  },
-                  child: Text(
-                    '서비스 이름',
-                    style: TextStyle(
-                      fontFamily: 'Pretendard',
-                      color: Colors.white,
-                      fontSize: 96,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
+              shaderCallback: (Rect bounds) {
+                return LinearGradient(
+                  colors: <Color>[
+                    Color.fromRGBO(255, 0, 142, 1),
+                    Color.fromRGBO(255, 235, 90, 1)
+                  ],
+                  begin: Alignment.topCenter, // 그라데이션 시작 위치 (위쪽 중앙)
+                  end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
+                ).createShader(bounds);
+              },
+              child: Text(
+                '서비스 이름',
+                style: TextStyle(
+                  fontFamily: 'Pretendard',
+                  color: Colors.white,
+                  fontSize: 96,
+                  fontWeight: FontWeight.w400,
                 ),
+              ),
+            ),
             SizedBox(height: height * 0.13),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -78,19 +78,16 @@ class _MyHomeState extends State<MyHome> {
   }
 }
 
-class CustomImageWidget extends StatefulWidget {
-  final String imagePath;
-
-  const CustomImageWidget({required this.imagePath, Key? key})
-      : super(key: key);
+class GameList extends StatefulWidget {
+  final String index;
+  final String name;
+  const GameList({super.key, required this.index, required this.name});
 
   @override
-  State<CustomImageWidget> createState() => _CustomImageWidgetState();
+  State<GameList> createState() => _GameListState();
 }
 
-class _CustomImageWidgetState extends State<CustomImageWidget> {
-  double _opacity = 0.5;
-  final Color _backgroundColor = Colors.white;
+class _GameListState extends State<GameList> {
   bool _isMouseOver = false;
 
   @override
@@ -99,41 +96,54 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
       onEnter: (_) {
         setState(() {
           _isMouseOver = true;
-          _opacity = 0.0;
         });
       },
       onExit: (_) {
         setState(() {
           _isMouseOver = false;
-          _opacity = 0.5;
         });
       },
       child: Stack(
         alignment: Alignment.center,
         children: [
-          AnimatedContainer(
-            duration: Duration(milliseconds: 400), // 애니메이션 지속 시간 조절
-            decoration: BoxDecoration(
-              color: _backgroundColor, // 배경색을 지정합니다.
-              borderRadius: BorderRadius.circular(20.0), // 원하는 반지름 값으로 조절
-            ),
-            width: 240,
-            height: 500,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20.0), // 위와 같은 반지름 값으로 조절
-              child: Image.asset(
-                widget.imagePath,
-                fit: BoxFit.cover,
-                color: Colors.black.withOpacity(_opacity), // 이미지에 색상 필터를 적용합니다.
-                colorBlendMode: BlendMode.srcOver,
-              ),
+          Container(
+            padding: const EdgeInsets.only(bottom: 4),
+            width: 360,
+            height: 64,
+            child: Visibility(
+              visible: !_isMouseOver,
+              child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                  textBaseline: TextBaseline.alphabetic,
+                  children: [
+                    Text(
+                      widget.index,
+                      style: TextStyle(
+                        fontFamily: 'Pretendard',
+                        color: Colors.white,
+                        fontSize: 45,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    SizedBox(width: 34),
+                    Text(
+                      widget.name,
+                      style: TextStyle(
+                        fontFamily: 'Pretendard',
+                        color: Colors.white,
+                        fontSize: 45,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ]),
             ),
           ),
-          Positioned(
-            bottom: 10,
-            child: AnimatedOpacity(
-              duration: Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
-              opacity: _opacity == 0 ? 1.0 : 0.0,
+          Container(
+            padding: const EdgeInsets.only(bottom: 4),
+            width: 390,
+            height: 64,
+            child: Visibility(
+              visible: _isMouseOver,
               child: ElevatedButton(
                   onPressed: () {
                     switch (widget.index) {
@@ -156,27 +166,36 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    disabledBackgroundColor: Colors.grey,
+                    backgroundColor: Colors.transparent,
+                    disabledBackgroundColor: Colors.transparent,
+                    foregroundColor: Colors.transparent,
+                    shadowColor: Colors.transparent,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(11),
                     ),
-                    padding: EdgeInsets.symmetric(horizontal: 20),
                   ),
-                  child: Container(
-                    width: 100,
-                    height: 45,
-                    child: Center(
-                      child: Text(
-                        '시작하기',
-                        style: TextStyle(
-                          fontFamily: 'Pretendard',
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                          width: 29,
+                          height: 51,
+                          child: Image.asset('assets/images/gameover.png')),
+                      SizedBox(width: 31),
+                      Container(
+                        padding: EdgeInsets.only(left: 24, right: 24),
+                        color: Color.fromRGBO(255, 98, 211, 1),
+                        child: Text(
+                          widget.name,
+                          style: TextStyle(
+                            fontFamily: 'Pretendard',
+                            color: Colors.white,
+                            fontSize: 45,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
-                    ),
+                    ],
                   )),
             ),
           ),
