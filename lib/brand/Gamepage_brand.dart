@@ -1,10 +1,8 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-
 import '../gameover.dart';
-import '../candidate_choi.dart';
+import '../candidate.dart';
 import '../card.dart';
 
 class BrandGame extends StatefulWidget {

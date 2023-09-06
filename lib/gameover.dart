@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:testes/main.dart';
-
 import 'brand/SetPage_brand.dart';
 import 'choi/SetPage_choi.dart';
 import 'four/SetPage_four.dart';
