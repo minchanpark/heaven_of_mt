@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+import '../main.dart';
 import 'Gamepage_choi.dart';
 
 class ChoiPage extends StatefulWidget {
@@ -27,7 +28,11 @@ class _ChoiPageState extends State<ChoiPage> {
           children: [
             IconButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => MyHome(), // Beauty 이미지에 대한 페이지
+                  ),
+                );
               },
               color: Colors.white,
               icon: ImageIcon(AssetImage('assets/images/home.png')),

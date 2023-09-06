@@ -84,6 +84,7 @@ class _ChoiGamePageState extends State<ChoiGame> {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
+
                     color: Colors.white,
                     icon: ImageIcon(AssetImage('assets/images/Exit.png')),
                     iconSize: 39,
