@@ -231,6 +231,28 @@ final List<GameContents> random3 = [
   GameContents(name: '카카_ _', index: '10'),
 ];
 
-// 단어 텔레파시 6번째 들어와야 함
+final List<GameContents> random4 = [
+  GameContents(name: '스', index: '1'),
+  GameContents(name: '하', index: '2'),
+  GameContents(name: '물', index: '3'),
+  GameContents(name: '사', index: '4'),
+  GameContents(name: '나', index: '5'),
+  GameContents(name: '중', index: '6'),
+  GameContents(name: '월', index: '7'),
+  GameContents(name: '우', index: '8'),
+  GameContents(name: '구', index: '9'),
+  GameContents(name: '자', index: '10'),
+];
 
-// 브랜드게임 들어와야 함
+final List<GameContents> random5 = [
+  GameContents(name: '라면', index: '1'),
+  GameContents(name: '자동차', index: '2'),
+  GameContents(name: '치킨', index: '3'),
+  GameContents(name: '아이스크림', index: '4'),
+  GameContents(name: '한동대 건물', index: '5'),
+  GameContents(name: '떡볶이', index: '6'),
+  GameContents(name: '과자', index: '7'),
+  GameContents(name: '햄버거', index: '8'),
+  GameContents(name: '의류브랜드', index: '9'),
+  GameContents(name: '걸그룹', index: '10'),
+];
