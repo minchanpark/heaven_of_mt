@@ -27,24 +27,24 @@ class _FourGameState extends State<FourGame> {
     super.initState();
 
     // widget.id 값에 따라 cards 변수에 값을 할당
-    if (widget.id == '1') {
-      cards = choi1
+    if (widget.id == 'SET 1') {
+      cards = four1
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
-    } else if (widget.id == '2') {
-      cards = choi2
+    } else if (widget.id == 'SET 2') {
+      cards = four2
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
-    } else if (widget.id == '3') {
-      cards = choi3
+    } else if (widget.id == 'SET 3') {
+      cards = four3
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
-    } else if (widget.id == '4') {
-      cards = choi4
+    } else if (widget.id == 'SET 4') {
+      cards = four4
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
     } else {
-      cards = choi5
+      cards = four5
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
     }
