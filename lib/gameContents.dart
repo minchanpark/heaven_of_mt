@@ -72,6 +72,70 @@ final List<GameContents> choi5 = [
 ];
 
 // 인물퀴즈 들어와야 함
+final List<GameContents> person1 = [
+  GameContents(name: 'assets/person/차두리.jpeg', index: '1'),
+  GameContents(name: 'assets/person/강동원.jpeg', index: '2'),
+  GameContents(name: 'assets/person/남도일.jpeg', index: '3'),
+  GameContents(name: 'assets/person/강백호.jpeg', index: '4'),
+  GameContents(name: 'assets/person/공유.jpeg', index: '5'),
+  GameContents(name: 'assets/person/미나.jpeg', index: '6'),
+  GameContents(name: 'assets/person/김태희.jpeg', index: '7'),
+  GameContents(name: 'assets/person/송혜교.jpeg', index: '8'),
+  GameContents(name: 'assets/person/박재범.jpeg', index: '9'),
+  GameContents(name: 'assets/person/수지.jpeg', index: '10'),
+];
+
+final List<GameContents> person2 = [
+  GameContents(name: 'assets/person/김동현.jpeg', index: '1'),
+  GameContents(name: 'assets/person/링컨.jpeg', index: '2'),
+  GameContents(name: 'assets/person/유관순.jpeg', index: '3'),
+  GameContents(name: 'assets/person/데드풀.jpeg', index: '4'),
+  GameContents(name: 'assets/person/로버트다우니주니어.jpeg', index: '5'),
+  GameContents(name: 'assets/person/민경훈.jpeg', index: '6'),
+  GameContents(name: 'assets/person/보노보노.jpeg', index: '7'),
+  GameContents(name: 'assets/person/스칼렛요한슨.jpeg', index: '8'),
+  GameContents(name: 'assets/person/올라프.jpeg', index: '9'),
+  GameContents(name: 'assets/person/이승우.jpeg', index: '10'),
+];
+
+final List<GameContents> person3 = [
+  GameContents(name: 'assets/person/장윤주.jpeg', index: '1'),
+  GameContents(name: 'assets/person/손흥민.jpeg', index: '2'),
+  GameContents(name: 'assets/person/강하늘.jpeg', index: '3'),
+  GameContents(name: 'assets/person/거미.jpeg', index: '4'),
+  GameContents(name: 'assets/person/김연자.jpeg', index: '5'),
+  GameContents(name: 'assets/person/미달이.jpeg', index: '6'),
+  GameContents(name: 'assets/person/뿡뿡이.jpeg', index: '7'),
+  GameContents(name: 'assets/person/어피치.jpeg', index: '8'),
+  GameContents(name: 'assets/person/혜린.jpeg', index: '9'),
+  GameContents(name: 'assets/person/저스틴비버.jpeg', index: '10'),
+];
+
+final List<GameContents> person4 = [
+  GameContents(name: 'assets/person/조정석.jpeg', index: '1'),
+  GameContents(name: 'assets/person/조유리.jpeg', index: '2'),
+  GameContents(name: 'assets/person/정동원.jpeg', index: '3'),
+  GameContents(name: 'assets/person/무민.jpeg', index: '4'),
+  GameContents(name: 'assets/person/샘스미스.jpeg', index: '5'),
+  GameContents(name: 'assets/person/현주엽.jpeg', index: '6'),
+  GameContents(name: 'assets/person/임영웅.jpeg', index: '7'),
+  GameContents(name: 'assets/person/김연경.jpeg', index: '8'),
+  GameContents(name: 'assets/person/타노스.jpeg', index: '9'),
+  GameContents(name: 'assets/person/조여정.jpeg', index: '10'),
+];
+
+final List<GameContents> person5 = [
+  GameContents(name: 'assets/person/조승우.jpeg', index: '1'),
+  GameContents(name: 'assets/person/안나.jpeg', index: '2'),
+  GameContents(name: 'assets/person/포돌이.jpeg', index: '3'),
+  GameContents(name: 'assets/person/이문세.jpeg', index: '4'),
+  GameContents(name: 'assets/person/문상훈.jpeg', index: '5'),
+  GameContents(name: 'assets/person/지성.jpeg', index: '6'),
+  GameContents(name: 'assets/person/이경영.jpeg', index: '7'),
+  GameContents(name: 'assets/person/피오나.jpeg', index: '8'),
+  GameContents(name: 'assets/person/윈터.jpeg', index: '9'),
+  GameContents(name: 'assets/person/고아성.jpeg', index: '10'),
+];
 
 final List<GameContents> four1 = [
   GameContents(name: '이구_ _', index: '1'),
@@ -216,7 +280,18 @@ final List<GameContents> random1 = [
   GameContents(name: 'ㄱ ㅁ', index: '10'),
 ];
 
-// 인물퀴즈 6번째 들어와야 함
+final List<GameContents> random2 = [
+  GameContents(name: 'assets/person/크러쉬.jpeg', index: '1'),
+  GameContents(name: 'assets/person/마동석.jpeg', index: '2'),
+  GameContents(name: 'assets/person/봉준호.jpeg', index: '3'),
+  GameContents(name: 'assets/person/안유진.jpeg', index: '4'),
+  GameContents(name: 'assets/person/박명수.jpeg', index: '5'),
+  GameContents(name: 'assets/person/나영석.jpeg', index: '6'),
+  GameContents(name: 'assets/person/일론머스크.jpeg', index: '7'),
+  GameContents(name: 'assets/person/최우식.jpeg', index: '8'),
+  GameContents(name: 'assets/person/유해진.jpeg', index: '9'),
+  GameContents(name: 'assets/person/노진구.jpeg', index: '10'),
+];
 
 
 final List<GameContents> random3 = [

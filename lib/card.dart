@@ -35,7 +35,7 @@ class GameCard extends StatelessWidget {
           ),
         );
       case 2:
-        break;
+        return Image.asset(gameContents.name);
       case 3:
         return Text(
           gameContents.name,
