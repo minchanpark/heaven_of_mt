@@ -6,7 +6,7 @@ import 'choi/setChoi.dart';
 
 void main() {
   runApp(
-    const MaterialApp(debugShowCheckedModeBanner: false, home: MyHome()),
+    const MaterialApp(debugShowCheckedModeBanner: false, home: ChoiPage()),
   );
 }
 
