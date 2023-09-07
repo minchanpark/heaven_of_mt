@@ -218,6 +218,7 @@ final List<GameContents> random1 = [
 
 // 인물퀴즈 6번째 들어와야 함
 
+
 final List<GameContents> random3 = [
   GameContents(name: '코미_ _', index: '1'),
   GameContents(name: '허리_ _', index: '2'),
