@@ -128,7 +128,7 @@ class _ChoiPageState extends State<ChoiPage> {
                   )),
               Positioned(
                 top: height * 0.04, // 상단으로부터의 거리를 화면 높이의 6%로 설정
-                right: width * 0.1, // 오른쪽으로부터의 거리를 화면 너비의 22%로 설정
+                right: width * 0.08, // 오른쪽으로부터의 거리를 화면 너비의 22%로 설정
                 child: InkWell(
                   onTap: () {
                     Navigator.of(context).pop();

@@ -1,16 +1,17 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 import 'package:flutter/material.dart';
-import '../main.dart';
-import 'gameFour.dart';
 
-class FourPage extends StatefulWidget {
-  const FourPage({super.key});
+import '../main.dart';
+import 'gameTele.dart';
+
+class TelePage extends StatefulWidget {
+  const TelePage({super.key});
 
   @override
-  State<FourPage> createState() => _FourPageState();
+  State<TelePage> createState() => _TelePageState();
 }
 
-class _FourPageState extends State<FourPage> {
+class _TelePageState extends State<TelePage> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -54,7 +55,7 @@ class _FourPageState extends State<FourPage> {
                       ).createShader(bounds);
                     },
                     child: Text(
-                      '네 글자 퀴즈',
+                      '텔레파시',
                       style: TextStyle(
                         fontFamily: 'Pretendard',
                         color: Colors.white,
@@ -209,7 +210,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) =>
-                            FourGame(id: widget.number), // Beauty 이미지에 대한 페이지
+                            TeleGame(id: widget.number), // Beauty 이미지에 대한 페이지
                       ),
                     );
                   },

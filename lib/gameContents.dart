@@ -1,4 +1,3 @@
-
 class GameContents {
   String name;
   String index;
@@ -90,7 +89,7 @@ final List<GameContents> person2 = [
   GameContents(name: 'assets/person/링컨.jpeg', index: '2'),
   GameContents(name: 'assets/person/유관순.jpeg', index: '3'),
   GameContents(name: 'assets/person/데드풀.jpeg', index: '4'),
-  GameContents(name: 'assets/person/로버트다우니주니어.jpeg', index: '5'),
+  GameContents(name: 'assets/person/로버트.jpeg', index: '5'),
   GameContents(name: 'assets/person/민경훈.jpeg', index: '6'),
   GameContents(name: 'assets/person/보노보노.jpeg', index: '7'),
   GameContents(name: 'assets/person/스칼렛요한슨.jpeg', index: '8'),
@@ -292,7 +291,6 @@ final List<GameContents> random2 = [
   GameContents(name: 'assets/person/유해진.jpeg', index: '9'),
   GameContents(name: 'assets/person/노진구.jpeg', index: '10'),
 ];
-
 
 final List<GameContents> random3 = [
   GameContents(name: '코미_ _', index: '1'),

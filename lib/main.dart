@@ -2,11 +2,13 @@
 import 'package:flutter/material.dart';
 import 'package:testes/brand/setBrand.dart';
 import 'package:testes/four/setFour.dart';
+import 'package:testes/person/setPerson.dart';
+import 'package:testes/tele/setTele.dart';
 import 'choi/setChoi.dart';
 
 void main() {
   runApp(
-    const MaterialApp(debugShowCheckedModeBanner: false, home: ChoiPage()),
+    const MaterialApp(debugShowCheckedModeBanner: false, home: MyHome()),
   );
 }
 
@@ -152,12 +154,16 @@ class _GameListState extends State<GameList> {
                             builder: (context) => ChoiPage()));
                         break;
                       case '2':
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => PersonPage()));
                         break;
                       case '3':
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => FourPage()));
                         break;
                       case '4':
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => TelePage()));
                         break;
                       case '5':
                         Navigator.of(context).push(MaterialPageRoute(
