@@ -1,11 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:testes/main.dart';
+import 'package:testes/person/setPerson.dart';
 
 import 'brand/setBrand.dart';
 import 'choi/setChoi.dart';
 import 'four/setFour.dart';
-
 
 class GameOver extends StatefulWidget {
   final String id;
@@ -38,7 +38,7 @@ class _GameOverState extends State<GameOver> {
         width: double.infinity,
         child: Column(
           children: [
-            SizedBox(height: height*0.191),
+            SizedBox(height: height * 0.191),
             Text(
               setNumber,
               style: const TextStyle(
@@ -47,7 +47,7 @@ class _GameOverState extends State<GameOver> {
                 fontSize: 48,
               ),
             ),
-            SizedBox(height: height*0.048),
+            SizedBox(height: height * 0.048),
             const Text(
               '모든 문제를 완료했어요!',
               style: TextStyle(
@@ -56,7 +56,7 @@ class _GameOverState extends State<GameOver> {
                 fontSize: 48,
               ),
             ),
-            SizedBox(height: height*0.1695),
+            SizedBox(height: height * 0.1695),
             MouseRegion(
               cursor: SystemMouseCursors.click, // 마우스 커서를 클릭 스타일로 설정
               onEnter: (_) {
@@ -109,6 +109,13 @@ class _GameOverState extends State<GameOver> {
                                 MaterialPageRoute(
                                   builder: (context) =>
                                       ChoiPage(), // Beauty 이미지에 대한 페이지
+                                ),
+                              );
+                            } else if (widget.gameName == 'person') {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      PersonPage(), // Beauty 이미지에 대한 페이지
                                 ),
                               );
                             } else if (widget.gameName == 'four') {
@@ -169,7 +176,7 @@ class _GameOverState extends State<GameOver> {
                 ],
               ),
             ),
-            SizedBox(height: height*0.048),
+            SizedBox(height: height * 0.048),
             MouseRegion(
               cursor: SystemMouseCursors.click, // 마우스 커서를 클릭 스타일로 설정
               onEnter: (_) {
