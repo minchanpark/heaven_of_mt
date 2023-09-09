@@ -66,129 +66,144 @@ class _PersonGameState extends State<PersonGame> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(14, 25, 62, 1),
       body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.only(
-            left: width * 0.075,
-            top: height * 0.073,
-            right: width * 0.0797,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+        child: Stack(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/home.gif'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(
+                left: width * 0.075,
+                top: height * 0.073,
+                right: width * 0.0797,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    color: Colors.white,
-                    icon: ImageIcon(AssetImage('assets/images/Exit.png')),
-                    iconSize: 39,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        color: Colors.white,
+                        icon: ImageIcon(AssetImage('assets/images/Exit.png')),
+                        iconSize: 39,
+                      ),
+                    ],
+                  ),
+                  Text(
+                    setNumber,
+                    style: const TextStyle(
+                      fontFamily: 'DungGeunMo',
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 60,
+                    ),
+                  ),
+                  SizedBox(height: height * 0.025),
+                  Text(
+                    '${currentCardIndex + 1} / ${cards.length}',
+                    style: const TextStyle(
+                      fontFamily: 'DungGeunMo',
+                      color: Color.fromRGBO(255, 98, 211, 1),
+                      fontWeight: FontWeight.w400,
+                      fontSize: 36,
+                    ),
+                  ),
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        isUndoButtonVisible
+                            ? IconButton(
+                                onPressed: controller.undo,
+                                color: Colors.transparent,
+                                icon: ImageIcon(
+                                  AssetImage(
+                                      'assets/images/icon_chevron_left.png'),
+                                ),
+                                iconSize: 90,
+                              )
+                            : IconButton(
+                                onPressed: () {
+                                  controller.undo();
+                                  if (currentCardIndex == 1) {
+                                    setState(() {
+                                      isUndoButtonVisible = true;
+                                    });
+                                  }
+                                },
+                                color: Colors.transparent,
+                                icon: ImageIcon(
+                                  AssetImage(
+                                      'assets/images/icon_chevron_left_white.png'),
+                                ),
+                                iconSize: 90,
+                              ),
+                        SizedBox(
+                          width: width * 0.57, // 최대 가로 크기를 설정할 수도 있습니다.
+                          height: height * 0.67, // 최대 세로 크기를 설정할 수도 있습니다
+                          child: CardSwiper(
+                            duration: const Duration(milliseconds: 0),
+                            controller: controller,
+                            cardsCount: cards.length,
+                            numberOfCardsDisplayed: 1,
+                            cardBuilder: (
+                              context,
+                              index,
+                              horizontalThresholdPercentage,
+                              verticalThresholdPercentage,
+                            ) {
+                              currentCardIndex = index;
+                              return cards[index];
+                            },
+                            isDisabled: true,
+                            onSwipe: _onSwipe,
+                            onUndo: _onUndo,
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: () {
+                            if (currentCardIndex == 9) {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => GameOver(
+                                    id: widget.id,
+                                    gameName: 'person',
+                                  ),
+                                ),
+                              );
+                            } else {
+                              controller.swipeLeft();
+                              if (currentCardIndex != 1) {
+                                setState(() {
+                                  isUndoButtonVisible = false;
+                                });
+                              }
+                            }
+                          },
+                          color: Colors.transparent,
+                          icon: ImageIcon(
+                            AssetImage('assets/images/icon_chevron_right.png'),
+                          ),
+                          iconSize: 90,
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
-              Text(
-                setNumber,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 60,
-                ),
-              ),
-              SizedBox(height: height * 0.025),
-              Text(
-                '${currentCardIndex + 1} / ${cards.length}',
-                style: const TextStyle(
-                  color: Color.fromRGBO(255, 98, 211, 1),
-                  fontWeight: FontWeight.w400,
-                  fontSize: 36,
-                ),
-              ),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    isUndoButtonVisible
-                        ? IconButton(
-                            onPressed: controller.undo,
-                            color: Colors.transparent,
-                            icon: ImageIcon(
-                              AssetImage('assets/images/icon_chevron_left.png'),
-                            ),
-                            iconSize: 90,
-                          )
-                        : IconButton(
-                            onPressed: () {
-                              controller.undo();
-                              if (currentCardIndex == 1) {
-                                setState(() {
-                                  isUndoButtonVisible = true;
-                                });
-                              }
-                            },
-                            color: Colors.transparent,
-                            icon: ImageIcon(
-                              AssetImage(
-                                  'assets/images/icon_chevron_left_white.png'),
-                            ),
-                            iconSize: 90,
-                          ),
-                    SizedBox(
-                      width: width * 0.57, // 최대 가로 크기를 설정할 수도 있습니다.
-                      height: height * 0.67, // 최대 세로 크기를 설정할 수도 있습니다
-                      child: CardSwiper(
-                        duration: const Duration(milliseconds: 0),
-                        controller: controller,
-                        cardsCount: cards.length,
-                        numberOfCardsDisplayed: 1,
-                        cardBuilder: (
-                          context,
-                          index,
-                          horizontalThresholdPercentage,
-                          verticalThresholdPercentage,
-                        ) {
-                          currentCardIndex = index;
-                          return cards[index];
-                        },
-                        isDisabled: true,
-                        onSwipe: _onSwipe,
-                        onUndo: _onUndo,
-                      ),
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        if (currentCardIndex == 9) {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => GameOver(
-                                id: widget.id,
-                                gameName: 'person',
-                              ),
-                            ),
-                          );
-                        } else {
-                          controller.swipeLeft();
-                          if (currentCardIndex != 1) {
-                            setState(() {
-                              isUndoButtonVisible = false;
-                            });
-                          }
-                        }
-                      },
-                      color: Colors.transparent,
-                      icon: ImageIcon(
-                        AssetImage('assets/images/icon_chevron_right.png'),
-                      ),
-                      iconSize: 90,
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

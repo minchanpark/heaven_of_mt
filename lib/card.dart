@@ -70,6 +70,7 @@ class GameCard extends StatelessWidget {
         child: Text(
           gameContents.name,
           style: const TextStyle(
+            fontFamily: 'DungGeunMo',
             color: Colors.white,
             fontWeight: FontWeight.w700,
             fontSize: 200,
