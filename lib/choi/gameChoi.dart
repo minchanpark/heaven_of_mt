@@ -183,7 +183,7 @@ class _ChoiGamePageState extends State<ChoiGame> {
                               );
                             } else {
                               controller.swipeLeft();
-                              if (currentCardIndex != 1) {
+                              if (currentCardIndex != 2) {
                                 setState(() {
                                   isUndoButtonVisible = false;
                                 });
