@@ -139,7 +139,7 @@ class _RandomGameState extends State<RandomGame> {
                         : IconButton(
                             onPressed: () {
                               controller.undo();
-                              if (currentCardIndex == 1) {
+                              if (currentCardIndex == 0) {
                                 setState(() {
                                   isUndoButtonVisible = true;
                                 });
@@ -176,8 +176,9 @@ class _RandomGameState extends State<RandomGame> {
                         ),
                       )
                     else
-                      SizedBox(
-                        width: width * 0.4,
+                      Container(
+                        color: Colors.amber,
+                        width: width * 0.69,
                         height: height * 0.4,
                         child: CardSwiper(
                           duration: const Duration(milliseconds: 0),

@@ -323,7 +323,7 @@ final List<GameContents> random5 = [
   GameContents(name: '자동차', index: '2'),
   GameContents(name: '치킨', index: '3'),
   GameContents(name: '아이스크림', index: '4'),
-  GameContents(name: '한동대 건물', index: '5'),
+  GameContents(name: '한동대건물', index: '5'),
   GameContents(name: '떡볶이', index: '6'),
   GameContents(name: '과자', index: '7'),
   GameContents(name: '햄버거', index: '8'),

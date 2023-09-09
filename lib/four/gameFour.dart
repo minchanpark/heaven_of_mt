@@ -124,7 +124,7 @@ class _FourGameState extends State<FourGame> {
                         : IconButton(
                             onPressed: () {
                               controller.undo();
-                              if (currentCardIndex == 1) {
+                              if (currentCardIndex == 0) {
                                 setState(() {
                                   isUndoButtonVisible = true;
                                 });
@@ -138,7 +138,7 @@ class _FourGameState extends State<FourGame> {
                             iconSize: 90,
                           ),
                     SizedBox(
-                      width: width * 0.4,
+                      width: width * 0.63,
                       height: height * 0.4,
                       child: CardSwiper(
                         duration: const Duration(milliseconds: 0),

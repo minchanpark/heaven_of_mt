@@ -124,7 +124,7 @@ class _TeleGameState extends State<TeleGame> {
                         : IconButton(
                             onPressed: () {
                               controller.undo();
-                              if (currentCardIndex == 1) {
+                              if (currentCardIndex == 0) {
                                 setState(() {
                                   isUndoButtonVisible = true;
                                 });
@@ -137,8 +137,9 @@ class _TeleGameState extends State<TeleGame> {
                             ),
                             iconSize: 90,
                           ),
-                    SizedBox(
-                      width: width * 0.4,
+                    Container(
+                      color: Colors.red,
+                      width: width * 0.63,
                       height: height * 0.4,
                       child: CardSwiper(
                         duration: const Duration(milliseconds: 0),
