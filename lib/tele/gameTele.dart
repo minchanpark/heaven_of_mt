@@ -138,7 +138,7 @@ class _TeleGameState extends State<TeleGame> {
                             iconSize: 90,
                           ),
                     Container(
-                      color: Colors.red,
+                      color: Colors.transparent,
                       width: width * 0.63,
                       height: height * 0.4,
                       child: CardSwiper(
@@ -189,6 +189,7 @@ class _TeleGameState extends State<TeleGame> {
                   ],
                 ),
               ),
+              SizedBox(height: 87)
             ],
           ),
         ),

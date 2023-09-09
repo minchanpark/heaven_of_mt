@@ -188,6 +188,7 @@ class _ChoiGamePageState extends State<ChoiGame> {
                   ],
                 ),
               ),
+              SizedBox(height: 87)
             ],
           ),
         ),

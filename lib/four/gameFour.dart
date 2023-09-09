@@ -188,6 +188,7 @@ class _FourGameState extends State<FourGame> {
                   ],
                 ),
               ),
+              SizedBox(height: 87)
             ],
           ),
         ),
