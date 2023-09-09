@@ -12,8 +12,6 @@ class ImageGameCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
     return Image.asset(
       gameContents.name,
       fit: BoxFit.fitHeight, // 이미지가 화면에 맞게 조절되도록 설정합니다.

@@ -1,7 +1,5 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_field
 import 'package:flutter/material.dart';
-
-import '../main.dart';
 import 'gameTele.dart';
 
 class TelePage extends StatefulWidget {
@@ -61,7 +59,7 @@ class _TelePageState extends State<TelePage> {
                           ).createShader(bounds);
                         },
                         child: Text(
-                          '텔레파시',
+                          '단어텔레파시',
                           style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.white,
