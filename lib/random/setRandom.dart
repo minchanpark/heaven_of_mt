@@ -67,23 +67,6 @@ class _RandomPageState extends State<RandomPage> {
                         ),
                       ),
                     ),
-                    SizedBox(width: width * 0.015),
-                    TextButton(
-                        onPressed: () {
-                          _showDeleteConfirmationDialog(context);
-                        },
-                        style: ButtonStyle(
-                            overlayColor:
-                                MaterialStateProperty.all(Colors.transparent)),
-                        child: RichText(
-                          text: TextSpan(
-                              text: "설명보기",
-                              style: TextStyle(
-                                  fontFamily: 'DungGeunMo',
-                                  fontSize: 24,
-                                  color: Colors.white,
-                                  decoration: TextDecoration.underline)),
-                        )),
                   ],
                 ),
                 SizedBox(height: 50),
@@ -104,52 +87,6 @@ class _RandomPageState extends State<RandomPage> {
           ),
         ],
       ),
-    );
-  }
-
-  void _showDeleteConfirmationDialog(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          shadowColor: Colors.transparent,
-          contentPadding: EdgeInsets.all(0), // padding을 0으로 설정
-          insetPadding: EdgeInsets.all(16), // 화면 주변 padding 설정
-          backgroundColor: Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          content: Stack(
-            children: [
-              SizedBox(
-                  width: width * 0.9, // 원하는 가로 길이 설정
-                  height: height * 0.77, // 원하는 세로 길이 설정
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/modal_brand.png',
-                      fit: BoxFit.cover,
-                    ),
-                  )),
-              Positioned(
-                top: height * 0.05, // 상단으로부터의 거리를 화면 높이의 6%로 설정
-                right: width * 0.11, // 오른쪽으로부터의 거리를 화면 너비의 22%로 설정
-                child: InkWell(
-                  onTap: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Container(
-                    width: 40, // 버튼의 너비 설정
-                    height: 40, // 버튼의 높이 설정
-                    color: Colors.transparent, // 버튼의 배경색을 투명으로 만듭니다.
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      },
     );
   }
 }
@@ -212,12 +149,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
               opacity: _opacity == 0 ? 1.0 : 0.0,
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            RandomGame(id: widget.number), // Beauty 이미지에 대한 페이지
-                      ),
-                    );
+                    _showDeleteConfirmationDialog(context);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -258,6 +190,72 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
           ),
         ],
       ),
+    );
+  }
+
+  String _getImagePath(String id) {
+    switch (id) {
+      case 'SET 1':
+        return 'assets/images/modal_choi.png';
+      case 'SET 2':
+        return 'assets/images/modal_person.png';
+      case 'SET 3':
+        return 'assets/images/modal_four.png';
+      case 'SET 4':
+        return 'assets/images/modal_tele.png';
+      default:
+        return 'assets/images/modal_brand.png';
+    }
+  }
+
+  void _showDeleteConfirmationDialog(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shadowColor: Colors.transparent,
+          contentPadding: EdgeInsets.all(0), // padding을 0으로 설정
+          insetPadding: EdgeInsets.all(16), // 화면 주변 padding 설정
+          backgroundColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          content: Stack(
+            children: [
+              SizedBox(
+                  width: width * 0.9, // 원하는 가로 길이 설정
+                  height: height * 0.77, // 원하는 세로 길이 설정
+                  child: Center(
+                    child: Image.asset(
+                      _getImagePath(widget.number),
+                      fit: BoxFit.cover,
+                    ),
+                  )),
+              Positioned(
+                top: height * 0.05, // 상단으로부터의 거리를 화면 높이의 6%로 설정
+                right: width * 0.11, // 오른쪽으로부터의 거리를 화면 너비의 22%로 설정
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            RandomGame(id: widget.number), // Beauty 이미지에 대한 페이지
+                      ),
+                    );
+                  },
+                  child: Container(
+                    width: 40, // 버튼의 너비 설정
+                    height: 40, // 버튼의 높이 설정
+                    color: Colors.transparent, // 버튼의 배경색을 투명으로 만듭니다.
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
