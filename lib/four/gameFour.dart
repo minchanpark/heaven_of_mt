@@ -172,7 +172,7 @@ class _FourGameState extends State<FourGame> {
                           );
                         } else {
                           controller.swipeLeft();
-                          if (currentCardIndex != 1) {
+                          if (currentCardIndex != 2) {
                             setState(() {
                               isUndoButtonVisible = false;
                             });

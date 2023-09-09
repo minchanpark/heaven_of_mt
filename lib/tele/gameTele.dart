@@ -172,7 +172,7 @@ class _TeleGameState extends State<TeleGame> {
                           );
                         } else {
                           controller.swipeLeft();
-                          if (currentCardIndex != 1) {
+                          if (currentCardIndex != 2) {
                             setState(() {
                               isUndoButtonVisible = false;
                             });

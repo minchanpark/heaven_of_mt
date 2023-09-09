@@ -116,33 +116,25 @@ class _GameOverState extends State<GameOver> {
                           child: ElevatedButton(
                               onPressed: () {
                                 if (widget.gameName == 'choi') {
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          ChoiPage(), // Beauty 이미지에 대한 페이지
-                                    ),
-                                  );
+                                  Navigator.popUntil(
+                                      context, ModalRoute.withName('/home'));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => ChoiPage()));
                                 } else if (widget.gameName == 'person') {
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          PersonPage(), // Beauty 이미지에 대한 페이지
-                                    ),
-                                  );
+                                  Navigator.popUntil(
+                                      context, ModalRoute.withName('/person'));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => PersonPage()));
                                 } else if (widget.gameName == 'four') {
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          FourPage(), // Beauty 이미지에 대한 페이지
-                                    ),
-                                  );
+                                  Navigator.popUntil(
+                                      context, ModalRoute.withName('/four'));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => FourPage()));
                                 } else if (widget.gameName == 'random') {
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          RandomPage(), // Beauty 이미지에 대한 페이지
-                                    ),
-                                  );
+                                  Navigator.popUntil(
+                                      context, ModalRoute.withName('/random'));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => RandomPage()));
                                 }
                               },
                               style: ElevatedButton.styleFrom(
@@ -232,12 +224,8 @@ class _GameOverState extends State<GameOver> {
                           opacity: _opacity1 == 0 ? 1.0 : 0.0,
                           child: ElevatedButton(
                               onPressed: () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        MyHome(), // Beauty 이미지에 대한 페이지
-                                  ),
-                                );
+                                Navigator.popUntil(
+                                    context, ModalRoute.withName('/home'));
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.transparent,
