@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:testes/imageCard.dart';
@@ -176,8 +175,7 @@ class _RandomGameState extends State<RandomGame> {
                         ),
                       )
                     else
-                      Container(
-                        color: Colors.amber,
+                      SizedBox(
                         width: width * 0.69,
                         height: height * 0.4,
                         child: CardSwiper(

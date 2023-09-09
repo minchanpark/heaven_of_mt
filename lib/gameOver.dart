@@ -1,6 +1,5 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_field
 import 'package:flutter/material.dart';
-import 'package:testes/main.dart';
 import 'package:testes/person/setPerson.dart';
 
 import 'random/setRandom.dart';
