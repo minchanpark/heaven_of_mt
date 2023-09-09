@@ -122,15 +122,15 @@ class _GameOverState extends State<GameOver> {
                                       builder: (context) => ChoiPage()));
                                 } else if (widget.gameName == 'person') {
                                   Navigator.popUntil(
-                                      context, ModalRoute.withName('/person'));
+                                      context, ModalRoute.withName('/home'));
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (context) => PersonPage()));
                                 } else if (widget.gameName == 'four') {
                                   Navigator.popUntil(
-                                      context, ModalRoute.withName('/four'));
+                                      context, ModalRoute.withName('/home'));
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (context) => FourPage()));
-                                } else if (widget.gameName == 'random') {
+                                } else if (widget.gameName == 'home') {
                                   Navigator.popUntil(
                                       context, ModalRoute.withName('/random'));
                                   Navigator.of(context).push(MaterialPageRoute(

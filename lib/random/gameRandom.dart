@@ -228,6 +228,7 @@ class _RandomGameState extends State<RandomGame> {
                   ],
                 ),
               ),
+              if (widget.id != 'SET 2') SizedBox(height: 87)
             ],
           ),
         ),
