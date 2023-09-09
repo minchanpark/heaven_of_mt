@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unused_field
 import 'package:flutter/material.dart';
 import 'package:testes/person/setPerson.dart';
+import 'package:testes/tele/setTele.dart';
 
 import 'random/setRandom.dart';
 import 'choi/setChoi.dart';
@@ -129,9 +130,14 @@ class _GameOverState extends State<GameOver> {
                                       context, ModalRoute.withName('/home'));
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (context) => FourPage()));
-                                } else if (widget.gameName == 'home') {
+                                } else if (widget.gameName == 'tele') {
                                   Navigator.popUntil(
-                                      context, ModalRoute.withName('/random'));
+                                      context, ModalRoute.withName('/home'));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => TelePage()));
+                                } else if (widget.gameName == 'random') {
+                                  Navigator.popUntil(
+                                      context, ModalRoute.withName('/home'));
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (context) => RandomPage()));
                                 }
