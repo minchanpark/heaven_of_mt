@@ -31,7 +31,7 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
-  List<String> gameName = ["액션초성게임", "인물퀴즈", "네 글자 퀴즈", "텔레파시", "랜덤게임"];
+  List<String> gameName = ["액션초성게임", "인물퀴즈", "네 글자 퀴즈", "단어텔레파시", "랜덤게임"];
 
   @override
   Widget build(BuildContext context) {
