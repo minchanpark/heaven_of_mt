@@ -43,8 +43,7 @@ class _GameOverState extends State<GameOver> {
               ),
             ),
           ),
-          Container(
-            color: const Color.fromRGBO(14, 25, 62, 1),
+          SizedBox(
             width: double.infinity,
             child: Column(
               children: [
@@ -109,8 +108,8 @@ class _GameOverState extends State<GameOver> {
                         ),
                       ),
                       Positioned(
-                        bottom: 1,
-                        right: 52,
+                        bottom: 5,
+                        right: 44,
                         child: AnimatedOpacity(
                           duration: Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
                           opacity: _opacity == 0 ? 1.0 : 0.0,
@@ -147,12 +146,9 @@ class _GameOverState extends State<GameOver> {
                                 }
                               },
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: const Color.fromRGBO(
-                                    14, 25, 62, 1), // 기본 배경 색상
-                                disabledBackgroundColor: const Color.fromRGBO(
-                                    14, 25, 62, 1), // 기본 배경 색상
-                                foregroundColor: const Color.fromRGBO(
-                                    14, 25, 62, 1), // 기본 배경 색상
+                                backgroundColor: Colors.transparent,
+                                disabledBackgroundColor: Colors.transparent,
+                                foregroundColor: Colors.transparent,
                                 shadowColor: Colors.transparent,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(11),
@@ -161,11 +157,11 @@ class _GameOverState extends State<GameOver> {
                               child: Row(
                                 children: [
                                   SizedBox(
-                                      width: 29,
-                                      height: 51,
+                                      width: 32,
+                                      height: 52,
                                       child: Image.asset(
                                           'assets/images/gameover.png')),
-                                  SizedBox(width: 34),
+                                  SizedBox(width: 10),
                                   Container(
                                     color: Color.fromRGBO(255, 98, 211, 1),
                                     child: Padding(
@@ -229,8 +225,8 @@ class _GameOverState extends State<GameOver> {
                         ),
                       ),
                       Positioned(
-                        bottom: 1,
-                        right: 63,
+                        bottom: 5,
+                        right: 80,
                         child: AnimatedOpacity(
                           duration: Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
                           opacity: _opacity1 == 0 ? 1.0 : 0.0,
@@ -244,12 +240,9 @@ class _GameOverState extends State<GameOver> {
                                 );
                               },
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: const Color.fromRGBO(
-                                    14, 25, 62, 1), // 기본 배경 색상
-                                disabledBackgroundColor: const Color.fromRGBO(
-                                    14, 25, 62, 1), // 기본 배경 색상
-                                foregroundColor: const Color.fromRGBO(
-                                    14, 25, 62, 1), // 기본 배경 색상
+                                backgroundColor: Colors.transparent,
+                                disabledBackgroundColor: Colors.transparent,
+                                foregroundColor: Colors.transparent,
                                 shadowColor: Colors.transparent,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(11),
@@ -262,7 +255,7 @@ class _GameOverState extends State<GameOver> {
                                       height: 51,
                                       child: Image.asset(
                                           'assets/images/gameover.png')),
-                                  SizedBox(width: 43),
+                                  SizedBox(width: 10),
                                   Container(
                                     color: Color.fromRGBO(255, 98, 211, 1),
                                     child: Padding(

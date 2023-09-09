@@ -238,9 +238,12 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                   child: Column(
                     children: [
                       SizedBox(
-                          width: 25,
-                          height: 31,
-                          child: Image.asset('assets/images/pink_up.png')),
+                        width: 25,
+                        height: 31,
+                        child: ImageIcon(
+                          AssetImage('assets/images/pink_up.png'), // 이미지 파일 경로
+                        ),
+                      ),
                       SizedBox(height: 8),
                       Container(
                         color: Color.fromRGBO(255, 98, 211, 1),
@@ -256,9 +259,13 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                       ),
                       SizedBox(height: 8),
                       SizedBox(
-                          width: 25,
-                          height: 31,
-                          child: Image.asset('assets/images/pink_down.png')),
+                        width: 25,
+                        height: 31,
+                        child: ImageIcon(
+                          AssetImage(
+                              'assets/images/pink_down.png'), // 이미지 파일 경로
+                        ),
+                      ),
                     ],
                   )),
             ),

@@ -5,6 +5,7 @@ import 'package:testes/four/setFour.dart';
 import 'package:testes/person/setPerson.dart';
 import 'package:testes/tele/setTele.dart';
 import 'choi/setChoi.dart';
+import 'gameOver.dart';
 
 void main() {
   runApp(
