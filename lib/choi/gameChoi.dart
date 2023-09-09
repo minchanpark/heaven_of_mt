@@ -124,7 +124,7 @@ class _ChoiGamePageState extends State<ChoiGame> {
                         : IconButton(
                             onPressed: () {
                               controller.undo();
-                              if (currentCardIndex == 1) {
+                              if (currentCardIndex == 0) {
                                 setState(() {
                                   isUndoButtonVisible = true;
                                 });
@@ -138,7 +138,7 @@ class _ChoiGamePageState extends State<ChoiGame> {
                             iconSize: 90,
                           ),
                     SizedBox(
-                      width: width * 0.5,
+                      width: width * 0.63,
                       height: height * 0.4,
                       child: CardSwiper(
                         duration: const Duration(milliseconds: 0),

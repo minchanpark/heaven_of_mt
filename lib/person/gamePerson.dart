@@ -125,7 +125,7 @@ class _PersonGameState extends State<PersonGame> {
                         : IconButton(
                             onPressed: () {
                               controller.undo();
-                              if (currentCardIndex == 1) {
+                              if (currentCardIndex == 0) {
                                 setState(() {
                                   isUndoButtonVisible = true;
                                 });
