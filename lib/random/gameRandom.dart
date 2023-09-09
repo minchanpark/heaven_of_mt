@@ -221,7 +221,7 @@ class _RandomGameState extends State<RandomGame> {
                               );
                             } else {
                               controller.swipeLeft();
-                              if (currentCardIndex != 1) {
+                              if (currentCardIndex != 2) {
                                 setState(() {
                                   isUndoButtonVisible = false;
                                 });

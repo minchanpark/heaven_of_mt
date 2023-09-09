@@ -36,11 +36,7 @@ class _ChoiPageState extends State<ChoiPage> {
               children: [
                 IconButton(
                   onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => MyHome(), // Beauty 이미지에 대한 페이지
-                      ),
-                    );
+                    Navigator.popUntil(context, ModalRoute.withName('/home'));
                   },
                   color: Colors.white,
                   icon: ImageIcon(AssetImage('assets/images/home.png')),
@@ -64,7 +60,7 @@ class _ChoiPageState extends State<ChoiPage> {
                           ).createShader(bounds);
                         },
                         child: Text(
-                          '초성 퀴즈',
+                          '액션초성게임',
                           style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.white,
@@ -131,8 +127,8 @@ class _ChoiPageState extends State<ChoiPage> {
           content: Stack(
             children: [
               SizedBox(
-                  width: width * 0.75, // 원하는 가로 길이 설정
-                  height: height * 0.65, // 원하는 세로 길이 설정
+                  width: width * 0.9, // 원하는 가로 길이 설정
+                  height: height * 0.77, // 원하는 세로 길이 설정
                   child: Center(
                     child: Image.asset(
                       'assets/images/modal_choi.png',
@@ -140,8 +136,8 @@ class _ChoiPageState extends State<ChoiPage> {
                     ),
                   )),
               Positioned(
-                top: height * 0.04, // 상단으로부터의 거리를 화면 높이의 6%로 설정
-                right: width * 0.08, // 오른쪽으로부터의 거리를 화면 너비의 22%로 설정
+                top: height * 0.05, // 상단으로부터의 거리를 화면 높이의 6%로 설정
+                right: width * 0.11, // 오른쪽으로부터의 거리를 화면 너비의 22%로 설정
                 child: InkWell(
                   onTap: () {
                     Navigator.of(context).pop();

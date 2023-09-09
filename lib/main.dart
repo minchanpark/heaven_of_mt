@@ -1,5 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:testes/choi/gameChoi.dart';
 import 'package:testes/random/setRandom.dart';
 import 'package:testes/four/setFour.dart';
 import 'package:testes/person/setPerson.dart';
@@ -11,7 +14,15 @@ void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyHome(),
+      initialRoute: '/home',
+      routes: {
+        '/home': (BuildContext context) => MyHome(),
+        '/choi': (BuildContext context) => ChoiPage(),
+        '/four': (BuildContext context) => FourPage(),
+        '/person': (BuildContext context) => PersonPage(),
+        '/random': (BuildContext context) => RandomPage(),
+        '/tele': (BuildContext context) => TelePage(),
+      },
     ),
   );
 }
@@ -56,7 +67,7 @@ class _MyHomeState extends State<MyHome> {
                 ).createShader(bounds);
               },
               child: Text(
-                '서비스 이름',
+                '액션게임천국',
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
@@ -190,7 +201,7 @@ class _GameListState extends State<GameList> {
                           width: 32,
                           height: 52,
                           child: Image.asset('assets/images/gameover.png')),
-                      SizedBox(width: 10),
+                      SizedBox(width: 18),
                       Container(
                         padding:
                             EdgeInsets.only(left: 10, right: 10, bottom: 5),
