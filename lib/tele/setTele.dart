@@ -18,86 +18,99 @@ class _TelePageState extends State<TelePage> {
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color.fromRGBO(14, 25, 62, 1),
-      body: Container(
-        padding: EdgeInsets.only(
-            left: width * 0.075, top: height * 0.073, right: width * 0.11),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            IconButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => MyHome(), // Beauty 이미지에 대한 페이지
-                  ),
-                );
-              },
-              color: Colors.white,
-              icon: ImageIcon(AssetImage('assets/images/home.png')),
-              iconSize: 39,
-            ),
-            SizedBox(height: height * 0.1),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.baseline,
-              textBaseline: TextBaseline.alphabetic,
-              children: [
-                Center(
-                  child: ShaderMask(
-                    shaderCallback: (Rect bounds) {
-                      return LinearGradient(
-                        colors: <Color>[
-                          Color.fromRGBO(255, 0, 142, 1),
-                          Color.fromRGBO(255, 235, 90, 1)
-                        ],
-                        begin: Alignment.topCenter, // 그라데이션 시작 위치 (위쪽 중앙)
-                        end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
-                      ).createShader(bounds);
-                    },
-                    child: Text(
-                      '텔레파시',
-                      style: TextStyle(
-                        fontFamily: 'Pretendard',
-                        color: Colors.white,
-                        fontSize: 60,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(width: width * 0.015),
-                TextButton(
-                    onPressed: () {
-                      _showDeleteConfirmationDialog(context);
-                    },
-                    style: ButtonStyle(
-                        overlayColor:
-                            MaterialStateProperty.all(Colors.transparent)),
-                    child: RichText(
-                      text: TextSpan(
-                          text: "설명보기",
-                          style: TextStyle(
-                              fontSize: 24,
-                              color: Colors.white,
-                              decoration: TextDecoration.underline)),
-                    )),
-              ],
-            ),
-            SizedBox(height: 50),
-            Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CustomImageWidget(number: 'SET 1'),
-                  CustomImageWidget(number: 'SET 2'),
-                  CustomImageWidget(number: 'SET 3'),
-                  CustomImageWidget(number: 'SET 4'),
-                  CustomImageWidget(number: 'SET 5'),
-                ],
+      body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/home.gif'),
+                fit: BoxFit.cover,
               ),
             ),
-          ],
-        ),
+          ),
+          Container(
+            padding: EdgeInsets.only(
+                left: width * 0.075, top: height * 0.073, right: width * 0.11),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                IconButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => MyHome(), // Beauty 이미지에 대한 페이지
+                      ),
+                    );
+                  },
+                  color: Colors.white,
+                  icon: ImageIcon(AssetImage('assets/images/home.png')),
+                  iconSize: 39,
+                ),
+                SizedBox(height: height * 0.1),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                  textBaseline: TextBaseline.alphabetic,
+                  children: [
+                    Center(
+                      child: ShaderMask(
+                        shaderCallback: (Rect bounds) {
+                          return LinearGradient(
+                            colors: <Color>[
+                              Color.fromRGBO(255, 0, 142, 1),
+                              Color.fromRGBO(255, 235, 90, 1)
+                            ],
+                            begin: Alignment.topCenter, // 그라데이션 시작 위치 (위쪽 중앙)
+                            end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
+                          ).createShader(bounds);
+                        },
+                        child: Text(
+                          '텔레파시',
+                          style: TextStyle(
+                            fontFamily: 'DungGeunMo',
+                            color: Colors.white,
+                            fontSize: 60,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: width * 0.015),
+                    TextButton(
+                        onPressed: () {
+                          _showDeleteConfirmationDialog(context);
+                        },
+                        style: ButtonStyle(
+                            overlayColor:
+                                MaterialStateProperty.all(Colors.transparent)),
+                        child: RichText(
+                          text: TextSpan(
+                              text: "설명보기",
+                              style: TextStyle(
+                                  fontFamily: 'DungGeunMo',
+                                  fontSize: 24,
+                                  color: Colors.white,
+                                  decoration: TextDecoration.underline)),
+                        )),
+                  ],
+                ),
+                SizedBox(height: 50),
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CustomImageWidget(number: 'SET 1'),
+                      CustomImageWidget(number: 'SET 2'),
+                      CustomImageWidget(number: 'SET 3'),
+                      CustomImageWidget(number: 'SET 4'),
+                      CustomImageWidget(number: 'SET 5'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -128,8 +141,8 @@ class _TelePageState extends State<TelePage> {
                     ),
                   )),
               Positioned(
-                top: 47, // 상단으로부터의 거리 조절
-                right: 196, // 오른쪽으로부터의 거리 조절
+                top: height * 0.04, // 상단으로부터의 거리를 화면 높이의 6%로 설정
+                right: width * 0.08, // 오른쪽으로부터의 거리를 화면 너비의 22%로 설정
                 child: InkWell(
                   onTap: () {
                     Navigator.of(context).pop();
@@ -192,7 +205,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
               child: Text(
                 widget.number,
                 style: TextStyle(
-                  fontFamily: 'Pretendard',
+                  fontFamily: 'DungGeunMo',
                   color: Colors.white,
                   fontSize: 48,
                   fontWeight: FontWeight.w400,
@@ -201,7 +214,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
             ),
           ),
           Positioned(
-            bottom: 0,
+            bottom: 3,
             child: AnimatedOpacity(
               duration: Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
               opacity: _opacity == 0 ? 1.0 : 0.0,
@@ -215,12 +228,9 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        const Color.fromRGBO(14, 25, 62, 1), // 기본 배경 색상
-                    disabledBackgroundColor:
-                        const Color.fromRGBO(14, 25, 62, 1), // 기본 배경 색상
-                    foregroundColor:
-                        const Color.fromRGBO(14, 25, 62, 1), // 기본 배경 색상
+                    backgroundColor: Colors.transparent,
+                    disabledBackgroundColor: Colors.transparent,
+                    foregroundColor: Colors.transparent,
                     shadowColor: Colors.transparent,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(11),
@@ -238,7 +248,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                         child: Text(
                           widget.number,
                           style: TextStyle(
-                            fontFamily: 'Pretendard',
+                            fontFamily: 'DungGeunMo',
                             color: Colors.white,
                             fontSize: 48,
                             fontWeight: FontWeight.w400,

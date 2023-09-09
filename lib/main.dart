@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
-import 'package:testes/brand/setBrand.dart';
+import 'package:testes/random/setRandom.dart';
 import 'package:testes/four/setFour.dart';
 import 'package:testes/person/setPerson.dart';
 import 'package:testes/tele/setTele.dart';
@@ -8,7 +8,10 @@ import 'choi/setChoi.dart';
 
 void main() {
   runApp(
-    const MaterialApp(debugShowCheckedModeBanner: false, home: MyHome()),
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MyHome(),
+    ),
   );
 }
 
@@ -31,7 +34,7 @@ class _MyHomeState extends State<MyHome> {
         Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/gif.gif'),
+              image: AssetImage('assets/images/home.gif'),
               fit: BoxFit.cover,
             ),
           ),
@@ -54,7 +57,7 @@ class _MyHomeState extends State<MyHome> {
               child: Text(
                 '서비스 이름',
                 style: TextStyle(
-                  fontFamily: 'Pretendard',
+                  fontFamily: 'DungGeunMo',
                   color: Colors.white,
                   fontSize: 96,
                   fontWeight: FontWeight.w400,
@@ -121,7 +124,7 @@ class _GameListState extends State<GameList> {
                     Text(
                       widget.index,
                       style: TextStyle(
-                        fontFamily: 'Pretendard',
+                        fontFamily: 'DungGeunMo',
                         color: Colors.white,
                         fontSize: 45,
                         fontWeight: FontWeight.w400,
@@ -131,7 +134,7 @@ class _GameListState extends State<GameList> {
                     Text(
                       widget.name,
                       style: TextStyle(
-                        fontFamily: 'Pretendard',
+                        fontFamily: 'DungGeunMo',
                         color: Colors.white,
                         fontSize: 45,
                         fontWeight: FontWeight.w400,
@@ -140,8 +143,7 @@ class _GameListState extends State<GameList> {
                   ]),
             ),
           ),
-          Container(
-            padding: const EdgeInsets.only(bottom: 4),
+          SizedBox(
             width: 390,
             height: 64,
             child: Visibility(
@@ -167,7 +169,7 @@ class _GameListState extends State<GameList> {
                         break;
                       case '5':
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => BrandPage()));
+                            builder: (context) => RandomPage()));
                         break;
                     }
                   },
@@ -184,17 +186,18 @@ class _GameListState extends State<GameList> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SizedBox(
-                          width: 29,
-                          height: 51,
+                          width: 32,
+                          height: 52,
                           child: Image.asset('assets/images/gameover.png')),
-                      SizedBox(width: 31),
+                      SizedBox(width: 10),
                       Container(
-                        padding: EdgeInsets.only(left: 24, right: 24),
+                        padding:
+                            EdgeInsets.only(left: 10, right: 10, bottom: 5),
                         color: Color.fromRGBO(255, 98, 211, 1),
                         child: Text(
                           widget.name,
                           style: TextStyle(
-                            fontFamily: 'Pretendard',
+                            fontFamily: 'DungGeunMo',
                             color: Colors.white,
                             fontSize: 45,
                             fontWeight: FontWeight.w400,

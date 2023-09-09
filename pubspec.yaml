@@ -27,3 +27,7 @@ flutter:
     - assets/
     - assets/images/
     - assets/person/
+  fonts:
+  - family: DungGeunMo
+    fonts:
+      - asset: fonts/DungGeunMo.otf

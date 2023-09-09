@@ -91,6 +91,7 @@ class _FourGameState extends State<FourGame> {
               Text(
                 setNumber,
                 style: const TextStyle(
+                  fontFamily: 'DungGeunMo',
                   color: Colors.white,
                   fontWeight: FontWeight.w400,
                   fontSize: 60,
@@ -100,6 +101,7 @@ class _FourGameState extends State<FourGame> {
               Text(
                 '${currentCardIndex + 1} / ${cards.length}',
                 style: const TextStyle(
+                  fontFamily: 'DungGeunMo',
                   color: Color.fromRGBO(255, 98, 211, 1),
                   fontWeight: FontWeight.w400,
                   fontSize: 36,
