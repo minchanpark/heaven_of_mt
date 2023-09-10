@@ -90,7 +90,7 @@ final List<GameContents> person2 = [
   GameContents(name: 'assets/person/김동현.WEBP', index: '1'),
   GameContents(name: 'assets/person/링컨.WEBP', index: '2'),
   GameContents(name: 'assets/person/유관순.WEBP', index: '3'),
-  GameContents(name: 'assets/person/데드풀.jpeg', index: '4'),
+  GameContents(name: 'assets/person/Deadpool.JPG', index: '4'),
   GameContents(name: 'assets/person/로버트.WEBP', index: '5'),
   GameContents(name: 'assets/person/민경훈.jpeg', index: '6'),
   GameContents(name: 'assets/person/보노보노.WEBP', index: '7'),
