@@ -90,7 +90,7 @@ final List<GameContents> person2 = [
   GameContents(name: 'assets/person/김동현.WEBP', index: '1'),
   GameContents(name: 'assets/person/링컨.WEBP', index: '2'),
   GameContents(name: 'assets/person/유관순.WEBP', index: '3'),
-  GameContents(name: 'assets/person/데드풀.AVIF', index: '4'),
+  GameContents(name: 'assets/person/데드풀.jpeg', index: '4'),
   GameContents(name: 'assets/person/로버트.WEBP', index: '5'),
   GameContents(name: 'assets/person/민경훈.jpeg', index: '6'),
   GameContents(name: 'assets/person/보노보노.WEBP', index: '7'),
@@ -109,18 +109,18 @@ final List<GameContents> person3 = [
   GameContents(name: 'assets/person/뿡뿡이.WEBP', index: '7'),
   GameContents(name: 'assets/person/어피치.WEBP', index: '8'),
   GameContents(name: 'assets/person/해린.JPG', index: '9'),
-  GameContents(name: 'assets/person/저스틴비버.JPG', index: '10'),
+  GameContents(name: 'assets/person/Justin Bieber.png', index: '10'),
 ];
 
 final List<GameContents> person4 = [
   GameContents(name: 'assets/person/조정석.WEBP', index: '1'),
   GameContents(name: 'assets/person/조유리.WEBP', index: '2'),
-  GameContents(name: 'assets/person/정동원.AVIF', index: '3'),
+  GameContents(name: 'assets/person/정 동원.jpeg', index: '3'),
   GameContents(name: 'assets/person/무민.JPG', index: '4'),
   GameContents(name: 'assets/person/샘스미스.WEBP', index: '5'),
   GameContents(name: 'assets/person/현주엽.WEBP', index: '6'),
   GameContents(name: 'assets/person/전여빈.WEBP', index: '7'),
-  GameContents(name: 'assets/person/김연경.AVIF', index: '8'),
+  GameContents(name: 'assets/person/김연경.jpeg', index: '8'),
   GameContents(name: 'assets/person/타노스.WEBP', index: '9'),
   GameContents(name: 'assets/person/김소연.WEBP', index: '10'),
 ];
@@ -134,7 +134,7 @@ final List<GameContents> person5 = [
   GameContents(name: 'assets/person/지성.WEBP', index: '6'),
   GameContents(name: 'assets/person/이경영.WEBP', index: '7'),
   GameContents(name: 'assets/person/피오나.WEBP', index: '8'),
-  GameContents(name: 'assets/person/윈터.AVIF', index: '9'),
+  GameContents(name: 'assets/person/winter.jpeg', index: '9'),
   GameContents(name: 'assets/person/고아성.WEBP', index: '10'),
 ];
 
@@ -283,14 +283,14 @@ final List<GameContents> random1 = [
 
 final List<GameContents> random2 = [
   GameContents(name: 'assets/person/크러쉬.JPG', index: '1'),
-  GameContents(name: 'assets/person/마동석.AVIF', index: '2'),
+  GameContents(name: 'assets/person/마 동석.jpeg', index: '2'),
   GameContents(name: 'assets/person/봉준호.WEBP', index: '3'),
   GameContents(name: 'assets/person/안유진.JPG', index: '4'),
   GameContents(name: 'assets/person/박명수.WEBP', index: '5'),
   GameContents(name: 'assets/person/나영석.WEBP', index: '6'),
   GameContents(name: 'assets/person/일론머스크.WEBP', index: '7'),
   GameContents(name: 'assets/person/최우식.JPG', index: '8'),
-  GameContents(name: 'assets/person/유해진.AVIF', index: '9'),
+  GameContents(name: 'assets/person/유해 진.jpeg', index: '9'),
   GameContents(name: 'assets/person/노진구.JPG', index: '10'),
 ];
 
