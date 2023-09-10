@@ -51,26 +51,43 @@ class _MyHomeState extends State<MyHome> {
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             SizedBox(height: height * 0.15),
-            ShaderMask(
-              shaderCallback: (Rect bounds) {
-                return LinearGradient(
-                  colors: <Color>[
-                    Color.fromRGBO(255, 0, 142, 1),
-                    Color.fromRGBO(255, 235, 90, 1)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                    SizedBox(height: height * 0.15),
+                    Image.asset(
+                      'assets/images/cloud.png',
+                      width: 67,
+                      height: 45,
+                    ),
                   ],
-                  begin: Alignment.topCenter, // 그라데이션 시작 위치 (위쪽 중앙)
-                  end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
-                ).createShader(bounds);
-              },
-              child: Text(
-                '액션게임천국',
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 96,
-                  fontWeight: FontWeight.w400,
                 ),
-              ),
+                ShaderMask(
+                    shaderCallback: (Rect bounds) {
+                      return LinearGradient(
+                        colors: <Color>[
+                          Color.fromRGBO(255, 0, 142, 1),
+                          Color.fromRGBO(255, 235, 90, 1)
+                        ],
+                        begin: Alignment.topCenter, // 그라데이션 시작 위치 (위쪽 중앙)
+                        end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
+                      ).createShader(bounds);
+                    },
+                    child: Image.asset('assets/images/title.png',
+                        width: 718, height: 96)),
+                Column(
+                  children: [
+                    Image.asset(
+                      'assets/images/cloud.png',
+                      width: 67,
+                      height: 45,
+                    ),
+                    SizedBox(height: height * 0.15),
+                  ],
+                ),
+              ],
             ),
             SizedBox(height: height * 0.13),
             Column(
