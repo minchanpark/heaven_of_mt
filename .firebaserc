@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "heavenofmt",
+    "yes": "heavenofmt"
+  },
+  "targets": {},
+  "etags": {}
+}

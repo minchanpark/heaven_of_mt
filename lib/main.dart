@@ -64,19 +64,7 @@ class _MyHomeState extends State<MyHome> {
                     ),
                   ],
                 ),
-                ShaderMask(
-                    shaderCallback: (Rect bounds) {
-                      return LinearGradient(
-                        colors: <Color>[
-                          Color.fromRGBO(255, 0, 142, 1),
-                          Color.fromRGBO(255, 235, 90, 1)
-                        ],
-                        begin: Alignment.topCenter, // 그라데이션 시작 위치 (위쪽 중앙)
-                        end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
-                      ).createShader(bounds);
-                    },
-                    child: Image.asset('assets/images/title.png',
-                        width: 718, height: 96)),
+                Image.asset('assets/images/title.png', width: 718, height: 96),
                 Column(
                   children: [
                     Image.asset(
