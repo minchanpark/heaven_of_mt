@@ -223,17 +223,24 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
             borderRadius: BorderRadius.circular(12),
           ),
           content: InkWell(
-            onTap: () => Navigator.of(context).pop(),
-              child: SizedBox(
-                  width: width * 0.9, // 원하는 가로 길이 설정
-                  height: height * 0.77, // 원하는 세로 길이 설정
-                  child: Center(
-                    child: Image.asset(
-                      _getImagePath(widget.number),
-                      fit: BoxFit.cover,
-                    ),
-                  )),
-            ),
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) =>
+                      RandomGame(id: widget.number), // Beauty 이미지에 대한 페이지
+                ),
+              );
+            },
+            child: SizedBox(
+                width: width * 0.9, // 원하는 가로 길이 설정
+                height: height * 0.77, // 원하는 세로 길이 설정
+                child: Center(
+                  child: Image.asset(
+                    _getImagePath(widget.number),
+                    fit: BoxFit.cover,
+                  ),
+                )),
+          ),
         );
       },
     );
