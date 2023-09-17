@@ -222,9 +222,9 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
-          content: Stack(
-            children: [
-              SizedBox(
+          content: InkWell(
+            onTap: () => Navigator.of(context).pop(),
+              child: SizedBox(
                   width: width * 0.9, // 원하는 가로 길이 설정
                   height: height * 0.77, // 원하는 세로 길이 설정
                   child: Center(
@@ -233,27 +233,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                       fit: BoxFit.cover,
                     ),
                   )),
-              Positioned(
-                top: height * 0.05, // 상단으로부터의 거리를 화면 높이의 6%로 설정
-                right: width * 0.095, // 오른쪽으로부터의 거리를 화면 너비의 22%로 설정
-                child: InkWell(
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            RandomGame(id: widget.number), // Beauty 이미지에 대한 페이지
-                      ),
-                    );
-                  },
-                  child: Container(
-                    width: 40, // 버튼의 너비 설정
-                    height: 40, // 버튼의 높이 설정
-                    color: Colors.transparent, // 버튼의 배경색을 투명으로 만듭니다.
-                  ),
-                ),
-              ),
-            ],
-          ),
+            ),
         );
       },
     );
