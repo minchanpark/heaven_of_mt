@@ -13,7 +13,7 @@ class _ChoiPageState extends State<ChoiPage> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    if(width > 400) {
+    if(width > 500) {
       return const ChoiWeb();
     }
     else {
