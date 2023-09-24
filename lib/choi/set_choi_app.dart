@@ -25,31 +25,30 @@ class _ChoiAppState extends State<ChoiApp> {
               ),
             ),
           ),
-          Container(
-            padding: EdgeInsets.only(
-                left: width * 0.06, top: height * 0.1, right: width * 0.14),
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    IconButton(
-                      onPressed: () {
-                        Navigator.popUntil(context, ModalRoute.withName('/home'));
-                      },
-                      color: Colors.white,
-                      icon: const ImageIcon(
-                          AssetImage('assets/images/icon_chevron_left_white.png')),
-                      iconSize: 27,
-                    ),
-                  ],
-                ),
-                SizedBox(height: height * 0.0628),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  textBaseline: TextBaseline.alphabetic,
-                  children: [
-                    Center(
-                      child: ShaderMask(
+          Center(
+            child: Container(
+              padding: EdgeInsets.only(
+                  left: width * 0.06, top: height * 0.1, right: width * 0.06),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          Navigator.popUntil(context, ModalRoute.withName('/home'));
+                        },
+                        color: Colors.white,
+                        icon: const ImageIcon(
+                            AssetImage('assets/images/icon_chevron_left_white.png')),
+                        iconSize: 27,
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: height * 0.0628),
+                  Column(
+          
+                    children: [
+                      ShaderMask(
                         shaderCallback: (Rect bounds) {
                           return const LinearGradient(
                             colors: <Color>[
@@ -70,39 +69,37 @@ class _ChoiAppState extends State<ChoiApp> {
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(height: height * 0.032),
-                    TextButton(
-                        onPressed: () {
-                          _showDeleteConfirmationDialog(context);
-                        },
-                        style: ButtonStyle(
-                            overlayColor:
-                                MaterialStateProperty.all(Colors.transparent)),
-                        child: RichText(
-                          text: const TextSpan(
-                              text: "설명보기",
-                              style: TextStyle(
-                                  fontFamily: 'DungGeunMo',
-                                  fontSize: 23,
-                                  color: Colors.white,
-                                  decoration: TextDecoration.underline)),
-                        )),
-                  ],
-                ),
-                SizedBox(height: height * 0.09),
-                Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: List.generate(5, (index) {
-                      return Column(
-                        children: [
-                          CustomImageWidget(number: 'SET ${index + 1}'),
-                          SizedBox(height: height * 0.03)
-                        ],
-                      );
-                    })),
-              ],
+                      SizedBox(height: height * 0.032),
+                      TextButton(
+                          onPressed: () {
+                            _showDeleteConfirmationDialog(context);
+                          },
+                          style: ButtonStyle(
+                              overlayColor:
+                                  MaterialStateProperty.all(Colors.transparent)),
+                          child: RichText(
+                            text: const TextSpan(
+                                text: "설명보기",
+                                style: TextStyle(
+                                    fontFamily: 'DungGeunMo',
+                                    fontSize: 23,
+                                    color: Colors.white,
+                                    decoration: TextDecoration.underline)),
+                          )),
+                    ],
+                  ),
+                  SizedBox(height: height * 0.09),
+                  Column(
+                      children: List.generate(5, (index) {
+                        return Column(
+                          children: [
+                            CustomImageWidget(number: 'SET ${index + 1}'),
+                            SizedBox(height: height * 0.022)
+                          ],
+                        );
+                      })),
+                ],
+              ),
             ),
           ),
         ],
@@ -187,7 +184,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                 style: const TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 48,
+                  fontSize: 45,
                   fontWeight: FontWeight.w400,
                 ),
               ),
