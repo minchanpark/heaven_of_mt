@@ -35,7 +35,7 @@ class _GameOverState extends State<GameOver> {
       child: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/images/home.gif'),
                 fit: BoxFit.cover,
@@ -86,7 +86,7 @@ class _GameOverState extends State<GameOver> {
                     children: [
                       AnimatedContainer(
                         padding: const EdgeInsets.only(bottom: 4),
-                        duration: Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
+                        duration: const Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
                         decoration: BoxDecoration(
                           color: Colors.transparent, // 배경색을 지정합니다.
                           borderRadius:
@@ -94,7 +94,7 @@ class _GameOverState extends State<GameOver> {
                         ),
                         width: 360,
                         height: 64,
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'Play Again',
                             style: TextStyle(
@@ -110,7 +110,7 @@ class _GameOverState extends State<GameOver> {
                         bottom: 5,
                         right: 44,
                         child: AnimatedOpacity(
-                          duration: Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
+                          duration: const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
                           opacity: _opacity == 0 ? 1.0 : 0.0,
                           child: ElevatedButton(
                               onPressed: () {
@@ -118,27 +118,27 @@ class _GameOverState extends State<GameOver> {
                                   Navigator.popUntil(
                                       context, ModalRoute.withName('/home'));
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => ChoiPage()));
+                                      builder: (context) => const ChoiPage()));
                                 } else if (widget.gameName == 'person') {
                                   Navigator.popUntil(
                                       context, ModalRoute.withName('/home'));
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => PersonPage()));
+                                      builder: (context) => const PersonPage()));
                                 } else if (widget.gameName == 'four') {
                                   Navigator.popUntil(
                                       context, ModalRoute.withName('/home'));
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => FourPage()));
+                                      builder: (context) => const FourPage()));
                                 } else if (widget.gameName == 'tele') {
                                   Navigator.popUntil(
                                       context, ModalRoute.withName('/home'));
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => TelePage()));
+                                      builder: (context) => const TelePage()));
                                 } else if (widget.gameName == 'random') {
                                   Navigator.popUntil(
                                       context, ModalRoute.withName('/home'));
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => RandomPage()));
+                                      builder: (context) => const RandomPage()));
                                 }
                               },
                               style: ElevatedButton.styleFrom(
@@ -157,11 +157,11 @@ class _GameOverState extends State<GameOver> {
                                       height: 52,
                                       child: Image.asset(
                                           'assets/images/gameover.png')),
-                                  SizedBox(width: 10),
+                                  const SizedBox(width: 10),
                                   Container(
-                                    color: Color.fromRGBO(255, 98, 211, 1),
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(bottom: 5),
+                                    color: const Color.fromRGBO(255, 98, 211, 1),
+                                    child: const Padding(
+                                      padding: EdgeInsets.only(bottom: 5),
                                       child: Text(
                                         'Play Again',
                                         style: TextStyle(
@@ -200,7 +200,7 @@ class _GameOverState extends State<GameOver> {
                     children: [
                       AnimatedContainer(
                         padding: const EdgeInsets.only(bottom: 4),
-                        duration: Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
+                        duration: const Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
                         decoration: BoxDecoration(
                           color: Colors.transparent, // 배경색을 지정합니다.
                           borderRadius:
@@ -208,7 +208,7 @@ class _GameOverState extends State<GameOver> {
                         ),
                         width: 360,
                         height: 64,
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'Go Home',
                             style: TextStyle(
@@ -224,7 +224,7 @@ class _GameOverState extends State<GameOver> {
                         bottom: 5,
                         right: 80,
                         child: AnimatedOpacity(
-                          duration: Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
+                          duration: const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
                           opacity: _opacity1 == 0 ? 1.0 : 0.0,
                           child: ElevatedButton(
                               onPressed: () {
@@ -247,11 +247,11 @@ class _GameOverState extends State<GameOver> {
                                       height: 51,
                                       child: Image.asset(
                                           'assets/images/gameover.png')),
-                                  SizedBox(width: 10),
+                                  const SizedBox(width: 10),
                                   Container(
-                                    color: Color.fromRGBO(255, 98, 211, 1),
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(bottom: 5),
+                                    color: const Color.fromRGBO(255, 98, 211, 1),
+                                    child: const Padding(
+                                      padding: EdgeInsets.only(bottom: 5),
                                       child: Text(
                                         'Go Home',
                                         style: TextStyle(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'game_choi.dart';
 
-
 class ChoiPage extends StatefulWidget {
   const ChoiPage({Key? key}) : super(key: key);
 
