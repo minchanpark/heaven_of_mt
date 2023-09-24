@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'game_choi_app.dart';
+import 'choi_game_page.dart';
 
 class ChoiApp extends StatefulWidget {
   const ChoiApp({Key? key}) : super(key: key);
@@ -35,18 +35,18 @@ class _ChoiAppState extends State<ChoiApp> {
                     children: [
                       IconButton(
                         onPressed: () {
-                          Navigator.popUntil(context, ModalRoute.withName('/home'));
+                          Navigator.popUntil(
+                              context, ModalRoute.withName('/home'));
                         },
                         color: Colors.white,
-                        icon: const ImageIcon(
-                            AssetImage('assets/images/icon_chevron_left_white.png')),
+                        icon: const ImageIcon(AssetImage(
+                            'assets/images/icon_chevron_left_white.png')),
                         iconSize: 27,
                       ),
                     ],
                   ),
                   SizedBox(height: height * 0.0628),
                   Column(
-          
                     children: [
                       ShaderMask(
                         shaderCallback: (Rect bounds) {
@@ -75,8 +75,8 @@ class _ChoiAppState extends State<ChoiApp> {
                             _showDeleteConfirmationDialog(context);
                           },
                           style: ButtonStyle(
-                              overlayColor:
-                                  MaterialStateProperty.all(Colors.transparent)),
+                              overlayColor: MaterialStateProperty.all(
+                                  Colors.transparent)),
                           child: RichText(
                             text: const TextSpan(
                                 text: "설명보기",
@@ -91,13 +91,13 @@ class _ChoiAppState extends State<ChoiApp> {
                   SizedBox(height: height * 0.09),
                   Column(
                       children: List.generate(5, (index) {
-                        return Column(
-                          children: [
-                            CustomImageWidget(number: 'SET ${index + 1}'),
-                            SizedBox(height: height * 0.022)
-                          ],
-                        );
-                      })),
+                    return Column(
+                      children: [
+                        CustomImageWidget(number: 'SET ${index + 1}'),
+                        SizedBox(height: height * 0.022)
+                      ],
+                    );
+                  })),
                 ],
               ),
             ),
@@ -199,7 +199,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => ChoiAppGame(
+                        builder: (context) => ChoiGamePage(
                             id: widget.number), // Beauty 이미지에 대한 페이지
                       ),
                     );

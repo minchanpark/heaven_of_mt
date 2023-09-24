@@ -20,7 +20,7 @@ class GameCardApp extends StatelessWidget {
             fontFamily: 'DungGeunMo',
             color: Colors.white,
             fontWeight: FontWeight.w400,
-            fontSize: 190,
+            fontSize: 94,
           ),
         ),
       ),
