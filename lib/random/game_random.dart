@@ -1,9 +1,8 @@
-// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-import 'package:testes/imageCard.dart';
-import '../gameOver.dart';
-import '../gameContents.dart';
+import 'package:testes/image_card.dart';
+import '../game_over.dart';
+import '../game_contents.dart';
 import '../card.dart';
 
 class RandomGame extends StatefulWidget {

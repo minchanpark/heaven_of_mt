@@ -1,6 +1,5 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_field
 import 'package:flutter/material.dart';
-import 'gameFour.dart';
+import 'game_four.dart';
 
 class FourPage extends StatefulWidget {
   const FourPage({super.key});
@@ -15,11 +14,11 @@ class _FourPageState extends State<FourPage> {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Color.fromRGBO(14, 25, 62, 1),
+      backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/images/home.gif'),
                 fit: BoxFit.cover,
@@ -38,7 +37,7 @@ class _FourPageState extends State<FourPage> {
                     Navigator.popUntil(context, ModalRoute.withName('/home'));
                   },
                   color: Colors.white,
-                  icon: ImageIcon(AssetImage('assets/images/home.png')),
+                  icon: const ImageIcon(AssetImage('assets/images/home.png')),
                   iconSize: 39,
                 ),
                 SizedBox(height: height * 0.1),
@@ -49,7 +48,7 @@ class _FourPageState extends State<FourPage> {
                     Center(
                       child: ShaderMask(
                         shaderCallback: (Rect bounds) {
-                          return LinearGradient(
+                          return const LinearGradient(
                             colors: <Color>[
                               Color.fromRGBO(255, 0, 142, 1),
                               Color.fromRGBO(255, 235, 90, 1)
@@ -58,7 +57,7 @@ class _FourPageState extends State<FourPage> {
                             end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
                           ).createShader(bounds);
                         },
-                        child: Text(
+                        child: const Text(
                           '네 글자 퀴즈',
                           style: TextStyle(
                             fontFamily: 'DungGeunMo',
@@ -78,7 +77,7 @@ class _FourPageState extends State<FourPage> {
                             overlayColor:
                                 MaterialStateProperty.all(Colors.transparent)),
                         child: RichText(
-                          text: TextSpan(
+                          text: const TextSpan(
                               text: "설명보기",
                               style: TextStyle(
                                   fontFamily: 'DungGeunMo',
@@ -88,8 +87,8 @@ class _FourPageState extends State<FourPage> {
                         )),
                   ],
                 ),
-                SizedBox(height: 50),
-                Expanded(
+                const SizedBox(height: 50),
+                const Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -117,8 +116,8 @@ class _FourPageState extends State<FourPage> {
       builder: (BuildContext context) {
         return AlertDialog(
           shadowColor: Colors.transparent,
-          contentPadding: EdgeInsets.all(0), // padding을 0으로 설정
-          insetPadding: EdgeInsets.all(16), // 화면 주변 padding 설정
+          contentPadding: const EdgeInsets.all(0), // padding을 0으로 설정
+          insetPadding: const EdgeInsets.all(16), // 화면 주변 padding 설정
           backgroundColor: Colors.transparent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -173,7 +172,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
         alignment: Alignment.center,
         children: [
           AnimatedContainer(
-            duration: Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
+            duration: const Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
             decoration: BoxDecoration(
               color: Colors.transparent,
               borderRadius: BorderRadius.circular(20.0), // 원하는 반지름 값으로 조절
@@ -183,7 +182,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
             child: Center(
               child: Text(
                 widget.number,
-                style: TextStyle(
+                style: const TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
                   fontSize: 48,
@@ -195,7 +194,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
           Positioned(
             bottom: 3,
             child: AnimatedOpacity(
-              duration: Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
+              duration: const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
               opacity: _opacity == 0 ? 1.0 : 0.0,
               child: ElevatedButton(
                   onPressed: () {
@@ -221,12 +220,12 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                           width: 25,
                           height: 31,
                           child: Image.asset('assets/images/pink_up.png')),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Container(
-                        color: Color.fromRGBO(255, 98, 211, 1),
+                        color: const Color.fromRGBO(255, 98, 211, 1),
                         child: Text(
                           widget.number,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.white,
                             fontSize: 48,
@@ -234,7 +233,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       SizedBox(
                           width: 25,
                           height: 31,

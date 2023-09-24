@@ -1,10 +1,9 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
-import 'package:testes/random/setRandom.dart';
-import 'package:testes/four/setFour.dart';
-import 'package:testes/person/setPerson.dart';
-import 'package:testes/tele/setTele.dart';
-import 'choi/setChoi.dart';
+import 'package:testes/random/set_random.dart';
+import 'package:testes/four/set_four.dart';
+import 'package:testes/person/set_person.dart';
+import 'package:testes/tele/set_tele.dart';
+import 'choi/set_choi.dart';
 
 void main() {
   runApp(

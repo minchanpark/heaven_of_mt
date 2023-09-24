@@ -1,9 +1,8 @@
-// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-import '../gameOver.dart';
-import '../gameContents.dart';
-import '../imageCard.dart';
+import '../game_over.dart';
+import '../game_contents.dart';
+import '../image_card.dart';
 
 class PersonGame extends StatefulWidget {
   final String id;

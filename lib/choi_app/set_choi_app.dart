@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'game_random.dart';
+import 'game_choi_app.dart';
 
-class RandomPage extends StatefulWidget {
-  const RandomPage({super.key});
+class ChoiAppPage extends StatefulWidget {
+  const ChoiAppPage({Key? key}) : super(key: key);
 
   @override
-  State<RandomPage> createState() => _RandomPageState();
+  State<ChoiAppPage> createState() => _ChoiAppPageState();
 }
 
-class _RandomPageState extends State<RandomPage> {
+class _ChoiAppPageState extends State<ChoiAppPage> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -27,7 +27,7 @@ class _RandomPageState extends State<RandomPage> {
           ),
           Container(
             padding: EdgeInsets.only(
-                left: width * 0.075, top: height * 0.073, right: width * 0.11),
+                left: width * 0.075, top: height * 0.073, right: width * 0.09),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,27 +45,46 @@ class _RandomPageState extends State<RandomPage> {
                   crossAxisAlignment: CrossAxisAlignment.baseline,
                   textBaseline: TextBaseline.alphabetic,
                   children: [
-                    ShaderMask(
-                      shaderCallback: (Rect bounds) {
-                        return const LinearGradient(
-                          colors: <Color>[
-                            Color.fromRGBO(255, 0, 142, 1),
-                            Color.fromRGBO(255, 235, 90, 1)
-                          ],
-                          begin: Alignment.topCenter, // 그라데이션 시작 위치 (위쪽 중앙)
-                          end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
-                        ).createShader(bounds);
-                      },
-                      child: const Text(
-                        '랜덤게임',
-                        style: TextStyle(
-                          fontFamily: 'DungGeunMo',
-                          color: Colors.white,
-                          fontSize: 60,
-                          fontWeight: FontWeight.w400,
+                    Center(
+                      child: ShaderMask(
+                        shaderCallback: (Rect bounds) {
+                          return const LinearGradient(
+                            colors: <Color>[
+                              Color.fromRGBO(255, 0, 142, 1),
+                              Color.fromRGBO(255, 235, 90, 1)
+                            ],
+                            begin: Alignment.topCenter, // 그라데이션 시작 위치 (위쪽 중앙)
+                            end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
+                          ).createShader(bounds);
+                        },
+                        child: const Text(
+                          '액션초성게임',
+                          style: TextStyle(
+                            fontFamily: 'DungGeunMo',
+                            color: Colors.white,
+                            fontSize: 60,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                     ),
+                    SizedBox(width: width * 0.015),
+                    TextButton(
+                        onPressed: () {
+                          _showDeleteConfirmationDialog(context);
+                        },
+                        style: ButtonStyle(
+                            overlayColor:
+                                MaterialStateProperty.all(Colors.transparent)),
+                        child: RichText(
+                          text: const TextSpan(
+                              text: "설명보기",
+                              style: TextStyle(
+                                  fontFamily: 'DungGeunMo',
+                                  fontSize: 24,
+                                  color: Colors.white,
+                                  decoration: TextDecoration.underline)),
+                        )),
                   ],
                 ),
                 const SizedBox(height: 50),
@@ -86,6 +105,37 @@ class _RandomPageState extends State<RandomPage> {
           ),
         ],
       ),
+    );
+  }
+
+  void _showDeleteConfirmationDialog(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shadowColor: Colors.transparent,
+          contentPadding: const EdgeInsets.all(0), // padding을 0으로 설정
+          insetPadding: const EdgeInsets.all(16), // 화면 주변 padding 설정
+          backgroundColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          content: InkWell(
+            onTap: () => Navigator.of(context).pop(),
+              child: SizedBox(
+                  width: width * 0.9, // 원하는 가로 길이 설정
+                  height: height * 0.77, // 원하는 세로 길이 설정
+                  child: Center(
+                    child: Image.asset(
+                      'assets/images/modal_choi.png',
+                      fit: BoxFit.cover,
+                    ),
+                  )),
+            ),
+        );
+      },
     );
   }
 }
@@ -148,7 +198,12 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
               opacity: _opacity == 0 ? 1.0 : 0.0,
               child: ElevatedButton(
                   onPressed: () {
-                    _showDeleteConfirmationDialog(context);
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            ChoiAppGame(id: widget.number), // Beauty 이미지에 대한 페이지
+                      ),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -161,10 +216,13 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                   ),
                   child: Column(
                     children: [
-                      SizedBox(
-                          width: 25,
-                          height: 31,
-                          child: Image.asset('assets/images/pink_up.png')),
+                      const SizedBox(
+                        width: 25,
+                        height: 31,
+                        child: ImageIcon(
+                          AssetImage('assets/images/pink_up.png'), // 이미지 파일 경로
+                        ),
+                      ),
                       const SizedBox(height: 8),
                       Container(
                         color: const Color.fromRGBO(255, 98, 211, 1),
@@ -179,63 +237,20 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                         ),
                       ),
                       const SizedBox(height: 8),
-                      SizedBox(
-                          width: 25,
-                          height: 31,
-                          child: Image.asset('assets/images/pink_down.png')),
+                      const SizedBox(
+                        width: 25,
+                        height: 31,
+                        child: ImageIcon(
+                          AssetImage(
+                              'assets/images/pink_down.png'), // 이미지 파일 경로
+                        ),
+                      ),
                     ],
                   )),
             ),
           ),
         ],
       ),
-    );
-  }
-
-  String _getImagePath(String id) {
-    switch (id) {
-      case 'SET 1':
-        return 'assets/images/modal_choi.png';
-      case 'SET 2':
-        return 'assets/images/modal_person.png';
-      case 'SET 3':
-        return 'assets/images/modal_four.png';
-      case 'SET 4':
-        return 'assets/images/modal_tele.png';
-      default:
-        return 'assets/images/modal_brand.png';
-    }
-  }
-
-  void _showDeleteConfirmationDialog(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          shadowColor: Colors.transparent,
-          contentPadding: const EdgeInsets.all(0), // padding을 0으로 설정
-          insetPadding: const EdgeInsets.all(16), // 화면 주변 padding 설정
-          backgroundColor: Colors.transparent,
-
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          content: InkWell(
-            onTap: () => Navigator.of(context).pop(),
-              child: SizedBox(
-                  width: width * 0.9, // 원하는 가로 길이 설정
-                  height: height * 0.77, // 원하는 세로 길이 설정
-                  child: Center(
-                    child: Image.asset(
-                      _getImagePath(widget.number),
-                      fit: BoxFit.cover,
-                    ),
-                  )),
-            ),
-        );
-      },
     );
   }
 }

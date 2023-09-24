@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-import '../game_over.dart';
 import '../game_contents.dart';
+import '../game_over.dart';
 import '../card.dart';
 
-class FourGame extends StatefulWidget {
+class ChoiAppGame extends StatefulWidget {
   final String id;
 
-  const FourGame({
+  const ChoiAppGame({
     super.key,
     required this.id,
   });
 
   @override
-  State<FourGame> createState() => _FourGameState();
+  State<ChoiAppGame> createState() => _ChoiAppGamePageState();
 }
 
-class _FourGameState extends State<FourGame> {
+class _ChoiAppGamePageState extends State<ChoiAppGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
@@ -27,23 +27,23 @@ class _FourGameState extends State<FourGame> {
 
     // widget.id 값에 따라 cards 변수에 값을 할당
     if (widget.id == 'SET 1') {
-      cards = four1
+      cards = choi1
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
     } else if (widget.id == 'SET 2') {
-      cards = four2
+      cards = choi2
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
     } else if (widget.id == 'SET 3') {
-      cards = four3
+      cards = choi3
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
     } else if (widget.id == 'SET 4') {
-      cards = four4
+      cards = choi4
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
     } else {
-      cards = four5
+      cards = choi5
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
     }
@@ -165,7 +165,7 @@ class _FourGameState extends State<FourGame> {
                             MaterialPageRoute(
                               builder: (context) => GameOver(
                                 id: widget.id,
-                                gameName: 'four',
+                                gameName: 'choi',
                               ),
                             ),
                           );
