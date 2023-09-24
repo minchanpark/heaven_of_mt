@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'game_contents.dart';
 
-class GameCard extends StatelessWidget {
+class GameCardApp extends StatelessWidget {
   final GameContents gameContents;
 
-  const GameCard({
+  const GameCardApp({
     super.key,
     required this.gameContents,
   });
