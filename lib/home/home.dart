@@ -18,7 +18,30 @@ class _MyHomeState extends State<MyHome> {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+    if (width > 400) {
+      return HomeWeb(width: width, height: height, gameName: gameName);
+    } else {
+      return HomeApp(width: width, height: height, gameName: gameName);
+    }
+  }
+}
+
+class HomeWeb extends StatelessWidget {
+  const HomeWeb({
+    super.key,
+    required this.width,
+    required this.height,
+    required this.gameName,
+  });
+
+  final double width;
+  final double height;
+  final List<String> gameName;
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(children: [
@@ -48,6 +71,80 @@ class _MyHomeState extends State<MyHome> {
                   ],
                 ),
                 Image.asset('assets/images/title.png', width: 718, height: 96),
+                Column(
+                  children: [
+                    Image.asset(
+                      'assets/images/cloud.png',
+                      width: 67,
+                      height: 45,
+                    ),
+                    SizedBox(height: height * 0.15),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(height: height * 0.13),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: List.generate(5, (index) {
+                return Column(
+                  children: [
+                    GameList(index: "${index + 1}", name: gameName[index]),
+                    SizedBox(height: height * 0.01)
+                  ],
+                );
+              }),
+            ),
+          ]),
+        ),
+      ]),
+    );
+  }
+}
+
+class HomeApp extends StatelessWidget {
+  const HomeApp({
+    super.key,
+    required this.width,
+    required this.height,
+    required this.gameName,
+  });
+
+  final double width;
+  final double height;
+  final List<String> gameName;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Stack(children: [
+        Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/home.gif'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        Center(
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            SizedBox(height: height * 0.15),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                    SizedBox(height: height * 0.15),
+                    Image.asset(
+                      'assets/images/cloud.png',
+                      width: 20,
+                      height: 20,
+                    ),
+                  ],
+                ),
+                Image.asset('assets/images/title.png', width: 340, height: 55),
                 Column(
                   children: [
                     Image.asset(
@@ -187,8 +284,8 @@ class _GameListState extends State<GameList> {
                           child: Image.asset('assets/images/gameover.png')),
                       const SizedBox(width: 18),
                       Container(
-                        padding:
-                            const EdgeInsets.only(left: 10, right: 10, bottom: 5),
+                        padding: const EdgeInsets.only(
+                            left: 10, right: 10, bottom: 5),
                         color: const Color.fromRGBO(255, 98, 211, 1),
                         child: Text(
                           widget.name,
