@@ -9,17 +9,14 @@ import '../tele/set_tele.dart';
 class HomeWeb extends StatelessWidget {
   const HomeWeb({
     super.key,
-    required this.width,
-    required this.height,
     required this.gameName,
   });
 
-  final double width;
-  final double height;
   final List<String> gameName;
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(children: [
