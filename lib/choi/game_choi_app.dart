@@ -65,11 +65,7 @@ class _ChoiAppGamePageState extends State<ChoiAppGame> {
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.only(
-            left: width * 0.075,
-            top: height * 0.073,
-            right: width * 0.0797,
-          ),
+          padding: const EdgeInsets.only(left: 29, top: 62, right: 29),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -83,7 +79,7 @@ class _ChoiAppGamePageState extends State<ChoiAppGame> {
                     },
                     color: Colors.white,
                     icon: const ImageIcon(AssetImage('assets/images/Exit.png')),
-                    iconSize: 39,
+                    iconSize: 27,
                   ),
                 ],
               ),
@@ -93,17 +89,17 @@ class _ChoiAppGamePageState extends State<ChoiAppGame> {
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
                   fontWeight: FontWeight.w400,
-                  fontSize: 60,
+                  fontSize: 34,
                 ),
               ),
-              SizedBox(height: height * 0.025),
+              const SizedBox(height: 10),
               Text(
-                '${currentCardIndex + 1} / ${cards.length}',
+                '${currentCardIndex + 1}/${cards.length}',
                 style: const TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Color.fromRGBO(255, 98, 211, 1),
                   fontWeight: FontWeight.w400,
-                  fontSize: 36,
+                  fontSize: 26,
                 ),
               ),
               Expanded(
@@ -112,33 +108,50 @@ class _ChoiAppGamePageState extends State<ChoiAppGame> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     isUndoButtonVisible
-                        ? IconButton(
-                            onPressed: controller.undo,
-                            color: Colors.transparent,
-                            icon: const ImageIcon(
-                              AssetImage('assets/images/icon_chevron_left.png'),
+                        ? ConstrainedBox(
+                            constraints: const BoxConstraints.tightFor(
+                                width: 29, height: 52),
+                            child: ElevatedButton(
+                              onPressed: () {
+                                controller.undo;
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.transparent,
+                                padding: const EdgeInsets.only(left: 0),
+                              ),
+                              child: const ImageIcon(
+                                AssetImage(
+                                    'assets/images/icon_chevron_left.png'),
+                                size: 90,
+                              ),
                             ),
-                            iconSize: 90,
                           )
-                        : IconButton(
-                            onPressed: () {
-                              controller.undo();
-                              if (currentCardIndex == 0) {
-                                setState(() {
-                                  isUndoButtonVisible = true;
-                                });
-                              }
-                            },
-                            color: Colors.transparent,
-                            icon: const ImageIcon(
-                              AssetImage(
-                                  'assets/images/icon_chevron_left_white.png'),
+                        : ConstrainedBox(
+                            constraints: const BoxConstraints.tightFor(
+                                width: 29, height: 52),
+                            child: ElevatedButton(
+                              onPressed: () {
+                                controller.undo();
+                                if (currentCardIndex == 0) {
+                                  setState(() {
+                                    isUndoButtonVisible = true;
+                                  });
+                                }
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.transparent,
+                                padding: const EdgeInsets.only(left: 0),
+                              ),
+                              child: const ImageIcon(
+                                AssetImage(
+                                    'assets/images/icon_chevron_left_white.png'),
+                                size: 90,
+                              ),
                             ),
-                            iconSize: 90,
                           ),
                     SizedBox(
-                      width: width * 0.63,
-                      height: height * 0.4,
+                      width: 277,
+                      height: 200,
                       child: CardSwiper(
                         duration: const Duration(milliseconds: 0),
                         controller: controller,
@@ -151,6 +164,7 @@ class _ChoiAppGamePageState extends State<ChoiAppGame> {
                           verticalThresholdPercentage,
                         ) {
                           currentCardIndex = index;
+
                           return cards[index];
                         },
                         isDisabled: true,
@@ -158,31 +172,38 @@ class _ChoiAppGamePageState extends State<ChoiAppGame> {
                         onUndo: _onUndo,
                       ),
                     ),
-                    IconButton(
-                      onPressed: () {
-                        if (currentCardIndex == 9) {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => GameOver(
-                                id: widget.id,
-                                gameName: 'choi',
+                    ConstrainedBox(
+                      constraints:
+                          const BoxConstraints.tightFor(width: 29, height: 52),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          if (currentCardIndex == 9) {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => GameOver(
+                                  id: widget.id,
+                                  gameName: 'choi',
+                                ),
                               ),
-                            ),
-                          );
-                        } else {
-                          controller.swipeLeft();
-                          if (currentCardIndex != 2) {
-                            setState(() {
-                              isUndoButtonVisible = false;
-                            });
+                            );
+                          } else {
+                            controller.swipeLeft();
+                            if (currentCardIndex != 2) {
+                              setState(() {
+                                isUndoButtonVisible = false;
+                              });
+                            }
                           }
-                        }
-                      },
-                      color: Colors.transparent,
-                      icon: const ImageIcon(
-                        AssetImage('assets/images/icon_chevron_right.png'),
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          padding: EdgeInsets.zero,
+                        ),
+                        child: const ImageIcon(
+                          AssetImage('assets/images/icon_chevron_right.png'),
+                          size: 90,
+                        ),
                       ),
-                      iconSize: 90,
                     ),
                   ],
                 ),

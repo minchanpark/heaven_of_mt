@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'game_choi.dart';
+import 'choi_game_page.dart';
 
 class ChoiWeb extends StatefulWidget {
   const ChoiWeb({Key? key}) : super(key: key);
@@ -124,16 +124,16 @@ class _ChoiWebState extends State<ChoiWeb> {
           ),
           content: InkWell(
             onTap: () => Navigator.of(context).pop(),
-              child: SizedBox(
-                  width: width * 0.9, // 원하는 가로 길이 설정
-                  height: height * 0.77, // 원하는 세로 길이 설정
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/modal_choi.png',
-                      fit: BoxFit.cover,
-                    ),
-                  )),
-            ),
+            child: SizedBox(
+                width: width * 0.9, // 원하는 가로 길이 설정
+                height: height * 0.77, // 원하는 세로 길이 설정
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/modal_choi.png',
+                    fit: BoxFit.cover,
+                  ),
+                )),
+          ),
         );
       },
     );
@@ -200,8 +200,8 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) =>
-                            ChoiWebGame(id: widget.number), // Beauty 이미지에 대한 페이지
+                        builder: (context) => ChoiGamePage(
+                            id: widget.number), // Beauty 이미지에 대한 페이지
                       ),
                     );
                   },
