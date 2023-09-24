@@ -3,7 +3,7 @@ import 'package:testes/random/set_random.dart';
 import 'package:testes/four/set_four.dart';
 import 'package:testes/person/set_person.dart';
 import 'package:testes/tele/set_tele.dart';
-import 'choi/set_choi.dart';
+import 'choi/choi_page.dart';
 import 'home/home.dart';
 
 void main() {

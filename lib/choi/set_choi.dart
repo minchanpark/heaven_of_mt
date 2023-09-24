@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'game_choi.dart';
 
-class ChoiPage extends StatefulWidget {
-  const ChoiPage({Key? key}) : super(key: key);
+class ChoiWeb extends StatefulWidget {
+  const ChoiWeb({Key? key}) : super(key: key);
 
   @override
-  State<ChoiPage> createState() => _ChoiPageState();
+  State<ChoiWeb> createState() => _ChoiWebState();
 }
 
-class _ChoiPageState extends State<ChoiPage> {
+class _ChoiWebState extends State<ChoiWeb> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -201,7 +201,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) =>
-                            ChoiGame(id: widget.number), // Beauty 이미지에 대한 페이지
+                            ChoiWebGame(id: widget.number), // Beauty 이미지에 대한 페이지
                       ),
                     );
                   },

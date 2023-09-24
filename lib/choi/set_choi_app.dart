@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'game_choi_app.dart';
 
-class ChoiAppPage extends StatefulWidget {
-  const ChoiAppPage({Key? key}) : super(key: key);
+class ChoiApp extends StatefulWidget {
+  const ChoiApp({Key? key}) : super(key: key);
 
   @override
-  State<ChoiAppPage> createState() => _ChoiAppPageState();
+  State<ChoiApp> createState() => _ChoiAppState();
 }
 
-class _ChoiAppPageState extends State<ChoiAppPage> {
+class _ChoiAppState extends State<ChoiApp> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
