@@ -1,25 +1,24 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_field
 import 'package:flutter/material.dart';
-import 'gameChoi.dart';
+import 'package:testes/person/game_person.dart';
 
-class ChoiPage extends StatefulWidget {
-  const ChoiPage({Key? key}) : super(key: key);
+class PersonPage extends StatefulWidget {
+  const PersonPage({super.key});
 
   @override
-  State<ChoiPage> createState() => _ChoiPageState();
+  State<PersonPage> createState() => _PersonPageState();
 }
 
-class _ChoiPageState extends State<ChoiPage> {
+class _PersonPageState extends State<PersonPage> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Color.fromRGBO(14, 25, 62, 1),
+      backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/images/home.gif'),
                 fit: BoxFit.cover,
@@ -28,7 +27,7 @@ class _ChoiPageState extends State<ChoiPage> {
           ),
           Container(
             padding: EdgeInsets.only(
-                left: width * 0.075, top: height * 0.073, right: width * 0.09),
+                left: width * 0.075, top: height * 0.073, right: width * 0.11),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,7 +37,7 @@ class _ChoiPageState extends State<ChoiPage> {
                     Navigator.popUntil(context, ModalRoute.withName('/home'));
                   },
                   color: Colors.white,
-                  icon: ImageIcon(AssetImage('assets/images/home.png')),
+                  icon: const ImageIcon(AssetImage('assets/images/home.png')),
                   iconSize: 39,
                 ),
                 SizedBox(height: height * 0.1),
@@ -49,7 +48,7 @@ class _ChoiPageState extends State<ChoiPage> {
                     Center(
                       child: ShaderMask(
                         shaderCallback: (Rect bounds) {
-                          return LinearGradient(
+                          return const LinearGradient(
                             colors: <Color>[
                               Color.fromRGBO(255, 0, 142, 1),
                               Color.fromRGBO(255, 235, 90, 1)
@@ -58,8 +57,8 @@ class _ChoiPageState extends State<ChoiPage> {
                             end: Alignment.bottomCenter, // 그라데이션 끝 위치 (아래쪽 중앙)
                           ).createShader(bounds);
                         },
-                        child: Text(
-                          '액션초성게임',
+                        child: const Text(
+                          '인물퀴즈',
                           style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.white,
@@ -78,7 +77,7 @@ class _ChoiPageState extends State<ChoiPage> {
                             overlayColor:
                                 MaterialStateProperty.all(Colors.transparent)),
                         child: RichText(
-                          text: TextSpan(
+                          text: const TextSpan(
                               text: "설명보기",
                               style: TextStyle(
                                   fontFamily: 'DungGeunMo',
@@ -88,8 +87,8 @@ class _ChoiPageState extends State<ChoiPage> {
                         )),
                   ],
                 ),
-                SizedBox(height: 50),
-                Expanded(
+                const SizedBox(height: 50),
+                const Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -117,8 +116,8 @@ class _ChoiPageState extends State<ChoiPage> {
       builder: (BuildContext context) {
         return AlertDialog(
           shadowColor: Colors.transparent,
-          contentPadding: EdgeInsets.all(0), // padding을 0으로 설정
-          insetPadding: EdgeInsets.all(16), // 화면 주변 padding 설정
+          contentPadding: const EdgeInsets.all(0), // padding을 0으로 설정
+          insetPadding: const EdgeInsets.all(16), // 화면 주변 padding 설정
           backgroundColor: Colors.transparent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -130,7 +129,7 @@ class _ChoiPageState extends State<ChoiPage> {
                   height: height * 0.77, // 원하는 세로 길이 설정
                   child: Center(
                     child: Image.asset(
-                      'assets/images/modal_choi.png',
+                      'assets/images/modal_person.png',
                       fit: BoxFit.cover,
                     ),
                   )),
@@ -144,7 +143,7 @@ class _ChoiPageState extends State<ChoiPage> {
 class CustomImageWidget extends StatefulWidget {
   final String number;
 
-  const CustomImageWidget({required this.number, Key? key}) : super(key: key);
+  const CustomImageWidget({super.key, required this.number});
 
   @override
   State<CustomImageWidget> createState() => _CustomImageWidgetState();
@@ -173,9 +172,9 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
         alignment: Alignment.center,
         children: [
           AnimatedContainer(
-            duration: Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
+            duration: const Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
             decoration: BoxDecoration(
-              color: Colors.transparent, // 배경색을 지정합니다.
+              color: Colors.transparent,
               borderRadius: BorderRadius.circular(20.0), // 원하는 반지름 값으로 조절
             ),
             width: 136,
@@ -183,7 +182,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
             child: Center(
               child: Text(
                 widget.number,
-                style: TextStyle(
+                style: const TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
                   fontSize: 48,
@@ -195,14 +194,14 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
           Positioned(
             bottom: 3,
             child: AnimatedOpacity(
-              duration: Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
+              duration: const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
               opacity: _opacity == 0 ? 1.0 : 0.0,
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) =>
-                            ChoiGame(id: widget.number), // Beauty 이미지에 대한 페이지
+                            PersonGame(id: widget.number), // Beauty 이미지에 대한 페이지
                       ),
                     );
                   },
@@ -218,18 +217,15 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                   child: Column(
                     children: [
                       SizedBox(
-                        width: 25,
-                        height: 31,
-                        child: ImageIcon(
-                          AssetImage('assets/images/pink_up.png'), // 이미지 파일 경로
-                        ),
-                      ),
-                      SizedBox(height: 8),
+                          width: 25,
+                          height: 31,
+                          child: Image.asset('assets/images/pink_up.png')),
+                      const SizedBox(height: 8),
                       Container(
-                        color: Color.fromRGBO(255, 98, 211, 1),
+                        color: const Color.fromRGBO(255, 98, 211, 1),
                         child: Text(
                           widget.number,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.white,
                             fontSize: 48,
@@ -237,15 +233,11 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       SizedBox(
-                        width: 25,
-                        height: 31,
-                        child: ImageIcon(
-                          AssetImage(
-                              'assets/images/pink_down.png'), // 이미지 파일 경로
-                        ),
-                      ),
+                          width: 25,
+                          height: 31,
+                          child: Image.asset('assets/images/pink_down.png')),
                     ],
                   )),
             ),

@@ -1,23 +1,22 @@
-// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-import '../gameOver.dart';
-import '../gameContents.dart';
+import '../game_over.dart';
+import '../game_contents.dart';
 import '../card.dart';
 
-class TeleGame extends StatefulWidget {
+class FourGame extends StatefulWidget {
   final String id;
 
-  const TeleGame({
+  const FourGame({
     super.key,
     required this.id,
   });
 
   @override
-  State<TeleGame> createState() => _TeleGameState();
+  State<FourGame> createState() => _FourGameState();
 }
 
-class _TeleGameState extends State<TeleGame> {
+class _FourGameState extends State<FourGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
@@ -28,23 +27,23 @@ class _TeleGameState extends State<TeleGame> {
 
     // widget.id 값에 따라 cards 변수에 값을 할당
     if (widget.id == 'SET 1') {
-      cards = tele1
+      cards = four1
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
     } else if (widget.id == 'SET 2') {
-      cards = tele2
+      cards = four2
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
     } else if (widget.id == 'SET 3') {
-      cards = tele3
+      cards = four3
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
     } else if (widget.id == 'SET 4') {
-      cards = tele4
+      cards = four4
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
     } else {
-      cards = tele5
+      cards = four5
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
     }
@@ -137,8 +136,7 @@ class _TeleGameState extends State<TeleGame> {
                             ),
                             iconSize: 90,
                           ),
-                    Container(
-                      color: Colors.transparent,
+                    SizedBox(
                       width: width * 0.63,
                       height: height * 0.4,
                       child: CardSwiper(
@@ -167,7 +165,7 @@ class _TeleGameState extends State<TeleGame> {
                             MaterialPageRoute(
                               builder: (context) => GameOver(
                                 id: widget.id,
-                                gameName: 'tele',
+                                gameName: 'four',
                               ),
                             ),
                           );

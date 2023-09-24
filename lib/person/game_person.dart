@@ -1,26 +1,25 @@
-// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-import '../gameContents.dart';
-import '../gameOver.dart';
-import '../card.dart';
+import '../game_over.dart';
+import '../game_contents.dart';
+import '../image_card.dart';
 
-class ChoiGame extends StatefulWidget {
+class PersonGame extends StatefulWidget {
   final String id;
 
-  const ChoiGame({
+  const PersonGame({
     super.key,
     required this.id,
   });
 
   @override
-  State<ChoiGame> createState() => _ChoiGamePageState();
+  State<PersonGame> createState() => _PersonGameState();
 }
 
-class _ChoiGamePageState extends State<ChoiGame> {
+class _PersonGameState extends State<PersonGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
-  List<GameCard> cards = []; // cards 변수를 초기화
+  List<ImageGameCard> cards = []; // cards 변수를 초기화
   String setNumber = '';
   @override
   void initState() {
@@ -28,24 +27,24 @@ class _ChoiGamePageState extends State<ChoiGame> {
 
     // widget.id 값에 따라 cards 변수에 값을 할당
     if (widget.id == 'SET 1') {
-      cards = choi1
-          .map((gameContents) => GameCard(gameContents: gameContents))
+      cards = person1
+          .map((gameContents) => ImageGameCard(gameContents: gameContents))
           .toList();
     } else if (widget.id == 'SET 2') {
-      cards = choi2
-          .map((gameContents) => GameCard(gameContents: gameContents))
+      cards = person2
+          .map((gameContents) => ImageGameCard(gameContents: gameContents))
           .toList();
     } else if (widget.id == 'SET 3') {
-      cards = choi3
-          .map((gameContents) => GameCard(gameContents: gameContents))
+      cards = person3
+          .map((gameContents) => ImageGameCard(gameContents: gameContents))
           .toList();
     } else if (widget.id == 'SET 4') {
-      cards = choi4
-          .map((gameContents) => GameCard(gameContents: gameContents))
+      cards = person4
+          .map((gameContents) => ImageGameCard(gameContents: gameContents))
           .toList();
     } else {
-      cards = choi5
-          .map((gameContents) => GameCard(gameContents: gameContents))
+      cards = person5
+          .map((gameContents) => ImageGameCard(gameContents: gameContents))
           .toList();
     }
     setNumber = widget.id;
@@ -138,8 +137,8 @@ class _ChoiGamePageState extends State<ChoiGame> {
                             iconSize: 90,
                           ),
                     SizedBox(
-                      width: width * 0.63,
-                      height: height * 0.4,
+                      width: width * 0.57, // 최대 가로 크기를 설정할 수도 있습니다.
+                      height: height * 0.67, // 최대 세로 크기를 설정할 수도 있습니다
                       child: CardSwiper(
                         duration: const Duration(milliseconds: 0),
                         controller: controller,
@@ -166,7 +165,7 @@ class _ChoiGamePageState extends State<ChoiGame> {
                             MaterialPageRoute(
                               builder: (context) => GameOver(
                                 id: widget.id,
-                                gameName: 'choi',
+                                gameName: 'person',
                               ),
                             ),
                           );
@@ -188,7 +187,6 @@ class _ChoiGamePageState extends State<ChoiGame> {
                   ],
                 ),
               ),
-              SizedBox(height: 87)
             ],
           ),
         ),

@@ -1,28 +1,25 @@
-// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-import 'package:testes/imageCard.dart';
-import '../gameOver.dart';
-import '../gameContents.dart';
+import '../game_contents.dart';
+import '../game_over.dart';
 import '../card.dart';
 
-class RandomGame extends StatefulWidget {
+class ChoiGame extends StatefulWidget {
   final String id;
 
-  const RandomGame({
+  const ChoiGame({
     super.key,
     required this.id,
   });
 
   @override
-  State<RandomGame> createState() => _RandomGameState();
+  State<ChoiGame> createState() => _ChoiGamePageState();
 }
 
-class _RandomGameState extends State<RandomGame> {
+class _ChoiGamePageState extends State<ChoiGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
-  List<ImageGameCard> imagecards = []; // cards 변수를 초기화
   String setNumber = '';
   @override
   void initState() {
@@ -30,23 +27,23 @@ class _RandomGameState extends State<RandomGame> {
 
     // widget.id 값에 따라 cards 변수에 값을 할당
     if (widget.id == 'SET 1') {
-      cards = random1
+      cards = choi1
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
     } else if (widget.id == 'SET 2') {
-      imagecards = random2
-          .map((gameContents) => ImageGameCard(gameContents: gameContents))
+      cards = choi2
+          .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
     } else if (widget.id == 'SET 3') {
-      cards = random3
+      cards = choi3
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
     } else if (widget.id == 'SET 4') {
-      cards = random4
+      cards = choi4
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
     } else {
-      cards = random5
+      cards = choi5
           .map((gameContents) => GameCard(gameContents: gameContents))
           .toList();
     }
@@ -83,7 +80,6 @@ class _RandomGameState extends State<RandomGame> {
                   IconButton(
                     onPressed: () {
                       Navigator.of(context).pop();
-                      Navigator.of(context).pop();
                     },
                     color: Colors.white,
                     icon: ImageIcon(AssetImage('assets/images/Exit.png')),
@@ -101,26 +97,15 @@ class _RandomGameState extends State<RandomGame> {
                 ),
               ),
               SizedBox(height: height * 0.025),
-              if (widget.id == 'SET 2')
-                Text(
-                  '${currentCardIndex + 1} / ${imagecards.length}',
-                  style: const TextStyle(
-                    fontFamily: 'DungGeunMo',
-                    color: Color.fromRGBO(255, 98, 211, 1),
-                    fontWeight: FontWeight.w400,
-                    fontSize: 36,
-                  ),
-                )
-              else
-                Text(
-                  '${currentCardIndex + 1} / ${cards.length}',
-                  style: const TextStyle(
-                    fontFamily: 'DungGeunMo',
-                    color: Color.fromRGBO(255, 98, 211, 1),
-                    fontWeight: FontWeight.w400,
-                    fontSize: 36,
-                  ),
+              Text(
+                '${currentCardIndex + 1} / ${cards.length}',
+                style: const TextStyle(
+                  fontFamily: 'DungGeunMo',
+                  color: Color.fromRGBO(255, 98, 211, 1),
+                  fontWeight: FontWeight.w400,
+                  fontSize: 36,
                 ),
+              ),
               Expanded(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -151,52 +136,28 @@ class _RandomGameState extends State<RandomGame> {
                             ),
                             iconSize: 90,
                           ),
-                    if (widget.id == 'SET 2')
-                      SizedBox(
-                        width: width * 0.57, // 최대 가로 크기를 설정할 수도 있습니다.
-                        height: height * 0.67, // 최대 세로 크기를 설정할 수도 있습니다
-                        child: CardSwiper(
-                          duration: const Duration(milliseconds: 0),
-                          controller: controller,
-                          cardsCount: imagecards.length,
-                          numberOfCardsDisplayed: 1,
-                          cardBuilder: (
-                            context,
-                            index,
-                            horizontalThresholdPercentage,
-                            verticalThresholdPercentage,
-                          ) {
-                            currentCardIndex = index;
-                            return imagecards[index];
-                          },
-                          isDisabled: true,
-                          onSwipe: _onSwipe,
-                          onUndo: _onUndo,
-                        ),
-                      )
-                    else
-                      SizedBox(
-                        width: width * 0.69,
-                        height: height * 0.4,
-                        child: CardSwiper(
-                          duration: const Duration(milliseconds: 0),
-                          controller: controller,
-                          cardsCount: cards.length,
-                          numberOfCardsDisplayed: 1,
-                          cardBuilder: (
-                            context,
-                            index,
-                            horizontalThresholdPercentage,
-                            verticalThresholdPercentage,
-                          ) {
-                            currentCardIndex = index;
-                            return cards[index];
-                          },
-                          isDisabled: true,
-                          onSwipe: _onSwipe,
-                          onUndo: _onUndo,
-                        ),
+                    SizedBox(
+                      width: width * 0.63,
+                      height: height * 0.4,
+                      child: CardSwiper(
+                        duration: const Duration(milliseconds: 0),
+                        controller: controller,
+                        cardsCount: cards.length,
+                        numberOfCardsDisplayed: 1,
+                        cardBuilder: (
+                          context,
+                          index,
+                          horizontalThresholdPercentage,
+                          verticalThresholdPercentage,
+                        ) {
+                          currentCardIndex = index;
+                          return cards[index];
+                        },
+                        isDisabled: true,
+                        onSwipe: _onSwipe,
+                        onUndo: _onUndo,
                       ),
+                    ),
                     IconButton(
                       onPressed: () {
                         if (currentCardIndex == 9) {
@@ -204,7 +165,7 @@ class _RandomGameState extends State<RandomGame> {
                             MaterialPageRoute(
                               builder: (context) => GameOver(
                                 id: widget.id,
-                                gameName: 'random',
+                                gameName: 'choi',
                               ),
                             ),
                           );
@@ -226,7 +187,7 @@ class _RandomGameState extends State<RandomGame> {
                   ],
                 ),
               ),
-              if (widget.id != 'SET 2') SizedBox(height: 87)
+              SizedBox(height: 87)
             ],
           ),
         ),

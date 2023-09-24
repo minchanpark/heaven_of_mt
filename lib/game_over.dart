@@ -1,11 +1,10 @@
-// ignore_for_file: prefer_const_constructors, unused_field
 import 'package:flutter/material.dart';
-import 'package:testes/person/setPerson.dart';
-import 'package:testes/tele/setTele.dart';
+import 'package:testes/person/set_person.dart';
+import 'package:testes/tele/set_tele.dart';
 
-import 'random/setRandom.dart';
-import 'choi/setChoi.dart';
-import 'four/setFour.dart';
+import 'random/set_random.dart';
+import 'choi/set_choi.dart';
+import 'four/set_four.dart';
 
 class GameOver extends StatefulWidget {
   final String id;
