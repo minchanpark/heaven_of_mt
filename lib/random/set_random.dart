@@ -218,6 +218,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
           contentPadding: const EdgeInsets.all(0), // padding을 0으로 설정
           insetPadding: const EdgeInsets.all(16), // 화면 주변 padding 설정
           backgroundColor: Colors.transparent,
+
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
