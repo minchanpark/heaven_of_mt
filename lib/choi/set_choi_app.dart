@@ -27,22 +27,25 @@ class _ChoiAppState extends State<ChoiApp> {
           ),
           Container(
             padding: EdgeInsets.only(
-                left: width * 0.075, top: height * 0.073, right: width * 0.09),
+                left: width * 0.06, top: height * 0.1, right: width * 0.14),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                IconButton(
-                  onPressed: () {
-                    Navigator.popUntil(context, ModalRoute.withName('/home'));
-                  },
-                  color: Colors.white,
-                  icon: const ImageIcon(AssetImage('assets/images/home.png')),
-                  iconSize: 39,
-                ),
-                SizedBox(height: height * 0.1),
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Navigator.popUntil(context, ModalRoute.withName('/home'));
+                      },
+                      color: Colors.white,
+                      icon: const ImageIcon(
+                          AssetImage('assets/images/icon_chevron_left_white.png')),
+                      iconSize: 27,
+                    ),
+                  ],
+                ),
+                SizedBox(height: height * 0.0628),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   textBaseline: TextBaseline.alphabetic,
                   children: [
                     Center(
@@ -62,13 +65,13 @@ class _ChoiAppState extends State<ChoiApp> {
                           style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.white,
-                            fontSize: 60,
+                            fontSize: 45,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
                       ),
                     ),
-                    SizedBox(width: width * 0.015),
+                    SizedBox(height: height * 0.032),
                     TextButton(
                         onPressed: () {
                           _showDeleteConfirmationDialog(context);
@@ -81,25 +84,24 @@ class _ChoiAppState extends State<ChoiApp> {
                               text: "설명보기",
                               style: TextStyle(
                                   fontFamily: 'DungGeunMo',
-                                  fontSize: 24,
+                                  fontSize: 23,
                                   color: Colors.white,
                                   decoration: TextDecoration.underline)),
                         )),
                   ],
                 ),
-                const SizedBox(height: 50),
-                const Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CustomImageWidget(number: 'SET 1'),
-                      CustomImageWidget(number: 'SET 2'),
-                      CustomImageWidget(number: 'SET 3'),
-                      CustomImageWidget(number: 'SET 4'),
-                      CustomImageWidget(number: 'SET 5'),
-                    ],
-                  ),
-                ),
+                SizedBox(height: height * 0.09),
+                Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: List.generate(5, (index) {
+                      return Column(
+                        children: [
+                          CustomImageWidget(number: 'SET ${index + 1}'),
+                          SizedBox(height: height * 0.03)
+                        ],
+                      );
+                    })),
               ],
             ),
           ),
@@ -124,16 +126,16 @@ class _ChoiAppState extends State<ChoiApp> {
           ),
           content: InkWell(
             onTap: () => Navigator.of(context).pop(),
-              child: SizedBox(
-                  width: width * 0.9, // 원하는 가로 길이 설정
-                  height: height * 0.77, // 원하는 세로 길이 설정
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/modal_choi.png',
-                      fit: BoxFit.cover,
-                    ),
-                  )),
-            ),
+            child: SizedBox(
+                width: width * 0.87, // 원하는 가로 길이 설정
+                height: height * 0.679, // 원하는 세로 길이 설정
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/modal_choi_app.png',
+                    fit: BoxFit.cover,
+                  ),
+                )),
+          ),
         );
       },
     );
@@ -177,8 +179,8 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
               color: Colors.transparent, // 배경색을 지정합니다.
               borderRadius: BorderRadius.circular(20.0), // 원하는 반지름 값으로 조절
             ),
-            width: 136,
-            height: 133,
+            width: 120,
+            height: 50,
             child: Center(
               child: Text(
                 widget.number,
@@ -200,8 +202,8 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) =>
-                            ChoiAppGame(id: widget.number), // Beauty 이미지에 대한 페이지
+                        builder: (context) => ChoiAppGame(
+                            id: widget.number), // Beauty 이미지에 대한 페이지
                       ),
                     );
                   },
