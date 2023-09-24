@@ -11,12 +11,12 @@ void main() {
       debugShowCheckedModeBanner: false,
       initialRoute: '/home',
       routes: {
-        '/home': (BuildContext context) => MyHome(),
-        '/choi': (BuildContext context) => ChoiPage(),
-        '/four': (BuildContext context) => FourPage(),
-        '/person': (BuildContext context) => PersonPage(),
-        '/random': (BuildContext context) => RandomPage(),
-        '/tele': (BuildContext context) => TelePage(),
+        '/home': (BuildContext context) => const MyHome(),
+        '/choi': (BuildContext context) => const ChoiPage(),
+        '/four': (BuildContext context) => const FourPage(),
+        '/person': (BuildContext context) => const PersonPage(),
+        '/random': (BuildContext context) => const RandomPage(),
+        '/tele': (BuildContext context) => const TelePage(),
       },
     ),
   );
@@ -39,7 +39,7 @@ class _MyHomeState extends State<MyHome> {
       backgroundColor: Colors.white,
       body: Stack(children: [
         Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/home.gif'),
               fit: BoxFit.cover,
@@ -135,17 +135,17 @@ class _GameListState extends State<GameList> {
                   children: [
                     Text(
                       widget.index,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontFamily: 'DungGeunMo',
                         color: Colors.white,
                         fontSize: 45,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    SizedBox(width: 34),
+                    const SizedBox(width: 34),
                     Text(
                       widget.name,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontFamily: 'DungGeunMo',
                         color: Colors.white,
                         fontSize: 45,
@@ -165,23 +165,23 @@ class _GameListState extends State<GameList> {
                     switch (widget.index) {
                       case '1':
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => ChoiPage()));
+                            builder: (context) => const ChoiPage()));
                         break;
                       case '2':
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => PersonPage()));
+                            builder: (context) => const PersonPage()));
                         break;
                       case '3':
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => FourPage()));
+                            builder: (context) => const FourPage()));
                         break;
                       case '4':
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => TelePage()));
+                            builder: (context) => const TelePage()));
                         break;
                       case '5':
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => RandomPage()));
+                            builder: (context) => const RandomPage()));
                         break;
                     }
                   },
@@ -201,14 +201,14 @@ class _GameListState extends State<GameList> {
                           width: 32,
                           height: 52,
                           child: Image.asset('assets/images/gameover.png')),
-                      SizedBox(width: 18),
+                      const SizedBox(width: 18),
                       Container(
                         padding:
-                            EdgeInsets.only(left: 10, right: 10, bottom: 5),
-                        color: Color.fromRGBO(255, 98, 211, 1),
+                            const EdgeInsets.only(left: 10, right: 10, bottom: 5),
+                        color: const Color.fromRGBO(255, 98, 211, 1),
                         child: Text(
                           widget.name,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.white,
                             fontSize: 45,

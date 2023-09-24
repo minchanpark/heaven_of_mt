@@ -62,7 +62,7 @@ class _TeleGameState extends State<TeleGame> {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Color.fromRGBO(14, 25, 62, 1),
+      backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.only(
@@ -82,7 +82,7 @@ class _TeleGameState extends State<TeleGame> {
                       Navigator.of(context).pop();
                     },
                     color: Colors.white,
-                    icon: ImageIcon(AssetImage('assets/images/Exit.png')),
+                    icon: const ImageIcon(AssetImage('assets/images/Exit.png')),
                     iconSize: 39,
                   ),
                 ],
@@ -115,7 +115,7 @@ class _TeleGameState extends State<TeleGame> {
                         ? IconButton(
                             onPressed: controller.undo,
                             color: Colors.transparent,
-                            icon: ImageIcon(
+                            icon: const ImageIcon(
                               AssetImage('assets/images/icon_chevron_left.png'),
                             ),
                             iconSize: 90,
@@ -130,7 +130,7 @@ class _TeleGameState extends State<TeleGame> {
                               }
                             },
                             color: Colors.transparent,
-                            icon: ImageIcon(
+                            icon: const ImageIcon(
                               AssetImage(
                                   'assets/images/icon_chevron_left_white.png'),
                             ),
@@ -180,7 +180,7 @@ class _TeleGameState extends State<TeleGame> {
                         }
                       },
                       color: Colors.transparent,
-                      icon: ImageIcon(
+                      icon: const ImageIcon(
                         AssetImage('assets/images/icon_chevron_right.png'),
                       ),
                       iconSize: 90,
@@ -188,7 +188,7 @@ class _TeleGameState extends State<TeleGame> {
                   ],
                 ),
               ),
-              SizedBox(height: 87)
+              const SizedBox(height: 87)
             ],
           ),
         ),

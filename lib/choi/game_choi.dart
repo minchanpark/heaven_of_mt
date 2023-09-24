@@ -62,7 +62,7 @@ class _ChoiGamePageState extends State<ChoiGame> {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Color.fromRGBO(14, 25, 62, 1),
+      backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.only(
@@ -82,7 +82,7 @@ class _ChoiGamePageState extends State<ChoiGame> {
                       Navigator.of(context).pop();
                     },
                     color: Colors.white,
-                    icon: ImageIcon(AssetImage('assets/images/Exit.png')),
+                    icon: const ImageIcon(AssetImage('assets/images/Exit.png')),
                     iconSize: 39,
                   ),
                 ],
@@ -115,7 +115,7 @@ class _ChoiGamePageState extends State<ChoiGame> {
                         ? IconButton(
                             onPressed: controller.undo,
                             color: Colors.transparent,
-                            icon: ImageIcon(
+                            icon: const ImageIcon(
                               AssetImage('assets/images/icon_chevron_left.png'),
                             ),
                             iconSize: 90,
@@ -130,7 +130,7 @@ class _ChoiGamePageState extends State<ChoiGame> {
                               }
                             },
                             color: Colors.transparent,
-                            icon: ImageIcon(
+                            icon: const ImageIcon(
                               AssetImage(
                                   'assets/images/icon_chevron_left_white.png'),
                             ),
@@ -179,7 +179,7 @@ class _ChoiGamePageState extends State<ChoiGame> {
                         }
                       },
                       color: Colors.transparent,
-                      icon: ImageIcon(
+                      icon: const ImageIcon(
                         AssetImage('assets/images/icon_chevron_right.png'),
                       ),
                       iconSize: 90,
@@ -187,7 +187,7 @@ class _ChoiGamePageState extends State<ChoiGame> {
                   ],
                 ),
               ),
-              SizedBox(height: 87)
+              const SizedBox(height: 87)
             ],
           ),
         ),
