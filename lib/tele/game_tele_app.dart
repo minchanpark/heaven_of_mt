@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import '../game_contents.dart';
-import '../game_over.dart';
 import '../card_app.dart';
+import '../gameover/gameover_app.dart';
 
 class TeleAppGame extends StatefulWidget {
   final String id;
@@ -180,7 +180,7 @@ class _TeleAppGamePageState extends State<TeleAppGame> {
                           if (currentCardIndex == 9) {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => GameOver(
+                                builder: (context) => GameOverApp(
                                   id: widget.id,
                                   gameName: 'tele',
                                 ),

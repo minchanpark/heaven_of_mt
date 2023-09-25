@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-import '../game_over.dart';
 import '../game_contents.dart';
+import '../gameover/gameover_web.dart';
 import '../image_card.dart';
 
 class PersonWebGame extends StatefulWidget {
