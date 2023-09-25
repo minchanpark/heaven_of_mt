@@ -213,31 +213,38 @@ class _RandomAppGameState extends State<RandomAppGame> {
                           onUndo: _onUndo,
                         ),
                       ),
-                    IconButton(
-                      onPressed: () {
-                        if (currentCardIndex == 9) {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => GameOverApp(
-                                id: widget.id,
-                                gameName: 'random',
+                    ConstrainedBox(
+                      constraints:
+                          const BoxConstraints.tightFor(width: 29, height: 52),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          if (currentCardIndex == 9) {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => GameOverApp(
+                                  id: widget.id,
+                                  gameName: 'random',
+                                ),
                               ),
-                            ),
-                          );
-                        } else {
-                          controller.swipeLeft();
-                          if (currentCardIndex != 2) {
-                            setState(() {
-                              isUndoButtonVisible = false;
-                            });
+                            );
+                          } else {
+                            controller.swipeLeft();
+                            if (currentCardIndex != 2) {
+                              setState(() {
+                                isUndoButtonVisible = false;
+                              });
+                            }
                           }
-                        }
-                      },
-                      color: Colors.transparent,
-                      icon: const ImageIcon(
-                        AssetImage('assets/images/icon_chevron_right.png'),
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          padding: EdgeInsets.zero,
+                        ),
+                        child: const ImageIcon(
+                          AssetImage('assets/images/icon_chevron_right.png'),
+                          size: 90,
+                        ),
                       ),
-                      iconSize: 90,
                     ),
                   ],
                 ),
