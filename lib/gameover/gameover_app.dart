@@ -43,7 +43,6 @@ class _GameOverAppState extends State<GameOverApp> {
             ),
           ),
           SizedBox(
-            width: double.infinity,
             child: Column(
               children: [
                 SizedBox(height: height * 0.213),
@@ -84,16 +83,10 @@ class _GameOverAppState extends State<GameOverApp> {
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
-                      AnimatedContainer(
+                      Container(
                         padding: const EdgeInsets.only(bottom: 4),
-                        duration: const Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
-                        decoration: BoxDecoration(
-                          color: Colors.transparent, // 배경색을 지정합니다.
-                          borderRadius:
-                              BorderRadius.circular(20.0), // 원하는 반지름 값으로 조절
-                        ),
-                        width: 230,
-                        height: 50,
+                        width: 300,
+                        height: 60,
                         child: const Center(
                           child: Text(
                             'Play Again',
@@ -107,10 +100,9 @@ class _GameOverAppState extends State<GameOverApp> {
                         ),
                       ),
                       Positioned(
-                        bottom: 5,
-                        right: 44,
                         child: AnimatedOpacity(
-                          duration: const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
+                          duration:
+                              const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
                           opacity: _opacity == 0 ? 1.0 : 0.0,
                           child: ElevatedButton(
                               onPressed: () {
@@ -123,7 +115,8 @@ class _GameOverAppState extends State<GameOverApp> {
                                   Navigator.popUntil(
                                       context, ModalRoute.withName('/home'));
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const PersonPage()));
+                                      builder: (context) =>
+                                          const PersonPage()));
                                 } else if (widget.gameName == 'four') {
                                   Navigator.popUntil(
                                       context, ModalRoute.withName('/home'));
@@ -138,7 +131,8 @@ class _GameOverAppState extends State<GameOverApp> {
                                   Navigator.popUntil(
                                       context, ModalRoute.withName('/home'));
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const RandomPage()));
+                                      builder: (context) =>
+                                          const RandomPage()));
                                 }
                               },
                               style: ElevatedButton.styleFrom(
@@ -151,28 +145,30 @@ class _GameOverAppState extends State<GameOverApp> {
                                 ),
                               ),
                               child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   SizedBox(
-                                      width: 32,
-                                      height: 52,
+                                      width: 18,
+                                      height: 32,
                                       child: Image.asset(
                                           'assets/images/gameover.png')),
-                                  const SizedBox(width: 10),
+                                  const SizedBox(width: 13),
                                   Container(
-                                    color: const Color.fromRGBO(255, 98, 211, 1),
-                                    child: const Padding(
-                                      padding: EdgeInsets.only(bottom: 5),
-                                      child: Text(
-                                        'Play Again',
-                                        style: TextStyle(
-                                          fontFamily: 'DungGeunMo',
-                                          color: Colors.white,
-                                          fontSize: 45,
-                                          fontWeight: FontWeight.w400,
-                                        ),
+                                    padding: const EdgeInsets.only(
+                                        left: 10, right: 10),
+                                    color:
+                                        const Color.fromRGBO(255, 98, 211, 1),
+                                    child: const Text(
+                                      'Play Again',
+                                      style: TextStyle(
+                                        fontFamily: 'DungGeunMo',
+                                        color: Colors.white,
+                                        fontSize: 45,
+                                        fontWeight: FontWeight.w400,
                                       ),
                                     ),
                                   ),
+                                  const SizedBox(width: 31, height: 32)
                                 ],
                               )),
                         ),
@@ -200,7 +196,8 @@ class _GameOverAppState extends State<GameOverApp> {
                     children: [
                       AnimatedContainer(
                         padding: const EdgeInsets.only(bottom: 4),
-                        duration: const Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
+                        duration:
+                            const Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
                         decoration: BoxDecoration(
                           color: Colors.transparent, // 배경색을 지정합니다.
                           borderRadius:
@@ -221,10 +218,9 @@ class _GameOverAppState extends State<GameOverApp> {
                         ),
                       ),
                       Positioned(
-                        bottom: 5,
-                        right: 80,
                         child: AnimatedOpacity(
-                          duration: const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
+                          duration:
+                              const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
                           opacity: _opacity1 == 0 ? 1.0 : 0.0,
                           child: ElevatedButton(
                               onPressed: () {
@@ -241,28 +237,30 @@ class _GameOverAppState extends State<GameOverApp> {
                                 ),
                               ),
                               child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   SizedBox(
-                                      width: 29,
-                                      height: 51,
+                                      width: 18,
+                                      height: 32,
                                       child: Image.asset(
                                           'assets/images/gameover.png')),
-                                  const SizedBox(width: 10),
+                                  const SizedBox(width: 13),
                                   Container(
-                                    color: const Color.fromRGBO(255, 98, 211, 1),
-                                    child: const Padding(
-                                      padding: EdgeInsets.only(bottom: 5),
-                                      child: Text(
-                                        'Go Home',
-                                        style: TextStyle(
-                                          fontFamily: 'DungGeunMo',
-                                          color: Colors.white,
-                                          fontSize: 45,
-                                          fontWeight: FontWeight.w400,
-                                        ),
+                                    padding: const EdgeInsets.only(
+                                        left: 10, right: 10),
+                                    color:
+                                        const Color.fromRGBO(255, 98, 211, 1),
+                                    child: const Text(
+                                      'Go Home',
+                                      style: TextStyle(
+                                        fontFamily: 'DungGeunMo',
+                                        color: Colors.white,
+                                        fontSize: 45,
+                                        fontWeight: FontWeight.w400,
                                       ),
                                     ),
                                   ),
+                                  const SizedBox(width: 31, height: 32)
                                 ],
                               )),
                         ),

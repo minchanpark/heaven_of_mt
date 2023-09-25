@@ -128,7 +128,7 @@ class _TeleAppState extends State<TeleApp> {
                 height: height * 0.679, // 원하는 세로 길이 설정
                 child: Center(
                   child: Image.asset(
-                    'assets/images/modal_choi_app.png',
+                    'assets/images/modal_tele_app.png',
                     fit: BoxFit.cover,
                   ),
                 )),

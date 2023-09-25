@@ -71,9 +71,7 @@ class _RandomAppState extends State<RandomApp> {
                       ),
                       SizedBox(height: height * 0.032),
                       TextButton(
-                          onPressed: () {
-                            _showDeleteConfirmationDialog(context);
-                          },
+                          onPressed: () {},
                           style: ButtonStyle(
                               overlayColor: MaterialStateProperty.all(
                                   Colors.transparent)),
@@ -104,37 +102,6 @@ class _RandomAppState extends State<RandomApp> {
           ),
         ],
       ),
-    );
-  }
-
-  void _showDeleteConfirmationDialog(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          shadowColor: Colors.transparent,
-          contentPadding: const EdgeInsets.all(0), // padding을 0으로 설정
-          insetPadding: const EdgeInsets.all(16), // 화면 주변 padding 설정
-          backgroundColor: Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          content: InkWell(
-            onTap: () => Navigator.of(context).pop(),
-            child: SizedBox(
-                width: width * 0.87, // 원하는 가로 길이 설정
-                height: height * 0.679, // 원하는 세로 길이 설정
-                child: Center(
-                  child: Image.asset(
-                    'assets/images/modal_choi_app.png',
-                    fit: BoxFit.cover,
-                  ),
-                )),
-          ),
-        );
-      },
     );
   }
 }
@@ -197,12 +164,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
               opacity: _opacity == 0 ? 1.0 : 0.0,
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => RandomGamePage(
-                            id: widget.number), // Beauty 이미지에 대한 페이지
-                      ),
-                    );
+                    _showDeleteConfirmationDialog(context);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -250,6 +212,58 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
           ),
         ],
       ),
+    );
+  }
+  String _getImagePath(String id) {
+    switch (id) {
+      case 'SET 1':
+        return 'assets/images/modal_choi_app.png';
+      case 'SET 2':
+        return 'assets/images/modal_person_app.png';
+      case 'SET 3':
+        return 'assets/images/modal_four_app.png';
+      case 'SET 4':
+        return 'assets/images/modal_tele_app.png';
+      default:
+        return 'assets/images/modal_brand_app.png';
+    }
+  }
+
+  void _showDeleteConfirmationDialog(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shadowColor: Colors.transparent,
+          contentPadding: const EdgeInsets.all(0), // padding을 0으로 설정
+          insetPadding: const EdgeInsets.all(16), // 화면 주변 padding 설정
+          backgroundColor: Colors.transparent,
+          surfaceTintColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          content: InkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => RandomGamePage(id: widget.number),
+                )
+              );
+            },
+            child: SizedBox(
+                width: width * 0.87, // 원하는 가로 길이 설정
+                height: height * 0.679, // 원하는 세로 길이 설정
+                child: Center(
+                  child: Image.asset(
+                    _getImagePath(widget.number),
+                    fit: BoxFit.cover,
+                  ),
+                )),
+          ),
+        );
+      },
     );
   }
 }
