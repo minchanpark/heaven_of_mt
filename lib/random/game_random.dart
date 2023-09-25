@@ -175,7 +175,7 @@ class _RandomWebGameState extends State<RandomWebGame> {
                       )
                     else
                       SizedBox(
-                        width: width * 0.69,
+                        width: width * 0.6,
                         height: height * 0.4,
                         child: CardSwiper(
                           duration: const Duration(milliseconds: 0),

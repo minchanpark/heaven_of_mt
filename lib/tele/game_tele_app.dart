@@ -59,8 +59,6 @@ class _TeleAppGamePageState extends State<TeleAppGame> {
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: SafeArea(
