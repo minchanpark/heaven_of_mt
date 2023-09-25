@@ -82,6 +82,7 @@ class _RandomAppGameState extends State<RandomAppGame> {
                   IconButton(
                     onPressed: () {
                       Navigator.of(context).pop();
+                      Navigator.of(context).pop();
                     },
                     color: Colors.white,
                     icon: const ImageIcon(AssetImage('assets/images/Exit.png')),
