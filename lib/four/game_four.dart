@@ -4,19 +4,19 @@ import '../game_over.dart';
 import '../game_contents.dart';
 import '../card.dart';
 
-class FourGame extends StatefulWidget {
+class FourWebGame extends StatefulWidget {
   final String id;
 
-  const FourGame({
+  const FourWebGame({
     super.key,
     required this.id,
   });
 
   @override
-  State<FourGame> createState() => _FourGameState();
+  State<FourWebGame> createState() => _FourWebGameState();
 }
 
-class _FourGameState extends State<FourGame> {
+class _FourWebGameState extends State<FourWebGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../choi/choi_page.dart';
-import '../four/set_four.dart';
-import '../person/set_person.dart';
-import '../random/set_random.dart';
-import '../tele/set_tele.dart';
+import '../four/four_page.dart';
+import '../person/person_page.dart';
+import '../random/random_page.dart';
+import '../tele/tele_page.dart';
 
 class HomeApp extends StatelessWidget {
   const HomeApp({
