@@ -42,8 +42,9 @@ class _GameOverAppState extends State<GameOverApp> {
               ),
             ),
           ),
-          SizedBox(
+          Center(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(height: height * 0.213),
                 Text(
@@ -87,23 +88,27 @@ class _GameOverAppState extends State<GameOverApp> {
                         padding: const EdgeInsets.only(bottom: 4),
                         width: 300,
                         height: 60,
-                        child: const Center(
-                          child: Text(
-                            'Play Again',
-                            style: TextStyle(
-                              fontFamily: 'DungGeunMo',
-                              color: Colors.white,
-                              fontSize: 45,
-                              fontWeight: FontWeight.w400,
+                        child: Visibility(
+                          visible: !_isMouseOver,
+                          child: const Center(
+                            child: Text(
+                              'Play Again',
+                              style: TextStyle(
+                                fontFamily: 'DungGeunMo',
+                                color: Colors.white,
+                                fontSize: 45,
+                                fontWeight: FontWeight.w400,
+                              ),
                             ),
                           ),
                         ),
                       ),
-                      Positioned(
-                        child: AnimatedOpacity(
-                          duration:
-                              const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
-                          opacity: _opacity == 0 ? 1.0 : 0.0,
+                      Container(
+                        padding: const EdgeInsets.only(bottom: 4),
+                        width: 340,
+                        height: 60,
+                        child: Visibility(
+                          visible: _isMouseOver,
                           child: ElevatedButton(
                               onPressed: () {
                                 if (widget.gameName == 'choi') {
@@ -194,34 +199,33 @@ class _GameOverAppState extends State<GameOverApp> {
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
-                      AnimatedContainer(
-                        padding: const EdgeInsets.only(bottom: 4),
-                        duration:
-                            const Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
-                        decoration: BoxDecoration(
-                          color: Colors.transparent, // 배경색을 지정합니다.
-                          borderRadius:
-                              BorderRadius.circular(20.0), // 원하는 반지름 값으로 조절
-                        ),
-                        width: 230,
-                        height: 50,
-                        child: const Center(
-                          child: Text(
-                            'Go Home',
-                            style: TextStyle(
-                              fontFamily: 'DungGeunMo',
-                              color: Colors.white,
-                              fontSize: 45,
-                              fontWeight: FontWeight.w400,
+                      Center(
+                        child: Container(
+                          padding: const EdgeInsets.only(bottom: 4),
+                          width: 180,
+                          height: 70,
+                          child: Visibility(
+                            visible: !_isMouseOver1,
+                            child: const Center(
+                              child: Text(
+                                'Go Home',
+                                style: TextStyle(
+                                  fontFamily: 'DungGeunMo',
+                                  color: Colors.white,
+                                  fontSize: 45,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
                             ),
                           ),
                         ),
                       ),
-                      Positioned(
-                        child: AnimatedOpacity(
-                          duration:
-                              const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
-                          opacity: _opacity1 == 0 ? 1.0 : 0.0,
+                      Container(
+                        padding: const EdgeInsets.only(bottom: 4),
+                        width: 280,
+                        height: 70,
+                        child: Visibility(
+                          visible: _isMouseOver1,
                           child: ElevatedButton(
                               onPressed: () {
                                 Navigator.popUntil(
