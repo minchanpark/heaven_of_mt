@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-import '../game_over.dart';
 import '../game_contents.dart';
 import '../card.dart';
+import '../gameover/gameover_web.dart';
 
 class TeleWebGame extends StatefulWidget {
   final String id;

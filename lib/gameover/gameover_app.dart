@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
-import 'four/four_page.dart';
-import 'person/person_page.dart';
-import 'choi/choi_page.dart';
-import 'random/random_page.dart';
-import 'tele/tele_page.dart';
+import '../choi/choi_page.dart';
+import '../four/four_page.dart';
+import '../person/person_page.dart';
+import '../random/random_page.dart';
+import '../tele/tele_page.dart';
 
-class GameOver extends StatefulWidget {
+class GameOverApp extends StatefulWidget {
   final String id;
   final String gameName;
-  const GameOver({super.key, required this.id, required this.gameName});
+  const GameOverApp({super.key, required this.id, required this.gameName});
 
   @override
-  State<GameOver> createState() => _GameOverState();
+  State<GameOverApp> createState() => _GameOverAppState();
 }
 
-class _GameOverState extends State<GameOver> {
+class _GameOverAppState extends State<GameOverApp> {
   String setNumber = '';
   @override
   void initState() {
@@ -46,27 +46,27 @@ class _GameOverState extends State<GameOver> {
             width: double.infinity,
             child: Column(
               children: [
-                SizedBox(height: height * 0.191),
+                SizedBox(height: height * 0.213),
                 Text(
                   setNumber,
                   style: const TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
                     fontWeight: FontWeight.w400,
-                    fontSize: 48,
+                    fontSize: 36,
                   ),
                 ),
-                SizedBox(height: height * 0.048),
+                SizedBox(height: height * 0.01),
                 const Text(
                   '모든 문제를 완료했어요!',
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
                     fontWeight: FontWeight.w400,
-                    fontSize: 48,
+                    fontSize: 25,
                   ),
                 ),
-                SizedBox(height: height * 0.1695),
+                SizedBox(height: height * 0.138),
                 MouseRegion(
                   cursor: SystemMouseCursors.click, // 마우스 커서를 클릭 스타일로 설정
                   onEnter: (_) {
@@ -92,15 +92,15 @@ class _GameOverState extends State<GameOver> {
                           borderRadius:
                               BorderRadius.circular(20.0), // 원하는 반지름 값으로 조절
                         ),
-                        width: 360,
-                        height: 64,
+                        width: 230,
+                        height: 50,
                         child: const Center(
                           child: Text(
                             'Play Again',
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 48,
+                              fontSize: 45,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -167,7 +167,7 @@ class _GameOverState extends State<GameOver> {
                                         style: TextStyle(
                                           fontFamily: 'DungGeunMo',
                                           color: Colors.white,
-                                          fontSize: 48,
+                                          fontSize: 45,
                                           fontWeight: FontWeight.w400,
                                         ),
                                       ),
@@ -180,7 +180,7 @@ class _GameOverState extends State<GameOver> {
                     ],
                   ),
                 ),
-                SizedBox(height: height * 0.048),
+                SizedBox(height: height * 0.04),
                 MouseRegion(
                   cursor: SystemMouseCursors.click, // 마우스 커서를 클릭 스타일로 설정
                   onEnter: (_) {
@@ -206,15 +206,15 @@ class _GameOverState extends State<GameOver> {
                           borderRadius:
                               BorderRadius.circular(20.0), // 원하는 반지름 값으로 조절
                         ),
-                        width: 360,
-                        height: 64,
+                        width: 230,
+                        height: 50,
                         child: const Center(
                           child: Text(
                             'Go Home',
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 48,
+                              fontSize: 45,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -257,7 +257,7 @@ class _GameOverState extends State<GameOver> {
                                         style: TextStyle(
                                           fontFamily: 'DungGeunMo',
                                           color: Colors.white,
-                                          fontSize: 48,
+                                          fontSize: 45,
                                           fontWeight: FontWeight.w400,
                                         ),
                                       ),

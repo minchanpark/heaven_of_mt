@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:testes/image_card.dart';
-import '../game_over.dart';
 import '../game_contents.dart';
 import '../card_app.dart';
+import '../gameover/gameover_app.dart';
 
 class RandomAppGame extends StatefulWidget {
   final String id;
@@ -200,7 +200,7 @@ class _RandomAppGameState extends State<RandomAppGame> {
                         if (currentCardIndex == 9) {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => GameOver(
+                              builder: (context) => GameOverApp(
                                 id: widget.id,
                                 gameName: 'random',
                               ),
