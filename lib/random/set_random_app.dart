@@ -69,24 +69,9 @@ class _RandomAppState extends State<RandomApp> {
                           ),
                         ),
                       ),
-                      SizedBox(height: height * 0.032),
-                      TextButton(
-                          onPressed: () {},
-                          style: ButtonStyle(
-                              overlayColor: MaterialStateProperty.all(
-                                  Colors.transparent)),
-                          child: RichText(
-                            text: const TextSpan(
-                                text: "설명보기",
-                                style: TextStyle(
-                                    fontFamily: 'DungGeunMo',
-                                    fontSize: 23,
-                                    color: Colors.white,
-                                    decoration: TextDecoration.underline)),
-                          )),
                     ],
                   ),
-                  SizedBox(height: height * 0.09),
+                  SizedBox(height: height * 0.149),
                   Column(
                       children: List.generate(5, (index) {
                     return Column(
