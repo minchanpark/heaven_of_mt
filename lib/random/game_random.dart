@@ -5,19 +5,19 @@ import '../game_over.dart';
 import '../game_contents.dart';
 import '../card.dart';
 
-class RandomGame extends StatefulWidget {
+class RandomWebGame extends StatefulWidget {
   final String id;
 
-  const RandomGame({
+  const RandomWebGame({
     super.key,
     required this.id,
   });
 
   @override
-  State<RandomGame> createState() => _RandomGameState();
+  State<RandomWebGame> createState() => _RandomWebGameState();
 }
 
-class _RandomGameState extends State<RandomGame> {
+class _RandomWebGameState extends State<RandomWebGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화

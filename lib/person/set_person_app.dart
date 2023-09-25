@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'game_person_app.dart';
+import 'person_game_page.dart';
 
-class PersonAppPage extends StatefulWidget {
-  const PersonAppPage({super.key});
+class PersonApp extends StatefulWidget {
+  const PersonApp({super.key});
 
   @override
-  State<PersonAppPage> createState() => _PersonAppPageState();
+  State<PersonApp> createState() => _PersonAppState();
 }
 
-class _PersonAppPageState extends State<PersonAppPage> {
+class _PersonAppState extends State<PersonApp> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -25,28 +25,30 @@ class _PersonAppPageState extends State<PersonAppPage> {
               ),
             ),
           ),
-          Container(
-            padding: EdgeInsets.only(
-                left: width * 0.075, top: height * 0.073, right: width * 0.11),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                IconButton(
-                  onPressed: () {
-                    Navigator.popUntil(context, ModalRoute.withName('/home'));
-                  },
-                  color: Colors.white,
-                  icon: const ImageIcon(AssetImage('assets/images/home.png')),
-                  iconSize: 39,
-                ),
-                SizedBox(height: height * 0.1),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.baseline,
-                  textBaseline: TextBaseline.alphabetic,
-                  children: [
-                    Center(
-                      child: ShaderMask(
+          Center(
+            child: Container(
+              padding: EdgeInsets.only(
+                  left: width * 0.06, top: height * 0.1, right: width * 0.06),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          Navigator.popUntil(
+                              context, ModalRoute.withName('/home'));
+                        },
+                        color: Colors.white,
+                        icon: const ImageIcon(AssetImage(
+                            'assets/images/icon_chevron_left_white.png')),
+                        iconSize: 27,
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: height * 0.0628),
+                  Column(
+                    children: [
+                      ShaderMask(
                         shaderCallback: (Rect bounds) {
                           return const LinearGradient(
                             colors: <Color>[
@@ -62,45 +64,42 @@ class _PersonAppPageState extends State<PersonAppPage> {
                           style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.white,
-                            fontSize: 60,
+                            fontSize: 45,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(width: width * 0.015),
-                    TextButton(
-                        onPressed: () {
-                          _showDeleteConfirmationDialog(context);
-                        },
-                        style: ButtonStyle(
-                            overlayColor:
-                                MaterialStateProperty.all(Colors.transparent)),
-                        child: RichText(
-                          text: const TextSpan(
-                              text: "설명보기",
-                              style: TextStyle(
-                                  fontFamily: 'DungGeunMo',
-                                  fontSize: 24,
-                                  color: Colors.white,
-                                  decoration: TextDecoration.underline)),
-                        )),
-                  ],
-                ),
-                const SizedBox(height: 50),
-                const Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CustomImageWidget(number: 'SET 1'),
-                      CustomImageWidget(number: 'SET 2'),
-                      CustomImageWidget(number: 'SET 3'),
-                      CustomImageWidget(number: 'SET 4'),
-                      CustomImageWidget(number: 'SET 5'),
+                      SizedBox(height: height * 0.032),
+                      TextButton(
+                          onPressed: () {
+                            _showDeleteConfirmationDialog(context);
+                          },
+                          style: ButtonStyle(
+                              overlayColor: MaterialStateProperty.all(
+                                  Colors.transparent)),
+                          child: RichText(
+                            text: const TextSpan(
+                                text: "설명보기",
+                                style: TextStyle(
+                                    fontFamily: 'DungGeunMo',
+                                    fontSize: 23,
+                                    color: Colors.white,
+                                    decoration: TextDecoration.underline)),
+                          )),
                     ],
                   ),
-                ),
-              ],
+                  SizedBox(height: height * 0.09),
+                  Column(
+                      children: List.generate(5, (index) {
+                    return Column(
+                      children: [
+                        CustomImageWidget(number: 'SET ${index + 1}'),
+                        SizedBox(height: height * 0.022)
+                      ],
+                    );
+                  })),
+                ],
+              ),
             ),
           ),
         ],
@@ -124,16 +123,16 @@ class _PersonAppPageState extends State<PersonAppPage> {
           ),
           content: InkWell(
             onTap: () => Navigator.of(context).pop(),
-              child: SizedBox(
-                  width: width * 0.9, // 원하는 가로 길이 설정
-                  height: height * 0.77, // 원하는 세로 길이 설정
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/modal_person.png',
-                      fit: BoxFit.cover,
-                    ),
-                  )),
-            ),
+            child: SizedBox(
+                width: width * 0.87, // 원하는 가로 길이 설정
+                height: height * 0.679, // 원하는 세로 길이 설정
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/modal_choi_app.png',
+                    fit: BoxFit.cover,
+                  ),
+                )),
+          ),
         );
       },
     );
@@ -143,7 +142,7 @@ class _PersonAppPageState extends State<PersonAppPage> {
 class CustomImageWidget extends StatefulWidget {
   final String number;
 
-  const CustomImageWidget({super.key, required this.number});
+  const CustomImageWidget({required this.number, Key? key}) : super(key: key);
 
   @override
   State<CustomImageWidget> createState() => _CustomImageWidgetState();
@@ -174,18 +173,18 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
           AnimatedContainer(
             duration: const Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
             decoration: BoxDecoration(
-              color: Colors.transparent,
+              color: Colors.transparent, // 배경색을 지정합니다.
               borderRadius: BorderRadius.circular(20.0), // 원하는 반지름 값으로 조절
             ),
-            width: 136,
-            height: 133,
+            width: 120,
+            height: 50,
             child: Center(
               child: Text(
                 widget.number,
                 style: const TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 48,
+                  fontSize: 45,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -200,8 +199,8 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) =>
-                            PersonAppGame(id: widget.number), // Beauty 이미지에 대한 페이지
+                        builder: (context) => PersonGamePage(
+                            id: widget.number), // Beauty 이미지에 대한 페이지
                       ),
                     );
                   },
@@ -216,10 +215,13 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                   ),
                   child: Column(
                     children: [
-                      SizedBox(
-                          width: 25,
-                          height: 31,
-                          child: Image.asset('assets/images/pink_up.png')),
+                      const SizedBox(
+                        width: 25,
+                        height: 31,
+                        child: ImageIcon(
+                          AssetImage('assets/images/pink_up.png'), // 이미지 파일 경로
+                        ),
+                      ),
                       const SizedBox(height: 8),
                       Container(
                         color: const Color.fromRGBO(255, 98, 211, 1),
@@ -234,10 +236,14 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                         ),
                       ),
                       const SizedBox(height: 8),
-                      SizedBox(
-                          width: 25,
-                          height: 31,
-                          child: Image.asset('assets/images/pink_down.png')),
+                      const SizedBox(
+                        width: 25,
+                        height: 31,
+                        child: ImageIcon(
+                          AssetImage(
+                              'assets/images/pink_down.png'), // 이미지 파일 경로
+                        ),
+                      ),
                     ],
                   )),
             ),

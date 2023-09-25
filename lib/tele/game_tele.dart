@@ -4,19 +4,19 @@ import '../game_over.dart';
 import '../game_contents.dart';
 import '../card.dart';
 
-class TeleGame extends StatefulWidget {
+class TeleWebGame extends StatefulWidget {
   final String id;
 
-  const TeleGame({
+  const TeleWebGame({
     super.key,
     required this.id,
   });
 
   @override
-  State<TeleGame> createState() => _TeleGameState();
+  State<TeleWebGame> createState() => _TeleWebGameState();
 }
 
-class _TeleGameState extends State<TeleGame> {
+class _TeleWebGameState extends State<TeleWebGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화

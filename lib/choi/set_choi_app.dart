@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'choi_game_page.dart';
 
 class ChoiApp extends StatefulWidget {
-  const ChoiApp({Key? key}) : super(key: key);
+  const ChoiApp({super.key});
 
   @override
   State<ChoiApp> createState() => _ChoiAppState();

@@ -65,10 +65,8 @@ class _PersonAppGameState extends State<PersonAppGame> {
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.only(
-            left: width * 0.075,
-            top: height * 0.073,
-            right: width * 0.0797,
+          padding: const EdgeInsets.only(
+            left: 29, top: 62, right: 29
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -83,7 +81,7 @@ class _PersonAppGameState extends State<PersonAppGame> {
                     },
                     color: Colors.white,
                     icon: const ImageIcon(AssetImage('assets/images/Exit.png')),
-                    iconSize: 39,
+                    iconSize: 27,
                   ),
                 ],
               ),
@@ -93,17 +91,17 @@ class _PersonAppGameState extends State<PersonAppGame> {
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
                   fontWeight: FontWeight.w400,
-                  fontSize: 60,
+                  fontSize: 34,
                 ),
               ),
-              SizedBox(height: height * 0.025),
+              const SizedBox(height: 10),
               Text(
                 '${currentCardIndex + 1} / ${cards.length}',
                 style: const TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Color.fromRGBO(255, 98, 211, 1),
                   fontWeight: FontWeight.w400,
-                  fontSize: 36,
+                  fontSize: 26,
                 ),
               ),
               Expanded(

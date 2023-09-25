@@ -82,11 +82,10 @@ class _RandomAppGameState extends State<RandomAppGame> {
                   IconButton(
                     onPressed: () {
                       Navigator.of(context).pop();
-                      Navigator.of(context).pop();
                     },
                     color: Colors.white,
                     icon: const ImageIcon(AssetImage('assets/images/Exit.png')),
-                    iconSize: 39,
+                    iconSize: 27,
                   ),
                 ],
               ),
@@ -96,7 +95,7 @@ class _RandomAppGameState extends State<RandomAppGame> {
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
                   fontWeight: FontWeight.w400,
-                  fontSize: 60,
+                  fontSize: 34,
                 ),
               ),
               SizedBox(height: height * 0.025),
@@ -107,7 +106,7 @@ class _RandomAppGameState extends State<RandomAppGame> {
                     fontFamily: 'DungGeunMo',
                     color: Color.fromRGBO(255, 98, 211, 1),
                     fontWeight: FontWeight.w400,
-                    fontSize: 36,
+                    fontSize: 26,
                   ),
                 )
               else
@@ -117,7 +116,7 @@ class _RandomAppGameState extends State<RandomAppGame> {
                     fontFamily: 'DungGeunMo',
                     color: Color.fromRGBO(255, 98, 211, 1),
                     fontWeight: FontWeight.w400,
-                    fontSize: 36,
+                    fontSize: 26,
                   ),
                 ),
               Expanded(

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'game_four.dart';
+import 'four_game_page.dart';
 
-class FourPage extends StatefulWidget {
-  const FourPage({super.key});
+class FourWeb extends StatefulWidget {
+  const FourWeb({super.key});
 
   @override
-  State<FourPage> createState() => _FourPageState();
+  State<FourWeb> createState() => _FourWebState();
 }
 
-class _FourPageState extends State<FourPage> {
+class _FourWebState extends State<FourWeb> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -201,7 +201,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) =>
-                            FourGame(id: widget.number), // Beauty 이미지에 대한 페이지
+                            FourGamePage(id: widget.number), // Beauty 이미지에 대한 페이지
                       ),
                     );
                   },

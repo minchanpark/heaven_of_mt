@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'game_random.dart';
+import 'random_game_page.dart';
 
-class RandomPage extends StatefulWidget {
-  const RandomPage({super.key});
+class RandomWeb extends StatefulWidget {
+  const RandomWeb({super.key});
 
   @override
-  State<RandomPage> createState() => _RandomPageState();
+  State<RandomWeb> createState() => _RandomWebState();
 }
 
-class _RandomPageState extends State<RandomPage> {
+class _RandomWebState extends State<RandomWeb> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -227,7 +227,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) =>
-                      RandomGame(id: widget.number), // Beauty 이미지에 대한 페이지
+                      RandomGamePage(id: widget.number), // Beauty 이미지에 대한 페이지
                 ),
               );
             },

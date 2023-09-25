@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'game_tele.dart';
 
-class TelePage extends StatefulWidget {
-  const TelePage({super.key});
+class TeleWeb extends StatefulWidget {
+  const TeleWeb({super.key});
 
   @override
-  State<TelePage> createState() => _TelePageState();
+  State<TeleWeb> createState() => _TeleWebState();
 }
 
-class _TelePageState extends State<TelePage> {
+class _TeleWebState extends State<TeleWeb> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -201,7 +201,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) =>
-                            TeleGame(id: widget.number), // Beauty 이미지에 대한 페이지
+                            TeleWebGame(id: widget.number), // Beauty 이미지에 대한 페이지
                       ),
                     );
                   },

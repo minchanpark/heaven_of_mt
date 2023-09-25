@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:testes/person/game_person.dart';
+import 'person_game_page.dart';
 
-class PersonPage extends StatefulWidget {
-  const PersonPage({super.key});
+class PersonWeb extends StatefulWidget {
+  const PersonWeb({super.key});
 
   @override
-  State<PersonPage> createState() => _PersonPageState();
+  State<PersonWeb> createState() => _PersonWebState();
 }
 
-class _PersonPageState extends State<PersonPage> {
+class _PersonWebState extends State<PersonWeb> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -201,7 +201,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) =>
-                            PersonGame(id: widget.number), // Beauty 이미지에 대한 페이지
+                            PersonGamePage(id: widget.number), // Beauty 이미지에 대한 페이지
                       ),
                     );
                   },

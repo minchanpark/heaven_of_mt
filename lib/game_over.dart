@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:testes/person/set_person.dart';
-import 'package:testes/tele/set_tele.dart';
 
-import 'random/set_random.dart';
+import 'four/four_page.dart';
+import 'person/person_page.dart';
 import 'choi/choi_page.dart';
-import 'four/set_four.dart';
+import 'random/random_page.dart';
+import 'tele/tele_page.dart';
 
 class GameOver extends StatefulWidget {
   final String id;

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:testes/random/set_random.dart';
-import 'package:testes/four/set_four.dart';
-import 'package:testes/person/set_person.dart';
-import 'package:testes/tele/set_tele.dart';
 import 'choi/choi_page.dart';
+import 'four/four_page.dart';
 import 'home/home.dart';
+import 'person/person_page.dart';
+import 'random/random_page.dart';
+import 'tele/tele_page.dart';
 
 void main() {
   runApp(
