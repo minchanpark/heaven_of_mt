@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import '../game_contents.dart';
-import '../card_app.dart';
+import '../card/card_app.dart';
 import '../gameover/gameover_app.dart';
 
 class ChoiAppGame extends StatefulWidget {
@@ -59,6 +59,8 @@ class _ChoiAppGamePageState extends State<ChoiAppGame> {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: SafeArea(
@@ -148,8 +150,8 @@ class _ChoiAppGamePageState extends State<ChoiAppGame> {
                             ),
                           ),
                     SizedBox(
-                      width: 277,
-                      height: 200,
+                      width: width * 0.6,
+                      height: height * 0.3,
                       child: CardSwiper(
                         duration: const Duration(milliseconds: 0),
                         controller: controller,
