@@ -86,7 +86,8 @@ class _GameOverState extends State<GameOver> {
                     children: [
                       AnimatedContainer(
                         padding: const EdgeInsets.only(bottom: 4),
-                        duration: const Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
+                        duration:
+                            const Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
                         decoration: BoxDecoration(
                           color: Colors.transparent, // 배경색을 지정합니다.
                           borderRadius:
@@ -110,7 +111,8 @@ class _GameOverState extends State<GameOver> {
                         bottom: 5,
                         right: 44,
                         child: AnimatedOpacity(
-                          duration: const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
+                          duration:
+                              const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
                           opacity: _opacity == 0 ? 1.0 : 0.0,
                           child: ElevatedButton(
                               onPressed: () {
@@ -123,7 +125,8 @@ class _GameOverState extends State<GameOver> {
                                   Navigator.popUntil(
                                       context, ModalRoute.withName('/home'));
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const PersonPage()));
+                                      builder: (context) =>
+                                          const PersonPage()));
                                 } else if (widget.gameName == 'four') {
                                   Navigator.popUntil(
                                       context, ModalRoute.withName('/home'));
@@ -138,7 +141,8 @@ class _GameOverState extends State<GameOver> {
                                   Navigator.popUntil(
                                       context, ModalRoute.withName('/home'));
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const RandomPage()));
+                                      builder: (context) =>
+                                          const RandomPage()));
                                 }
                               },
                               style: ElevatedButton.styleFrom(
@@ -159,7 +163,8 @@ class _GameOverState extends State<GameOver> {
                                           'assets/images/gameover.png')),
                                   const SizedBox(width: 10),
                                   Container(
-                                    color: const Color.fromRGBO(255, 98, 211, 1),
+                                    color:
+                                        const Color.fromRGBO(255, 98, 211, 1),
                                     child: const Padding(
                                       padding: EdgeInsets.only(bottom: 5),
                                       child: Text(
@@ -200,7 +205,8 @@ class _GameOverState extends State<GameOver> {
                     children: [
                       AnimatedContainer(
                         padding: const EdgeInsets.only(bottom: 4),
-                        duration: const Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
+                        duration:
+                            const Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
                         decoration: BoxDecoration(
                           color: Colors.transparent, // 배경색을 지정합니다.
                           borderRadius:
@@ -224,7 +230,8 @@ class _GameOverState extends State<GameOver> {
                         bottom: 5,
                         right: 80,
                         child: AnimatedOpacity(
-                          duration: const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
+                          duration:
+                              const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
                           opacity: _opacity1 == 0 ? 1.0 : 0.0,
                           child: ElevatedButton(
                               onPressed: () {
@@ -249,7 +256,8 @@ class _GameOverState extends State<GameOver> {
                                           'assets/images/gameover.png')),
                                   const SizedBox(width: 10),
                                   Container(
-                                    color: const Color.fromRGBO(255, 98, 211, 1),
+                                    color:
+                                        const Color.fromRGBO(255, 98, 211, 1),
                                     child: const Padding(
                                       padding: EdgeInsets.only(bottom: 5),
                                       child: Text(

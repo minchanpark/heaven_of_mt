@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'game_contents.dart';
+import '../game_contents.dart';
 
-class GameCardApp extends StatelessWidget {
+class GameCardFourApp extends StatelessWidget {
   final GameContents gameContents;
 
-  const GameCardApp({
+  const GameCardFourApp({
     super.key,
     required this.gameContents,
   });
@@ -13,14 +13,14 @@ class GameCardApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Transform.translate(
-        offset: const Offset(0, -10), // 위로 이동할 양을 조정하십시오.
+        offset: const Offset(0, -5), // 위로 이동할 양을 조정하십시오.
         child: Text(
           gameContents.name,
           style: const TextStyle(
             fontFamily: 'DungGeunMo',
             color: Colors.white,
             fontWeight: FontWeight.w400,
-            fontSize: 94,
+            fontSize: 55,
           ),
         ),
       ),

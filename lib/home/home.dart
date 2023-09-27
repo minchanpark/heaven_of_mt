@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../choi/choi_game_page.dart';
 import 'home_app.dart';
 import 'home_web.dart';
 

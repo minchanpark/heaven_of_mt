@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import '../game_contents.dart';
-import '../card_app.dart';
+import '../card/card_app.dart';
 import '../gameover/gameover_app.dart';
 
 class TeleAppGame extends StatefulWidget {

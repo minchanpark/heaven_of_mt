@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+import '../card/card_four_app.dart';
 import '../game_contents.dart';
-import '../card_app.dart';
+import '../card/card_app.dart';
 import '../gameover/gameover_app.dart';
 
 class FourAppGame extends StatefulWidget {
@@ -19,7 +20,7 @@ class FourAppGame extends StatefulWidget {
 class _FourAppGameState extends State<FourAppGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
-  List<GameCardApp> cards = []; // cards 변수를 초기화
+  List<GameCardFourApp> cards = []; // cards 변수를 초기화
   String setNumber = '';
   @override
   void initState() {
@@ -28,23 +29,23 @@ class _FourAppGameState extends State<FourAppGame> {
     // widget.id 값에 따라 cards 변수에 값을 할당
     if (widget.id == 'SET 1') {
       cards = four1
-          .map((gameContents) => GameCardApp(gameContents: gameContents))
+          .map((gameContents) => GameCardFourApp(gameContents: gameContents))
           .toList();
     } else if (widget.id == 'SET 2') {
       cards = four2
-          .map((gameContents) => GameCardApp(gameContents: gameContents))
+          .map((gameContents) => GameCardFourApp(gameContents: gameContents))
           .toList();
     } else if (widget.id == 'SET 3') {
       cards = four3
-          .map((gameContents) => GameCardApp(gameContents: gameContents))
+          .map((gameContents) => GameCardFourApp(gameContents: gameContents))
           .toList();
     } else if (widget.id == 'SET 4') {
       cards = four4
-          .map((gameContents) => GameCardApp(gameContents: gameContents))
+          .map((gameContents) => GameCardFourApp(gameContents: gameContents))
           .toList();
     } else {
       cards = four5
-          .map((gameContents) => GameCardApp(gameContents: gameContents))
+          .map((gameContents) => GameCardFourApp(gameContents: gameContents))
           .toList();
     }
     setNumber = widget.id;
@@ -154,8 +155,8 @@ class _FourAppGameState extends State<FourAppGame> {
                             ),
                           ),
                     SizedBox(
-                      width: width * 0.63,
-                      height: height * 0.4,
+                      width: width * 0.6,
+                      height: height * 0.3,
                       child: CardSwiper(
                         duration: const Duration(milliseconds: 0),
                         controller: controller,

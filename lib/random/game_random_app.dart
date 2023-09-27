@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:testes/image_card.dart';
+import '../card/card_brand_app.dart';
 import '../game_contents.dart';
-import '../card_app.dart';
+import '../card/card_app.dart';
 import '../gameover/gameover_app.dart';
 
 class RandomAppGame extends StatefulWidget {
@@ -22,6 +23,8 @@ class _RandomAppGameState extends State<RandomAppGame> {
   final CardSwiperController controller = CardSwiperController();
   List<GameCardApp> cards = []; // cards 변수를 초기화
   List<ImageGameCard> imagecards = []; // cards 변수를 초기화
+  List<GameCardBrandApp> brandcards = []; // cards 변수를 초기화
+
   String setNumber = '';
   @override
   void initState() {
@@ -45,8 +48,8 @@ class _RandomAppGameState extends State<RandomAppGame> {
           .map((gameContents) => GameCardApp(gameContents: gameContents))
           .toList();
     } else {
-      cards = random5
-          .map((gameContents) => GameCardApp(gameContents: gameContents))
+      brandcards = random5
+          .map((gameContents) => GameCardBrandApp(gameContents: gameContents))
           .toList();
     }
     setNumber = widget.id;
@@ -73,7 +76,7 @@ class _RandomAppGameState extends State<RandomAppGame> {
             right: width * 0.0797,
           ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Row(
@@ -110,6 +113,16 @@ class _RandomAppGameState extends State<RandomAppGame> {
                     fontSize: 26,
                   ),
                 )
+              else if (widget.id == 'SET 5')
+                Text(
+                  '${currentCardIndex + 1} / ${brandcards.length}',
+                  style: const TextStyle(
+                    fontFamily: 'DungGeunMo',
+                    color: Color.fromRGBO(255, 98, 211, 1),
+                    fontWeight: FontWeight.w400,
+                    fontSize: 26,
+                  ),
+                )
               else
                 Text(
                   '${currentCardIndex + 1} / ${cards.length}',
@@ -120,134 +133,155 @@ class _RandomAppGameState extends State<RandomAppGame> {
                     fontSize: 26,
                   ),
                 ),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    isUndoButtonVisible
-                        ? ConstrainedBox(
-                            constraints: const BoxConstraints.tightFor(
-                                width: 29, height: 52),
-                            child: ElevatedButton(
-                              onPressed: () {
-                                controller.undo;
-                              },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.transparent,
-                                padding: const EdgeInsets.only(left: 0),
-                              ),
-                              child: const ImageIcon(
-                                AssetImage(
-                                    'assets/images/icon_chevron_left.png'),
-                                size: 90,
-                              ),
+              SizedBox(height: height * 0.1),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  isUndoButtonVisible
+                      ? ConstrainedBox(
+                          constraints: const BoxConstraints.tightFor(
+                              width: 29, height: 52),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              controller.undo;
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              padding: const EdgeInsets.only(left: 0),
                             ),
-                          )
-                        : ConstrainedBox(
-                            constraints: const BoxConstraints.tightFor(
-                                width: 29, height: 52),
-                            child: ElevatedButton(
-                              onPressed: () {
-                                controller.undo();
-                                if (currentCardIndex == 0) {
-                                  setState(() {
-                                    isUndoButtonVisible = true;
-                                  });
-                                }
-                              },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.transparent,
-                                padding: const EdgeInsets.only(left: 0),
-                              ),
-                              child: const ImageIcon(
-                                AssetImage(
-                                    'assets/images/icon_chevron_left_white.png'),
-                                size: 90,
-                              ),
+                            child: const ImageIcon(
+                              AssetImage('assets/images/icon_chevron_left.png'),
+                              size: 90,
                             ),
                           ),
-                    if (widget.id == 'SET 2')
-                      SizedBox(
-                        width: width * 0.57, // 최대 가로 크기를 설정할 수도 있습니다.
-                        height: height * 0.67, // 최대 세로 크기를 설정할 수도 있습니다
-                        child: CardSwiper(
-                          duration: const Duration(milliseconds: 0),
-                          controller: controller,
-                          cardsCount: imagecards.length,
-                          numberOfCardsDisplayed: 1,
-                          cardBuilder: (
-                            context,
-                            index,
-                            horizontalThresholdPercentage,
-                            verticalThresholdPercentage,
-                          ) {
-                            currentCardIndex = index;
-                            return imagecards[index];
-                          },
-                          isDisabled: true,
-                          onSwipe: _onSwipe,
-                          onUndo: _onUndo,
+                        )
+                      : ConstrainedBox(
+                          constraints: const BoxConstraints.tightFor(
+                              width: 29, height: 52),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              controller.undo();
+                              if (currentCardIndex == 0) {
+                                setState(() {
+                                  isUndoButtonVisible = true;
+                                });
+                              }
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              padding: const EdgeInsets.only(left: 0),
+                            ),
+                            child: const ImageIcon(
+                              AssetImage(
+                                  'assets/images/icon_chevron_left_white.png'),
+                              size: 90,
+                            ),
+                          ),
                         ),
-                      )
-                    else
-                      SizedBox(
-                        width: width * 0.69,
-                        height: height * 0.4,
-                        child: CardSwiper(
-                          duration: const Duration(milliseconds: 0),
-                          controller: controller,
-                          cardsCount: cards.length,
-                          numberOfCardsDisplayed: 1,
-                          cardBuilder: (
-                            context,
-                            index,
-                            horizontalThresholdPercentage,
-                            verticalThresholdPercentage,
-                          ) {
-                            currentCardIndex = index;
-                            return cards[index];
-                          },
-                          isDisabled: true,
-                          onSwipe: _onSwipe,
-                          onUndo: _onUndo,
-                        ),
-                      ),
-                    ConstrainedBox(
-                      constraints:
-                          const BoxConstraints.tightFor(width: 29, height: 52),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          if (currentCardIndex == 9) {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => GameOverApp(
-                                  id: widget.id,
-                                  gameName: 'random',
-                                ),
-                              ),
-                            );
-                          } else {
-                            controller.swipeLeft();
-                            if (currentCardIndex != 2) {
-                              setState(() {
-                                isUndoButtonVisible = false;
-                              });
-                            }
-                          }
+                  if (widget.id == 'SET 2')
+                    SizedBox(
+                      width: width * 0.7, // 최대 가로 크기를 설정할 수도 있습니다.
+                      height: height * 0.4, // 최대 세로 크기를 설정할 수도 있습니다
+                      child: CardSwiper(
+                        duration: const Duration(milliseconds: 0),
+                        controller: controller,
+                        cardsCount: imagecards.length,
+                        numberOfCardsDisplayed: 1,
+                        cardBuilder: (
+                          context,
+                          index,
+                          horizontalThresholdPercentage,
+                          verticalThresholdPercentage,
+                        ) {
+                          currentCardIndex = index;
+                          return imagecards[index];
                         },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.transparent,
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: const ImageIcon(
-                          AssetImage('assets/images/icon_chevron_right.png'),
-                          size: 90,
-                        ),
+                        isDisabled: true,
+                        onSwipe: _onSwipe,
+                        onUndo: _onUndo,
+                      ),
+                    )
+                  else if (widget.id == 'SET 5')
+                    SizedBox(
+                      width: width * 0.6, // 최대 가로 크기를 설정할 수도 있습니다.
+                      height: height * 0.4, // 최대 세로 크기를 설정할 수도 있습니다
+                      child: CardSwiper(
+                        duration: const Duration(milliseconds: 0),
+                        controller: controller,
+                        cardsCount: brandcards.length,
+                        numberOfCardsDisplayed: 1,
+                        cardBuilder: (
+                          context,
+                          index,
+                          horizontalThresholdPercentage,
+                          verticalThresholdPercentage,
+                        ) {
+                          currentCardIndex = index;
+                          return brandcards[index];
+                        },
+                        isDisabled: true,
+                        onSwipe: _onSwipe,
+                        onUndo: _onUndo,
+                      ),
+                    )
+                  else
+                    SizedBox(
+                      width: width * 0.69,
+                      height: height * 0.4,
+                      child: CardSwiper(
+                        duration: const Duration(milliseconds: 0),
+                        controller: controller,
+                        cardsCount: cards.length,
+                        numberOfCardsDisplayed: 1,
+                        cardBuilder: (
+                          context,
+                          index,
+                          horizontalThresholdPercentage,
+                          verticalThresholdPercentage,
+                        ) {
+                          currentCardIndex = index;
+                          return cards[index];
+                        },
+                        isDisabled: true,
+                        onSwipe: _onSwipe,
+                        onUndo: _onUndo,
                       ),
                     ),
-                  ],
-                ),
+                  ConstrainedBox(
+                    constraints:
+                        const BoxConstraints.tightFor(width: 29, height: 52),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        if (currentCardIndex == 9) {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => GameOverApp(
+                                id: widget.id,
+                                gameName: 'random',
+                              ),
+                            ),
+                          );
+                        } else {
+                          controller.swipeLeft();
+                          if (currentCardIndex != 2) {
+                            setState(() {
+                              isUndoButtonVisible = false;
+                            });
+                          }
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.transparent,
+                        padding: EdgeInsets.zero,
+                      ),
+                      child: const ImageIcon(
+                        AssetImage('assets/images/icon_chevron_right.png'),
+                        size: 90,
+                      ),
+                    ),
+                  ),
+                ],
               ),
               if (widget.id != 'SET 2') const SizedBox(height: 87)
             ],

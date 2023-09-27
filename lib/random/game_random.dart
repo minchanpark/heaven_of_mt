@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:testes/image_card.dart';
 import '../game_contents.dart';
-import '../card.dart';
+import '../card/card.dart';
 import '../gameover/gameover_web.dart';
 
 class RandomWebGame extends StatefulWidget {
