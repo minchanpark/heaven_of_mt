@@ -3,10 +3,8 @@ import 'game_choi.dart';
 import 'game_choi_app.dart';
 
 class ChoiGamePage extends StatefulWidget {
-  final String id;
   const ChoiGamePage({
     super.key,
-    required this.id,
   });
 
   @override
@@ -18,9 +16,9 @@ class _ChoiGamePageState extends State<ChoiGamePage> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     if (width > 500) {
-      return ChoiWebGame(id: widget.id);
+      return ChoiWebGame();
     } else {
-      return ChoiAppGame(id: widget.id);
+      return ChoiAppGame();
     }
   }
 }

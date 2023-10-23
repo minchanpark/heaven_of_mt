@@ -88,18 +88,7 @@ class _FourWebState extends State<FourWeb> {
                   ],
                 ),
                 const SizedBox(height: 50),
-                const Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CustomImageWidget(number: 'SET 1'),
-                      CustomImageWidget(number: 'SET 2'),
-                      CustomImageWidget(number: 'SET 3'),
-                      CustomImageWidget(number: 'SET 4'),
-                      CustomImageWidget(number: 'SET 5'),
-                    ],
-                  ),
-                ),
+                CustomImageWidget(),
               ],
             ),
           ),
@@ -124,16 +113,16 @@ class _FourWebState extends State<FourWeb> {
           ),
           content: InkWell(
             onTap: () => Navigator.of(context).pop(),
-              child: SizedBox(
-                  width: width * 0.9, // 원하는 가로 길이 설정
-                  height: height * 0.77, // 원하는 세로 길이 설정
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/modal_four.png',
-                      fit: BoxFit.cover,
-                    ),
-                  )),
-            ),
+            child: SizedBox(
+                width: width * 0.9, // 원하는 가로 길이 설정
+                height: height * 0.77, // 원하는 세로 길이 설정
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/modal_four.png',
+                    fit: BoxFit.cover,
+                  ),
+                )),
+          ),
         );
       },
     );
@@ -141,9 +130,7 @@ class _FourWebState extends State<FourWeb> {
 }
 
 class CustomImageWidget extends StatefulWidget {
-  final String number;
-
-  const CustomImageWidget({super.key, required this.number});
+  const CustomImageWidget({super.key});
 
   @override
   State<CustomImageWidget> createState() => _CustomImageWidgetState();
@@ -181,7 +168,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
             height: 133,
             child: Center(
               child: Text(
-                widget.number,
+                "Start",
                 style: const TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
@@ -201,7 +188,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) =>
-                            FourGamePage(id: widget.number), // Beauty 이미지에 대한 페이지
+                            FourGamePage(), // Beauty 이미지에 대한 페이지
                       ),
                     );
                   },
@@ -224,7 +211,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                       Container(
                         color: const Color.fromRGBO(255, 98, 211, 1),
                         child: Text(
-                          widget.number,
+                          "Start",
                           style: const TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.white,

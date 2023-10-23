@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+import 'dart:math';
+
 import '../game_contents.dart';
 import '../card/card.dart';
 import '../gameover/gameover_web.dart';
 
 class ChoiWebGame extends StatefulWidget {
-  final String id;
-
   const ChoiWebGame({
     super.key,
-    required this.id,
   });
 
   @override
@@ -21,33 +20,21 @@ class _ChoiWebGamePageState extends State<ChoiWebGame> {
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
   String setNumber = '';
+  final random = Random();
   @override
   void initState() {
     super.initState();
 
     // widget.id 값에 따라 cards 변수에 값을 할당
-    if (widget.id == 'SET 1') {
-      cards = choi1
-          .map((gameContents) => GameCard(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 2') {
-      cards = choi2
-          .map((gameContents) => GameCard(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 3') {
-      cards = choi3
-          .map((gameContents) => GameCard(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 4') {
-      cards = choi4
-          .map((gameContents) => GameCard(gameContents: gameContents))
-          .toList();
-    } else {
-      cards = choi5
-          .map((gameContents) => GameCard(gameContents: gameContents))
-          .toList();
-    }
-    setNumber = widget.id;
+
+    final choiIndices = List<int>.generate(choi.length, (i) => i)
+      ..shuffle(random);
+    final randomChoi =
+        choiIndices.sublist(0, 10).map((index) => choi[index]).toList();
+
+    cards = randomChoi
+        .map((gameContents) => GameCard(gameContents: gameContents))
+        .toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -87,15 +74,15 @@ class _ChoiWebGamePageState extends State<ChoiWebGame> {
                   ),
                 ],
               ),
-              Text(
-                setNumber,
-                style: const TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 60,
-                ),
-              ),
+              // Text(
+              //   setNumber,
+              //   style: const TextStyle(
+              //     fontFamily: 'DungGeunMo',
+              //     color: Colors.white,
+              //     fontWeight: FontWeight.w400,
+              //     fontSize: 60,
+              //   ),
+              // ),
               SizedBox(height: height * 0.025),
               Text(
                 '${currentCardIndex + 1} / ${cards.length}',
@@ -163,8 +150,7 @@ class _ChoiWebGamePageState extends State<ChoiWebGame> {
                         if (currentCardIndex == 9) {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => GameOver(
-                                id: widget.id,
+                              builder: (context) => const GameOver(
                                 gameName: 'choi',
                               ),
                             ),

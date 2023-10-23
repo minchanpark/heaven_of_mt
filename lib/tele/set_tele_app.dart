@@ -89,15 +89,8 @@ class _TeleAppState extends State<TeleApp> {
                     ],
                   ),
                   SizedBox(height: height * 0.09),
-                  Column(
-                      children: List.generate(5, (index) {
-                    return Column(
-                      children: [
-                        CustomImageWidget(number: 'SET ${index + 1}'),
-                        SizedBox(height: height * 0.022)
-                      ],
-                    );
-                  })),
+                  CustomImageWidget(),
+                  SizedBox(height: height * 0.022)
                 ],
               ),
             ),
@@ -140,9 +133,7 @@ class _TeleAppState extends State<TeleApp> {
 }
 
 class CustomImageWidget extends StatefulWidget {
-  final String number;
-
-  const CustomImageWidget({required this.number, Key? key}) : super(key: key);
+  const CustomImageWidget({Key? key}) : super(key: key);
 
   @override
   State<CustomImageWidget> createState() => _CustomImageWidgetState();
@@ -180,7 +171,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
             height: 50,
             child: Center(
               child: Text(
-                widget.number,
+                "Start",
                 style: const TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
@@ -199,8 +190,8 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => TeleGamePage(
-                            id: widget.number), // Beauty 이미지에 대한 페이지
+                        builder: (context) =>
+                            TeleGamePage(), // Beauty 이미지에 대한 페이지
                       ),
                     );
                   },
@@ -226,7 +217,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                       Container(
                         color: const Color.fromRGBO(255, 98, 211, 1),
                         child: Text(
-                          widget.number,
+                          "Start",
                           style: const TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.white,
