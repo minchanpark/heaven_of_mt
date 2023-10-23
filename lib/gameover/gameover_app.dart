@@ -7,9 +7,8 @@ import '../random/random_page.dart';
 import '../tele/tele_page.dart';
 
 class GameOverApp extends StatefulWidget {
-  final String id;
   final String gameName;
-  const GameOverApp({super.key, required this.id, required this.gameName});
+  const GameOverApp({super.key, required this.gameName});
 
   @override
   State<GameOverApp> createState() => _GameOverAppState();
@@ -20,7 +19,6 @@ class _GameOverAppState extends State<GameOverApp> {
   @override
   void initState() {
     super.initState();
-    setNumber = widget.id;
   }
 
   double _opacity = 0.5;

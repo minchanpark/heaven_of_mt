@@ -202,7 +202,6 @@ class _RandomWebGameState extends State<RandomWebGame> {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => GameOver(
-                                id: widget.id,
                                 gameName: 'random',
                               ),
                             ),

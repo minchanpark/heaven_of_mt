@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-import '../game_contents.dart';
+import 'dart:math';
+
 import '../card/card_app.dart';
+import '../game_contents.dart';
 import '../gameover/gameover_app.dart';
 
 class ChoiAppGame extends StatefulWidget {
-  final String id;
-
   const ChoiAppGame({
     super.key,
-    required this.id,
   });
 
   @override
@@ -21,33 +20,19 @@ class _ChoiAppGamePageState extends State<ChoiAppGame> {
   final CardSwiperController controller = CardSwiperController();
   List<GameCardApp> cards = []; // cards 변수를 초기화
   String setNumber = '';
+  final random = Random();
   @override
   void initState() {
     super.initState();
 
-    // widget.id 값에 따라 cards 변수에 값을 할당
-    if (widget.id == 'SET 1') {
-      cards = choi1
-          .map((gameContents) => GameCardApp(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 2') {
-      cards = choi2
-          .map((gameContents) => GameCardApp(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 3') {
-      cards = choi3
-          .map((gameContents) => GameCardApp(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 4') {
-      cards = choi4
-          .map((gameContents) => GameCardApp(gameContents: gameContents))
-          .toList();
-    } else {
-      cards = choi5
-          .map((gameContents) => GameCardApp(gameContents: gameContents))
-          .toList();
-    }
-    setNumber = widget.id;
+    final choiIndices = List<int>.generate(choi.length, (i) => i)
+      ..shuffle(random);
+    final randomChoi =
+        choiIndices.sublist(0, 10).map((index) => choi[index]).toList();
+
+    cards = randomChoi
+        .map((gameContents) => GameCardApp(gameContents: gameContents))
+        .toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -181,7 +166,6 @@ class _ChoiAppGamePageState extends State<ChoiAppGame> {
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) => GameOverApp(
-                                  id: widget.id,
                                   gameName: 'choi',
                                 ),
                               ),

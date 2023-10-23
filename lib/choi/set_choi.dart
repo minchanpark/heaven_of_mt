@@ -88,18 +88,7 @@ class _ChoiWebState extends State<ChoiWeb> {
                   ],
                 ),
                 const SizedBox(height: 50),
-                const Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CustomImageWidget(number: 'SET 1'),
-                      CustomImageWidget(number: 'SET 2'),
-                      CustomImageWidget(number: 'SET 3'),
-                      CustomImageWidget(number: 'SET 4'),
-                      CustomImageWidget(number: 'SET 5'),
-                    ],
-                  ),
-                ),
+                const CustomImageWidget(),
               ],
             ),
           ),
@@ -141,9 +130,7 @@ class _ChoiWebState extends State<ChoiWeb> {
 }
 
 class CustomImageWidget extends StatefulWidget {
-  final String number;
-
-  const CustomImageWidget({required this.number, Key? key}) : super(key: key);
+  const CustomImageWidget({Key? key}) : super(key: key);
 
   @override
   State<CustomImageWidget> createState() => _CustomImageWidgetState();
@@ -181,7 +168,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
             height: 133,
             child: Center(
               child: Text(
-                widget.number,
+                "Start",
                 style: const TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
@@ -200,8 +187,8 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => ChoiGamePage(
-                            id: widget.number), // Beauty 이미지에 대한 페이지
+                        builder: (context) =>
+                            ChoiGamePage(), // Beauty 이미지에 대한 페이지
                       ),
                     );
                   },
@@ -227,7 +214,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
                       Container(
                         color: const Color.fromRGBO(255, 98, 211, 1),
                         child: Text(
-                          widget.number,
+                          "Start",
                           style: const TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.white,

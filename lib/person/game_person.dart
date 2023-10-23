@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+import 'dart:math';
 import '../game_contents.dart';
 import '../gameover/gameover_web.dart';
 import '../image_card.dart';
 
 class PersonWebGame extends StatefulWidget {
-  final String id;
-
-  const PersonWebGame({
-    super.key,
-    required this.id,
-  });
+  const PersonWebGame({super.key});
 
   @override
   State<PersonWebGame> createState() => _PersonWebGameState();
@@ -20,34 +16,21 @@ class _PersonWebGameState extends State<PersonWebGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<ImageGameCard> cards = []; // cards 변수를 초기화
+
   String setNumber = '';
+  final random = Random();
   @override
   void initState() {
     super.initState();
 
-    // widget.id 값에 따라 cards 변수에 값을 할당
-    if (widget.id == 'SET 1') {
-      cards = person1
-          .map((gameContents) => ImageGameCard(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 2') {
-      cards = person2
-          .map((gameContents) => ImageGameCard(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 3') {
-      cards = person3
-          .map((gameContents) => ImageGameCard(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 4') {
-      cards = person4
-          .map((gameContents) => ImageGameCard(gameContents: gameContents))
-          .toList();
-    } else {
-      cards = person5
-          .map((gameContents) => ImageGameCard(gameContents: gameContents))
-          .toList();
-    }
-    setNumber = widget.id;
+    final personIndices = List<int>.generate(person.length, (i) => i)
+      ..shuffle(random);
+    final randomPerson =
+        personIndices.sublist(0, 10).map((index) => person[index]).toList();
+
+    cards = randomPerson
+        .map((gameContents) => ImageGameCard(gameContents: gameContents))
+        .toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -164,7 +147,6 @@ class _PersonWebGameState extends State<PersonWebGame> {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => GameOver(
-                                id: widget.id,
                                 gameName: 'person',
                               ),
                             ),
