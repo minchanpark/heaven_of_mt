@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: unused_field
 
-import '../home/home.dart';
+import 'package:flutter/material.dart';
 
 class GameOverApp extends StatefulWidget {
   final String gameName;
@@ -107,8 +107,6 @@ class _GameOverAppState extends State<GameOverApp> {
                               onPressed: () {
                                 Navigator.popUntil(
                                     context, ModalRoute.withName('/home'));
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => const MyHome()));
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.transparent,
