@@ -789,6 +789,7 @@ class WordTeleOnboarding extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                 ),
               ),
+              SizedBox(height: 10),
               Text(
                 "☆☆☆☆",
                 style: TextStyle(
@@ -1034,6 +1035,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                 ),
               ),
+              SizedBox(height: 10),
               Text(
                 "☆☆☆",
                 style: TextStyle(
@@ -1571,7 +1573,7 @@ class FamousLineOnboarding extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                "☆☆☆☆☆",
+                "☆☆☆☆",
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
