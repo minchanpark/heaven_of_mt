@@ -1,23 +1,30 @@
 import 'package:flutter/material.dart';
 
-import '../choi/choi_page.dart';
-import '../four/four_page.dart';
-import '../person/person_page.dart';
-import '../random/random_page.dart';
-import '../tele/tele_page.dart';
+import '../choi/choi_game_page.dart';
+import '../four/four_game_page.dart';
+import '../person/person_game_page.dart';
+import '../tele/tele_game_page.dart';
 
 class HomeApp extends StatelessWidget {
   const HomeApp({
     super.key,
-    required this.gameName,
   });
-
-  final List<String> gameName;
 
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+    const List<String> _GameNames = <String>[
+      '인물퀴즈',
+      '디스코',
+      '대표게임',
+      '네글자퀴즈',
+      '단어텔레파시',
+      '텔레스트레이션',
+      '액션초성게임',
+      '노래초성퀴즈',
+      '명대사퀴즈',
+    ];
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(children: [
@@ -42,7 +49,7 @@ class HomeApp extends StatelessWidget {
               children: List.generate(5, (index) {
                 return Column(
                   children: [
-                    GameList(index: "${index + 1}", name: gameName[index]),
+                    GameList(index: index + 1, name: _GameNames[index]),
                     SizedBox(height: height * 0.0246)
                   ],
                 );
@@ -56,7 +63,7 @@ class HomeApp extends StatelessWidget {
 }
 
 class GameList extends StatefulWidget {
-  final String index;
+  final int index;
   final String name;
   const GameList({super.key, required this.index, required this.name});
 
@@ -77,25 +84,41 @@ class _GameListState extends State<GameList> {
           child: ElevatedButton(
               onPressed: () {
                 switch (widget.index) {
-                  case '1':
+                  case 1:
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const ChoiPage()));
+                        builder: (context) => const PersonGamePage()));
                     break;
-                  case '2':
+                  case 2:
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const PersonPage()));
+                        builder: (context) => const ChoiGamePage()));
                     break;
-                  case '3':
+                  case 3:
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const FourPage()));
+                        builder: (context) => const ChoiGamePage()));
                     break;
-                  case '4':
+                  case 4:
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const TelePage()));
+                        builder: (context) => const FourGamePage()));
                     break;
-                  case '5':
+                  case 5:
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const RandomPage()));
+                        builder: (context) => const TeleGamePage()));
+                    break;
+                  case 6:
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ChoiGamePage()));
+                    break;
+                  case 7:
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ChoiGamePage()));
+                    break;
+                  case 8:
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ChoiGamePage()));
+                    break;
+                  case 9:
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ChoiGamePage()));
                     break;
                 }
               },

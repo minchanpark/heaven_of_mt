@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../choi/choi_page.dart';
-import '../four/four_page.dart';
-import '../person/person_page.dart';
-import '../random/random_page.dart';
-import '../tele/tele_page.dart';
+import '../home/home.dart';
 
 class GameOverApp extends StatefulWidget {
   final String gameName;
@@ -109,34 +105,10 @@ class _GameOverAppState extends State<GameOverApp> {
                           visible: _isMouseOver,
                           child: ElevatedButton(
                               onPressed: () {
-                                if (widget.gameName == 'choi') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const ChoiPage()));
-                                } else if (widget.gameName == 'person') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          const PersonPage()));
-                                } else if (widget.gameName == 'four') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const FourPage()));
-                                } else if (widget.gameName == 'tele') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const TelePage()));
-                                } else if (widget.gameName == 'random') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          const RandomPage()));
-                                }
+                                Navigator.popUntil(
+                                    context, ModalRoute.withName('/home'));
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => const MyHome()));
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.transparent,

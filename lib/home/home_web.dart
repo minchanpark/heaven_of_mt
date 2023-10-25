@@ -1,24 +1,60 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-import '../choi/choi_page.dart';
-import '../four/four_page.dart';
-import '../person/person_page.dart';
-import '../random/random_page.dart';
-import '../tele/tele_page.dart';
+import '../choi/choi_game_page.dart';
+import '../four/four_game_page.dart';
+import '../onboarding.dart';
+import '../person/person_game_page.dart';
+import '../tele/tele_game_page.dart';
 
-class HomeWeb extends StatelessWidget {
+const double _kItemExtent = 50.0;
+const List<String> _GameNames = <String>[
+  '인물퀴즈',
+  '디스코',
+  '대표게임',
+  '네글자퀴즈',
+  '단어텔레파시',
+  '텔레스트레이션',
+  '액션초성게임',
+  '노래초성퀴즈',
+  '명대사퀴즈',
+];
+List<Widget> contentList = [
+  const PersonOnboarding(),
+  const DiscoOnboarding(),
+  const CaptainOnboarding(),
+  const FourOnboarding(),
+  const WordTeleOnboarding(),
+  const TeleStrationOnboarding(),
+  const ChoiOnboarding(),
+  const MusicOnboarding(),
+  const FamousLineOnboarding(),
+];
+
+class HomeWeb extends StatefulWidget {
   const HomeWeb({
     super.key,
-    required this.gameName,
   });
+  @override
+  State<HomeWeb> createState() => _HomeWebState();
+}
 
-  final List<String> gameName;
+class _HomeWebState extends State<HomeWeb> {
+  FocusNode focusNode = FocusNode();
+  FixedExtentScrollController scr = FixedExtentScrollController();
+  @override
+  void initState() {
+    super.initState();
+    focusNode.requestFocus();
+  }
 
+  int _selectedFruit = 0;
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Stack(children: [
         Container(
           decoration: const BoxDecoration(
@@ -28,182 +64,182 @@ class HomeWeb extends StatelessWidget {
             ),
           ),
         ),
-        Center(
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-            SizedBox(height: height * 0.15),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    SizedBox(height: height * 0.15),
-                    Image.asset(
-                      'assets/images/cloud.png',
-                      width: 67,
-                      height: 45,
-                    ),
-                  ],
-                ),
-                Image.asset('assets/images/title.png', width: 718, height: 96),
-                Column(
-                  children: [
-                    Image.asset(
-                      'assets/images/cloud.png',
-                      width: 67,
-                      height: 45,
-                    ),
-                    SizedBox(height: height * 0.15),
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(height: height * 0.13),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: List.generate(5, (index) {
-                return Column(
-                  children: [
-                    GameList(index: "${index + 1}", name: gameName[index]),
-                    SizedBox(height: height * 0.01)
-                  ],
-                );
-              }),
-            ),
-          ]),
-        ),
-      ]),
-    );
-  }
-}
-
-class GameList extends StatefulWidget {
-  final String index;
-  final String name;
-  const GameList({super.key, required this.index, required this.name});
-
-  @override
-  State<GameList> createState() => _GameListState();
-}
-
-class _GameListState extends State<GameList> {
-  bool _isMouseOver = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (_) {
-        setState(() {
-          _isMouseOver = true;
-        });
-      },
-      onExit: (_) {
-        setState(() {
-          _isMouseOver = false;
-        });
-      },
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
+        Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          const SizedBox(height: 47),
           Container(
-            padding: const EdgeInsets.only(bottom: 4),
-            width: 360,
-            height: 64,
-            child: Visibility(
-              visible: !_isMouseOver,
-              child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.baseline,
-                  textBaseline: TextBaseline.alphabetic,
-                  children: [
-                    Text(
-                      widget.index,
-                      style: const TextStyle(
-                        fontFamily: 'DungGeunMo',
-                        color: Colors.white,
-                        fontSize: 45,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    const SizedBox(width: 34),
-                    Text(
-                      widget.name,
-                      style: const TextStyle(
-                        fontFamily: 'DungGeunMo',
-                        color: Colors.white,
-                        fontSize: 45,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ]),
-            ),
-          ),
-          SizedBox(
-            width: 390,
-            height: 64,
-            child: Visibility(
-              visible: _isMouseOver,
-              child: ElevatedButton(
-                  onPressed: () {
-                    switch (widget.index) {
-                      case '1':
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const ChoiPage()));
-                        break;
-                      case '2':
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const PersonPage()));
-                        break;
-                      case '3':
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const FourPage()));
-                        break;
-                      case '4':
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const TelePage()));
-                        break;
-                      case '5':
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const RandomPage()));
-                        break;
+              margin: const EdgeInsets.only(left: 108),
+              child: Image.asset('assets/images/title.png',
+                  width: width * 0.15, height: height * 0.038)),
+          const SizedBox(height: 27),
+          Container(
+            margin: const EdgeInsets.only(left: 96),
+            child: RawKeyboardListener(
+              focusNode: focusNode,
+              onKey: (RawKeyEvent event) {
+                if (event is RawKeyDownEvent) {
+                  if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
+                    if (_selectedFruit == 8) {
+                    } else {
+                      setState(() {
+                        _selectedFruit =
+                            (_selectedFruit + 1) % _GameNames.length;
+                        scr.animateToItem(
+                          _selectedFruit,
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeInOut,
+                        );
+                      });
                     }
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    disabledBackgroundColor: Colors.transparent,
-                    foregroundColor: Colors.transparent,
-                    shadowColor: Colors.transparent,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(11),
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                  } else if (event.logicalKey == LogicalKeyboardKey.arrowUp) {
+                    if (_selectedFruit == 0) {
+                    } else {
+                      setState(() {
+                        _selectedFruit =
+                            (_selectedFruit - 1 + _GameNames.length) %
+                                _GameNames.length;
+                        scr.animateToItem(
+                          _selectedFruit,
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeInOut,
+                        );
+                      });
+                    }
+                  }
+                }
+              },
+              child: Column(
+                children: [
+                  Row(
                     children: [
+                      contentList[_selectedFruit],
                       SizedBox(
-                          width: 32,
-                          height: 52,
-                          child: Image.asset('assets/images/gameover.png')),
-                      const SizedBox(width: 18),
-                      Container(
-                        padding: const EdgeInsets.only(
-                            left: 10, right: 10, bottom: 5),
-                        color: const Color.fromRGBO(255, 98, 211, 1),
-                        child: Text(
-                          widget.name,
-                          style: const TextStyle(
-                            fontFamily: 'DungGeunMo',
-                            color: Colors.white,
-                            fontSize: 45,
-                            fontWeight: FontWeight.w400,
-                          ),
+                        width: 635,
+                        height: 671,
+                        child: CupertinoPicker(
+                          scrollController: scr,
+                          magnification: 1.22,
+                          squeeze: 1.2,
+                          useMagnifier: true,
+                          itemExtent: 100,
+                          onSelectedItemChanged: (int selectedItem) {
+                            setState(() {
+                              _selectedFruit = selectedItem;
+                              debugPrint("$_selectedFruit");
+                            });
+                          },
+                          selectionOverlay: null,
+                          children: List<Widget>.generate(_GameNames.length,
+                              (int index) {
+                            final isSelected = index == _selectedFruit;
+                            return Center(
+                                child: isSelected
+                                    ? Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Image.asset("assets/images/left.png",
+                                              width: 24, height: 42),
+                                          const SizedBox(width: 18),
+                                          InkWell(
+                                            onTap: () {
+                                              switch (_selectedFruit + 1) {
+                                                case 1:
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const PersonGamePage()));
+                                                  break;
+                                                case 2:
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const ChoiGamePage()));
+                                                  break;
+                                                case 3:
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const ChoiGamePage()));
+                                                  break;
+                                                case 4:
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const FourGamePage()));
+                                                  break;
+                                                case 5:
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const TeleGamePage()));
+                                                  break;
+                                                case 6:
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const ChoiGamePage()));
+                                                  break;
+                                                case 7:
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const ChoiGamePage()));
+                                                  break;
+                                                case 8:
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const ChoiGamePage()));
+                                                  break;
+                                                case 9:
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const ChoiGamePage()));
+                                                  break;
+                                              }
+                                            },
+                                            child: Container(
+                                              width: 330,
+                                              height: 59,
+                                              decoration: const BoxDecoration(
+                                                  color: Color(0xFFFF62D3)),
+                                              child: Center(
+                                                child: Text(
+                                                  _GameNames[index],
+                                                  style: const TextStyle(
+                                                      fontFamily: 'DungGeunMo',
+                                                      fontSize: 44,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      color: Colors.white),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(width: 18),
+                                          Image.asset("assets/images/right.png",
+                                              width: 24, height: 42)
+                                        ],
+                                      )
+                                    : Text(_GameNames[index],
+                                        style: TextStyle(
+                                            fontFamily: 'DungGeunMo',
+                                            fontSize: 44,
+                                            fontWeight: FontWeight.w400,
+                                            color: Colors.white
+                                                .withOpacity(0.5))));
+                          }),
                         ),
                       ),
                     ],
-                  )),
+                  ),
+                ],
+              ),
             ),
           ),
-        ],
-      ),
+        ]),
+      ]),
     );
   }
 }
