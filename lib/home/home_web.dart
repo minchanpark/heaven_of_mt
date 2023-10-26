@@ -9,6 +9,7 @@ import '../four/four_game_page.dart';
 import '../onboarding.dart';
 import '../person/person_game_page.dart';
 import '../tele/tele_game_page.dart';
+import '../telestration/telestration_game_page.dart';
 
 const double _kItemExtent = 50.0;
 const List<String> _GameNames = <String>[
@@ -179,7 +180,7 @@ class _HomeWebState extends State<HomeWeb> {
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              const ChoiGamePage()));
+                                                              const TelestrationGamePage()));
                                                   break;
                                                 case 7: // 액션초성게임
                                                   Navigator.of(context).push(
