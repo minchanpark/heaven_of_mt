@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../captain/captain_game_page.dart';
 import '../choi/choi_game_page.dart';
 import '../disco/disco_game_page.dart';
 import '../four/four_game_page.dart';
@@ -144,55 +145,55 @@ class _HomeWebState extends State<HomeWeb> {
                                           InkWell(
                                             onTap: () {
                                               switch (_selectedGame + 1) {
-                                                case 1:
+                                                case 1: // 인물퀴즈
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
                                                               const PersonGamePage()));
                                                   break;
-                                                case 2:
+                                                case 2: // 디스코
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
                                                               const DiscoGamePage()));
                                                   break;
-                                                case 3:
+                                                case 3: // 대표게임
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              const ChoiGamePage()));
+                                                              const CaptainGamePage()));
                                                   break;
-                                                case 4:
+                                                case 4: // 네글자퀴즈
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
                                                               const FourGamePage()));
                                                   break;
-                                                case 5:
+                                                case 5: // 단어텔레파시
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
                                                               const TeleGamePage()));
                                                   break;
-                                                case 6:
+                                                case 6: // 텔레스트레이션
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
                                                               const ChoiGamePage()));
                                                   break;
-                                                case 7:
+                                                case 7: // 액션초성게임
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
                                                               const ChoiGamePage()));
                                                   break;
-                                                case 8:
+                                                case 8: // 노래초성퀴즈
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
                                                               const ChoiGamePage()));
                                                   break;
-                                                case 9:
+                                                case 9: // 명대사퀴즈
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>

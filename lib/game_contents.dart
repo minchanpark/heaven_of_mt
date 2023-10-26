@@ -1,10 +1,12 @@
 class GameContents {
   String name;
   String index;
+  String answer;
 
   GameContents({
     required this.name,
     required this.index,
+    this.answer = '',
   });
 }
 
@@ -72,6 +74,19 @@ final List<GameContents> disco = [
   GameContents(name: '사랑7', index: '8'),
   GameContents(name: '사랑8', index: '9'),
   GameContents(name: '사랑9', index: '10'),
+];
+
+final List<GameContents> captain = [
+  GameContents(name: '가장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '1'),
+  GameContents(name: '나장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '2'),
+  GameContents(name: '다장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '3'),
+  GameContents(name: '라장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '4'),
+  GameContents(name: '마장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '5'),
+  GameContents(name: '바장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '6'),
+  GameContents(name: '사장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '7'),
+  GameContents(name: '아장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '8'),
+  GameContents(name: '자장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '9'),
+  GameContents(name: '차장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '10'),
 ];
 
 final List<GameContents> choi = [

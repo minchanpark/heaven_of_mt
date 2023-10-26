@@ -3,10 +3,14 @@ import '../game_contents.dart';
 
 class GameCard extends StatelessWidget {
   final GameContents gameContents;
+  final bool answer;
+  final double fontSize;
 
   const GameCard({
     super.key,
     required this.gameContents,
+    this.answer = false,
+    this.fontSize = 190,
   });
 
   @override
@@ -15,12 +19,16 @@ class GameCard extends StatelessWidget {
       child: Transform.translate(
         offset: const Offset(0, -10), // 위로 이동할 양을 조정하십시오.
         child: Text(
-          gameContents.name,
-          style: const TextStyle(
+          !answer
+          ? gameContents.name
+          : gameContents.answer,
+          textAlign: TextAlign.center,
+          style: TextStyle(
             fontFamily: 'DungGeunMo',
-            color: Colors.white,
+            color: !answer ? Colors.white : const Color(0xffFF62D3),
             fontWeight: FontWeight.w400,
-            fontSize: 190,
+            fontSize: fontSize,
+            height: 1.286,
           ),
         ),
       ),
