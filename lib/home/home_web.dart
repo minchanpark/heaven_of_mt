@@ -6,6 +6,7 @@ import '../captain/captain_game_page.dart';
 import '../choi/choi_game_page.dart';
 import '../disco/disco_game_page.dart';
 import '../four/four_game_page.dart';
+import '../movie/movie_game_page.dart';
 import '../onboarding.dart';
 import '../person/person_game_page.dart';
 import '../tele/tele_game_page.dart';
@@ -196,7 +197,7 @@ class _HomeWebState extends State<HomeWeb> {
                                               Navigator.of(context).push(
                                                   MaterialPageRoute(
                                                       builder: (context) =>
-                                                          const ChoiGamePage()));
+                                                          const MovieGamePage()));
                                               break;
                                           }
                                         },
