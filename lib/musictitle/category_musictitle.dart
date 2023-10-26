@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../choi/choi_game_page.dart';
-import '../four/four_game_page.dart';
-import '../person/person_game_page.dart';
-import '../tele/tele_game_page.dart';
+import 'game_musictitle.dart';
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({Key? key}) : super(key: key);
@@ -26,25 +23,33 @@ class _CategoryPageState extends State<CategoryPage> {
       case 1:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const ChoiGamePage()),
+          MaterialPageRoute(
+              builder: (context) =>
+                  const MusicTitleWebGame(generation: '1990')),
         );
         break;
       case 2:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const FourGamePage()),
+          MaterialPageRoute(
+              builder: (context) =>
+                  const MusicTitleWebGame(generation: '2000')),
         );
         break;
       case 3:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const PersonGamePage()),
+          MaterialPageRoute(
+              builder: (context) =>
+                  const MusicTitleWebGame(generation: '2010')),
         );
         break;
       case 4:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const TeleGamePage()),
+          MaterialPageRoute(
+              builder: (context) =>
+                  const MusicTitleWebGame(generation: '2020')),
         );
         break;
     }
