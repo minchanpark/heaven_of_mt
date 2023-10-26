@@ -260,3 +260,16 @@ final List<GameContents> telestration = [
   GameContents(name: '구천혜향', index: '9'),
   GameContents(name: '만혜향', index: '10'),
 ];
+
+final List<GameContents> movie = [
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '고구마호박', index: '1'),
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '노구마호박', index: '2'),
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '도구마호박', index: '3'),
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '로구마호박', index: '4'),
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '모구마호박', index: '5'),
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '보구마호박', index: '6'),
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '소구마호박', index: '7'),
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '오구마호박', index: '8'),
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '조구마호박', index: '9'),
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '초구마호박', index: '10'),
+];
