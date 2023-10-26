@@ -6,16 +6,16 @@ import '../game_contents.dart';
 import '../card/card.dart';
 import '../gameover/gameover_web.dart';
 
-class ChoiWebGame extends StatefulWidget {
-  const ChoiWebGame({
+class DiscoWebGame extends StatefulWidget {
+  const DiscoWebGame({
     super.key,
   });
 
   @override
-  State<ChoiWebGame> createState() => _ChoiWebGamePageState();
+  State<DiscoWebGame> createState() => _DiscoWebGamePageState();
 }
 
-class _ChoiWebGamePageState extends State<ChoiWebGame> {
+class _DiscoWebGamePageState extends State<DiscoWebGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
@@ -26,12 +26,12 @@ class _ChoiWebGamePageState extends State<ChoiWebGame> {
 
     // widget.id 값에 따라 cards 변수에 값을 할당
 
-    final choiIndices = List<int>.generate(choi.length, (i) => i)
+    final discoIndices = List<int>.generate(disco.length, (i) => i)
       ..shuffle(random);
-    final randomchoi =
-        choiIndices.sublist(0, 10).map((index) => choi[index]).toList();
+    final randomdisco =
+        discoIndices.sublist(0, 10).map((index) => disco[index]).toList();
 
-    cards = randomchoi
+    cards = randomdisco
         .map((gameContents) => GameCard(gameContents: gameContents))
         .toList();
   }
@@ -156,7 +156,7 @@ class _ChoiWebGamePageState extends State<ChoiWebGame> {
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
                                     builder: (context) => const GameOver(
-                                      gameName: 'choi',
+                                      gameName: 'disco',
                                     ),
                                   ),
                                 );

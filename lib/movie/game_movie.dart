@@ -4,31 +4,34 @@ import 'dart:math';
 import '../game_contents.dart';
 import '../gameover/gameover_web.dart';
 
-class PersonWebGame extends StatefulWidget {
-  const PersonWebGame({super.key});
+class MovieWebGame extends StatefulWidget {
+  const MovieWebGame({super.key});
 
   @override
-  State<PersonWebGame> createState() => _PersonWebGameState();
+  State<MovieWebGame> createState() => _MovieWebGameState();
 }
 
-class _PersonWebGameState extends State<PersonWebGame> {
+class _MovieWebGameState extends State<MovieWebGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
 
   List<String> cards = []; // cards 변수를 초기화
   bool _isAnswered = false;
-  String personName = '';
+  String movieName = '';
   final random = Random();
+  List<String> answer_cards = [];
   @override
   void initState() {
     super.initState();
 
-    final personIndices = List<int>.generate(person.length, (i) => i)
+    final movieIndices = List<int>.generate(movie.length, (i) => i)
       ..shuffle(random);
-    final randomPerson =
-        personIndices.sublist(0, 10).map((index) => person[index]).toList();
+    final randommovie =
+        movieIndices.sublist(0, 10).map((index) => movie[index]).toList();
 
-    cards = randomPerson.map((gameContents) => gameContents.name).toList();
+    cards = randommovie.map((gameContents) => gameContents.name).toList();
+    answer_cards =
+        randommovie.map((gameContents) => gameContents.answer).toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -147,11 +150,22 @@ class _PersonWebGameState extends State<PersonWebGame> {
                             verticalThresholdPercentage,
                           ) {
                             currentCardIndex = index;
-                            personName = extractName(cards[index]);
-                            return Image.asset(
-                              cards[index],
-                              fit: BoxFit.fitHeight,
-                            );
+                            movieName = extractName(cards[index]);
+                            return !_isAnswered
+                                ? Image.asset(
+                                    cards[index],
+                                    fit: BoxFit.fitHeight,
+                                  )
+                                : Center(
+                                    child: Text(
+                                      answer_cards[currentCardIndex],
+                                      style: const TextStyle(
+                                          fontFamily: 'DungGeunMo',
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 84,
+                                          color: Color(0xffFF62D3)),
+                                    ),
+                                  );
                           },
                           isDisabled: true,
                           onSwipe: _onSwipe,
@@ -164,7 +178,7 @@ class _PersonWebGameState extends State<PersonWebGame> {
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) => const GameOver(
-                                  gameName: 'person',
+                                  gameName: 'movie',
                                 ),
                               ),
                             );
@@ -187,35 +201,33 @@ class _PersonWebGameState extends State<PersonWebGame> {
                     ],
                   ),
                   // SizedBox(height: height * 0.038),
-                  !_isAnswered
-                      ? SizedBox(
-                          width: 250,
-                          height: 71,
-                          child: ElevatedButton(
-                              onPressed: () {
-                                setState(() {
-                                  _isAnswered = !_isAnswered;
-                                });
-                              },
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color(0xffFF62D3),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(12))),
-                              child: const Text(
-                                '정답보기',
-                                style: TextStyle(
-                                    fontFamily: 'DungGeunMo',
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 42,
-                                    color: Colors.black),
-                              )),
-                        )
-                      : Text(personName,
+                  SizedBox(
+                      width: 250,
+                      height: 71,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            _isAnswered = !_isAnswered;
+                          });
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: _isAnswered
+                              ? Colors.white
+                              : const Color(0xffFF62D3),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12)),
+                        ),
+                        child: Text(
+                          !_isAnswered ? '정답보기' : '문제보기',
                           style: const TextStyle(
-                              fontFamily: 'DungGeunMo',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 72,
-                              color: Color(0xffFF62D3))),
+                            fontFamily: 'DungGeunMo',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 42,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
                 ],
               ),
             ),

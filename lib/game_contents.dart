@@ -1,12 +1,93 @@
 class GameContents {
   String name;
   String index;
+  String answer;
 
   GameContents({
     required this.name,
     required this.index,
+    this.answer = '',
   });
 }
+
+final List<GameContents> person = [
+  GameContents(name: 'assets/person/류승범.WEBP', index: '1'),
+  GameContents(name: 'assets/person/강동원.WEBP', index: '2'),
+  GameContents(name: 'assets/person/남도일.WEBP', index: '3'),
+  GameContents(name: 'assets/person/강백호.JPG', index: '4'),
+  GameContents(name: 'assets/person/공유.WEBP', index: '5'),
+  GameContents(name: 'assets/person/미나.WEBP', index: '6'),
+  GameContents(name: 'assets/person/김태희.WEBP', index: '7'),
+  GameContents(name: 'assets/person/송혜교.WEBP', index: '8'),
+  GameContents(name: 'assets/person/박재범.WEBP', index: '9'),
+  GameContents(name: 'assets/person/수지.JPG', index: '10'),
+  GameContents(name: 'assets/person/김동현.WEBP', index: '11'),
+  GameContents(name: 'assets/person/링컨.WEBP', index: '12'),
+  GameContents(name: 'assets/person/유관순.WEBP', index: '13'),
+  GameContents(name: 'assets/person/데드풀.JPG', index: '14'),
+  GameContents(name: 'assets/person/로버트.WEBP', index: '15'),
+  GameContents(name: 'assets/person/민경훈.jpeg', index: '16'),
+  GameContents(name: 'assets/person/보노보노.WEBP', index: '17'),
+  GameContents(name: 'assets/person/스칼렛요한슨.JPG', index: '18'),
+  GameContents(name: 'assets/person/올라프.JPG', index: '19'),
+  GameContents(name: 'assets/person/이승우.JPG', index: '20'),
+  GameContents(name: 'assets/person/안재홍.WEBP', index: '21'),
+  GameContents(name: 'assets/person/손흥민.JPG', index: '22'),
+  GameContents(name: 'assets/person/강하늘.WEBP', index: '23'),
+  GameContents(name: 'assets/person/거미.WEBP', index: '24'),
+  GameContents(name: 'assets/person/고윤정.WEBP', index: '25'),
+  GameContents(name: 'assets/person/미달이.WEBP', index: '26'),
+  GameContents(name: 'assets/person/뿡뿡이.WEBP', index: '27'),
+  GameContents(name: 'assets/person/어피치.WEBP', index: '28'),
+  GameContents(name: 'assets/person/해린.JPG', index: '29'),
+  GameContents(name: 'assets/person/저스틴비버.png', index: '30'),
+  GameContents(name: 'assets/person/조정석.WEBP', index: '31'),
+  GameContents(name: 'assets/person/조유리.WEBP', index: '32'),
+  GameContents(name: 'assets/person/정 동원.jpeg', index: '33'),
+  GameContents(name: 'assets/person/무민.JPG', index: '34'),
+  GameContents(name: 'assets/person/샘스미스.WEBP', index: '35'),
+  GameContents(name: 'assets/person/현주엽.WEBP', index: '36'),
+  GameContents(name: 'assets/person/전여빈.WEBP', index: '37'),
+  GameContents(name: 'assets/person/김연경.jpeg', index: '38'),
+  GameContents(name: 'assets/person/타노스.WEBP', index: '39'),
+  GameContents(name: 'assets/person/김소연.WEBP', index: '40'),
+  GameContents(name: 'assets/person/조승우.JPG', index: '41'),
+  GameContents(name: 'assets/person/안나.JPG', index: '42'),
+  GameContents(name: 'assets/person/포돌이.WEBP', index: '43'),
+  GameContents(name: 'assets/person/이문세.WEBP', index: '44'),
+  GameContents(name: 'assets/person/문상훈.WEBP', index: '45'),
+  GameContents(name: 'assets/person/지성.WEBP', index: '46'),
+  GameContents(name: 'assets/person/이경영.WEBP', index: '47'),
+  GameContents(name: 'assets/person/피오나.WEBP', index: '48'),
+  GameContents(name: 'assets/person/윈터.jpeg', index: '49'),
+  GameContents(name: 'assets/person/고아성.WEBP', index: '50'),
+];
+
+final List<GameContents> disco = [
+  GameContents(name: '사랑', index: '1'),
+  GameContents(name: '사랑1', index: '2'),
+  GameContents(name: '사랑2', index: '3'),
+  GameContents(name: '사랑3', index: '4'),
+  GameContents(name: '사랑4', index: '5'),
+  GameContents(name: '사랑5', index: '6'),
+  GameContents(name: '사랑6', index: '7'),
+  GameContents(name: '사랑7', index: '8'),
+  GameContents(name: '사랑8', index: '9'),
+  GameContents(name: '사랑9', index: '10'),
+];
+
+final List<GameContents> captain = [
+  GameContents(name: '가장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '1'),
+  GameContents(name: '나장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '2'),
+  GameContents(name: '다장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '3'),
+  GameContents(name: '라장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '4'),
+  GameContents(name: '마장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '5'),
+  GameContents(name: '바장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '6'),
+  GameContents(name: '사장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '7'),
+  GameContents(name: '아장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '8'),
+  GameContents(name: '자장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '9'),
+  GameContents(name: '차장 노래를\n잘할 것 같은 사람', answer: '절대음감 게임', index: '10'),
+];
 
 final List<GameContents> choi = [
   GameContents(name: 'ㄷ ㅁ', index: '1'),
@@ -61,58 +142,6 @@ final List<GameContents> choi = [
   GameContents(name: 'ㅂ ㅂ', index: '50'),
 ];
 
-final List<GameContents> person = [
-  GameContents(name: 'assets/person/류승범.WEBP', index: '1'),
-  GameContents(name: 'assets/person/강동원.WEBP', index: '2'),
-  GameContents(name: 'assets/person/남도일.WEBP', index: '3'),
-  GameContents(name: 'assets/person/강백호.JPG', index: '4'),
-  GameContents(name: 'assets/person/공유.WEBP', index: '5'),
-  GameContents(name: 'assets/person/미나.WEBP', index: '6'),
-  GameContents(name: 'assets/person/김태희.WEBP', index: '7'),
-  GameContents(name: 'assets/person/송혜교.WEBP', index: '8'),
-  GameContents(name: 'assets/person/박재범.WEBP', index: '9'),
-  GameContents(name: 'assets/person/수지.JPG', index: '10'),
-  GameContents(name: 'assets/person/김동현.WEBP', index: '11'),
-  GameContents(name: 'assets/person/링컨.WEBP', index: '12'),
-  GameContents(name: 'assets/person/유관순.WEBP', index: '13'),
-  GameContents(name: 'assets/person/Deadpool.JPG', index: '14'),
-  GameContents(name: 'assets/person/로버트.WEBP', index: '15'),
-  GameContents(name: 'assets/person/민경훈.jpeg', index: '16'),
-  GameContents(name: 'assets/person/보노보노.WEBP', index: '17'),
-  GameContents(name: 'assets/person/스칼렛요한슨.JPG', index: '18'),
-  GameContents(name: 'assets/person/올라프.JPG', index: '19'),
-  GameContents(name: 'assets/person/이승우.JPG', index: '20'),
-  GameContents(name: 'assets/person/안재홍.WEBP', index: '21'),
-  GameContents(name: 'assets/person/손흥민.JPG', index: '22'),
-  GameContents(name: 'assets/person/강하늘.WEBP', index: '23'),
-  GameContents(name: 'assets/person/거미.WEBP', index: '24'),
-  GameContents(name: 'assets/person/고윤정.WEBP', index: '25'),
-  GameContents(name: 'assets/person/미달이.WEBP', index: '26'),
-  GameContents(name: 'assets/person/뿡뿡이.WEBP', index: '27'),
-  GameContents(name: 'assets/person/어피치.WEBP', index: '28'),
-  GameContents(name: 'assets/person/해린.JPG', index: '29'),
-  GameContents(name: 'assets/person/Justin Bieber.png', index: '30'),
-  GameContents(name: 'assets/person/조정석.WEBP', index: '31'),
-  GameContents(name: 'assets/person/조유리.WEBP', index: '32'),
-  GameContents(name: 'assets/person/정 동원.jpeg', index: '33'),
-  GameContents(name: 'assets/person/무민.JPG', index: '34'),
-  GameContents(name: 'assets/person/샘스미스.WEBP', index: '35'),
-  GameContents(name: 'assets/person/현주엽.WEBP', index: '36'),
-  GameContents(name: 'assets/person/전여빈.WEBP', index: '37'),
-  GameContents(name: 'assets/person/김연경.jpeg', index: '38'),
-  GameContents(name: 'assets/person/타노스.WEBP', index: '39'),
-  GameContents(name: 'assets/person/김소연.WEBP', index: '40'),
-  GameContents(name: 'assets/person/조승우.JPG', index: '41'),
-  GameContents(name: 'assets/person/안나.JPG', index: '42'),
-  GameContents(name: 'assets/person/포돌이.WEBP', index: '43'),
-  GameContents(name: 'assets/person/이문세.WEBP', index: '44'),
-  GameContents(name: 'assets/person/문상훈.WEBP', index: '45'),
-  GameContents(name: 'assets/person/지성.WEBP', index: '46'),
-  GameContents(name: 'assets/person/이경영.WEBP', index: '47'),
-  GameContents(name: 'assets/person/피오나.WEBP', index: '48'),
-  GameContents(name: 'assets/person/winter.jpeg', index: '49'),
-  GameContents(name: 'assets/person/고아성.WEBP', index: '50'),
-];
 final List<GameContents> four = [
   GameContents(name: '이구_ _', index: '1'),
   GameContents(name: '동문_ _', index: '2'),
@@ -165,6 +194,7 @@ final List<GameContents> four = [
   GameContents(name: '코카_ _', index: '49'),
   GameContents(name: '오피_ _', index: '50'),
 ];
+
 final List<GameContents> tele = [
   GameContents(name: '가', index: '1'),
   GameContents(name: '다', index: '2'),
@@ -216,4 +246,30 @@ final List<GameContents> tele = [
   GameContents(name: '나', index: '48'),
   GameContents(name: '구', index: '49'),
   GameContents(name: '원', index: '50'),
+];
+
+final List<GameContents> telestration = [
+  GameContents(name: '천혜향', index: '1'),
+  GameContents(name: '이천혜향', index: '2'),
+  GameContents(name: '삼천혜향', index: '3'),
+  GameContents(name: '사천혜향', index: '4'),
+  GameContents(name: '오천혜향', index: '5'),
+  GameContents(name: '육천혜향', index: '6'),
+  GameContents(name: '칠천혜향', index: '7'),
+  GameContents(name: '팔천혜향', index: '8'),
+  GameContents(name: '구천혜향', index: '9'),
+  GameContents(name: '만혜향', index: '10'),
+];
+
+final List<GameContents> movie = [
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '고구마호박', index: '1'),
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '노구마호박', index: '2'),
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '도구마호박', index: '3'),
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '로구마호박', index: '4'),
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '모구마호박', index: '5'),
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '보구마호박', index: '6'),
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '소구마호박', index: '7'),
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '오구마호박', index: '8'),
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '조구마호박', index: '9'),
+  GameContents(name: 'assets/movie/호박고구마.png', answer: '초구마호박', index: '10'),
 ];

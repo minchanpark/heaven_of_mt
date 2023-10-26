@@ -6,33 +6,41 @@ import '../game_contents.dart';
 import '../card/card.dart';
 import '../gameover/gameover_web.dart';
 
-class ChoiWebGame extends StatefulWidget {
-  const ChoiWebGame({
+class CaptainWebGame extends StatefulWidget {
+  const CaptainWebGame({
     super.key,
   });
 
   @override
-  State<ChoiWebGame> createState() => _ChoiWebGamePageState();
+  State<CaptainWebGame> createState() => _CaptainWebGamePageState();
 }
 
-class _ChoiWebGamePageState extends State<ChoiWebGame> {
+class _CaptainWebGamePageState extends State<CaptainWebGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
+  List<GameCard> answer_cards = [];
   final random = Random();
+  bool _isAnswered = false;
+  List<GameContents> randomcaptain = [];
   @override
   void initState() {
     super.initState();
 
     // widget.id 값에 따라 cards 변수에 값을 할당
 
-    final choiIndices = List<int>.generate(choi.length, (i) => i)
+    final captainIndices = List<int>.generate(captain.length, (i) => i)
       ..shuffle(random);
-    final randomchoi =
-        choiIndices.sublist(0, 10).map((index) => choi[index]).toList();
+    randomcaptain =
+        captainIndices.sublist(0, 10).map((index) => captain[index]).toList();
 
-    cards = randomchoi
-        .map((gameContents) => GameCard(gameContents: gameContents))
+    cards = randomcaptain
+        .map((gameContents) =>
+            GameCard(gameContents: gameContents, fontSize: 84))
+        .toList();
+    answer_cards = randomcaptain
+        .map((gameContents) =>
+            GameCard(gameContents: gameContents, answer: true, fontSize: 84))
         .toList();
   }
 
@@ -65,14 +73,13 @@ class _ChoiWebGamePageState extends State<ChoiWebGame> {
                 padding: EdgeInsets.only(
                   left: width * 0.075,
                   top: height * 0.073,
-                  right: width * 0.0797,
+                  right: width * 0.075,
                 ),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconButton(
                           onPressed: () {
@@ -104,7 +111,10 @@ class _ChoiWebGamePageState extends State<ChoiWebGame> {
                         children: [
                           isUndoButtonVisible
                               ? IconButton(
-                                  onPressed: controller.undo,
+                                  onPressed: () {
+                                    controller.undo();
+                                    _isAnswered = false;
+                                  },
                                   color: Colors.transparent,
                                   icon: const ImageIcon(
                                     AssetImage(
@@ -115,6 +125,7 @@ class _ChoiWebGamePageState extends State<ChoiWebGame> {
                               : IconButton(
                                   onPressed: () {
                                     controller.undo();
+                                    _isAnswered = false;
                                     if (currentCardIndex == 0) {
                                       setState(() {
                                         isUndoButtonVisible = true;
@@ -143,7 +154,9 @@ class _ChoiWebGamePageState extends State<ChoiWebGame> {
                                 verticalThresholdPercentage,
                               ) {
                                 currentCardIndex = index;
-                                return cards[index];
+                                return !_isAnswered
+                                    ? cards[index]
+                                    : answer_cards[index];
                               },
                               isDisabled: true,
                               onSwipe: _onSwipe,
@@ -156,7 +169,7 @@ class _ChoiWebGamePageState extends State<ChoiWebGame> {
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
                                     builder: (context) => const GameOver(
-                                      gameName: 'choi',
+                                      gameName: 'captain',
                                     ),
                                   ),
                                 );
@@ -168,17 +181,46 @@ class _ChoiWebGamePageState extends State<ChoiWebGame> {
                                   });
                                 }
                               }
+                              _isAnswered = false;
                             },
                             color: Colors.transparent,
                             icon: const ImageIcon(
-                              AssetImage('assets/images/icon_chevron_right.png'),
+                              AssetImage(
+                                  'assets/images/icon_chevron_right.png'),
                             ),
                             iconSize: 90,
                           ),
                         ],
                       ),
                     ),
-                    const SizedBox(height: 87)
+                    SizedBox(
+                      width: 250,
+                      height: 71,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            _isAnswered = !_isAnswered;
+                          });
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: _isAnswered
+                              ? Colors.white
+                              : const Color(0xffFF62D3),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12)),
+                        ),
+                        child: Text(
+                          _isAnswered ? '미션보기' : '돌아가기',
+                          style: const TextStyle(
+                            fontFamily: 'DungGeunMo',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 42,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 110),
                   ],
                 ),
               ),

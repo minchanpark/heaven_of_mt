@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../category.dart';
+import '../captain/captain_game_page.dart';
 import '../choi/choi_game_page.dart';
+import '../disco/disco_game_page.dart';
 import '../four/four_game_page.dart';
+import '../movie/movie_game_page.dart';
 import '../onboarding.dart';
 import '../person/person_game_page.dart';
 import '../tele/tele_game_page.dart';
+import '../telestration/telestration_game_page.dart';
 
 const double _kItemExtent = 50.0;
 const List<String> _GameNames = <String>[
@@ -50,7 +54,7 @@ class _HomeWebState extends State<HomeWeb> {
     focusNode.requestFocus();
   }
 
-  int _selectedFruit = 0;
+  int _selectedGame = 0;
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -80,27 +84,26 @@ class _HomeWebState extends State<HomeWeb> {
               onKey: (RawKeyEvent event) {
                 if (event is RawKeyDownEvent) {
                   if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
-                    if (_selectedFruit == 8) {
+                    if (_selectedGame == 8) {
                     } else {
                       setState(() {
-                        _selectedFruit =
-                            (_selectedFruit + 1) % _GameNames.length;
+                        _selectedGame = (_selectedGame + 1) % _GameNames.length;
                         scr.animateToItem(
-                          _selectedFruit,
+                          _selectedGame,
                           duration: const Duration(milliseconds: 300),
                           curve: Curves.easeInOut,
                         );
                       });
                     }
                   } else if (event.logicalKey == LogicalKeyboardKey.arrowUp) {
-                    if (_selectedFruit == 0) {
+                    if (_selectedGame == 0) {
                     } else {
                       setState(() {
-                        _selectedFruit =
-                            (_selectedFruit - 1 + _GameNames.length) %
+                        _selectedGame =
+                            (_selectedGame - 1 + _GameNames.length) %
                                 _GameNames.length;
                         scr.animateToItem(
-                          _selectedFruit,
+                          _selectedGame,
                           duration: const Duration(milliseconds: 300),
                           curve: Curves.easeInOut,
                         );
@@ -109,7 +112,8 @@ class _HomeWebState extends State<HomeWeb> {
                   }
                 }
               },
-              child: Column(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Row(
                     children: [
@@ -198,7 +202,7 @@ class _HomeWebState extends State<HomeWeb> {
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              const ChoiGamePage()));
+                                                              const MovieGamePage()));
                                                   break;
                                               }
                                             },
@@ -220,22 +224,22 @@ class _HomeWebState extends State<HomeWeb> {
                                               ),
                                             ),
                                           ),
-                                          const SizedBox(width: 18),
-                                          Image.asset("assets/images/right.png",
-                                              width: 24, height: 42)
-                                        ],
-                                      )
-                                    : Text(_GameNames[index],
-                                        style: TextStyle(
-                                            fontFamily: 'DungGeunMo',
-                                            fontSize: 44,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.white
-                                                .withOpacity(0.5))));
-                          }),
-                        ),
-                      ),
-                    ],
+                                        ),
+                                      ),
+                                      const SizedBox(width: 18),
+                                      Image.asset("assets/images/right.png",
+                                          width: 24, height: 42)
+                                    ],
+                                  )
+                                : Text(_GameNames[index],
+                                    style: TextStyle(
+                                        fontFamily: 'DungGeunMo',
+                                        fontSize: 44,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white
+                                            .withOpacity(0.5))));
+                      }),
+                    ),
                   ),
                 ],
               ),
