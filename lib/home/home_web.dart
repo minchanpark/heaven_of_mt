@@ -1,17 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:testes/movie/movie_game_page.dart';
 
-import '../category.dart';
-import '../captain/captain_game_page.dart';
+import '../musictitle/category_musictitle.dart';
 import '../choi/choi_game_page.dart';
-import '../disco/disco_game_page.dart';
 import '../four/four_game_page.dart';
-import '../movie/movie_game_page.dart';
 import '../onboarding.dart';
 import '../person/person_game_page.dart';
 import '../tele/tele_game_page.dart';
-import '../telestration/telestration_game_page.dart';
 
 const double _kItemExtent = 50.0;
 const List<String> _GameNames = <String>[
@@ -112,12 +109,11 @@ class _HomeWebState extends State<HomeWeb> {
                   }
                 }
               },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: Column(
                 children: [
                   Row(
                     children: [
-                      contentList[_selectedFruit],
+                      contentList[_selectedGame],
                       SizedBox(width: width * 0.063),
                       SizedBox(
                         width: width * 0.394,
@@ -130,14 +126,14 @@ class _HomeWebState extends State<HomeWeb> {
                           itemExtent: 100,
                           onSelectedItemChanged: (int selectedItem) {
                             setState(() {
-                              _selectedFruit = selectedItem;
-                              debugPrint("$_selectedFruit");
+                              _selectedGame = selectedItem;
+                              debugPrint("$_selectedGame");
                             });
                           },
                           selectionOverlay: null,
                           children: List<Widget>.generate(_GameNames.length,
                               (int index) {
-                            final isSelected = index == _selectedFruit;
+                            final isSelected = index == _selectedGame;
                             return Center(
                                 child: isSelected
                                     ? Row(
@@ -149,7 +145,7 @@ class _HomeWebState extends State<HomeWeb> {
                                           const SizedBox(width: 18),
                                           InkWell(
                                             onTap: () {
-                                              switch (_selectedFruit + 1) {
+                                              switch (_selectedGame + 1) {
                                                 case 1:
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
@@ -224,22 +220,22 @@ class _HomeWebState extends State<HomeWeb> {
                                               ),
                                             ),
                                           ),
-                                        ),
-                                      ),
-                                      const SizedBox(width: 18),
-                                      Image.asset("assets/images/right.png",
-                                          width: 24, height: 42)
-                                    ],
-                                  )
-                                : Text(_GameNames[index],
-                                    style: TextStyle(
-                                        fontFamily: 'DungGeunMo',
-                                        fontSize: 44,
-                                        fontWeight: FontWeight.w400,
-                                        color: Colors.white
-                                            .withOpacity(0.5))));
-                      }),
-                    ),
+                                          const SizedBox(width: 18),
+                                          Image.asset("assets/images/right.png",
+                                              width: 24, height: 42)
+                                        ],
+                                      )
+                                    : Text(_GameNames[index],
+                                        style: TextStyle(
+                                            fontFamily: 'DungGeunMo',
+                                            fontSize: 44,
+                                            fontWeight: FontWeight.w400,
+                                            color: Colors.white
+                                                .withOpacity(0.5))));
+                          }),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
