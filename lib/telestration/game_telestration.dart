@@ -155,7 +155,7 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
                                 return !_isAnswered
                                     ? cards[index]
                                     : const Center(
-                                      child: Text(
+                                        child: Text(
                                           '게임 진행 중 ...',
                                           style: TextStyle(
                                               fontFamily: 'DungGeunMo',
@@ -163,7 +163,7 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
                                               fontSize: 84,
                                               color: Color(0xffFF62D3)),
                                         ),
-                                    );
+                                      );
                               },
                               isDisabled: true,
                               onSwipe: _onSwipe,
@@ -200,49 +200,33 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
                         ],
                       ),
                     ),
-                    !_isAnswered
-                        ? SizedBox(
-                            width: 250,
-                            height: 71,
-                            child: ElevatedButton(
-                                onPressed: () {
-                                  setState(() {
-                                    _isAnswered = !_isAnswered;
-                                  });
-                                },
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: const Color(0xffFF62D3),
-                                    textStyle: const TextStyle(
-                                        fontFamily: 'DungGeunMo',
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 42,
-                                        color: Colors.black),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(12))),
-                                child: const Text('가리기')),
-                          )
-                        : SizedBox(
-                            width: 250,
-                            height: 71,
-                            child: ElevatedButton(
-                                onPressed: () {
-                                  setState(() {
-                                    _isAnswered = !_isAnswered;
-                                  });
-                                },
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.white,
-                                    textStyle: const TextStyle(
-                                        fontFamily: 'DungGeunMo',
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 42,
-                                        color: Colors.black),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(12))),
-                                child: const Text('정답보기')),
+                    SizedBox(
+                      width: 250,
+                      height: 71,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            _isAnswered = !_isAnswered;
+                          });
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: _isAnswered
+                              ? Colors.white
+                              : const Color(0xffFF62D3),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12)),
+                        ),
+                        child: Text(
+                          _isAnswered ? '정답보기' : '가리기',
+                          style: const TextStyle(
+                            fontFamily: 'DungGeunMo',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 42,
+                            color: Colors.black,
                           ),
+                        ),
+                      ),
+                    ),
                     const SizedBox(height: 110),
                   ],
                 ),
