@@ -1,15 +1,10 @@
+// ignore_for_file: unused_field
+
 import 'package:flutter/material.dart';
 
-import '../choi/choi_page.dart';
-import '../four/four_page.dart';
-import '../person/person_page.dart';
-import '../random/random_page.dart';
-import '../tele/tele_page.dart';
-
 class GameOverApp extends StatefulWidget {
-  final String id;
   final String gameName;
-  const GameOverApp({super.key, required this.id, required this.gameName});
+  const GameOverApp({super.key, required this.gameName});
 
   @override
   State<GameOverApp> createState() => _GameOverAppState();
@@ -20,7 +15,6 @@ class _GameOverAppState extends State<GameOverApp> {
   @override
   void initState() {
     super.initState();
-    setNumber = widget.id;
   }
 
   double _opacity = 0.5;
@@ -111,34 +105,8 @@ class _GameOverAppState extends State<GameOverApp> {
                           visible: _isMouseOver,
                           child: ElevatedButton(
                               onPressed: () {
-                                if (widget.gameName == 'choi') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const ChoiPage()));
-                                } else if (widget.gameName == 'person') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          const PersonPage()));
-                                } else if (widget.gameName == 'four') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const FourPage()));
-                                } else if (widget.gameName == 'tele') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const TelePage()));
-                                } else if (widget.gameName == 'random') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          const RandomPage()));
-                                }
+                                Navigator.popUntil(
+                                    context, ModalRoute.withName('/home'));
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.transparent,

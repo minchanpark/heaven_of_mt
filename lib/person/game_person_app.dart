@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+import 'dart:math';
 import '../game_contents.dart';
 import '../gameover/gameover_app.dart';
 import '../image_card.dart';
 
 class PersonAppGame extends StatefulWidget {
-  final String id;
-
-  const PersonAppGame({
-    super.key,
-    required this.id,
-  });
+  const PersonAppGame({super.key});
 
   @override
   State<PersonAppGame> createState() => _PersonAppGameState();
@@ -21,33 +17,19 @@ class _PersonAppGameState extends State<PersonAppGame> {
   final CardSwiperController controller = CardSwiperController();
   List<ImageGameCard> cards = []; // cards 변수를 초기화
   String setNumber = '';
+  final random = Random();
   @override
   void initState() {
     super.initState();
 
-    // widget.id 값에 따라 cards 변수에 값을 할당
-    if (widget.id == 'SET 1') {
-      cards = person1
-          .map((gameContents) => ImageGameCard(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 2') {
-      cards = person2
-          .map((gameContents) => ImageGameCard(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 3') {
-      cards = person3
-          .map((gameContents) => ImageGameCard(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 4') {
-      cards = person4
-          .map((gameContents) => ImageGameCard(gameContents: gameContents))
-          .toList();
-    } else {
-      cards = person5
-          .map((gameContents) => ImageGameCard(gameContents: gameContents))
-          .toList();
-    }
-    setNumber = widget.id;
+    final personIndices = List<int>.generate(person.length, (i) => i)
+      ..shuffle(random);
+    final randomPerson =
+        personIndices.sublist(0, 10).map((index) => person[index]).toList();
+
+    cards = randomPerson
+        .map((gameContents) => ImageGameCard(gameContents: gameContents))
+        .toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -65,11 +47,9 @@ class _PersonAppGameState extends State<PersonAppGame> {
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.only(
-            left: 29, top: 62, right: 29
-          ),
+          padding: const EdgeInsets.only(left: 29, top: 62, right: 29),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Row(
@@ -104,110 +84,107 @@ class _PersonAppGameState extends State<PersonAppGame> {
                   fontSize: 26,
                 ),
               ),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    isUndoButtonVisible
-                        ? ConstrainedBox(
-                            constraints: const BoxConstraints.tightFor(
-                                width: 29, height: 52),
-                            child: ElevatedButton(
-                              onPressed: () {
-                                controller.undo;
-                              },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.transparent,
-                                padding: const EdgeInsets.only(left: 0),
-                              ),
-                              child: const ImageIcon(
-                                AssetImage(
-                                    'assets/images/icon_chevron_left.png'),
-                                size: 90,
-                              ),
+              SizedBox(height: height * 0.1),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  isUndoButtonVisible
+                      ? ConstrainedBox(
+                          constraints: const BoxConstraints.tightFor(
+                              width: 29, height: 52),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              controller.undo;
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              padding: const EdgeInsets.only(left: 0),
                             ),
-                          )
-                        : ConstrainedBox(
-                            constraints: const BoxConstraints.tightFor(
-                                width: 29, height: 52),
-                            child: ElevatedButton(
-                              onPressed: () {
-                                controller.undo();
-                                if (currentCardIndex == 0) {
-                                  setState(() {
-                                    isUndoButtonVisible = true;
-                                  });
-                                }
-                              },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.transparent,
-                                padding: const EdgeInsets.only(left: 0),
-                              ),
-                              child: const ImageIcon(
-                                AssetImage(
-                                    'assets/images/icon_chevron_left_white.png'),
-                                size: 90,
-                              ),
+                            child: const ImageIcon(
+                              AssetImage('assets/images/icon_chevron_left.png'),
+                              size: 90,
                             ),
                           ),
-                    SizedBox(
-                      width: width * 0.57, // 최대 가로 크기를 설정할 수도 있습니다.
-                      height: height * 0.67, // 최대 세로 크기를 설정할 수도 있습니다
-                      child: CardSwiper(
-                        duration: const Duration(milliseconds: 0),
-                        controller: controller,
-                        cardsCount: cards.length,
-                        numberOfCardsDisplayed: 1,
-                        cardBuilder: (
-                          context,
-                          index,
-                          horizontalThresholdPercentage,
-                          verticalThresholdPercentage,
-                        ) {
-                          currentCardIndex = index;
-                          return cards[index];
-                        },
-                        isDisabled: true,
-                        onSwipe: _onSwipe,
-                        onUndo: _onUndo,
-                      ),
+                        )
+                      : ConstrainedBox(
+                          constraints: const BoxConstraints.tightFor(
+                              width: 29, height: 52),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              controller.undo();
+                              if (currentCardIndex == 0) {
+                                setState(() {
+                                  isUndoButtonVisible = true;
+                                });
+                              }
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              padding: const EdgeInsets.only(left: 0),
+                            ),
+                            child: const ImageIcon(
+                              AssetImage(
+                                  'assets/images/icon_chevron_left_white.png'),
+                              size: 90,
+                            ),
+                          ),
+                        ),
+                  SizedBox(
+                    width: width * 0.7, // 최대 가로 크기를 설정할 수도 있습니다.
+                    height: height * 0.4, // 최대 세로 크기를 설정할 수도 있습니다
+                    child: CardSwiper(
+                      duration: const Duration(milliseconds: 0),
+                      controller: controller,
+                      cardsCount: cards.length,
+                      numberOfCardsDisplayed: 1,
+                      cardBuilder: (
+                        context,
+                        index,
+                        horizontalThresholdPercentage,
+                        verticalThresholdPercentage,
+                      ) {
+                        currentCardIndex = index;
+                        return cards[index];
+                      },
+                      isDisabled: true,
+                      onSwipe: _onSwipe,
+                      onUndo: _onUndo,
                     ),
-                    ConstrainedBox(
-                      constraints:
-                          const BoxConstraints.tightFor(width: 29, height: 52),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          if (currentCardIndex == 9) {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => GameOverApp(
-                                  id: widget.id,
-                                  gameName: 'person',
-                                ),
+                  ),
+                  ConstrainedBox(
+                    constraints:
+                        const BoxConstraints.tightFor(width: 29, height: 52),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        if (currentCardIndex == 9) {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => GameOverApp(
+                                gameName: 'person',
                               ),
-                            );
-                          } else {
-                            controller.swipeLeft();
-                            if (currentCardIndex != 2) {
-                              setState(() {
-                                isUndoButtonVisible = false;
-                              });
-                            }
+                            ),
+                          );
+                        } else {
+                          controller.swipeLeft();
+                          if (currentCardIndex != 2) {
+                            setState(() {
+                              isUndoButtonVisible = false;
+                            });
                           }
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.transparent,
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: const ImageIcon(
-                          AssetImage('assets/images/icon_chevron_right.png'),
-                          size: 90,
-                        ),
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.transparent,
+                        padding: EdgeInsets.zero,
+                      ),
+                      child: const ImageIcon(
+                        AssetImage('assets/images/icon_chevron_right.png'),
+                        size: 90,
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ],
           ),

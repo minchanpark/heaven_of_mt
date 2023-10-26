@@ -3,10 +3,8 @@ import 'game_four.dart';
 import 'game_four_app.dart';
 
 class FourGamePage extends StatefulWidget {
-  final String id;
   const FourGamePage({
     super.key,
-    required this.id,
   });
 
   @override
@@ -18,9 +16,9 @@ class _FourGamePageState extends State<FourGamePage> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     if (width > 500) {
-      return FourWebGame(id: widget.id);
+      return FourWebGame();
     } else {
-      return FourAppGame(id: widget.id);
+      return FourAppGame();
     }
   }
 }

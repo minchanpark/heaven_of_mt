@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+import 'dart:math';
 import '../game_contents.dart';
 import '../gameover/gameover_web.dart';
+import '../image_card.dart';
 
 class PersonWebGame extends StatefulWidget {
-  final String id;
-
-  const PersonWebGame({
-    super.key,
-    required this.id,
-  });
+  const PersonWebGame({super.key});
 
   @override
   State<PersonWebGame> createState() => _PersonWebGameState();
@@ -18,28 +15,23 @@ class PersonWebGame extends StatefulWidget {
 class _PersonWebGameState extends State<PersonWebGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
-  List<String> cards = []; // cards 변수를 초기화
-  String setNumber = '';
-  bool _isAnswered = false;
-  String personName = '';
 
+  List<ImageGameCard> cards = []; // cards 변수를 초기화
+
+  String setNumber = '';
+  final random = Random();
   @override
   void initState() {
     super.initState();
 
-    // widget.id 값에 따라 cards 변수에 값을 할당
-    if (widget.id == 'SET 1') {
-      cards = person1.map((gameContents) => gameContents.name).toList();
-    } else if (widget.id == 'SET 2') {
-      cards = person2.map((gameContents) => gameContents.name).toList();
-    } else if (widget.id == 'SET 3') {
-      cards = person3.map((gameContents) => gameContents.name).toList();
-    } else if (widget.id == 'SET 4') {
-      cards = person4.map((gameContents) => gameContents.name).toList();
-    } else {
-      cards = person5.map((gameContents) => gameContents.name).toList();
-    }
-    setNumber = widget.id;
+    final personIndices = List<int>.generate(person.length, (i) => i)
+      ..shuffle(random);
+    final randomPerson =
+        personIndices.sublist(0, 10).map((index) => person[index]).toList();
+
+    cards = randomPerson
+        .map((gameContents) => ImageGameCard(gameContents: gameContents))
+        .toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -111,6 +103,7 @@ class _PersonWebGameState extends State<PersonWebGame> {
                           icon: const ImageIcon(
                             AssetImage('assets/images/icon_chevron_left.png'),
                           ),
+<<<<<<< HEAD
                           iconSize: 90,
                         )
                       : IconButton(
@@ -150,6 +143,48 @@ class _PersonWebGameState extends State<PersonWebGame> {
                           cards[index],
                           fit: BoxFit.fitHeight,
                         );
+=======
+                    SizedBox(
+                      width: width * 0.57, // 최대 가로 크기를 설정할 수도 있습니다.
+                      height: height * 0.67, // 최대 세로 크기를 설정할 수도 있습니다
+                      child: CardSwiper(
+                        duration: const Duration(milliseconds: 0),
+                        controller: controller,
+                        cardsCount: cards.length,
+                        numberOfCardsDisplayed: 1,
+                        cardBuilder: (
+                          context,
+                          index,
+                          horizontalThresholdPercentage,
+                          verticalThresholdPercentage,
+                        ) {
+                          currentCardIndex = index;
+                          return cards[index];
+                        },
+                        isDisabled: true,
+                        onSwipe: _onSwipe,
+                        onUndo: _onUndo,
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        if (currentCardIndex == 9) {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => GameOver(
+                                gameName: 'person',
+                              ),
+                            ),
+                          );
+                        } else {
+                          controller.swipeLeft();
+                          if (currentCardIndex != 2) {
+                            setState(() {
+                              isUndoButtonVisible = false;
+                            });
+                          }
+                        }
+>>>>>>> cb7b4342a1d6bddb7c50bee95fecd85c80ef4dd2
                       },
                       isDisabled: true,
                       onSwipe: _onSwipe,

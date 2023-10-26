@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+import 'dart:math';
+
 import '../game_contents.dart';
-import '../card.dart';
+import '../card/card.dart';
 import '../gameover/gameover_web.dart';
 
 class FourWebGame extends StatefulWidget {
-  final String id;
-
-  const FourWebGame({
-    super.key,
-    required this.id,
-  });
+  const FourWebGame({super.key});
 
   @override
   State<FourWebGame> createState() => _FourWebGameState();
@@ -21,33 +18,19 @@ class _FourWebGameState extends State<FourWebGame> {
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
   String setNumber = '';
+  final random = Random();
   @override
   void initState() {
     super.initState();
 
-    // widget.id 값에 따라 cards 변수에 값을 할당
-    if (widget.id == 'SET 1') {
-      cards = four1
-          .map((gameContents) => GameCard(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 2') {
-      cards = four2
-          .map((gameContents) => GameCard(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 3') {
-      cards = four3
-          .map((gameContents) => GameCard(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 4') {
-      cards = four4
-          .map((gameContents) => GameCard(gameContents: gameContents))
-          .toList();
-    } else {
-      cards = four5
-          .map((gameContents) => GameCard(gameContents: gameContents))
-          .toList();
-    }
-    setNumber = widget.id;
+    final fourIndices = List<int>.generate(four.length, (i) => i)
+      ..shuffle(random);
+    final randomFour =
+        fourIndices.sublist(0, 10).map((index) => four[index]).toList();
+
+    cards = randomFour
+        .map((gameContents) => GameCard(gameContents: gameContents))
+        .toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -164,7 +147,6 @@ class _FourWebGameState extends State<FourWebGame> {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => GameOver(
-                                id: widget.id,
                                 gameName: 'four',
                               ),
                             ),

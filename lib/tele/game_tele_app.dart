@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+import 'dart:math';
 import '../game_contents.dart';
-import '../card_app.dart';
+import '../card/card_app.dart';
 import '../gameover/gameover_app.dart';
 
 class TeleAppGame extends StatefulWidget {
-  final String id;
-
-  const TeleAppGame({
-    super.key,
-    required this.id,
-  });
+  const TeleAppGame({super.key});
 
   @override
   State<TeleAppGame> createState() => _TeleAppGamePageState();
@@ -21,33 +17,19 @@ class _TeleAppGamePageState extends State<TeleAppGame> {
   final CardSwiperController controller = CardSwiperController();
   List<GameCardApp> cards = []; // cards 변수를 초기화
   String setNumber = '';
+  final random = Random();
   @override
   void initState() {
     super.initState();
 
-    // widget.id 값에 따라 cards 변수에 값을 할당
-    if (widget.id == 'SET 1') {
-      cards = tele1
-          .map((gameContents) => GameCardApp(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 2') {
-      cards = tele2
-          .map((gameContents) => GameCardApp(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 3') {
-      cards = tele3
-          .map((gameContents) => GameCardApp(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 4') {
-      cards = tele4
-          .map((gameContents) => GameCardApp(gameContents: gameContents))
-          .toList();
-    } else {
-      cards = tele5
-          .map((gameContents) => GameCardApp(gameContents: gameContents))
-          .toList();
-    }
-    setNumber = widget.id;
+    final teleIndices = List<int>.generate(tele.length, (i) => i)
+      ..shuffle(random);
+    final randomTele =
+        teleIndices.sublist(0, 10).map((index) => tele[index]).toList();
+
+    cards = randomTele
+        .map((gameContents) => GameCardApp(gameContents: gameContents))
+        .toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -179,7 +161,6 @@ class _TeleAppGamePageState extends State<TeleAppGame> {
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) => GameOverApp(
-                                  id: widget.id,
                                   gameName: 'tele',
                                 ),
                               ),

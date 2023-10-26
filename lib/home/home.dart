@@ -11,15 +11,13 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
-  List<String> gameName = ["액션초성게임", "인물퀴즈", "네글자퀴즈", "단어텔레파시", "랜덤게임"];
-
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     if (width > 600) {
-      return HomeWeb(gameName: gameName);
+      return const HomeWeb();
     } else {
-      return HomeApp(gameName: gameName);
+      return const HomeApp();
     }
   }
 }

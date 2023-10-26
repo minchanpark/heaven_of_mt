@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+import 'dart:math';
 import '../game_contents.dart';
-import '../card.dart';
+import '../card/card.dart';
 import '../gameover/gameover_web.dart';
 
 class TeleWebGame extends StatefulWidget {
-  final String id;
-
   const TeleWebGame({
     super.key,
-    required this.id,
   });
 
   @override
@@ -21,33 +19,19 @@ class _TeleWebGameState extends State<TeleWebGame> {
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
   String setNumber = '';
+  final random = Random();
   @override
   void initState() {
     super.initState();
 
-    // widget.id 값에 따라 cards 변수에 값을 할당
-    if (widget.id == 'SET 1') {
-      cards = tele1
-          .map((gameContents) => GameCard(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 2') {
-      cards = tele2
-          .map((gameContents) => GameCard(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 3') {
-      cards = tele3
-          .map((gameContents) => GameCard(gameContents: gameContents))
-          .toList();
-    } else if (widget.id == 'SET 4') {
-      cards = tele4
-          .map((gameContents) => GameCard(gameContents: gameContents))
-          .toList();
-    } else {
-      cards = tele5
-          .map((gameContents) => GameCard(gameContents: gameContents))
-          .toList();
-    }
-    setNumber = widget.id;
+    final teleIndices = List<int>.generate(tele.length, (i) => i)
+      ..shuffle(random);
+    final randomTele =
+        teleIndices.sublist(0, 10).map((index) => tele[index]).toList();
+
+    cards = randomTele
+        .map((gameContents) => GameCard(gameContents: gameContents))
+        .toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -165,7 +149,6 @@ class _TeleWebGameState extends State<TeleWebGame> {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => GameOver(
-                                id: widget.id,
                                 gameName: 'tele',
                               ),
                             ),

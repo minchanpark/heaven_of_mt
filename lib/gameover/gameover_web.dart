@@ -1,15 +1,10 @@
+// ignore_for_file: unused_field
+
 import 'package:flutter/material.dart';
 
-import '../choi/choi_page.dart';
-import '../four/four_page.dart';
-import '../person/person_page.dart';
-import '../random/random_page.dart';
-import '../tele/tele_page.dart';
-
 class GameOver extends StatefulWidget {
-  final String id;
   final String gameName;
-  const GameOver({super.key, required this.id, required this.gameName});
+  const GameOver({super.key, required this.gameName});
 
   @override
   State<GameOver> createState() => _GameOverState();
@@ -20,7 +15,6 @@ class _GameOverState extends State<GameOver> {
   @override
   void initState() {
     super.initState();
-    setNumber = widget.id;
   }
 
   double _opacity = 0.5;
@@ -86,7 +80,8 @@ class _GameOverState extends State<GameOver> {
                     children: [
                       AnimatedContainer(
                         padding: const EdgeInsets.only(bottom: 4),
-                        duration: const Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
+                        duration:
+                            const Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
                         decoration: BoxDecoration(
                           color: Colors.transparent, // 배경색을 지정합니다.
                           borderRadius:
@@ -110,36 +105,13 @@ class _GameOverState extends State<GameOver> {
                         bottom: 5,
                         right: 44,
                         child: AnimatedOpacity(
-                          duration: const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
+                          duration:
+                              const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
                           opacity: _opacity == 0 ? 1.0 : 0.0,
                           child: ElevatedButton(
                               onPressed: () {
-                                if (widget.gameName == 'choi') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const ChoiPage()));
-                                } else if (widget.gameName == 'person') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const PersonPage()));
-                                } else if (widget.gameName == 'four') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const FourPage()));
-                                } else if (widget.gameName == 'tele') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const TelePage()));
-                                } else if (widget.gameName == 'random') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const RandomPage()));
-                                }
+                                Navigator.popUntil(
+                                    context, ModalRoute.withName('/home'));
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.transparent,
@@ -159,7 +131,8 @@ class _GameOverState extends State<GameOver> {
                                           'assets/images/gameover.png')),
                                   const SizedBox(width: 10),
                                   Container(
-                                    color: const Color.fromRGBO(255, 98, 211, 1),
+                                    color:
+                                        const Color.fromRGBO(255, 98, 211, 1),
                                     child: const Padding(
                                       padding: EdgeInsets.only(bottom: 5),
                                       child: Text(
@@ -200,7 +173,8 @@ class _GameOverState extends State<GameOver> {
                     children: [
                       AnimatedContainer(
                         padding: const EdgeInsets.only(bottom: 4),
-                        duration: const Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
+                        duration:
+                            const Duration(milliseconds: 300), // 애니메이션 지속 시간 조절
                         decoration: BoxDecoration(
                           color: Colors.transparent, // 배경색을 지정합니다.
                           borderRadius:
@@ -224,7 +198,8 @@ class _GameOverState extends State<GameOver> {
                         bottom: 5,
                         right: 80,
                         child: AnimatedOpacity(
-                          duration: const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
+                          duration:
+                              const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
                           opacity: _opacity1 == 0 ? 1.0 : 0.0,
                           child: ElevatedButton(
                               onPressed: () {
@@ -249,7 +224,8 @@ class _GameOverState extends State<GameOver> {
                                           'assets/images/gameover.png')),
                                   const SizedBox(width: 10),
                                   Container(
-                                    color: const Color.fromRGBO(255, 98, 211, 1),
+                                    color:
+                                        const Color.fromRGBO(255, 98, 211, 1),
                                     child: const Padding(
                                       padding: EdgeInsets.only(bottom: 5),
                                       child: Text(
