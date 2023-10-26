@@ -199,14 +199,16 @@ class _PersonWebGameState extends State<PersonWebGame> {
                               },
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0xffFF62D3),
-                                  textStyle: const TextStyle(
-                                      fontFamily: 'DungGeunMo',
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 42,
-                                      color: Colors.black),
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(12))),
-                              child: const Text('정답보기')),
+                              child: const Text(
+                                '정답보기',
+                                style: TextStyle(
+                                    fontFamily: 'DungGeunMo',
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 42,
+                                    color: Colors.black),
+                              )),
                         )
                       : Text(personName,
                           style: const TextStyle(

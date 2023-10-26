@@ -193,49 +193,33 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
                         ],
                       ),
                     ),
-                    !_isAnswered
-                        ? SizedBox(
-                            width: 250,
-                            height: 71,
-                            child: ElevatedButton(
-                                onPressed: () {
-                                  setState(() {
-                                    _isAnswered = !_isAnswered;
-                                  });
-                                },
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: const Color(0xffFF62D3),
-                                    textStyle: const TextStyle(
-                                        fontFamily: 'DungGeunMo',
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 42,
-                                        color: Colors.black),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(12))),
-                                child: const Text('미션보기')),
-                          )
-                        : SizedBox(
-                            width: 250,
-                            height: 71,
-                            child: ElevatedButton(
-                                onPressed: () {
-                                  setState(() {
-                                    _isAnswered = !_isAnswered;
-                                  });
-                                },
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.white,
-                                    textStyle: const TextStyle(
-                                        fontFamily: 'DungGeunMo',
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 42,
-                                        color: Colors.black),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(12))),
-                                child: const Text('돌아가기')),
+                    SizedBox(
+                      width: 250,
+                      height: 71,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            _isAnswered = !_isAnswered;
+                          });
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: _isAnswered
+                              ? Colors.white
+                              : const Color(0xffFF62D3),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12)),
+                        ),
+                        child: Text(
+                          _isAnswered ? '미션보기' : '돌아가기',
+                          style: const TextStyle(
+                            fontFamily: 'DungGeunMo',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 42,
+                            color: Colors.black,
                           ),
+                        ),
+                      ),
+                    ),
                     const SizedBox(height: 110),
                   ],
                 ),
