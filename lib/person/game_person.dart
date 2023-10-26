@@ -28,9 +28,7 @@ class _PersonWebGameState extends State<PersonWebGame> {
     final randomPerson =
         personIndices.sublist(0, 10).map((index) => person[index]).toList();
 
-    cards = randomPerson
-        .map((gameContents) => gameContents.name)
-        .toList();
+    cards = randomPerson.map((gameContents) => gameContents.name).toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -51,162 +49,176 @@ class _PersonWebGameState extends State<PersonWebGame> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    
+
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
-      body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.only(
-            left: width * 0.075,
-            top: height * 0.071,
-            right: width * 0.075,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    color: Colors.white,
-                    icon: const ImageIcon(AssetImage('assets/images/Exit.png')),
-                    iconSize: 39,
-                  ),
-                  const Spacer(),
-                  Text(
-                    '${currentCardIndex + 1}/${cards.length}',
-                    style: const TextStyle(
-                      fontFamily: 'DungGeunMo',
-                      color: Colors.white,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 42,
-                    ),
-                  ),
-                  const Spacer(),
-                  const SizedBox(width: 50),
-                ],
+      body: Stack(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/background_game.png"),
+                fit: BoxFit.cover,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            ),
+          ),
+          SafeArea(
+            child: Container(
+              padding: EdgeInsets.only(
+                left: width * 0.075,
+                top: height * 0.071,
+                right: width * 0.075,
+              ),
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  isUndoButtonVisible
-                      ? IconButton(
-                          onPressed: () {
-                            controller.undo();
-                            _isAnswered = false;
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        color: Colors.white,
+                        icon: const ImageIcon(
+                            AssetImage('assets/images/Exit.png')),
+                        iconSize: 39,
+                      ),
+                      const Spacer(),
+                      Text(
+                        '${currentCardIndex + 1}/${cards.length}',
+                        style: const TextStyle(
+                          fontFamily: 'DungGeunMo',
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 42,
+                        ),
+                      ),
+                      const Spacer(),
+                      const SizedBox(width: 50),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      isUndoButtonVisible
+                          ? IconButton(
+                              onPressed: () {
+                                controller.undo();
+                                _isAnswered = false;
+                              },
+                              color: Colors.transparent,
+                              icon: const ImageIcon(
+                                AssetImage(
+                                    'assets/images/icon_chevron_left.png'),
+                              ),
+                              iconSize: 90,
+                            )
+                          : IconButton(
+                              onPressed: () {
+                                controller.undo();
+                                _isAnswered = false;
+                                if (currentCardIndex == 0) {
+                                  setState(() {
+                                    isUndoButtonVisible = true;
+                                  });
+                                }
+                              },
+                              color: Colors.transparent,
+                              icon: const ImageIcon(
+                                AssetImage(
+                                    'assets/images/icon_chevron_left_white.png'),
+                              ),
+                              iconSize: 90,
+                            ),
+                      SizedBox(
+                        width: width * 0.57, // 최대 가로 크기를 설정할 수도 있습니다.
+                        height: height * 0.67, // 최대 세로 크기를 설정할 수도 있습니다
+                        child: CardSwiper(
+                          duration: const Duration(milliseconds: 0),
+                          controller: controller,
+                          cardsCount: cards.length,
+                          numberOfCardsDisplayed: 1,
+                          cardBuilder: (
+                            context,
+                            index,
+                            horizontalThresholdPercentage,
+                            verticalThresholdPercentage,
+                          ) {
+                            currentCardIndex = index;
+                            personName = extractName(cards[index]);
+                            return Image.asset(
+                              cards[index],
+                              fit: BoxFit.fitHeight,
+                            );
                           },
-                          color: Colors.transparent,
-                          icon: const ImageIcon(
-                            AssetImage('assets/images/icon_chevron_left.png'),
-                          ),
-                          iconSize: 90,
-                        )
-                      : IconButton(
-                          onPressed: () {
-                            controller.undo();
-                            _isAnswered = false;
-                            if (currentCardIndex == 0) {
+                          isDisabled: true,
+                          onSwipe: _onSwipe,
+                          onUndo: _onUndo,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          if (currentCardIndex == 9) {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => const GameOver(
+                                  gameName: 'person',
+                                ),
+                              ),
+                            );
+                          } else {
+                            controller.swipeLeft();
+                            if (currentCardIndex != 2) {
                               setState(() {
-                                isUndoButtonVisible = true;
+                                isUndoButtonVisible = false;
                               });
                             }
-                          },
-                          color: Colors.transparent,
-                          icon: const ImageIcon(
-                            AssetImage(
-                                'assets/images/icon_chevron_left_white.png'),
-                          ),
-                          iconSize: 90,
+                          }
+                          _isAnswered = false;
+                        },
+                        color: Colors.transparent,
+                        icon: const ImageIcon(
+                          AssetImage('assets/images/icon_chevron_right.png'),
                         ),
-                  SizedBox(
-                    width: width * 0.57, // 최대 가로 크기를 설정할 수도 있습니다.
-                    height: height * 0.67, // 최대 세로 크기를 설정할 수도 있습니다
-                    child: CardSwiper(
-                      duration: const Duration(milliseconds: 0),
-                      controller: controller,
-                      cardsCount: cards.length,
-                      numberOfCardsDisplayed: 1,
-                      cardBuilder: (
-                        context,
-                        index,
-                        horizontalThresholdPercentage,
-                        verticalThresholdPercentage,
-                      ) {
-                        currentCardIndex = index;
-                        personName = extractName(cards[index]);
-                        return Image.asset(
-                          cards[index],
-                          fit: BoxFit.fitHeight,
-                        );
-                      },
-                      isDisabled: true,
-                      onSwipe: _onSwipe,
-                      onUndo: _onUndo,
-                    ),
+                        iconSize: 90,
+                      ),
+                    ],
                   ),
-                  IconButton(
-                    onPressed: () {
-                      if (currentCardIndex == 9) {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => const GameOver(
-                              gameName: 'person',
-                            ),
-                          ),
-                        );
-                      } else {
-                        controller.swipeLeft();
-                        if (currentCardIndex != 2) {
-                          setState(() {
-                            isUndoButtonVisible = false;
-                          });
-                        }
-                      }
-                      _isAnswered = false;
-                    },
-                    color: Colors.transparent,
-                    icon: const ImageIcon(
-                      AssetImage('assets/images/icon_chevron_right.png'),
-                    ),
-                    iconSize: 90,
-                  ),
+                  // SizedBox(height: height * 0.038),
+                  !_isAnswered
+                      ? SizedBox(
+                          width: 250,
+                          height: 71,
+                          child: ElevatedButton(
+                              onPressed: () {
+                                setState(() {
+                                  _isAnswered = !_isAnswered;
+                                });
+                              },
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color(0xffFF62D3),
+                                  textStyle: const TextStyle(
+                                      fontFamily: 'DungGeunMo',
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 42,
+                                      color: Colors.black),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(12))),
+                              child: const Text('정답보기')),
+                        )
+                      : Text(personName,
+                          style: const TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              fontWeight: FontWeight.w400,
+                              fontSize: 72,
+                              color: Color(0xffFF62D3))),
                 ],
               ),
-              // SizedBox(height: height * 0.038),
-              !_isAnswered
-                  ? SizedBox(
-                      width: 250,
-                      height: 71,
-                      child: ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              _isAnswered = !_isAnswered;
-                            });
-                          },
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xffFF62D3),
-                              textStyle: const TextStyle(
-                                  fontFamily: 'DungGeunMo',
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 42,
-                                  color: Colors.black),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12))),
-                          child: const Text('정답보기')),
-                    )
-                  : Text(personName,
-                      style: const TextStyle(
-                          fontFamily: 'DungGeunMo',
-                          fontWeight: FontWeight.w400,
-                          fontSize: 72,
-                          color: Color(0xffFF62D3))),
-            ],
-          ),
-        ),
+            ),
+          )
+        ],
       ),
     );
   }
