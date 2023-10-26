@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../choi/choi_game_page.dart';
+import '../disco/disco_game_page.dart';
 import '../four/four_game_page.dart';
 import '../onboarding.dart';
 import '../person/person_game_page.dart';
@@ -49,7 +50,7 @@ class _HomeWebState extends State<HomeWeb> {
     focusNode.requestFocus();
   }
 
-  int _selectedFruit = 0;
+  int _selectedGame = 0;
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -78,27 +79,27 @@ class _HomeWebState extends State<HomeWeb> {
               onKey: (RawKeyEvent event) {
                 if (event is RawKeyDownEvent) {
                   if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
-                    if (_selectedFruit == 8) {
+                    if (_selectedGame == 8) {
                     } else {
                       setState(() {
-                        _selectedFruit =
-                            (_selectedFruit + 1) % _GameNames.length;
+                        _selectedGame =
+                            (_selectedGame + 1) % _GameNames.length;
                         scr.animateToItem(
-                          _selectedFruit,
+                          _selectedGame,
                           duration: const Duration(milliseconds: 300),
                           curve: Curves.easeInOut,
                         );
                       });
                     }
                   } else if (event.logicalKey == LogicalKeyboardKey.arrowUp) {
-                    if (_selectedFruit == 0) {
+                    if (_selectedGame == 0) {
                     } else {
                       setState(() {
-                        _selectedFruit =
-                            (_selectedFruit - 1 + _GameNames.length) %
+                        _selectedGame =
+                            (_selectedGame - 1 + _GameNames.length) %
                                 _GameNames.length;
                         scr.animateToItem(
-                          _selectedFruit,
+                          _selectedGame,
                           duration: const Duration(milliseconds: 300),
                           curve: Curves.easeInOut,
                         );
@@ -111,7 +112,7 @@ class _HomeWebState extends State<HomeWeb> {
                 children: [
                   Row(
                     children: [
-                      contentList[_selectedFruit],
+                      contentList[_selectedGame],
                       SizedBox(
                         width: 635,
                         height: 671,
@@ -123,14 +124,14 @@ class _HomeWebState extends State<HomeWeb> {
                           itemExtent: 100,
                           onSelectedItemChanged: (int selectedItem) {
                             setState(() {
-                              _selectedFruit = selectedItem;
-                              debugPrint("$_selectedFruit");
+                              _selectedGame = selectedItem;
+                              debugPrint("$_selectedGame");
                             });
                           },
                           selectionOverlay: null,
                           children: List<Widget>.generate(_GameNames.length,
                               (int index) {
-                            final isSelected = index == _selectedFruit;
+                            final isSelected = index == _selectedGame;
                             return Center(
                                 child: isSelected
                                     ? Row(
@@ -142,7 +143,7 @@ class _HomeWebState extends State<HomeWeb> {
                                           const SizedBox(width: 18),
                                           InkWell(
                                             onTap: () {
-                                              switch (_selectedFruit + 1) {
+                                              switch (_selectedGame + 1) {
                                                 case 1:
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
@@ -153,7 +154,7 @@ class _HomeWebState extends State<HomeWeb> {
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              const ChoiGamePage()));
+                                                              const DiscoGamePage()));
                                                   break;
                                                 case 3:
                                                   Navigator.of(context).push(
