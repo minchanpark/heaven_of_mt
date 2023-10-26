@@ -5,11 +5,13 @@ class PersonOnboarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Stack(
       children: <Widget>[
-        Container(
-            width: 549,
-            height: 671,
+        SizedBox(
+            width: width * 0.43,
+            height: height * 0.806,
             child:
                 Image.asset('assets/images/back_image.png', fit: BoxFit.fill)),
         Positioned(
@@ -149,11 +151,13 @@ class DiscoOnboarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Stack(
       children: <Widget>[
         SizedBox(
-            width: 549,
-            height: 671,
+            width: width * 0.43,
+            height: height * 0.806,
             child:
                 Image.asset('assets/images/back_image.png', fit: BoxFit.fill)),
         Positioned(
@@ -400,11 +404,13 @@ class CaptainOnboarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Stack(
       children: <Widget>[
         SizedBox(
-            width: 549,
-            height: 671,
+            width: width * 0.43,
+            height: height * 0.806,
             child:
                 Image.asset('assets/images/back_image.png', fit: BoxFit.fill)),
         Positioned(
@@ -554,11 +560,13 @@ class FourOnboarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Stack(
       children: <Widget>[
         SizedBox(
-          width: 549,
-          height: 671,
+          width: width * 0.43,
+          height: height * 0.806,
           child: Image.asset('assets/images/back_image.png', fit: BoxFit.fill),
         ),
         Positioned(
@@ -738,11 +746,13 @@ class WordTeleOnboarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Stack(
       children: <Widget>[
         SizedBox(
-            width: 549,
-            height: 671,
+            width: width * 0.43,
+            height: height * 0.806,
             child:
                 Image.asset('assets/images/back_image.png', fit: BoxFit.fill)),
         Positioned(
@@ -984,11 +994,13 @@ class TeleStrationOnboarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Stack(
       children: <Widget>[
         SizedBox(
-          width: 549,
-          height: 671,
+          width: width * 0.43,
+          height: height * 0.806,
           child: Image.asset('assets/images/back_image.png', fit: BoxFit.fill),
         ),
         Positioned(
@@ -1261,11 +1273,13 @@ class ChoiOnboarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Stack(
       children: <Widget>[
         SizedBox(
-            width: 549,
-            height: 671,
+            width: width * 0.43,
+            height: height * 0.806,
             child:
                 Image.asset('assets/images/back_image.png', fit: BoxFit.fill)),
         Positioned(
@@ -1405,11 +1419,13 @@ class MusicOnboarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Stack(
       children: <Widget>[
         SizedBox(
-            width: 549,
-            height: 671,
+            width: width * 0.43,
+            height: height * 0.806,
             child:
                 Image.asset('assets/images/back_image.png', fit: BoxFit.fill)),
         Positioned(
@@ -1520,11 +1536,13 @@ class FamousLineOnboarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Stack(
       children: <Widget>[
         SizedBox(
-            width: 549,
-            height: 671,
+            width: width * 0.43,
+            height: height * 0.806,
             child:
                 Image.asset('assets/images/back_image.png', fit: BoxFit.fill)),
         Positioned(

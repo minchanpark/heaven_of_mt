@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../category.dart';
 import '../captain/captain_game_page.dart';
 import '../choi/choi_game_page.dart';
 import '../disco/disco_game_page.dart';
@@ -69,14 +70,15 @@ class _HomeWebState extends State<HomeWeb> {
           ),
         ),
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          const SizedBox(height: 47),
+          SizedBox(height: height * 0.056),
           Container(
-              margin: const EdgeInsets.only(left: 108),
+              margin:
+                  EdgeInsets.only(left: width * 0.084, right: width * 0.084),
               child: Image.asset('assets/images/title.png',
                   width: width * 0.15, height: height * 0.038)),
-          const SizedBox(height: 27),
+          SizedBox(height: height * 0.032),
           Container(
-            margin: const EdgeInsets.only(left: 96),
+            margin: EdgeInsets.only(left: width * 0.075),
             child: RawKeyboardListener(
               focusNode: focusNode,
               onKey: (RawKeyEvent event) {
@@ -113,108 +115,113 @@ class _HomeWebState extends State<HomeWeb> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  contentList[_selectedGame],
-                  SizedBox(
-                    width: 635,
-                    height: 671,
-                    child: CupertinoPicker(
-                      scrollController: scr,
-                      magnification: 1.22,
-                      squeeze: 1.2,
-                      useMagnifier: true,
-                      itemExtent: 100,
-                      onSelectedItemChanged: (int selectedItem) {
-                        setState(() {
-                          _selectedGame = selectedItem;
-                          debugPrint("$_selectedGame");
-                        });
-                      },
-                      selectionOverlay: null,
-                      children: List<Widget>.generate(_GameNames.length,
-                          (int index) {
-                        final isSelected = index == _selectedGame;
-                        return Center(
-                            child: isSelected
-                                ? Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.center,
-                                    children: [
-                                      Image.asset("assets/images/left.png",
-                                          width: 24, height: 42),
-                                      const SizedBox(width: 18),
-                                      InkWell(
-                                        onTap: () {
-                                          switch (_selectedGame + 1) {
-                                            case 1: // 인물퀴즈
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const PersonGamePage()));
-                                              break;
-                                            case 2: // 디스코
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const DiscoGamePage()));
-                                              break;
-                                            case 3: // 대표게임
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const CaptainGamePage()));
-                                              break;
-                                            case 4: // 네글자퀴즈
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const FourGamePage()));
-                                              break;
-                                            case 5: // 단어텔레파시
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const TeleGamePage()));
-                                              break;
-                                            case 6: // 텔레스트레이션
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const TelestrationGamePage()));
-                                              break;
-                                            case 7: // 액션초성게임
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const ChoiGamePage()));
-                                              break;
-                                            case 8: // 노래초성퀴즈
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const ChoiGamePage()));
-                                              break;
-                                            case 9: // 명대사퀴즈
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const MovieGamePage()));
-                                              break;
-                                          }
-                                        },
-                                        child: Container(
-                                          width: 330,
-                                          height: 59,
-                                          decoration: const BoxDecoration(
-                                              color: Color(0xFFFF62D3)),
-                                          child: Center(
-                                            child: Text(
-                                              _GameNames[index],
-                                              style: const TextStyle(
-                                                  fontFamily: 'DungGeunMo',
-                                                  fontSize: 44,
-                                                  fontWeight:
-                                                      FontWeight.w400,
-                                                  color: Colors.white),
+                  Row(
+                    children: [
+                      contentList[_selectedFruit],
+                      SizedBox(width: width * 0.063),
+                      SizedBox(
+                        width: width * 0.394,
+                        height: height * 0.806,
+                        child: CupertinoPicker(
+                          scrollController: scr,
+                          magnification: 1.22,
+                          squeeze: 1.2,
+                          useMagnifier: true,
+                          itemExtent: 100,
+                          onSelectedItemChanged: (int selectedItem) {
+                            setState(() {
+                              _selectedFruit = selectedItem;
+                              debugPrint("$_selectedFruit");
+                            });
+                          },
+                          selectionOverlay: null,
+                          children: List<Widget>.generate(_GameNames.length,
+                              (int index) {
+                            final isSelected = index == _selectedFruit;
+                            return Center(
+                                child: isSelected
+                                    ? Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Image.asset("assets/images/left.png",
+                                              width: 24, height: 42),
+                                          const SizedBox(width: 18),
+                                          InkWell(
+                                            onTap: () {
+                                              switch (_selectedFruit + 1) {
+                                                case 1:
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const PersonGamePage()));
+                                                  break;
+                                                case 2:
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const ChoiGamePage()));
+                                                  break;
+                                                case 3:
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const ChoiGamePage()));
+                                                  break;
+                                                case 4:
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const FourGamePage()));
+                                                  break;
+                                                case 5:
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const TeleGamePage()));
+                                                  break;
+                                                case 6:
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const ChoiGamePage()));
+                                                  break;
+                                                case 7:
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const ChoiGamePage()));
+                                                  break;
+                                                case 8:
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const CategoryPage()));
+                                                  break;
+                                                case 9:
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const MovieGamePage()));
+                                                  break;
+                                              }
+                                            },
+                                            child: Container(
+                                              width: 330,
+                                              height: 59,
+                                              decoration: const BoxDecoration(
+                                                  color: Color(0xFFFF62D3)),
+                                              child: Center(
+                                                child: Text(
+                                                  _GameNames[index],
+                                                  style: const TextStyle(
+                                                      fontFamily: 'DungGeunMo',
+                                                      fontSize: 44,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      color: Colors.white),
+                                                ),
+                                              ),
                                             ),
                                           ),
                                         ),
