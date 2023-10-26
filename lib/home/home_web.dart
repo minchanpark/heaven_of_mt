@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../category.dart';
 import '../choi/choi_game_page.dart';
 import '../four/four_game_page.dart';
 import '../onboarding.dart';
@@ -65,14 +66,15 @@ class _HomeWebState extends State<HomeWeb> {
           ),
         ),
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          const SizedBox(height: 47),
+          SizedBox(height: height * 0.056),
           Container(
-              margin: const EdgeInsets.only(left: 108),
+              margin:
+                  EdgeInsets.only(left: width * 0.084, right: width * 0.084),
               child: Image.asset('assets/images/title.png',
                   width: width * 0.15, height: height * 0.038)),
-          const SizedBox(height: 27),
+          SizedBox(height: height * 0.032),
           Container(
-            margin: const EdgeInsets.only(left: 96),
+            margin: EdgeInsets.only(left: width * 0.075),
             child: RawKeyboardListener(
               focusNode: focusNode,
               onKey: (RawKeyEvent event) {
@@ -112,9 +114,10 @@ class _HomeWebState extends State<HomeWeb> {
                   Row(
                     children: [
                       contentList[_selectedFruit],
+                      SizedBox(width: width * 0.063),
                       SizedBox(
-                        width: 635,
-                        height: 671,
+                        width: width * 0.394,
+                        height: height * 0.806,
                         child: CupertinoPicker(
                           scrollController: scr,
                           magnification: 1.22,
@@ -189,7 +192,7 @@ class _HomeWebState extends State<HomeWeb> {
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              const ChoiGamePage()));
+                                                              const CategoryPage()));
                                                   break;
                                                 case 9:
                                                   Navigator.of(context).push(
