@@ -247,3 +247,16 @@ final List<GameContents> tele = [
   GameContents(name: '구', index: '49'),
   GameContents(name: '원', index: '50'),
 ];
+
+final List<GameContents> telestration = [
+  GameContents(name: '천혜향', index: '1'),
+  GameContents(name: '이천혜향', index: '2'),
+  GameContents(name: '삼천혜향', index: '3'),
+  GameContents(name: '사천혜향', index: '4'),
+  GameContents(name: '오천혜향', index: '5'),
+  GameContents(name: '육천혜향', index: '6'),
+  GameContents(name: '칠천혜향', index: '7'),
+  GameContents(name: '팔천혜향', index: '8'),
+  GameContents(name: '구천혜향', index: '9'),
+  GameContents(name: '만혜향', index: '10'),
+];
