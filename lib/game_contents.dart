@@ -75,7 +75,7 @@ final List<GameContents> person = [
   GameContents(name: 'assets/person/김동현.WEBP', index: '11'),
   GameContents(name: 'assets/person/링컨.WEBP', index: '12'),
   GameContents(name: 'assets/person/유관순.WEBP', index: '13'),
-  GameContents(name: 'assets/person/Deadpool.JPG', index: '14'),
+  GameContents(name: 'assets/person/데드풀.JPG', index: '14'),
   GameContents(name: 'assets/person/로버트.WEBP', index: '15'),
   GameContents(name: 'assets/person/민경훈.jpeg', index: '16'),
   GameContents(name: 'assets/person/보노보노.WEBP', index: '17'),
@@ -91,7 +91,7 @@ final List<GameContents> person = [
   GameContents(name: 'assets/person/뿡뿡이.WEBP', index: '27'),
   GameContents(name: 'assets/person/어피치.WEBP', index: '28'),
   GameContents(name: 'assets/person/해린.JPG', index: '29'),
-  GameContents(name: 'assets/person/Justin Bieber.png', index: '30'),
+  GameContents(name: 'assets/person/저스틴비버.png', index: '30'),
   GameContents(name: 'assets/person/조정석.WEBP', index: '31'),
   GameContents(name: 'assets/person/조유리.WEBP', index: '32'),
   GameContents(name: 'assets/person/정 동원.jpeg', index: '33'),
@@ -110,67 +110,11 @@ final List<GameContents> person = [
   GameContents(name: 'assets/person/지성.WEBP', index: '46'),
   GameContents(name: 'assets/person/이경영.WEBP', index: '47'),
   GameContents(name: 'assets/person/피오나.WEBP', index: '48'),
-  GameContents(name: 'assets/person/winter.jpeg', index: '49'),
+  GameContents(name: 'assets/person/윈터.jpeg', index: '49'),
   GameContents(name: 'assets/person/고아성.WEBP', index: '50'),
 ];
-<<<<<<< HEAD
 
-final List<GameContents> person2 = [
-  GameContents(name: 'assets/person/김동현.WEBP', index: '1'),
-  GameContents(name: 'assets/person/링컨.WEBP', index: '2'),
-  GameContents(name: 'assets/person/유관순.WEBP', index: '3'),
-  GameContents(name: 'assets/person/데드풀.JPG', index: '4'),
-  GameContents(name: 'assets/person/로버트.WEBP', index: '5'),
-  GameContents(name: 'assets/person/민경훈.jpeg', index: '6'),
-  GameContents(name: 'assets/person/보노보노.WEBP', index: '7'),
-  GameContents(name: 'assets/person/스칼렛요한슨.JPG', index: '8'),
-  GameContents(name: 'assets/person/올라프.JPG', index: '9'),
-  GameContents(name: 'assets/person/이승우.JPG', index: '10'),
-];
-
-final List<GameContents> person3 = [
-  GameContents(name: 'assets/person/안재홍.WEBP', index: '1'),
-  GameContents(name: 'assets/person/손흥민.JPG', index: '2'),
-  GameContents(name: 'assets/person/강하늘.WEBP', index: '3'),
-  GameContents(name: 'assets/person/거미.WEBP', index: '4'),
-  GameContents(name: 'assets/person/고윤정.WEBP', index: '5'),
-  GameContents(name: 'assets/person/미달이.WEBP', index: '6'),
-  GameContents(name: 'assets/person/뿡뿡이.WEBP', index: '7'),
-  GameContents(name: 'assets/person/어피치.WEBP', index: '8'),
-  GameContents(name: 'assets/person/해린.JPG', index: '9'),
-  GameContents(name: 'assets/person/저스틴비버.png', index: '10'),
-];
-
-final List<GameContents> person4 = [
-  GameContents(name: 'assets/person/조정석.WEBP', index: '1'),
-  GameContents(name: 'assets/person/조유리.WEBP', index: '2'),
-  GameContents(name: 'assets/person/정 동원.jpeg', index: '3'),
-  GameContents(name: 'assets/person/무민.JPG', index: '4'),
-  GameContents(name: 'assets/person/샘스미스.WEBP', index: '5'),
-  GameContents(name: 'assets/person/현주엽.WEBP', index: '6'),
-  GameContents(name: 'assets/person/전여빈.WEBP', index: '7'),
-  GameContents(name: 'assets/person/김연경.jpeg', index: '8'),
-  GameContents(name: 'assets/person/타노스.WEBP', index: '9'),
-  GameContents(name: 'assets/person/김소연.WEBP', index: '10'),
-];
-
-final List<GameContents> person5 = [
-  GameContents(name: 'assets/person/조승우.JPG', index: '1'),
-  GameContents(name: 'assets/person/안나.JPG', index: '2'),
-  GameContents(name: 'assets/person/포돌이.WEBP', index: '3'),
-  GameContents(name: 'assets/person/이문세.WEBP', index: '4'),
-  GameContents(name: 'assets/person/문상훈.WEBP', index: '5'),
-  GameContents(name: 'assets/person/지성.WEBP', index: '6'),
-  GameContents(name: 'assets/person/이경영.WEBP', index: '7'),
-  GameContents(name: 'assets/person/피오나.WEBP', index: '8'),
-  GameContents(name: 'assets/person/윈터.jpeg', index: '9'),
-  GameContents(name: 'assets/person/고아성.WEBP', index: '10'),
-];
-
-final List<GameContents> four1 = [
-=======
 final List<GameContents> four = [
->>>>>>> cb7b4342a1d6bddb7c50bee95fecd85c80ef4dd2
   GameContents(name: '이구_ _', index: '1'),
   GameContents(name: '동문_ _', index: '2'),
   GameContents(name: '드라_ _', index: '3'),

@@ -3,7 +3,6 @@ import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
 import '../game_contents.dart';
 import '../gameover/gameover_web.dart';
-import '../image_card.dart';
 
 class PersonWebGame extends StatefulWidget {
   const PersonWebGame({super.key});
@@ -16,8 +15,8 @@ class _PersonWebGameState extends State<PersonWebGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
 
-  List<ImageGameCard> cards = []; // cards 변수를 초기화
-
+  List<String> cards = []; // cards 변수를 초기화
+  bool _isAnswered = false;
   String setNumber = '';
   final random = Random();
   @override
@@ -30,7 +29,7 @@ class _PersonWebGameState extends State<PersonWebGame> {
         personIndices.sublist(0, 10).map((index) => person[index]).toList();
 
     cards = randomPerson
-        .map((gameContents) => ImageGameCard(gameContents: gameContents))
+        .map((gameContents) => gameContents.name)
         .toList();
   }
 
@@ -52,6 +51,7 @@ class _PersonWebGameState extends State<PersonWebGame> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+    String personName = '';
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: SafeArea(
@@ -103,7 +103,6 @@ class _PersonWebGameState extends State<PersonWebGame> {
                           icon: const ImageIcon(
                             AssetImage('assets/images/icon_chevron_left.png'),
                           ),
-<<<<<<< HEAD
                           iconSize: 90,
                         )
                       : IconButton(
@@ -143,48 +142,6 @@ class _PersonWebGameState extends State<PersonWebGame> {
                           cards[index],
                           fit: BoxFit.fitHeight,
                         );
-=======
-                    SizedBox(
-                      width: width * 0.57, // 최대 가로 크기를 설정할 수도 있습니다.
-                      height: height * 0.67, // 최대 세로 크기를 설정할 수도 있습니다
-                      child: CardSwiper(
-                        duration: const Duration(milliseconds: 0),
-                        controller: controller,
-                        cardsCount: cards.length,
-                        numberOfCardsDisplayed: 1,
-                        cardBuilder: (
-                          context,
-                          index,
-                          horizontalThresholdPercentage,
-                          verticalThresholdPercentage,
-                        ) {
-                          currentCardIndex = index;
-                          return cards[index];
-                        },
-                        isDisabled: true,
-                        onSwipe: _onSwipe,
-                        onUndo: _onUndo,
-                      ),
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        if (currentCardIndex == 9) {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => GameOver(
-                                gameName: 'person',
-                              ),
-                            ),
-                          );
-                        } else {
-                          controller.swipeLeft();
-                          if (currentCardIndex != 2) {
-                            setState(() {
-                              isUndoButtonVisible = false;
-                            });
-                          }
-                        }
->>>>>>> cb7b4342a1d6bddb7c50bee95fecd85c80ef4dd2
                       },
                       isDisabled: true,
                       onSwipe: _onSwipe,
@@ -196,8 +153,7 @@ class _PersonWebGameState extends State<PersonWebGame> {
                       if (currentCardIndex == 9) {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (context) => GameOver(
-                              id: widget.id,
+                            builder: (context) => const GameOver(
                               gameName: 'person',
                             ),
                           ),
@@ -247,7 +203,7 @@ class _PersonWebGameState extends State<PersonWebGame> {
                           fontFamily: 'DungGeunMo',
                           fontWeight: FontWeight.w400,
                           fontSize: 72,
-                          color: Color(0xffFF62D3))),
+                          color: Colors.white)),
             ],
           ),
         ),
