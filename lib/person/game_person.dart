@@ -17,7 +17,7 @@ class _PersonWebGameState extends State<PersonWebGame> {
 
   List<String> cards = []; // cards 변수를 초기화
   bool _isAnswered = false;
-  String setNumber = '';
+  String personName = '';
   final random = Random();
   @override
   void initState() {
@@ -51,7 +51,7 @@ class _PersonWebGameState extends State<PersonWebGame> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    String personName = '';
+    
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: SafeArea(
@@ -203,7 +203,7 @@ class _PersonWebGameState extends State<PersonWebGame> {
                           fontFamily: 'DungGeunMo',
                           fontWeight: FontWeight.w400,
                           fontSize: 72,
-                          color: Colors.white)),
+                          color: Color(0xffFF62D3))),
             ],
           ),
         ),
