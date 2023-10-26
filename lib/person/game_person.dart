@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import '../game_contents.dart';
 import '../gameover/gameover_web.dart';
-import '../image_card.dart';
 
 class PersonWebGame extends StatefulWidget {
   final String id;
@@ -19,33 +18,26 @@ class PersonWebGame extends StatefulWidget {
 class _PersonWebGameState extends State<PersonWebGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
-  List<ImageGameCard> cards = []; // cards 변수를 초기화
+  List<String> cards = []; // cards 변수를 초기화
   String setNumber = '';
+  bool _isAnswered = false;
+  String personName = '';
+
   @override
   void initState() {
     super.initState();
 
     // widget.id 값에 따라 cards 변수에 값을 할당
     if (widget.id == 'SET 1') {
-      cards = person1
-          .map((gameContents) => ImageGameCard(gameContents: gameContents))
-          .toList();
+      cards = person1.map((gameContents) => gameContents.name).toList();
     } else if (widget.id == 'SET 2') {
-      cards = person2
-          .map((gameContents) => ImageGameCard(gameContents: gameContents))
-          .toList();
+      cards = person2.map((gameContents) => gameContents.name).toList();
     } else if (widget.id == 'SET 3') {
-      cards = person3
-          .map((gameContents) => ImageGameCard(gameContents: gameContents))
-          .toList();
+      cards = person3.map((gameContents) => gameContents.name).toList();
     } else if (widget.id == 'SET 4') {
-      cards = person4
-          .map((gameContents) => ImageGameCard(gameContents: gameContents))
-          .toList();
+      cards = person4.map((gameContents) => gameContents.name).toList();
     } else {
-      cards = person5
-          .map((gameContents) => ImageGameCard(gameContents: gameContents))
-          .toList();
+      cards = person5.map((gameContents) => gameContents.name).toList();
     }
     setNumber = widget.id;
   }
@@ -55,6 +47,13 @@ class _PersonWebGameState extends State<PersonWebGame> {
   void dispose() {
     controller.dispose();
     super.dispose();
+  }
+
+  String extractName(String imagePath) {
+    List<String> pathParts = imagePath.split('/');
+    List<String> fileParts = pathParts[2].split('.');
+    String name = fileParts[0];
+    return name;
   }
 
   @override
@@ -67,15 +66,14 @@ class _PersonWebGameState extends State<PersonWebGame> {
         child: Container(
           padding: EdgeInsets.only(
             left: width * 0.075,
-            top: height * 0.073,
-            right: width * 0.0797,
+            top: height * 0.071,
+            right: width * 0.075,
           ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(
                     onPressed: () {
@@ -85,108 +83,136 @@ class _PersonWebGameState extends State<PersonWebGame> {
                     icon: const ImageIcon(AssetImage('assets/images/Exit.png')),
                     iconSize: 39,
                   ),
+                  const Spacer(),
+                  Text(
+                    '${currentCardIndex + 1}/${cards.length}',
+                    style: const TextStyle(
+                      fontFamily: 'DungGeunMo',
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 42,
+                    ),
+                  ),
+                  const Spacer(),
+                  const SizedBox(width: 50),
                 ],
               ),
-              Text(
-                setNumber,
-                style: const TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 60,
-                ),
-              ),
-              SizedBox(height: height * 0.025),
-              Text(
-                '${currentCardIndex + 1} / ${cards.length}',
-                style: const TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Color.fromRGBO(255, 98, 211, 1),
-                  fontWeight: FontWeight.w400,
-                  fontSize: 36,
-                ),
-              ),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    isUndoButtonVisible
-                        ? IconButton(
-                            onPressed: controller.undo,
-                            color: Colors.transparent,
-                            icon: const ImageIcon(
-                              AssetImage('assets/images/icon_chevron_left.png'),
-                            ),
-                            iconSize: 90,
-                          )
-                        : IconButton(
-                            onPressed: () {
-                              controller.undo();
-                              if (currentCardIndex == 0) {
-                                setState(() {
-                                  isUndoButtonVisible = true;
-                                });
-                              }
-                            },
-                            color: Colors.transparent,
-                            icon: const ImageIcon(
-                              AssetImage(
-                                  'assets/images/icon_chevron_left_white.png'),
-                            ),
-                            iconSize: 90,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  isUndoButtonVisible
+                      ? IconButton(
+                          onPressed: () {
+                            controller.undo();
+                            _isAnswered = false;
+                          },
+                          color: Colors.transparent,
+                          icon: const ImageIcon(
+                            AssetImage('assets/images/icon_chevron_left.png'),
                           ),
-                    SizedBox(
-                      width: width * 0.57, // 최대 가로 크기를 설정할 수도 있습니다.
-                      height: height * 0.67, // 최대 세로 크기를 설정할 수도 있습니다
-                      child: CardSwiper(
-                        duration: const Duration(milliseconds: 0),
-                        controller: controller,
-                        cardsCount: cards.length,
-                        numberOfCardsDisplayed: 1,
-                        cardBuilder: (
-                          context,
-                          index,
-                          horizontalThresholdPercentage,
-                          verticalThresholdPercentage,
-                        ) {
-                          currentCardIndex = index;
-                          return cards[index];
-                        },
-                        isDisabled: true,
-                        onSwipe: _onSwipe,
-                        onUndo: _onUndo,
-                      ),
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        if (currentCardIndex == 9) {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => GameOver(
-                                id: widget.id,
-                                gameName: 'person',
-                              ),
-                            ),
-                          );
-                        } else {
-                          controller.swipeLeft();
-                          if (currentCardIndex != 2) {
-                            setState(() {
-                              isUndoButtonVisible = false;
-                            });
-                          }
-                        }
+                          iconSize: 90,
+                        )
+                      : IconButton(
+                          onPressed: () {
+                            controller.undo();
+                            _isAnswered = false;
+                            if (currentCardIndex == 0) {
+                              setState(() {
+                                isUndoButtonVisible = true;
+                              });
+                            }
+                          },
+                          color: Colors.transparent,
+                          icon: const ImageIcon(
+                            AssetImage(
+                                'assets/images/icon_chevron_left_white.png'),
+                          ),
+                          iconSize: 90,
+                        ),
+                  SizedBox(
+                    width: width * 0.57, // 최대 가로 크기를 설정할 수도 있습니다.
+                    height: height * 0.67, // 최대 세로 크기를 설정할 수도 있습니다
+                    child: CardSwiper(
+                      duration: const Duration(milliseconds: 0),
+                      controller: controller,
+                      cardsCount: cards.length,
+                      numberOfCardsDisplayed: 1,
+                      cardBuilder: (
+                        context,
+                        index,
+                        horizontalThresholdPercentage,
+                        verticalThresholdPercentage,
+                      ) {
+                        currentCardIndex = index;
+                        personName = extractName(cards[index]);
+                        return Image.asset(
+                          cards[index],
+                          fit: BoxFit.fitHeight,
+                        );
                       },
-                      color: Colors.transparent,
-                      icon: const ImageIcon(
-                        AssetImage('assets/images/icon_chevron_right.png'),
-                      ),
-                      iconSize: 90,
+                      isDisabled: true,
+                      onSwipe: _onSwipe,
+                      onUndo: _onUndo,
                     ),
-                  ],
-                ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      if (currentCardIndex == 9) {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => GameOver(
+                              id: widget.id,
+                              gameName: 'person',
+                            ),
+                          ),
+                        );
+                      } else {
+                        controller.swipeLeft();
+                        if (currentCardIndex != 2) {
+                          setState(() {
+                            isUndoButtonVisible = false;
+                          });
+                        }
+                      }
+                      _isAnswered = false;
+                    },
+                    color: Colors.transparent,
+                    icon: const ImageIcon(
+                      AssetImage('assets/images/icon_chevron_right.png'),
+                    ),
+                    iconSize: 90,
+                  ),
+                ],
               ),
+              // SizedBox(height: height * 0.038),
+              !_isAnswered
+                  ? SizedBox(
+                      width: 250,
+                      height: 71,
+                      child: ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              _isAnswered = !_isAnswered;
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xffFF62D3),
+                              textStyle: const TextStyle(
+                                  fontFamily: 'DungGeunMo',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 42,
+                                  color: Colors.black),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12))),
+                          child: const Text('정답보기')),
+                    )
+                  : Text(personName,
+                      style: const TextStyle(
+                          fontFamily: 'DungGeunMo',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 72,
+                          color: Color(0xffFF62D3))),
             ],
           ),
         ),

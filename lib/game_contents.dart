@@ -90,7 +90,7 @@ final List<GameContents> person2 = [
   GameContents(name: 'assets/person/김동현.WEBP', index: '1'),
   GameContents(name: 'assets/person/링컨.WEBP', index: '2'),
   GameContents(name: 'assets/person/유관순.WEBP', index: '3'),
-  GameContents(name: 'assets/person/Deadpool.JPG', index: '4'),
+  GameContents(name: 'assets/person/데드풀.JPG', index: '4'),
   GameContents(name: 'assets/person/로버트.WEBP', index: '5'),
   GameContents(name: 'assets/person/민경훈.jpeg', index: '6'),
   GameContents(name: 'assets/person/보노보노.WEBP', index: '7'),
@@ -109,7 +109,7 @@ final List<GameContents> person3 = [
   GameContents(name: 'assets/person/뿡뿡이.WEBP', index: '7'),
   GameContents(name: 'assets/person/어피치.WEBP', index: '8'),
   GameContents(name: 'assets/person/해린.JPG', index: '9'),
-  GameContents(name: 'assets/person/Justin Bieber.png', index: '10'),
+  GameContents(name: 'assets/person/저스틴비버.png', index: '10'),
 ];
 
 final List<GameContents> person4 = [
@@ -134,7 +134,7 @@ final List<GameContents> person5 = [
   GameContents(name: 'assets/person/지성.WEBP', index: '6'),
   GameContents(name: 'assets/person/이경영.WEBP', index: '7'),
   GameContents(name: 'assets/person/피오나.WEBP', index: '8'),
-  GameContents(name: 'assets/person/winter.jpeg', index: '9'),
+  GameContents(name: 'assets/person/윈터.jpeg', index: '9'),
   GameContents(name: 'assets/person/고아성.WEBP', index: '10'),
 ];
 
