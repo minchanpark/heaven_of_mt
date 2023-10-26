@@ -42,7 +42,7 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
           .toList();
       answer_cards = randomMusicTitle
           .map((gameContents) =>
-              GameCard(gameContents: gameContents, answer: true, fontSize: 84))
+              GameCard(gameContents: gameContents, answer: true, fontSize: 108))
           .toList();
     } else if (widget.generation == '2000') {
       final musicTitleIndices = List<int>.generate(music2000.length, (i) => i)
