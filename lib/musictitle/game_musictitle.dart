@@ -249,7 +249,7 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
                               borderRadius: BorderRadius.circular(12)),
                         ),
                         child: Text(
-                          _isAnswered ? '정답보기' : '문제보기',
+                          _isAnswered ? '문제보기' : '정답보기',
                           style: const TextStyle(
                             fontFamily: 'DungGeunMo',
                             fontWeight: FontWeight.w400,
