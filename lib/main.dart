@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'home/home.dart';
+import 'splash.dart';
 
 void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/home',
+      initialRoute: '/splash',
       routes: {
-        '/home': (BuildContext context) => const MyHome(),
+        '/splash': (BuildContext context) => const SplashPage(),
       },
     ),
   );
