@@ -9,7 +9,6 @@ import '../disco/disco_game_page.dart';
 import '../four/four_game_page.dart';
 import '../movie/movie_game_page.dart';
 import '../musictitle/category_musictitle.dart';
-import '../person/person_game_page.dart';
 import '../tele/tele_game_page.dart';
 import '../telestration/telestration_game_page.dart';
 
@@ -266,9 +265,7 @@ class _GameOverState extends State<GameOver> {
                           child: ElevatedButton(
                               onPressed: () {
                                 Navigator.popUntil(
-                                    context, ModalRoute.withName('/splash'));
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => const MyHome()));
+                                    context, ModalRoute.withName('/home'));
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.transparent,
