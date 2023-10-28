@@ -2,6 +2,15 @@
 
 import 'package:flutter/material.dart';
 
+import '../captain/captain_game_page.dart';
+import '../choi/choi_game_page.dart';
+import '../disco/disco_game_page.dart';
+import '../four/four_game_page.dart';
+import '../movie/movie_game_page.dart';
+import '../musictitle/category_musictitle.dart';
+import '../tele/tele_game_page.dart';
+import '../telestration/telestration_game_page.dart';
+
 class GameOverApp extends StatefulWidget {
   final String gameName;
   const GameOverApp({super.key, required this.gameName});
@@ -105,8 +114,59 @@ class _GameOverAppState extends State<GameOverApp> {
                           visible: _isMouseOver,
                           child: ElevatedButton(
                               onPressed: () {
-                                Navigator.popUntil(
-                                    context, ModalRoute.withName('/home'));
+                                if (widget.gameName == 'person') {
+                                  Navigator.popUntil(
+                                      context, ModalRoute.withName('/home'));
+                                  Navigator.pushNamed(context, '/person');
+                                } else if (widget.gameName == 'disco') {
+                                  Navigator.popUntil(
+                                      context, ModalRoute.withName('/home'));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          const DiscoGamePage()));
+                                } else if (widget.gameName == 'captain') {
+                                  Navigator.popUntil(
+                                      context, ModalRoute.withName('/home'));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          const CaptainGamePage()));
+                                } else if (widget.gameName == 'four') {
+                                  Navigator.popUntil(
+                                      context, ModalRoute.withName('/home'));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          const FourGamePage()));
+                                } else if (widget.gameName == 'tele') {
+                                  Navigator.popUntil(
+                                      context, ModalRoute.withName('/home'));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          const TeleGamePage()));
+                                } else if (widget.gameName == 'telestration') {
+                                  Navigator.popUntil(
+                                      context, ModalRoute.withName('/home'));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          const TelestrationGamePage()));
+                                } else if (widget.gameName == 'choi') {
+                                  Navigator.popUntil(
+                                      context, ModalRoute.withName('/home'));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          const ChoiGamePage()));
+                                } else if (widget.gameName == 'musicTitle') {
+                                  Navigator.popUntil(
+                                      context, ModalRoute.withName('/home'));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          const CategoryPage()));
+                                } else if (widget.gameName == 'movie') {
+                                  Navigator.popUntil(
+                                      context, ModalRoute.withName('/home'));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          const MovieGamePage()));
+                                }
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.transparent,

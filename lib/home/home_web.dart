@@ -3,12 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:testes/movie/movie_game_page.dart';
 
+import '../captain/captain_game_page.dart';
+import '../disco/disco_game_page.dart';
 import '../musictitle/category_musictitle.dart';
 import '../choi/choi_game_page.dart';
 import '../four/four_game_page.dart';
 import '../onboarding.dart';
 import '../person/person_game_page.dart';
 import '../tele/tele_game_page.dart';
+import '../telestration/telestration_game_page.dart';
 
 const double _kItemExtent = 50.0;
 const List<String> _GameNames = <String>[
@@ -147,22 +150,20 @@ class _HomeWebState extends State<HomeWeb> {
                                             onTap: () {
                                               switch (_selectedGame + 1) {
                                                 case 1:
-                                                  Navigator.of(context).push(
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              const PersonGamePage()));
+                                                  Navigator.pushNamed(
+                                                      context, '/person');
                                                   break;
                                                 case 2:
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              const ChoiGamePage()));
+                                                              const DiscoGamePage()));
                                                   break;
                                                 case 3:
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              const ChoiGamePage()));
+                                                              const CaptainGamePage()));
                                                   break;
                                                 case 4:
                                                   Navigator.of(context).push(
@@ -180,7 +181,7 @@ class _HomeWebState extends State<HomeWeb> {
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              const ChoiGamePage()));
+                                                              const TelestrationGamePage()));
                                                   break;
                                                 case 7:
                                                   Navigator.of(context).push(

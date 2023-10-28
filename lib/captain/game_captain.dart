@@ -210,7 +210,7 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
                               borderRadius: BorderRadius.circular(12)),
                         ),
                         child: Text(
-                          _isAnswered ? '미션보기' : '돌아가기',
+                          _isAnswered ? '돌아가기' : '미션보기',
                           style: const TextStyle(
                             fontFamily: 'DungGeunMo',
                             fontWeight: FontWeight.w400,
