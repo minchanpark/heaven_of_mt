@@ -64,8 +64,7 @@ class _SplashPageState extends State<SplashPage> {
               SizedBox(width: width * 0.026),
               InkWell(
                 onTap: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => const MyHome()));
+                  Navigator.pushNamed(context, '/home');
                 },
                 child: ShaderMask(
                   shaderCallback: (Rect bounds) {

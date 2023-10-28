@@ -105,8 +105,8 @@ class _GameOverAppState extends State<GameOverApp> {
                           visible: _isMouseOver,
                           child: ElevatedButton(
                               onPressed: () {
-                                Navigator.popUntil(
-                                    context, ModalRoute.withName('/home'));
+                                // Navigator.popUntil(
+                                //     context, ModalRoute.withName('/home'));
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.transparent,
