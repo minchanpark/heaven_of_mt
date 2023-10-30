@@ -14,9 +14,9 @@ class _PersonGamePageState extends State<PersonGamePage> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     if (width > 500) {
-      return PersonWebGame();
+      return const PersonWebGame();
     } else {
-      return PersonAppGame();
+      return const PersonAppGame();
     }
   }
 }

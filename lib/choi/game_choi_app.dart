@@ -165,7 +165,7 @@ class _ChoiAppGamePageState extends State<ChoiAppGame> {
                           if (currentCardIndex == 9) {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => GameOverApp(
+                                builder: (context) => const GameOverApp(
                                   gameName: 'choi',
                                 ),
                               ),

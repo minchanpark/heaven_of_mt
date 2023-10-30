@@ -16,9 +16,9 @@ class _ChoiGamePageState extends State<ChoiGamePage> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     if (width > 500) {
-      return ChoiWebGame();
+      return const ChoiWebGame();
     } else {
-      return ChoiAppGame();
+      return const ChoiAppGame();
     }
   }
 }

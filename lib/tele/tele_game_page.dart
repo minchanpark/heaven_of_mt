@@ -14,9 +14,9 @@ class _TeleGamePageState extends State<TeleGamePage> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     if (width > 500) {
-      return TeleWebGame();
+      return const TeleWebGame();
     } else {
-      return TeleAppGame();
+      return const TeleAppGame();
     }
   }
 }

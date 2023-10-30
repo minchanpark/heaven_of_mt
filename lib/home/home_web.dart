@@ -9,11 +9,9 @@ import '../musictitle/category_musictitle.dart';
 import '../choi/choi_game_page.dart';
 import '../four/four_game_page.dart';
 import '../onboarding.dart';
-import '../person/person_game_page.dart';
 import '../tele/tele_game_page.dart';
 import '../telestration/telestration_game_page.dart';
 
-const double _kItemExtent = 50.0;
 const List<String> _GameNames = <String>[
   '인물퀴즈',
   '디스코',
