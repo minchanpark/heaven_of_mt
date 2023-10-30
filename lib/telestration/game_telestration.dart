@@ -19,7 +19,6 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
-  List<GameCard> answer_cards = [];
   final random = Random();
   bool _isAnswered = false;
   List<GameContents> randomtelestration = [];

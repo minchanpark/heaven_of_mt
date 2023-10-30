@@ -160,7 +160,7 @@ class _TeleAppGamePageState extends State<TeleAppGame> {
                           if (currentCardIndex == 9) {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => GameOverApp(
+                                builder: (context) => const GameOverApp(
                                   gameName: 'tele',
                                 ),
                               ),

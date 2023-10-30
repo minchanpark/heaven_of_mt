@@ -168,7 +168,7 @@ class _FourAppGameState extends State<FourAppGame> {
                           if (currentCardIndex == 9) {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => GameOverApp(
+                                builder: (context) => const GameOverApp(
                                   gameName: 'four',
                                 ),
                               ),

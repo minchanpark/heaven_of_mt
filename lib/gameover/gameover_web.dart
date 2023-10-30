@@ -1,7 +1,6 @@
 // ignore_for_file: unused_field
 
 import 'package:flutter/material.dart';
-import 'package:testes/home/home.dart';
 
 import '../captain/captain_game_page.dart';
 import '../choi/choi_game_page.dart';

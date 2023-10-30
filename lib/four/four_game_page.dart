@@ -16,9 +16,9 @@ class _FourGamePageState extends State<FourGamePage> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     if (width > 500) {
-      return FourWebGame();
+      return const FourWebGame();
     } else {
-      return FourAppGame();
+      return const FourAppGame();
     }
   }
 }
