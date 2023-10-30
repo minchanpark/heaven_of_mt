@@ -120,135 +120,132 @@ class _HomeWebState extends State<HomeWeb> {
                       });
                     }
                   } else if (event.logicalKey == LogicalKeyboardKey.enter) {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => pageList[_selectedGame]));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => pageList[_selectedGame]));
                   }
                 }
               },
-              child: Column(
+              child: Row(
                 children: [
-                  Row(
-                    children: [
-                      contentList[_selectedGame],
-                      SizedBox(width: width * 0.063),
-                      SizedBox(
-                        width: width * 0.394,
-                        height: height * 0.806,
-                        child: CupertinoPicker(
-                          scrollController: scr,
-                          magnification: 1.22,
-                          squeeze: 1.2,
-                          useMagnifier: true,
-                          itemExtent: 100,
-                          onSelectedItemChanged: (int selectedItem) {
-                            setState(() {
-                              _selectedGame = selectedItem;
-                              debugPrint("$_selectedGame");
-                            });
-                          },
-                          selectionOverlay: null,
-                          children: List<Widget>.generate(_GameNames.length,
-                              (int index) {
-                            final isSelected = index == _selectedGame;
-                            return Center(
-                                child: isSelected
-                                    ? Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Image.asset("assets/images/left.png",
-                                              width: 24, height: 42),
-                                          const SizedBox(width: 18),
-                                          InkWell(
-                                            onTap: () {
-                                              switch (_selectedGame + 1) {
-                                                case 1:
-                                                  Navigator.pushNamed(
-                                                      context, '/person');
-                                                  break;
-                                                case 2:
-                                                  Navigator.of(context).push(
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              const DiscoGamePage()));
-                                                  break;
-                                                case 3:
-                                                  Navigator.of(context).push(
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              const CaptainGamePage()));
-                                                  break;
-                                                case 4:
-                                                  Navigator.of(context).push(
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              const FourGamePage()));
-                                                  break;
-                                                case 5:
-                                                  Navigator.of(context).push(
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              const TeleGamePage()));
-                                                  break;
-                                                case 6:
-                                                  Navigator.of(context).push(
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              const TelestrationGamePage()));
-                                                  break;
-                                                case 7:
-                                                  Navigator.of(context).push(
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              const ChoiGamePage()));
-                                                  break;
-                                                case 8:
-                                                  Navigator.of(context).push(
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              const CategoryPage()));
-                                                  break;
-                                                case 9:
-                                                  Navigator.of(context).push(
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              const MovieGamePage()));
-                                                  break;
-                                              }
-                                            },
-                                            child: Container(
-                                              width: 330,
-                                              height: 59,
-                                              decoration: const BoxDecoration(
-                                                  color: Color(0xFFFF62D3)),
-                                              child: Center(
-                                                child: Text(
-                                                  _GameNames[index],
-                                                  style: const TextStyle(
-                                                      fontFamily: 'DungGeunMo',
-                                                      fontSize: 44,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      color: Colors.white),
-                                                ),
-                                              ),
+                  contentList[_selectedGame],
+                  SizedBox(width: width * 0.063),
+                  SizedBox(
+                    width: width * 0.394,
+                    height: height * 0.806,
+                    child: CupertinoPicker(
+                      scrollController: scr,
+                      magnification: 1.22,
+                      squeeze: 1.2,
+                      useMagnifier: true,
+                      itemExtent: 100,
+                      onSelectedItemChanged: (int selectedItem) {
+                        setState(() {
+                          _selectedGame = selectedItem;
+                          debugPrint("$_selectedGame");
+                        });
+                      },
+                      selectionOverlay: null,
+                      children: List<Widget>.generate(_GameNames.length,
+                          (int index) {
+                        final isSelected = index == _selectedGame;
+                        return Center(
+                            child: isSelected
+                                ? Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.center,
+                                    children: [
+                                      Image.asset("assets/images/left.png",
+                                          width: 24, height: 42),
+                                      const SizedBox(width: 18),
+                                      InkWell(
+                                        onTap: () {
+                                          switch (_selectedGame + 1) {
+                                            case 1:
+                                              Navigator.pushNamed(
+                                                  context, '/person');
+                                              break;
+                                            case 2:
+                                              Navigator.of(context).push(
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const DiscoGamePage()));
+                                              break;
+                                            case 3:
+                                              Navigator.of(context).push(
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const CaptainGamePage()));
+                                              break;
+                                            case 4:
+                                              Navigator.of(context).push(
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const FourGamePage()));
+                                              break;
+                                            case 5:
+                                              Navigator.of(context).push(
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const TeleGamePage()));
+                                              break;
+                                            case 6:
+                                              Navigator.of(context).push(
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const TelestrationGamePage()));
+                                              break;
+                                            case 7:
+                                              Navigator.of(context).push(
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const ChoiGamePage()));
+                                              break;
+                                            case 8:
+                                              Navigator.of(context).push(
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const CategoryPage()));
+                                              break;
+                                            case 9:
+                                              Navigator.of(context).push(
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const MovieGamePage()));
+                                              break;
+                                          }
+                                        },
+                                        child: Container(
+                                          width: 330,
+                                          height: 59,
+                                          decoration: const BoxDecoration(
+                                              color: Color(0xFFFF62D3)),
+                                          child: Center(
+                                            child: Text(
+                                              _GameNames[index],
+                                              style: const TextStyle(
+                                                  fontFamily: 'DungGeunMo',
+                                                  fontSize: 44,
+                                                  fontWeight:
+                                                      FontWeight.w400,
+                                                  color: Colors.white),
                                             ),
                                           ),
-                                          const SizedBox(width: 18),
-                                          Image.asset("assets/images/right.png",
-                                              width: 24, height: 42)
-                                        ],
-                                      )
-                                    : Text(_GameNames[index],
-                                        style: TextStyle(
-                                            fontFamily: 'DungGeunMo',
-                                            fontSize: 44,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.white
-                                                .withOpacity(0.5))));
-                          }),
-                        ),
-                      ),
-                    ],
+                                        ),
+                                      ),
+                                      const SizedBox(width: 18),
+                                      Image.asset("assets/images/right.png",
+                                          width: 24, height: 42)
+                                    ],
+                                  )
+                                : Text(_GameNames[index],
+                                    style: TextStyle(
+                                        fontFamily: 'DungGeunMo',
+                                        fontSize: 44,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white
+                                            .withOpacity(0.5))));
+                      }),
+                    ),
                   ),
                 ],
               ),
