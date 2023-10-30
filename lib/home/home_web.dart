@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:testes/movie/movie_game_page.dart';
+import 'package:testes/person/person_game_page.dart';
 
 import '../captain/captain_game_page.dart';
 import '../disco/disco_game_page.dart';
@@ -33,6 +34,17 @@ List<Widget> contentList = [
   const ChoiOnboarding(),
   const MusicOnboarding(),
   const FamousLineOnboarding(),
+];
+List<Widget> pageList = [
+  const PersonGamePage(),
+  const DiscoGamePage(),
+  const CaptainGamePage(),
+  const FourGamePage(),
+  const TeleGamePage(),
+  const TelestrationGamePage(),
+  const ChoiGamePage(),
+  const CategoryPage(),
+  const MovieGamePage(),
 ];
 
 class HomeWeb extends StatefulWidget {
@@ -107,6 +119,8 @@ class _HomeWebState extends State<HomeWeb> {
                         );
                       });
                     }
+                  } else if (event.logicalKey == LogicalKeyboardKey.enter) {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => pageList[_selectedGame]));
                   }
                 }
               },
