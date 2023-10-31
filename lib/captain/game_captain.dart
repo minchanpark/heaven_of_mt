@@ -92,6 +92,7 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
                       } else if (event.logicalKey ==
                           LogicalKeyboardKey.arrowLeft) {
                         controller.undo();
+                        _isAnswered = false;
                         if (currentCardIndex == 0) {
                           setState(() {
                             isUndoButtonVisible = true;
@@ -99,11 +100,12 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
                         }
                       } else if (event.logicalKey ==
                           LogicalKeyboardKey.arrowRight) {
+                        _isAnswered = false;
                         if (currentCardIndex == 9) {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => const GameOver(
-                                gameName: 'disco',
+                                gameName: 'captain',
                               ),
                             ),
                           );
