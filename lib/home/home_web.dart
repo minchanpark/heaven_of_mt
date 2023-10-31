@@ -81,10 +81,17 @@ class _HomeWebState extends State<HomeWeb> {
         ),
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(height: height * 0.056),
+
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pushReplacementNamed('/home');
+            },
+            child: 
           Container(
               margin: EdgeInsets.only(left: width * 0.075),
               child: Image.asset('assets/images/title.png',
                   width: width * 0.179, height: height * 0.047)),
+          ),
           SizedBox(height: height * 0.032),
           Container(
             margin: EdgeInsets.only(left: width * 0.075),
