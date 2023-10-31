@@ -68,7 +68,7 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
                 padding: EdgeInsets.only(
                   left: width * 0.075,
                   top: height * 0.073,
-                  right: width * 0.0797,
+                  right: width * 0.075,
                 ),
                 child: RawKeyboardListener(
                   focusNode: focusNode,
