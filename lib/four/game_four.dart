@@ -57,7 +57,7 @@ class _FourWebGamePageState extends State<FourWebGame> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/background_game.png"),
+                image: AssetImage("assets/images/background_final.png"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -209,7 +209,8 @@ class _FourWebGamePageState extends State<FourWebGame> {
                               },
                               color: Colors.transparent,
                               icon: const ImageIcon(
-                                AssetImage('assets/images/icon_chevron_right.png'),
+                                AssetImage(
+                                    'assets/images/icon_chevron_right.png'),
                               ),
                               iconSize: 90,
                             ),

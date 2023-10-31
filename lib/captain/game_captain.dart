@@ -65,7 +65,7 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/background_game.png"),
+                image: AssetImage('assets/images/background_final.png'),
                 fit: BoxFit.cover,
               ),
             ),
