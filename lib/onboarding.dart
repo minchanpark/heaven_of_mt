@@ -9,35 +9,37 @@ class PersonOnboarding extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     return Stack(
       children: <Widget>[
-        Container(
+        SizedBox(
             width: width * 0.43,
             height: height * 0.806,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(36)),
             child:
                 Image.asset('assets/images/back_image.png', fit: BoxFit.fill)),
         Padding(
-          padding: const EdgeInsets.only(left: 36, top: 36),
+          padding: EdgeInsets.only(left: width * 0.028, top: height * 0.043),
           child: Column(
             children: [
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
-                    width: 285,
-                    height: 185,
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(16)),
-                    child:
-                        Image.asset('assets/images/test.png', fit: BoxFit.fill),
+                  SizedBox(
+                    width: width * 0.222,
+                    height: height * 0.222,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Image.asset(
+                        'assets/images/onboarding_person.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
-                  const SizedBox(width: 35),
-                  const Column(
+                  SizedBox(width: width * 35 / 1280),
+                  Column(
                     children: [
-                      SizedBox(height: 16),
+                      SizedBox(height: height * 0.019),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             "권장인원:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
@@ -46,8 +48,8 @@ class PersonOnboarding extends StatelessWidget {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          SizedBox(height: 10),
-                          Text(
+                          SizedBox(height: height * 0.01),
+                          const Text(
                             "4-5명",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
@@ -56,13 +58,8 @@ class PersonOnboarding extends StatelessWidget {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                        ],
-                      ),
-                      SizedBox(height: 31),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
+                          SizedBox(height: height * 0.037),
+                          const Text(
                             "난이도:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
@@ -71,8 +68,8 @@ class PersonOnboarding extends StatelessWidget {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          SizedBox(height: 10),
-                          Text(
+                          SizedBox(height: height * 0.01),
+                          const Text(
                             "☆☆",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
@@ -82,7 +79,7 @@ class PersonOnboarding extends StatelessWidget {
                             ),
                           ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ],
@@ -90,10 +87,10 @@ class PersonOnboarding extends StatelessWidget {
             ],
           ),
         ),
-        const Positioned(
-          top: 249,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.299,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -119,10 +116,10 @@ class PersonOnboarding extends StatelessWidget {
             ],
           ),
         ),
-        const Positioned(
-          top: 297,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.356,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -179,67 +176,83 @@ class DiscoOnboarding extends StatelessWidget {
             height: height * 0.806,
             child:
                 Image.asset('assets/images/back_image.png', fit: BoxFit.fill)),
-        Positioned(
-          top: 36,
-          left: 45,
-          child: SizedBox(
-            width: 249,
-            height: 182,
-            child: Image.asset('assets/images/test.png', fit: BoxFit.fill),
-          ),
-        ),
-        const Positioned(
-          top: 52,
-          left: 329,
+        Padding(
+          padding: EdgeInsets.only(left: width * 0.028, top: height * 0.043),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "권장인원:",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "4-5명",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 31),
-              Text(
-                "난이도:",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "☆☆☆☆☆",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: width * 0.222,
+                    height: height * 0.222,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Image.asset(
+                        'assets/images/onboarding_disco.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: width * 35 / 1280),
+                  Column(
+                    children: [
+                      SizedBox(height: height * 0.019),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "권장인원:",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.01),
+                          const Text(
+                            "4-5명",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.037),
+                          const Text(
+                            "난이도:",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.01),
+                          const Text(
+                            "☆☆☆☆☆",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),
         ),
-        const Positioned(
-          top: 249,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.299,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -280,10 +293,10 @@ class DiscoOnboarding extends StatelessWidget {
             ],
           ),
         ),
-        const Positioned(
-          top: 329,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.395,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -321,10 +334,10 @@ class DiscoOnboarding extends StatelessWidget {
             ],
           ),
         ),
-        const Positioned(
-          top: 409,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.49,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -362,10 +375,10 @@ class DiscoOnboarding extends StatelessWidget {
             ],
           ),
         ),
-        const Positioned(
-          top: 489,
-          left: 36,
-          child: Row(
+        Positioned(
+          top: height * 0.587,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -432,67 +445,83 @@ class CaptainOnboarding extends StatelessWidget {
             height: height * 0.806,
             child:
                 Image.asset('assets/images/back_image.png', fit: BoxFit.fill)),
-        Positioned(
-          top: 36,
-          left: 45,
-          child: SizedBox(
-            width: 249,
-            height: 182,
-            child: Image.asset('assets/images/test.png', fit: BoxFit.fill),
-          ),
-        ),
-        const Positioned(
-          top: 52,
-          left: 329,
+        Padding(
+          padding: EdgeInsets.only(left: width * 0.028, top: height * 0.043),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "권장인원:",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "5명",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 31),
-              Text(
-                "난이도:",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "☆",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: width * 0.222,
+                    height: height * 0.222,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Image.asset(
+                        'assets/images/onboarding_captain.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: width * 35 / 1280),
+                  Column(
+                    children: [
+                      SizedBox(height: height * 0.019),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "권장인원:",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.01),
+                          const Text(
+                            "5명",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.037),
+                          const Text(
+                            "난이도:",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.01),
+                          const Text(
+                            "☆",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),
         ),
-        const Positioned(
-          top: 249,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.299,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -540,10 +569,10 @@ class CaptainOnboarding extends StatelessWidget {
             ],
           ),
         ),
-        const Positioned(
-          top: 361,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.43,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -588,67 +617,83 @@ class FourOnboarding extends StatelessWidget {
           height: height * 0.806,
           child: Image.asset('assets/images/back_image.png', fit: BoxFit.fill),
         ),
-        Positioned(
-          top: 36,
-          left: 45,
-          child: SizedBox(
-            width: 249,
-            height: 182,
-            child: Image.asset('assets/images/test.png', fit: BoxFit.fill),
-          ),
-        ),
-        const Positioned(
-          top: 52,
-          left: 329,
+        Padding(
+          padding: EdgeInsets.only(left: width * 0.028, top: height * 0.043),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "권장인원:",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "4-5명",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 31),
-              Text(
-                "난이도:",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "☆☆",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: width * 0.222,
+                    height: height * 0.222,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Image.asset(
+                        'assets/images/onboarding_four.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: width * 35 / 1280),
+                  Column(
+                    children: [
+                      SizedBox(height: height * 0.019),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "권장인원:",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.01),
+                          const Text(
+                            "4-5명",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.037),
+                          const Text(
+                            "난이도:",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.01),
+                          const Text(
+                            "☆☆",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),
         ),
-        const Positioned(
-          top: 249,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.299,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -674,10 +719,10 @@ class FourOnboarding extends StatelessWidget {
             ],
           ),
         ),
-        const Positioned(
-          top: 297,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.356,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -715,10 +760,10 @@ class FourOnboarding extends StatelessWidget {
             ],
           ),
         ),
-        const Positioned(
-          top: 377,
-          left: 36,
-          child: Row(
+        Positioned(
+          top: height * 0.45,
+          left: width * 0.028,
+          child: const Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -774,67 +819,83 @@ class WordTeleOnboarding extends StatelessWidget {
             height: height * 0.806,
             child:
                 Image.asset('assets/images/back_image.png', fit: BoxFit.fill)),
-        Positioned(
-          top: 36,
-          left: 45,
-          child: SizedBox(
-            width: 249,
-            height: 182,
-            child: Image.asset('assets/images/test.png', fit: BoxFit.fill),
-          ),
-        ),
-        const Positioned(
-          top: 52,
-          left: 329,
+        Padding(
+          padding: EdgeInsets.only(left: width * 0.028, top: height * 0.043),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "권장인원:",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "4-5명",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 31),
-              Text(
-                "난이도:",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "☆☆☆☆",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: width * 0.222,
+                    height: height * 0.222,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Image.asset(
+                        'assets/images/onboarding_wordTele.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: width * 35 / 1280),
+                  Column(
+                    children: [
+                      SizedBox(height: height * 0.019),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "권장인원:",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.01),
+                          const Text(
+                            "4-5명",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.037),
+                          const Text(
+                            "난이도:",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.01),
+                          const Text(
+                            "☆☆☆☆",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),
         ),
-        const Positioned(
-          top: 249,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.299,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -860,10 +921,10 @@ class WordTeleOnboarding extends StatelessWidget {
             ],
           ),
         ),
-        const Positioned(
-          top: 297,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.356,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -901,10 +962,10 @@ class WordTeleOnboarding extends StatelessWidget {
             ],
           ),
         ),
-        const Positioned(
-          top: 377,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.45,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -952,10 +1013,10 @@ class WordTeleOnboarding extends StatelessWidget {
             ],
           ),
         ),
-        const Positioned(
-          top: 493,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.59,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1022,67 +1083,83 @@ class TeleStrationOnboarding extends StatelessWidget {
           height: height * 0.806,
           child: Image.asset('assets/images/back_image.png', fit: BoxFit.fill),
         ),
-        Positioned(
-          top: 36,
-          left: 45,
-          child: SizedBox(
-            width: 249,
-            height: 182,
-            child: Image.asset('assets/images/test.png', fit: BoxFit.fill),
-          ),
-        ),
-        const Positioned(
-          top: 52,
-          left: 329,
+        Padding(
+          padding: EdgeInsets.only(left: width * 0.028, top: height * 0.043),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "권장인원:",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "4-5명",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 31),
-              Text(
-                "난이도:",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "☆☆☆",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: width * 0.222,
+                    height: height * 0.222,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Image.asset(
+                        'assets/images/onboarding_teleStration.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: width * 35 / 1280),
+                  Column(
+                    children: [
+                      SizedBox(height: height * 0.019),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "권장인원:",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.01),
+                          const Text(
+                            "4-5명",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.037),
+                          const Text(
+                            "난이도:",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.01),
+                          const Text(
+                            "☆☆☆",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),
         ),
-        const Positioned(
-          top: 249,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.299,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1108,10 +1185,10 @@ class TeleStrationOnboarding extends StatelessWidget {
             ],
           ),
         ),
-        const Positioned(
-          top: 299,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.356,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1149,10 +1226,10 @@ class TeleStrationOnboarding extends StatelessWidget {
             ],
           ),
         ),
-        const Positioned(
-          top: 377,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.45,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1190,10 +1267,10 @@ class TeleStrationOnboarding extends StatelessWidget {
             ],
           ),
         ),
-        const Positioned(
-          top: 457,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.55,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1231,10 +1308,10 @@ class TeleStrationOnboarding extends StatelessWidget {
             ],
           ),
         ),
-        const Positioned(
-          top: 537,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.645,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1301,67 +1378,83 @@ class ChoiOnboarding extends StatelessWidget {
             height: height * 0.806,
             child:
                 Image.asset('assets/images/back_image.png', fit: BoxFit.fill)),
-        Positioned(
-          top: 36,
-          left: 45,
-          child: SizedBox(
-            width: 249,
-            height: 182,
-            child: Image.asset('assets/images/test.png', fit: BoxFit.fill),
-          ),
-        ),
-        const Positioned(
-          top: 52,
-          left: 329,
+        Padding(
+          padding: EdgeInsets.only(left: width * 0.028, top: height * 0.043),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "권장인원:",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "4-5명",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 31),
-              Text(
-                "난이도:",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "☆☆☆",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: width * 0.222,
+                    height: height * 0.222,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Image.asset(
+                        'assets/images/onboarding_choi.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: width * 35 / 1280),
+                  Column(
+                    children: [
+                      SizedBox(height: height * 0.019),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "권장인원:",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.01),
+                          const Text(
+                            "4-5명",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.037),
+                          const Text(
+                            "난이도:",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.01),
+                          const Text(
+                            "☆☆☆",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),
         ),
-        const Positioned(
-          top: 249,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.299,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1399,10 +1492,10 @@ class ChoiOnboarding extends StatelessWidget {
             ],
           ),
         ),
-        const Positioned(
-          top: 329,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.395,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1447,67 +1540,83 @@ class MusicOnboarding extends StatelessWidget {
             height: height * 0.806,
             child:
                 Image.asset('assets/images/back_image.png', fit: BoxFit.fill)),
-        Positioned(
-          top: 36,
-          left: 45,
-          child: SizedBox(
-            width: 249,
-            height: 182,
-            child: Image.asset('assets/images/test.png', fit: BoxFit.fill),
-          ),
-        ),
-        const Positioned(
-          top: 52,
-          left: 329,
+        Padding(
+          padding: EdgeInsets.only(left: width * 0.028, top: height * 0.043),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "권장인원:",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "4-5명",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 31),
-              Text(
-                "난이도:",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "☆☆☆☆☆",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: width * 0.222,
+                    height: height * 0.222,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Image.asset(
+                        'assets/images/onboarding_music.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: width * 35 / 1280),
+                  Column(
+                    children: [
+                      SizedBox(height: height * 0.019),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "권장인원:",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.01),
+                          const Text(
+                            "4-5명",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.037),
+                          const Text(
+                            "난이도:",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.01),
+                          const Text(
+                            "☆☆☆☆☆",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),
         ),
-        const Positioned(
-          top: 249,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.299,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1564,67 +1673,83 @@ class FamousLineOnboarding extends StatelessWidget {
             height: height * 0.806,
             child:
                 Image.asset('assets/images/back_image.png', fit: BoxFit.fill)),
-        Positioned(
-          top: 36,
-          left: 45,
-          child: SizedBox(
-            width: 249,
-            height: 182,
-            child: Image.asset('assets/images/test.png', fit: BoxFit.fill),
-          ),
-        ),
-        const Positioned(
-          top: 52,
-          left: 329,
+        Padding(
+          padding: EdgeInsets.only(left: width * 0.028, top: height * 0.043),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "권장인원:",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "4-5명",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 31),
-              Text(
-                "난이도:",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "☆☆☆☆",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: width * 0.222,
+                    height: height * 0.222,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Image.asset(
+                        'assets/images/onboarding_famous.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: width * 35 / 1280),
+                  Column(
+                    children: [
+                      SizedBox(height: height * 0.019),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "권장인원:",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.01),
+                          const Text(
+                            "4-5명",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.037),
+                          const Text(
+                            "난이도:",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.01),
+                          const Text(
+                            "☆☆☆☆",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),
         ),
-        const Positioned(
-          top: 249,
-          left: 30,
-          child: Row(
+        Positioned(
+          top: height * 0.299,
+          left: width * 0.028,
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
