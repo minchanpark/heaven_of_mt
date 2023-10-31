@@ -9,64 +9,83 @@ class PersonOnboarding extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     return Stack(
       children: <Widget>[
-        SizedBox(
+        Container(
             width: width * 0.43,
             height: height * 0.806,
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(36)),
             child:
                 Image.asset('assets/images/back_image.png', fit: BoxFit.fill)),
-        Positioned(
-          top: 36,
-          left: 45,
-          child: SizedBox(
-            width: 249,
-            height: 182,
-            child: Image.asset('assets/images/test.png', fit: BoxFit.fill),
-          ),
-        ),
-        const Positioned(
-          top: 52,
-          left: 329,
+        Padding(
+          padding: const EdgeInsets.only(left: 36, top: 36),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "권장인원:",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "4-5명",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 31),
-              Text(
-                "난이도:",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "☆☆",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 285,
+                    height: 185,
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(16)),
+                    child:
+                        Image.asset('assets/images/test.png', fit: BoxFit.fill),
+                  ),
+                  const SizedBox(width: 35),
+                  const Column(
+                    children: [
+                      SizedBox(height: 16),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "권장인원:",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "4-5명",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 31),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "난이도:",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "☆☆",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ],
               ),
             ],
           ),

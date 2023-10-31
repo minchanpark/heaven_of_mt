@@ -83,7 +83,7 @@ class _HomeWebState extends State<HomeWeb> {
           SizedBox(height: height * 0.056),
           Container(
               margin:
-                  EdgeInsets.only(left: width * 0.084, right: width * 0.084),
+                  EdgeInsets.only(left: width * 0.058),
               child: Image.asset('assets/images/title.png',
                   width: width * 0.15, height: height * 0.038)),
           SizedBox(height: height * 0.032),
@@ -215,7 +215,7 @@ class _HomeWebState extends State<HomeWeb> {
                                           }
                                         },
                                         child: Container(
-                                          width: 330,
+                                          width: 382,
                                           height: 59,
                                           decoration: const BoxDecoration(
                                               color: Color(0xFFFF62D3)),
@@ -224,7 +224,7 @@ class _HomeWebState extends State<HomeWeb> {
                                               _GameNames[index],
                                               style: const TextStyle(
                                                   fontFamily: 'DungGeunMo',
-                                                  fontSize: 44,
+                                                  fontSize: 54,
                                                   fontWeight:
                                                       FontWeight.w400,
                                                   color: Colors.white),
