@@ -81,11 +81,15 @@ class _HomeWebState extends State<HomeWeb> {
         ),
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(height: height * 0.056),
-          Container(
-              margin:
-                  EdgeInsets.only(left: width * 0.058),
-              child: Image.asset('assets/images/title.png',
-                  width: width * 0.15, height: height * 0.038)),
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pushReplacementNamed('/home');
+            },
+            child: Container(
+                margin: EdgeInsets.only(left: width * 0.058),
+                child: Image.asset('assets/images/title.png',
+                    width: width * 0.15, height: height * 0.038)),
+          ),
           SizedBox(height: height * 0.032),
           Container(
             margin: EdgeInsets.only(left: width * 0.075),
@@ -145,14 +149,13 @@ class _HomeWebState extends State<HomeWeb> {
                         });
                       },
                       selectionOverlay: null,
-                      children: List<Widget>.generate(_GameNames.length,
-                          (int index) {
+                      children:
+                          List<Widget>.generate(_GameNames.length, (int index) {
                         final isSelected = index == _selectedGame;
                         return Center(
                             child: isSelected
                                 ? Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Image.asset("assets/images/left.png",
                                           width: 24, height: 42),
@@ -225,8 +228,7 @@ class _HomeWebState extends State<HomeWeb> {
                                               style: const TextStyle(
                                                   fontFamily: 'DungGeunMo',
                                                   fontSize: 54,
-                                                  fontWeight:
-                                                      FontWeight.w400,
+                                                  fontWeight: FontWeight.w400,
                                                   color: Colors.white),
                                             ),
                                           ),
@@ -242,8 +244,7 @@ class _HomeWebState extends State<HomeWeb> {
                                         fontFamily: 'DungGeunMo',
                                         fontSize: 44,
                                         fontWeight: FontWeight.w400,
-                                        color: Colors.white
-                                            .withOpacity(0.5))));
+                                        color: Colors.white.withOpacity(0.5))));
                       }),
                     ),
                   ),
