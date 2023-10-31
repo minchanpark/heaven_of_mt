@@ -84,7 +84,6 @@ class _DiscoWebGamePageState extends State<DiscoWebGame> {
                                 isUndoButtonVisible = true;
                               });
                             }
-                        
                       } else if (event.logicalKey ==
                           LogicalKeyboardKey.arrowRight) {
                         if (currentCardIndex == 9) {
