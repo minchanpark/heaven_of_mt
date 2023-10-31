@@ -74,23 +74,21 @@ class _HomeWebState extends State<HomeWeb> {
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/home.gif'),
+              image: AssetImage('assets/images/background_final.png'),
               fit: BoxFit.cover,
             ),
           ),
         ),
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(height: height * 0.056),
-
           InkWell(
             onTap: () {
               Navigator.of(context).pushReplacementNamed('/home');
             },
-            child: 
-          Container(
-              margin: EdgeInsets.only(left: width * 0.075),
-              child: Image.asset('assets/images/title.png',
-                  width: width * 0.179, height: height * 0.047)),
+            child: Container(
+                margin: EdgeInsets.only(left: width * 0.075),
+                child: Image.asset('assets/images/title.png',
+                    width: width * 0.179, height: height * 0.047)),
           ),
           SizedBox(height: height * 0.032),
           Container(

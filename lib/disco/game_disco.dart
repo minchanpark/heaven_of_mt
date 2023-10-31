@@ -57,7 +57,7 @@ class _DiscoWebGamePageState extends State<DiscoWebGame> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/background_game.png"),
+                image: AssetImage("assets/images/background_final.png"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -78,12 +78,12 @@ class _DiscoWebGamePageState extends State<DiscoWebGame> {
                         Navigator.of(context).pop();
                       } else if (event.logicalKey ==
                           LogicalKeyboardKey.arrowLeft) {
-                            controller.undo();
-                            if (currentCardIndex == 0){
-                              setState(() {
-                                isUndoButtonVisible = true;
-                              });
-                            }
+                        controller.undo();
+                        if (currentCardIndex == 0) {
+                          setState(() {
+                            isUndoButtonVisible = true;
+                          });
+                        }
                       } else if (event.logicalKey ==
                           LogicalKeyboardKey.arrowRight) {
                         if (currentCardIndex == 9) {
