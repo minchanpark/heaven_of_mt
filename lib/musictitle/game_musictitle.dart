@@ -38,26 +38,13 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
           .sublist(0, 10)
           .map((index) => music1990[index])
           .toList();
-
-      cards = randomMusicTitle
-          .map((gameContents) =>
-              GameCard(gameContents: gameContents, fontSize: 108))
-          .toList();
-      answer_cards = randomMusicTitle
-          .map((gameContents) =>
-              GameCard(gameContents: gameContents, answer: true, fontSize: 108))
-          .toList();
     } else if (widget.generation == '2000') {
+      print(widget.generation);
       final musicTitleIndices = List<int>.generate(music2000.length, (i) => i)
         ..shuffle(random);
       randomMusicTitle = musicTitleIndices
           .sublist(0, 10)
           .map((index) => music2000[index])
-          .toList();
-
-      cards = randomMusicTitle
-          .map((gameContents) =>
-              GameCard(gameContents: gameContents, fontSize: 108))
           .toList();
     } else if (widget.generation == '2010') {
       final musicTitleIndices = List<int>.generate(music2010.length, (i) => i)
@@ -66,11 +53,6 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
           .sublist(0, 10)
           .map((index) => music2010[index])
           .toList();
-
-      cards = randomMusicTitle
-          .map((gameContents) =>
-              GameCard(gameContents: gameContents, fontSize: 108))
-          .toList();
     } else if (widget.generation == '2020') {
       final musicTitleIndices = List<int>.generate(music2020.length, (i) => i)
         ..shuffle(random);
@@ -78,12 +60,15 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
           .sublist(0, 10)
           .map((index) => music2020[index])
           .toList();
-
-      cards = randomMusicTitle
-          .map((gameContents) =>
-              GameCard(gameContents: gameContents, fontSize: 108))
-          .toList();
     }
+    cards = randomMusicTitle
+        .map((gameContents) =>
+            GameCard(gameContents: gameContents, fontSize: 108))
+        .toList();
+    answer_cards = randomMusicTitle
+        .map((gameContents) =>
+            GameCard(gameContents: gameContents, answer: true, fontSize: 108))
+        .toList();
   }
 
   bool isUndoButtonVisible = true;
