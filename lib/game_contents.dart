@@ -596,7 +596,105 @@ final List<GameContents> movie = [
   GameContents(name: 'assets/movie/타짜.png', answer: '묻고 더블로 가!', index: '6'),
   GameContents(
       name: 'assets/movie/지붕뚫고 하이킥.png', answer: '이 빵꾸똥꾸야!', index: '7'),
-  GameContents(name: 'assets/movie/호박고구마.png', answer: '오구마호박', index: '8'),
-  GameContents(name: 'assets/movie/호박고구마.png', answer: '조구마호박', index: '9'),
-  GameContents(name: 'assets/movie/호박고구마.png', answer: '초구마호박', index: '10'),
+  GameContents(
+      name: 'assets/movie/아저씨.png', answer: '이거 방탄유리야 이 개**야!', index: '8'),
+  GameContents(
+      name: 'assets/movie/내부자들.png',
+      answer: '모히또 가가지고 몰디브나 한 잔 할라니까',
+      index: '9'),
+  GameContents(
+      name: 'assets/movie/도깨비.png',
+      answer: '날이 좋아서, 날이 좋지 않아서, 날이 적당해서 모든 날이 좋았다',
+      index: '10'),
+  GameContents(name: 'assets/movie/타짜2.png', answer: '쏠 수 있어!', index: '11'),
+  GameContents(name: 'assets/movie/최고의 사랑.png', answer: '극 뽁 ~', index: '12'),
+  GameContents(
+      name: 'assets/movie/어게인 마이 라이프.png',
+      answer: '진행시켜.',
+      index: '13'),
+  GameContents(name: 'assets/movie/야인시대.png', answer: '4딸라', index: '14'),
+  GameContents(
+      name: 'assets/movie/기생충.png', answer: '너는 다 계획이 있구나', index: '15'),
+  GameContents(
+      name: 'assets/movie/친구.png', answer: '느그 아부지 머하시노.', index: '16'),
+  GameContents(
+      name: 'assets/movie/사랑했나봐.png',
+      answer: '예나…선정이 딸이에요',
+      index: '17'),
+  GameContents(
+      name: 'assets/movie/타짜3.png',
+      answer: '예림이! 그 패 봐봐, 혹시 장이야?',
+      index: '18'),
+  GameContents(
+      name: 'assets/movie/상속자들.png', answer: '나, 너 좋아하냐?', index: '19'),
+  GameContents(
+      name: 'assets/movie/부당거래.png',
+      answer: '호의가 계속되면, 그게 권리인 줄 알아요',
+      index: '20'),
+  GameContents(name: 'assets/movie/아이리스.png', answer: '아악 안돼', index: '21'),
+  GameContents(
+      name: 'assets/movie/천국의 계단.png', answer: '사랑은, 돌아오는 거야 ~ !', index: '22'),
+  GameContents(
+      name: 'assets/movie/파리의 연인.png', answer: '이 안에 너 있다', index: '23'),
+  GameContents(
+      name: 'assets/movie/내 머리속의 지우개.png',
+      answer: '이거 마시면 나랑 사귀는 거다',
+      index: '24'),
+  GameContents(name: 'assets/movie/올드보이.png', answer: '누구냐, 넌', index: '25'),
+  GameContents(
+      name: 'assets/movie/친절한 금자씨.png', answer: '너나 잘하세요', index: '26'),
+  GameContents(
+      name: 'assets/movie/스카이캐슬.png', answer: '전적으로 저를 믿으셔야 합니다', index: '27'),
+  GameContents(name: 'assets/movie/더글로리.png', answer: '멋지다 연진아~', index: '28'),
+  GameContents(
+      name: 'assets/movie/살인의 추억.png', answer: '밥은 먹고 다니냐?', index: '29'),
+  GameContents(
+      name: 'assets/movie/범죄도시.png', answer: '어, 아직 싱글이야', index: '30'),
+  GameContents(
+      name: 'assets/movie/태조 왕건.png',
+      answer: '누구인가? 누가 기침소리를 내었는가?',
+      index: '31'),
+  GameContents(
+      name: 'assets/movie/어벤져스(인피니티 워).png', answer: '와칸다 포에버', index: '32'),
+  GameContents(
+      name: 'assets/movie/어벤져스(엔드게임).png',
+      answer: 'I am Iron Man',
+      index: '33'),
+  GameContents(name: 'assets/movie/변호인.png', answer: '국가란 국민입니다!', index: '34'),
+  GameContents(
+      name: 'assets/movie/겨울왕국1.png',
+      answer: 'Do you wanna build a snowman? ',
+      index: '35'),
+  GameContents(
+      name: 'assets/movie/킹스맨.png',
+      answer: 'Manners, Maketh, Man',
+      index: '36'),
+  GameContents(
+      name: 'assets/movie/무한도전.png', answer: '어데가서 무기받노~', index: '37'),
+  GameContents(
+      name: 'assets/movie/바람.png', answer: '내 나이? 서른마흔다섯살이다.', index: '38'),
+  GameContents(name: 'assets/movie/범죄도시2.png', answer: '너 납치된거야', index: '39'),
+  GameContents(
+      name: 'assets/movie/재벌집 막내아들.png', answer: '몇개고? 밥알 말이다', index: '40'),
+  GameContents(
+      name: 'assets/movie/상속자들2.png',
+      answer: '사탄들의 학교에 루시퍼의 등장이라..',
+      index: '41'),
+  GameContents(
+      name: 'assets/movie/미래를 보는 소년.png',
+      answer: '이따 5시에 호떡집에서 불이 날거에요',
+      index: '42'),
+  GameContents(
+      name: 'assets/movie/쌈마이웨이.png',
+      answer: '예쁜 척 하는게 아니라 예쁘게 태어난곤데~',
+      index: '43'),
+  GameContents(name: 'assets/movie/러브레터.png', answer: '오겡끼데스까~~', index: '44'),
+  GameContents(name: 'assets/movie/암살.png', answer: '구멍이 두개지요', index: '45'),
+  GameContents(
+      name: 'assets/movie/명량.png',
+      answer: '신에게는 아직 12척의 배가 남아있사옵니다',
+      index: '46'),
+  GameContents(name: 'assets/movie/관상.png', answer: '내가 왕이 될 상인가', index: '47'),
+  GameContents(
+      name: 'assets/movie/7번방의 선물.png', answer: '예승이 콩먹어 콩 비타민 ', index: '48'),
 ];
