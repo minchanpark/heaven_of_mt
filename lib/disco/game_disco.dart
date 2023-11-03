@@ -106,8 +106,6 @@ class _DiscoWebGamePageState extends State<DiscoWebGame> {
                     }
                   },
                   child: Column(
-                    // mainAxisAlignment: MainAxisAlignment.center,
-                    // crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,

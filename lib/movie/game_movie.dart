@@ -117,7 +117,6 @@ class _MovieWebGameState extends State<MovieWebGame> {
                   }
                 },
                 child: Column(
-                  // crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

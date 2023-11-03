@@ -106,8 +106,6 @@ class _ChoiWebGamePageState extends State<ChoiWebGame> {
                     }
                   },
                   child: Column(
-                    // mainAxisAlignment: MainAxisAlignment.center,
-                    // crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
