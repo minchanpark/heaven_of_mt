@@ -622,7 +622,7 @@ final List<GameContents> movie = [
       answer: '예나…선정이 딸이에요',
       index: '17'),
   GameContents(
-      name: 'assets/movie/타짜3.png',
+      name: 'assets/movie/타짜3.png',
       answer: '예림이! 그 패 봐봐, 혹시 장이야?',
       index: '18'),
   GameContents(
@@ -681,7 +681,7 @@ final List<GameContents> movie = [
       answer: '사탄들의 학교에 루시퍼의 등장이라..',
       index: '41'),
   GameContents(
-      name: 'assets/movie/미래를 보는 소년.png',
+      name: 'assets/movie/미래를 보는 소년.png',
       answer: '이따 5시에 호떡집에서 불이 날거에요',
       index: '42'),
   GameContents(
