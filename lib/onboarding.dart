@@ -1013,57 +1013,6 @@ class WordTeleOnboarding extends StatelessWidget {
             ],
           ),
         ),
-        Positioned(
-          top: height * 0.59,
-          left: width * 0.028,
-          child: const Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "4)",
-                style: TextStyle(
-                  fontFamily: 'DungGeunMo',
-                  color: Colors.white,
-                  fontSize: 23,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(width: 10),
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(
-                  "그림 → 답 → 그림의 순서로 게임을",
-                  style: TextStyle(
-                    fontFamily: 'DungGeunMo',
-                    color: Colors.white,
-                    fontSize: 23,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  "진행하고, 마지막 사람은 그림을 보고",
-                  style: TextStyle(
-                    fontFamily: 'DungGeunMo',
-                    color: Colors.white,
-                    fontSize: 23,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  "답을 맞추세요.",
-                  style: TextStyle(
-                    fontFamily: 'DungGeunMo',
-                    color: Colors.white,
-                    fontSize: 23,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ])
-            ],
-          ),
-        ),
       ],
     );
   }

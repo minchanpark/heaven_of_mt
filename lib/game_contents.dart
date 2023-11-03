@@ -481,7 +481,7 @@ final List<GameContents> music2010 = [
   GameContents(name: 'ㄴ ㄸㅁㅇ ㅁㅊ', answer: '너 때문에 미쳐', index: '3'),
   GameContents(name: 'ㅂㅁ ㅈ ㅁㄷㄹ', answer: '밥만 잘 먹더라', index: '4'),
   GameContents(name: 'ㄹㅍ', answer: '루팡', index: '5'),
-  GameContents(name: 'ㅆㅇㅂㄹ', answer: '외톨이야', index: '6'),
+  GameContents(name: 'ㅇㅌㅇㅇ', answer: '외톨이야', index: '6'),
   GameContents(name: 'ㄱㅂ', answer: '고백', index: '7'),
   GameContents(name: 'ㄴ ㅂㅈㅇ ㄴㄹ', answer: '널 붙잡을 노래', index: '8'),
   GameContents(name: 'ㄹㄹㅍㄹ', answer: '롤리폴리', index: '9'),
@@ -584,27 +584,27 @@ final List<GameContents> movie = [
   GameContents(name: 'assets/movie/오징어게임.png', answer: '우린 깐부잖아', index: '1'),
   GameContents(
       name: 'assets/movie/해바라기.png',
-      answer: '꼭 그렇게⋯ 다 가져가야만⋯ 속이 후련했냐!',
+      answer: '꼭 그렇게⋯ 다 가져가야만⋯\n속이 후련했냐!',
       index: '2'),
   GameContents(name: 'assets/movie/곡성.png', answer: '뭣이 중헌디!', index: '3'),
   GameContents(
       name: 'assets/movie/박하사탕.png', answer: '나 다시 돌아갈래~ ', index: '4'),
   GameContents(
       name: 'assets/movie/극한직업.png',
-      answer: '지금까지 이런 맛은 없었다. 이것은 갈비인가 통닭인가',
+      answer: '지금까지 이런 맛은 없었다.\n이것은 갈비인가 통닭인가',
       index: '5'),
   GameContents(name: 'assets/movie/타짜.png', answer: '묻고 더블로 가!', index: '6'),
   GameContents(
       name: 'assets/movie/지붕뚫고 하이킥.png', answer: '이 빵꾸똥꾸야!', index: '7'),
   GameContents(
-      name: 'assets/movie/아저씨.png', answer: '이거 방탄유리야 이 개**야!', index: '8'),
+      name: 'assets/movie/아저씨.png', answer: '이거 방탄유리야\n이 개**야!', index: '8'),
   GameContents(
       name: 'assets/movie/내부자들.png',
-      answer: '모히또 가가지고 몰디브나 한 잔 할라니까',
+      answer: '모히또 가가지고\n몰디브나 한 잔 할라니까',
       index: '9'),
   GameContents(
       name: 'assets/movie/도깨비.png',
-      answer: '날이 좋아서, 날이 좋지 않아서, 날이 적당해서 모든 날이 좋았다',
+      answer: '날이 좋아서, 날이 좋지 않아서,\n날이 적당해서 모든 날이 좋았다',
       index: '10'),
   GameContents(name: 'assets/movie/타짜2.png', answer: '쏠 수 있어!', index: '11'),
   GameContents(name: 'assets/movie/최고의 사랑.png', answer: '극 뽁 ~', index: '12'),
@@ -629,7 +629,7 @@ final List<GameContents> movie = [
       name: 'assets/movie/상속자들.png', answer: '나, 너 좋아하냐?', index: '19'),
   GameContents(
       name: 'assets/movie/부당거래.png',
-      answer: '호의가 계속되면, 그게 권리인 줄 알아요',
+      answer: '호의가 계속되면,\n그게 권리인 줄 알아요',
       index: '20'),
   GameContents(name: 'assets/movie/아이리스.png', answer: '아악 안돼', index: '21'),
   GameContents(
@@ -644,7 +644,7 @@ final List<GameContents> movie = [
   GameContents(
       name: 'assets/movie/친절한 금자씨.png', answer: '너나 잘하세요', index: '26'),
   GameContents(
-      name: 'assets/movie/스카이캐슬.png', answer: '전적으로 저를 믿으셔야 합니다', index: '27'),
+      name: 'assets/movie/스카이캐슬.png', answer: '전적으로 저를\n믿으셔야 합니다', index: '27'),
   GameContents(name: 'assets/movie/더글로리.png', answer: '멋지다 연진아~', index: '28'),
   GameContents(
       name: 'assets/movie/살인의 추억.png', answer: '밥은 먹고 다니냐?', index: '29'),
@@ -663,7 +663,7 @@ final List<GameContents> movie = [
   GameContents(name: 'assets/movie/변호인.png', answer: '국가란 국민입니다!', index: '34'),
   GameContents(
       name: 'assets/movie/겨울왕국1.png',
-      answer: 'Do you wanna build a snowman? ',
+      answer: 'Do you wanna build a snowman?',
       index: '35'),
   GameContents(
       name: 'assets/movie/킹스맨.png',
@@ -672,17 +672,17 @@ final List<GameContents> movie = [
   GameContents(
       name: 'assets/movie/무한도전.png', answer: '어데가서 무기받노~', index: '37'),
   GameContents(
-      name: 'assets/movie/바람.png', answer: '내 나이? 서른마흔다섯살이다.', index: '38'),
+      name: 'assets/movie/바람.png', answer: '내 나이?\n서른마흔다섯살이다.', index: '38'),
   GameContents(name: 'assets/movie/범죄도시2.png', answer: '너 납치된거야', index: '39'),
   GameContents(
       name: 'assets/movie/재벌집 막내아들.png', answer: '몇개고? 밥알 말이다', index: '40'),
   GameContents(
       name: 'assets/movie/상속자들2.png',
-      answer: '사탄들의 학교에 루시퍼의 등장이라..',
+      answer: '사탄들의 학교에\n루시퍼의 등장이라..',
       index: '41'),
   GameContents(
       name: 'assets/movie/미래를 보는 소년.png',
-      answer: '이따 5시에 호떡집에서 불이 날거에요',
+      answer: '이따 5시에 호떡집에서\n불이 날거에요',
       index: '42'),
   GameContents(
       name: 'assets/movie/쌈마이웨이.png',
