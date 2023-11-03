@@ -40,7 +40,7 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
 
     cards = randomtelestration
         .map((gameContents) =>
-            GameCard(gameContents: gameContents, fontSize: 156))
+            GameCard(gameContents: gameContents, fontSize: 140))
         .toList();
   }
 
