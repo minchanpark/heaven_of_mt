@@ -159,7 +159,7 @@ class _GameOverState extends State<GameOver> {
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (context) =>
                                           const ChoiGamePage()));
-                                } else if (widget.gameName == 'musicTitle') {
+                                } else if (widget.gameName == 'musictitle') {
                                   Navigator.popUntil(
                                       context, ModalRoute.withName('/home'));
                                   Navigator.of(context).push(MaterialPageRoute(

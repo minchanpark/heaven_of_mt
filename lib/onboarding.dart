@@ -28,7 +28,7 @@ class PersonOnboarding extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       child: Image.asset(
                         'assets/images/onboarding_person.png',
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),
@@ -190,7 +190,7 @@ class DiscoOnboarding extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       child: Image.asset(
                         'assets/images/onboarding_disco.png',
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),
@@ -459,7 +459,7 @@ class CaptainOnboarding extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       child: Image.asset(
                         'assets/images/onboarding_captain.png',
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),
@@ -631,7 +631,7 @@ class FourOnboarding extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       child: Image.asset(
                         'assets/images/onboarding_four.png',
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),
@@ -833,7 +833,7 @@ class WordTeleOnboarding extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       child: Image.asset(
                         'assets/images/onboarding_wordTele.png',
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),
@@ -1046,7 +1046,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       child: Image.asset(
                         'assets/images/onboarding_teleStration.png',
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),
@@ -1341,7 +1341,7 @@ class ChoiOnboarding extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       child: Image.asset(
                         'assets/images/onboarding_choi.png',
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),
@@ -1503,7 +1503,7 @@ class MusicOnboarding extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       child: Image.asset(
                         'assets/images/onboarding_music.png',
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),
@@ -1636,7 +1636,7 @@ class FamousLineOnboarding extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       child: Image.asset(
                         'assets/images/onboarding_famous.png',
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),
