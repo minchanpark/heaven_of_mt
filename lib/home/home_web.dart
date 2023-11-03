@@ -145,7 +145,6 @@ class _HomeWebState extends State<HomeWeb> {
                       onSelectedItemChanged: (int selectedItem) {
                         setState(() {
                           _selectedGame = selectedItem;
-                          debugPrint("$_selectedGame");
                         });
                       },
                       selectionOverlay: null,
