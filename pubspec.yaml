@@ -30,7 +30,7 @@ flutter:
     - assets/
     - assets/images/
     - assets/person/
-    - assets/movie/호박고구마.png
+    - assets/movie/
     
   fonts:
   - family: DungGeunMo
