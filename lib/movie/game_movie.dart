@@ -203,6 +203,7 @@ class _MovieWebGameState extends State<MovieWebGame> {
                                   : Center(
                                       child: Text(
                                         answer_cards[currentCardIndex],
+                                        textAlign: TextAlign.center,
                                         style: const TextStyle(
                                             fontFamily: 'DungGeunMo',
                                             fontWeight: FontWeight.w400,

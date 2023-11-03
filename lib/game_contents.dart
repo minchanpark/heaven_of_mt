@@ -629,7 +629,7 @@ final List<GameContents> movie = [
       name: 'assets/movie/상속자들.png', answer: '나, 너 좋아하냐?', index: '19'),
   GameContents(
       name: 'assets/movie/부당거래.png',
-      answer: '호의가 계속되면, 그게 권리인 줄 알아요',
+      answer: '호의가 계속되면,\n그게 권리인 줄 알아요',
       index: '20'),
   GameContents(name: 'assets/movie/아이리스.png', answer: '아악 안돼', index: '21'),
   GameContents(
@@ -644,7 +644,7 @@ final List<GameContents> movie = [
   GameContents(
       name: 'assets/movie/친절한 금자씨.png', answer: '너나 잘하세요', index: '26'),
   GameContents(
-      name: 'assets/movie/스카이캐슬.png', answer: '전적으로 저를 믿으셔야 합니다', index: '27'),
+      name: 'assets/movie/스카이캐슬.png', answer: '전적으로 저를\n믿으셔야 합니다', index: '27'),
   GameContents(name: 'assets/movie/더글로리.png', answer: '멋지다 연진아~', index: '28'),
   GameContents(
       name: 'assets/movie/살인의 추억.png', answer: '밥은 먹고 다니냐?', index: '29'),
@@ -678,7 +678,7 @@ final List<GameContents> movie = [
       name: 'assets/movie/재벌집 막내아들.png', answer: '몇개고? 밥알 말이다', index: '40'),
   GameContents(
       name: 'assets/movie/상속자들2.png',
-      answer: '사탄들의 학교에 루시퍼의 등장이라..',
+      answer: '사탄들의 학교에\n루시퍼의 등장이라..',
       index: '41'),
   GameContents(
       name: 'assets/movie/미래를 보는 소년.png',
