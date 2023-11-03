@@ -39,7 +39,6 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
           .map((index) => music1990[index])
           .toList();
     } else if (widget.generation == '2000') {
-      print(widget.generation);
       final musicTitleIndices = List<int>.generate(music2000.length, (i) => i)
         ..shuffle(random);
       randomMusicTitle = musicTitleIndices

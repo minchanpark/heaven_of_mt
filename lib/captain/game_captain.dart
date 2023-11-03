@@ -185,7 +185,7 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
                                     iconSize: 90,
                                   ),
                             SizedBox(
-                              width: width * 0.63,
+                              width: width * 0.7,
                               height: height * 0.4,
                               child: CardSwiper(
                                 duration: const Duration(milliseconds: 0),
