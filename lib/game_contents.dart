@@ -48,7 +48,7 @@ final List<GameContents> person = [
   GameContents(name: 'assets/person/샘스미스.WEBP', index: '35'),
   GameContents(name: 'assets/person/현주엽.WEBP', index: '36'),
   GameContents(name: 'assets/person/전여빈.WEBP', index: '37'),
-  GameContents(name: 'assets/person/김연경.JPG', index: '38'),
+  GameContents(name: 'assets/person/김연경.jpeg', index: '38'),
   GameContents(name: 'assets/person/타노스.WEBP', index: '39'),
   GameContents(name: 'assets/person/김소연.WEBP', index: '40'),
   GameContents(name: 'assets/person/조승우.JPG', index: '41'),
