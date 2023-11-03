@@ -40,7 +40,7 @@ final List<GameContents> person = [
   GameContents(name: 'assets/person/뿡뿡이.WEBP', index: '27'),
   GameContents(name: 'assets/person/어피치.png', index: '28'),
   GameContents(name: 'assets/person/해린.JPG', index: '29'),
-  GameContents(name: 'assets/person/저스틴비버.png', index: '30'),
+  GameContents(name: 'assets/person/저스틴 비버.png', index: '30'),
   GameContents(name: 'assets/person/조정석.WEBP', index: '31'),
   GameContents(name: 'assets/person/조유리.png', index: '32'),
   GameContents(name: 'assets/person/정동원.jpeg', index: '33'),
@@ -48,7 +48,7 @@ final List<GameContents> person = [
   GameContents(name: 'assets/person/샘스미스.WEBP', index: '35'),
   GameContents(name: 'assets/person/현주엽.WEBP', index: '36'),
   GameContents(name: 'assets/person/전여빈.WEBP', index: '37'),
-  GameContents(name: 'assets/person/김연경.jpeg', index: '38'),
+  GameContents(name: 'assets/person/김연경.JPG', index: '38'),
   GameContents(name: 'assets/person/타노스.WEBP', index: '39'),
   GameContents(name: 'assets/person/김소연.WEBP', index: '40'),
   GameContents(name: 'assets/person/조승우.JPG', index: '41'),
@@ -581,13 +581,21 @@ final List<GameContents> music2020 = [
 ];
 
 final List<GameContents> movie = [
-  GameContents(name: 'assets/movie/호박고구마.png', answer: '고구마호박', index: '1'),
-  GameContents(name: 'assets/movie/호박고구마.png', answer: '노구마호박', index: '2'),
-  GameContents(name: 'assets/movie/호박고구마.png', answer: '도구마호박', index: '3'),
-  GameContents(name: 'assets/movie/호박고구마.png', answer: '로구마호박', index: '4'),
-  GameContents(name: 'assets/movie/호박고구마.png', answer: '모구마호박', index: '5'),
-  GameContents(name: 'assets/movie/호박고구마.png', answer: '보구마호박', index: '6'),
-  GameContents(name: 'assets/movie/호박고구마.png', answer: '소구마호박', index: '7'),
+  GameContents(name: 'assets/movie/오징어게임.png', answer: '우린 깐부잖아', index: '1'),
+  GameContents(
+      name: 'assets/movie/해바라기.png',
+      answer: '꼭 그렇게⋯ 다 가져가야만⋯ 속이 후련했냐!',
+      index: '2'),
+  GameContents(name: 'assets/movie/곡성.png', answer: '뭣이 중헌디!', index: '3'),
+  GameContents(
+      name: 'assets/movie/박하사탕.png', answer: '나 다시 돌아갈래~ ', index: '4'),
+  GameContents(
+      name: 'assets/movie/극한직업.png',
+      answer: '지금까지 이런 맛은 없었다. 이것은 갈비인가 통닭인가',
+      index: '5'),
+  GameContents(name: 'assets/movie/타짜.png', answer: '묻고 더블로 가!', index: '6'),
+  GameContents(
+      name: 'assets/movie/지붕뚫고 하이킥.png', answer: '이 빵꾸똥꾸야!', index: '7'),
   GameContents(name: 'assets/movie/호박고구마.png', answer: '오구마호박', index: '8'),
   GameContents(name: 'assets/movie/호박고구마.png', answer: '조구마호박', index: '9'),
   GameContents(name: 'assets/movie/호박고구마.png', answer: '초구마호박', index: '10'),
