@@ -62,11 +62,11 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
     }
     cards = randomMusicTitle
         .map((gameContents) =>
-            GameCard(gameContents: gameContents, fontSize: 108))
+            GameCard(gameContents: gameContents, fontSize: 100))
         .toList();
     answer_cards = randomMusicTitle
         .map((gameContents) =>
-            GameCard(gameContents: gameContents, answer: true, fontSize: 108))
+            GameCard(gameContents: gameContents, answer: true, fontSize: 100))
         .toList();
   }
 
