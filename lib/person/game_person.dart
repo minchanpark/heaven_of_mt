@@ -255,12 +255,19 @@ class _PersonWebGameState extends State<PersonWebGame> {
                                       color: Colors.black),
                                 )),
                           )
-                        : Text(personName,
-                            style: const TextStyle(
-                                fontFamily: 'DungGeunMo',
-                                fontWeight: FontWeight.w400,
-                                fontSize: 72,
-                                color: Color(0xffFF62D3))),
+                        : InkWell(
+                            onTap: () {
+                              setState(() {
+                                _isAnswered = !_isAnswered;
+                              });
+                            },
+                            child: Text(personName,
+                                style: const TextStyle(
+                                    fontFamily: 'DungGeunMo',
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 72,
+                                    color: Color(0xffFF62D3))),
+                          ),
                   ],
                 ),
               ),
