@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:testes/movie/movie_game_page.dart';
-import 'package:testes/person/person_game_page.dart';
 
 import '../captain/captain_game_page.dart';
 import '../disco/disco_game_page.dart';
+import '../movie/movie_game_page.dart';
 import '../musictitle/category_musictitle.dart';
 import '../choi/choi_game_page.dart';
 import '../four/four_game_page.dart';
 import '../onboarding.dart';
+import '../person/person_game_page.dart';
 import '../tele/tele_game_page.dart';
 import '../telestration/telestration_game_page.dart';
 

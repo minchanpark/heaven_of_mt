@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:testes/person/person_game_page.dart';
+import 'package:heven_of_mt/person/person_game_page.dart';
 import 'home/home.dart';
 import 'splash.dart';
 
