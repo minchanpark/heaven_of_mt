@@ -180,7 +180,7 @@ class _MovieWebGameState extends State<MovieWebGame> {
                                 iconSize: 90,
                               ),
                         SizedBox(
-                          width: width * 0.57, // 최대 가로 크기를 설정할 수도 있습니다.
+                          width: width * 0.7, // 최대 가로 크기를 설정할 수도 있습니다.
                           height: height * 0.67, // 최대 세로 크기를 설정할 수도 있습니다
                           child: CardSwiper(
                             duration: const Duration(milliseconds: 0),
