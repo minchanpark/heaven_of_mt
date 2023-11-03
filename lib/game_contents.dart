@@ -147,7 +147,8 @@ final List<GameContents> captain = [
   GameContents(name: '가장 당당해 보이는 사람', answer: '당연하지 게임', index: '10'),
   GameContents(name: '사회생활 잘할 \n것 같은 사람', answer: '눈치게임', index: '11'),
   GameContents(name: '눈물 많을\n것 같은 사람', answer: '눈물 빨리 흘리기', index: '12'),
-  GameContents(name: '무인도에서 살아남을 수\n있을 것 같은 사람', answer: '물 빨리 마시기', index: '13'),
+  GameContents(
+      name: '무인도에서 살아남을 수\n있을 것 같은 사람', answer: '물 빨리 마시기', index: '13'),
   GameContents(
       name: '과자를 가장 많이 먹을\n것 같은 사람', answer: '과자 부스러기 보고\n과자 맞추기', index: '14'),
   GameContents(name: '요리 잘 할\n것 같은 사람', answer: '후라이펜 놀이', index: '15'),
@@ -648,7 +649,7 @@ final List<GameContents> movie = [
       name: 'assets/movie/스카이캐슬.png', answer: '전적으로 저를\n믿으셔야 합니다', index: '27'),
   GameContents(name: 'assets/movie/더글로리.png', answer: '멋지다 연진아 ~', index: '28'),
   GameContents(
-      name: 'assets/movie/살인의 추억.png', answer: '밥은 먹고 다니냐?', index: '29'),
+      name: 'assets/movie/살인의추억.png', answer: '밥은 먹고 다니냐?', index: '29'),
   GameContents(
       name: 'assets/movie/범죄도시.png', answer: '어, 아직 싱글이야', index: '30'),
   GameContents(
