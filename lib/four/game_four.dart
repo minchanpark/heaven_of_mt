@@ -106,8 +106,6 @@ class _FourWebGamePageState extends State<FourWebGame> {
                     }
                   },
                   child: Column(
-                    // mainAxisAlignment: MainAxisAlignment.center,
-                    // crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,

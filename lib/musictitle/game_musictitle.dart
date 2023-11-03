@@ -144,7 +144,6 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
                     }
                   },
                   child: Column(
-                    // crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,

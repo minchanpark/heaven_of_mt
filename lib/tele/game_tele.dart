@@ -106,8 +106,6 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
                     }
                   },
                   child: Column(
-                    // mainAxisAlignment: MainAxisAlignment.center,
-                    // crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,

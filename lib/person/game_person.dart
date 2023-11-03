@@ -114,7 +114,6 @@ class _PersonWebGameState extends State<PersonWebGame> {
                   }
                 },
                 child: Column(
-                  // crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

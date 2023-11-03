@@ -121,7 +121,6 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
                     }
                   },
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
