@@ -34,7 +34,6 @@ flutter:
     - assets/images/
     - assets/person/
     - assets/movie/
-    - assets/icons/
     
   fonts:
   - family: DungGeunMo
