@@ -13,7 +13,8 @@ import '../person/person_game_page.dart';
 import '../tele/tele_game_page.dart';
 import '../telestration/telestration_game_page.dart';
 
-const List<String> _GameNames = <String>[
+// 게임 이름 목록
+const List<String> _gameNames = <String>[
   '인물퀴즈',
   '디스코',
   '대표게임',
@@ -24,6 +25,8 @@ const List<String> _GameNames = <String>[
   '노래초성퀴즈',
   '명대사퀴즈',
 ];
+
+// 게임 설명 목록
 List<Widget> contentList = [
   const PersonOnboarding(),
   const DiscoOnboarding(),
@@ -35,6 +38,8 @@ List<Widget> contentList = [
   const MusicOnboarding(),
   const FamousLineOnboarding(),
 ];
+
+// 게임 페이지 묵룩
 List<Widget> pageList = [
   const PersonGamePage(),
   const DiscoGamePage(),
@@ -58,19 +63,63 @@ class HomeWeb extends StatefulWidget {
 class _HomeWebState extends State<HomeWeb> {
   FocusNode focusNode = FocusNode();
   FixedExtentScrollController scr = FixedExtentScrollController();
+  int _selectedGame = 0;
+
+  // 게임 선택 로직
+  void selectGame() {
+    switch (_selectedGame + 1) {
+      case 1:
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const PersonGamePage()));
+        break;
+      case 2:
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const DiscoGamePage()));
+        break;
+      case 3:
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const CaptainGamePage()));
+        break;
+      case 4:
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const FourGamePage()));
+        break;
+      case 5:
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const TeleGamePage()));
+        break;
+      case 6:
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => const TelestrationGamePage()));
+        break;
+      case 7:
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const ChoiGamePage()));
+        break;
+      case 8:
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const CategoryPage()));
+        break;
+      case 9:
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const MovieGamePage()));
+        break;
+    }
+  }
+
   @override
   void initState() {
     super.initState();
     focusNode.requestFocus();
   }
 
-  int _selectedGame = 0;
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Stack(children: [
+        // 배경
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
@@ -79,11 +128,12 @@ class _HomeWebState extends State<HomeWeb> {
             ),
           ),
         ),
+        // 홈 화면 구성
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(height: height * 0.056),
-          InkWell(
+          GestureDetector(
             onTap: () {
-              Navigator.of(context).pushReplacementNamed('/home');
+              Navigator.of(context).pushReplacementNamed('/splash');
             },
             child: Container(
                 margin: EdgeInsets.only(left: width * 0.075),
@@ -93,15 +143,17 @@ class _HomeWebState extends State<HomeWeb> {
           SizedBox(height: height * 0.032),
           Container(
             margin: EdgeInsets.only(left: width * 0.075),
+            // 키보드 interaction
             child: RawKeyboardListener(
               focusNode: focusNode,
               onKey: (RawKeyEvent event) {
                 if (event is RawKeyDownEvent) {
+                  // 키보드 아래 화살표
                   if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
                     if (_selectedGame == 8) {
                     } else {
                       setState(() {
-                        _selectedGame = (_selectedGame + 1) % _GameNames.length;
+                        _selectedGame = (_selectedGame + 1) % _gameNames.length;
                         scr.animateToItem(
                           _selectedGame,
                           duration: const Duration(milliseconds: 300),
@@ -109,13 +161,14 @@ class _HomeWebState extends State<HomeWeb> {
                         );
                       });
                     }
+                    // 키보드 위 화살표
                   } else if (event.logicalKey == LogicalKeyboardKey.arrowUp) {
                     if (_selectedGame == 0) {
                     } else {
                       setState(() {
                         _selectedGame =
-                            (_selectedGame - 1 + _GameNames.length) %
-                                _GameNames.length;
+                            (_selectedGame - 1 + _gameNames.length) %
+                                _gameNames.length;
                         scr.animateToItem(
                           _selectedGame,
                           duration: const Duration(milliseconds: 300),
@@ -123,6 +176,7 @@ class _HomeWebState extends State<HomeWeb> {
                         );
                       });
                     }
+                    // 키보드 엔터 시 게임 화면으로 이동
                   } else if (event.logicalKey == LogicalKeyboardKey.enter) {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => pageList[_selectedGame]));
@@ -131,6 +185,7 @@ class _HomeWebState extends State<HomeWeb> {
               },
               child: Row(
                 children: [
+                  // 설명란
                   contentList[_selectedGame],
                   SizedBox(width: width * 0.063),
                   SizedBox(
@@ -149,81 +204,29 @@ class _HomeWebState extends State<HomeWeb> {
                       },
                       selectionOverlay: null,
                       children:
-                          List<Widget>.generate(_GameNames.length, (int index) {
-                        final isSelected = index == _selectedGame;
+                          // 게임 목록 선택 화면
+                          List<Widget>.generate(_gameNames.length, (int index) {
+                        final isSelected = (index == _selectedGame);
                         return Center(
                             child: isSelected
-                                ? Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Image.asset("assets/images/left.png",
-                                          width: 24, height: 42),
-                                      const SizedBox(width: 18),
-                                      InkWell(
-                                        onTap: () {
-                                          switch (_selectedGame + 1) {
-                                            case 1:
-                                              Navigator.pushNamed(
-                                                  context, '/person');
-                                              break;
-                                            case 2:
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const DiscoGamePage()));
-                                              break;
-                                            case 3:
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const CaptainGamePage()));
-                                              break;
-                                            case 4:
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const FourGamePage()));
-                                              break;
-                                            case 5:
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const TeleGamePage()));
-                                              break;
-                                            case 6:
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const TelestrationGamePage()));
-                                              break;
-                                            case 7:
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const ChoiGamePage()));
-                                              break;
-                                            case 8:
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const CategoryPage()));
-                                              break;
-                                            case 9:
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const MovieGamePage()));
-                                              break;
-                                          }
-                                        },
-                                        child: Container(
+                                // 선택 되어있을 때 보여줄 ui
+                                ? GestureDetector(
+                                    onTap: selectGame,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Image.asset("assets/images/left.png",
+                                            width: 24, height: 42),
+                                        const SizedBox(width: 18),
+                                        Container(
                                           width: 382,
                                           height: 59,
                                           decoration: const BoxDecoration(
                                               color: Color(0xFFFF62D3)),
                                           child: Center(
                                             child: Text(
-                                              _GameNames[index],
+                                              _gameNames[index],
                                               style: const TextStyle(
                                                   fontFamily: 'DungGeunMo',
                                                   fontSize: 54,
@@ -232,13 +235,13 @@ class _HomeWebState extends State<HomeWeb> {
                                             ),
                                           ),
                                         ),
-                                      ),
-                                      const SizedBox(width: 18),
-                                      Image.asset("assets/images/right.png",
-                                          width: 24, height: 42)
-                                    ],
+                                        const SizedBox(width: 18),
+                                        Image.asset("assets/images/right.png",
+                                            width: 24, height: 42)
+                                      ],
+                                    ),
                                   )
-                                : Text(_GameNames[index],
+                                : Text(_gameNames[index],
                                     style: TextStyle(
                                         fontFamily: 'DungGeunMo',
                                         fontSize: 44,
