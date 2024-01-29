@@ -192,10 +192,11 @@ class _HomeWebState extends State<HomeWeb> {
                     width: width * 0.394,
                     height: height * 0.806,
                     child: CupertinoPicker(
+                      diameterRatio: 1.5,
                       scrollController: scr,
-                      magnification: 1.22,
-                      squeeze: 1.2,
-                      useMagnifier: true,
+                      // magnification: 1.22,
+                      squeeze: 1.3,
+                      // useMagnifier: true,
                       itemExtent: 100,
                       onSelectedItemChanged: (int selectedItem) {
                         setState(() {
@@ -246,7 +247,8 @@ class _HomeWebState extends State<HomeWeb> {
                                         fontFamily: 'DungGeunMo',
                                         fontSize: 44,
                                         fontWeight: FontWeight.w400,
-                                        color: Colors.white.withOpacity(0.5))));
+                                        color:
+                                            Colors.white.withOpacity(0.5))));
                       }),
                     ),
                   ),
