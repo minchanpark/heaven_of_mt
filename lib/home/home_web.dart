@@ -194,10 +194,10 @@ class _HomeWebState extends State<HomeWeb> {
                     child: CupertinoPicker(
                       diameterRatio: 1.5,
                       scrollController: scr,
-                      // magnification: 1.22,
-                      squeeze: 1.3,
-                      // useMagnifier: true,
-                      itemExtent: 100,
+                      magnification: 1,
+                      squeeze: 0.8,
+                      useMagnifier: true,
+                      itemExtent: 59,
                       onSelectedItemChanged: (int selectedItem) {
                         setState(() {
                           _selectedGame = selectedItem;
@@ -222,7 +222,6 @@ class _HomeWebState extends State<HomeWeb> {
                                         const SizedBox(width: 18),
                                         Container(
                                           width: 382,
-                                          height: 59,
                                           decoration: const BoxDecoration(
                                               color: Color(0xFFFF62D3)),
                                           child: Center(
@@ -247,8 +246,7 @@ class _HomeWebState extends State<HomeWeb> {
                                         fontFamily: 'DungGeunMo',
                                         fontSize: 44,
                                         fontWeight: FontWeight.w400,
-                                        color:
-                                            Colors.white.withOpacity(0.5))));
+                                        color: Colors.white.withOpacity(0.5))));
                       }),
                     ),
                   ),
