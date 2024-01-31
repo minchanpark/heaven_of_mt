@@ -189,15 +189,16 @@ class _HomeWebState extends State<HomeWeb> {
                   contentList[_selectedGame],
                   SizedBox(width: width * 0.063),
                   SizedBox(
-                    width: width * 0.394,
-                    height: height * 0.806,
+                    width: width * 0.4,
+                    height: height * 0.81,
                     child: CupertinoPicker(
                       diameterRatio: 1.5,
+                      // diameterRatio: 1000,
                       scrollController: scr,
                       // magnification: 1.22,
-                      squeeze: 1.3,
+                      squeeze: 0.8,
                       // useMagnifier: true,
-                      itemExtent: 100,
+                      itemExtent: 59,
                       onSelectedItemChanged: (int selectedItem) {
                         setState(() {
                           _selectedGame = selectedItem;
