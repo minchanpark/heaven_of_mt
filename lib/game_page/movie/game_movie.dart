@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
-import '../game_contents.dart';
-import '../gameover/gameover_web.dart';
+import '../../game_contents.dart';
+import '../../gameover/gameover_web.dart';
 
 class MovieWebGame extends StatefulWidget {
   const MovieWebGame({super.key});

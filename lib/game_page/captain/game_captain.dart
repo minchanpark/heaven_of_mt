@@ -3,19 +3,20 @@ import 'package:flutter/services.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
 
-import '../game_contents.dart';
-import '../card/card.dart';
-import '../gameover/gameover_web.dart';
+import '../../game_contents.dart';
+import '../../card/card.dart';
+import '../../gameover/gameover_web.dart';
 
-class MusicTitleWebGame extends StatefulWidget {
-  final String generation;
-  const MusicTitleWebGame({super.key, required this.generation});
+class CaptainWebGame extends StatefulWidget {
+  const CaptainWebGame({
+    super.key,
+  });
 
   @override
-  State<MusicTitleWebGame> createState() => _MusicTitleWebGamePageState();
+  State<CaptainWebGame> createState() => _CaptainWebGamePageState();
 }
 
-class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
+class _CaptainWebGamePageState extends State<CaptainWebGame> {
   FocusNode focusNode = FocusNode();
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
@@ -23,7 +24,7 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
   List<GameCard> answer_cards = [];
   final random = Random();
   bool _isAnswered = false;
-  List<GameContents> randomMusicTitle = [];
+  List<GameContents> randomcaptain = [];
   @override
   void initState() {
     super.initState();
@@ -31,42 +32,18 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
 
     // widget.id 값에 따라 cards 변수에 값을 할당
 
-    if (widget.generation == '1990') {
-      final musicTitleIndices = List<int>.generate(music1990.length, (i) => i)
-        ..shuffle(random);
-      randomMusicTitle = musicTitleIndices
-          .sublist(0, 10)
-          .map((index) => music1990[index])
-          .toList();
-    } else if (widget.generation == '2000') {
-      final musicTitleIndices = List<int>.generate(music2000.length, (i) => i)
-        ..shuffle(random);
-      randomMusicTitle = musicTitleIndices
-          .sublist(0, 10)
-          .map((index) => music2000[index])
-          .toList();
-    } else if (widget.generation == '2010') {
-      final musicTitleIndices = List<int>.generate(music2010.length, (i) => i)
-        ..shuffle(random);
-      randomMusicTitle = musicTitleIndices
-          .sublist(0, 10)
-          .map((index) => music2010[index])
-          .toList();
-    } else if (widget.generation == '2020') {
-      final musicTitleIndices = List<int>.generate(music2020.length, (i) => i)
-        ..shuffle(random);
-      randomMusicTitle = musicTitleIndices
-          .sublist(0, 10)
-          .map((index) => music2020[index])
-          .toList();
-    }
-    cards = randomMusicTitle
+    final captainIndices = List<int>.generate(captain.length, (i) => i)
+      ..shuffle(random);
+    randomcaptain =
+        captainIndices.sublist(0, 10).map((index) => captain[index]).toList();
+
+    cards = randomcaptain
         .map((gameContents) =>
-            GameCard(gameContents: gameContents, fontSize: 100))
+            GameCard(gameContents: gameContents, fontSize: 84))
         .toList();
-    answer_cards = randomMusicTitle
+    answer_cards = randomcaptain
         .map((gameContents) =>
-            GameCard(gameContents: gameContents, answer: true, fontSize: 100))
+            GameCard(gameContents: gameContents, answer: true, fontSize: 84))
         .toList();
   }
 
@@ -88,7 +65,7 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/background_final.png"),
+                image: AssetImage('assets/images/background_final.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -128,7 +105,7 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => const GameOver(
-                                gameName: 'musictitle',
+                                gameName: 'captain',
                               ),
                             ),
                           );
@@ -207,7 +184,7 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
                                     iconSize: 90,
                                   ),
                             SizedBox(
-                              width: width * 0.63,
+                              width: width * 0.7,
                               height: height * 0.4,
                               child: CardSwiper(
                                 duration: const Duration(milliseconds: 0),
@@ -236,7 +213,7 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
                                       builder: (context) => const GameOver(
-                                        gameName: 'musicTitle',
+                                        gameName: 'captain',
                                       ),
                                     ),
                                   );
@@ -277,7 +254,7 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
                                 borderRadius: BorderRadius.circular(12)),
                           ),
                           child: Text(
-                            _isAnswered ? '문제보기' : '정답보기',
+                            _isAnswered ? '돌아가기' : '미션보기',
                             style: const TextStyle(
                               fontFamily: 'DungGeunMo',
                               fontWeight: FontWeight.w400,

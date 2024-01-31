@@ -1,15 +1,16 @@
 // ignore_for_file: unused_field
 
 import 'package:flutter/material.dart';
+import 'package:heaven_of_mt/church_game/church_captain.dart';
 
-import '../captain/captain_game_page.dart';
-import '../choi/choi_game_page.dart';
-import '../disco/disco_game_page.dart';
-import '../four/four_game_page.dart';
-import '../movie/movie_game_page.dart';
-import '../musictitle/category_musictitle.dart';
-import '../tele/tele_game_page.dart';
-import '../telestration/telestration_game_page.dart';
+import '../game_page/captain/captain_game_page.dart';
+import '../game_page/choi/choi_game_page.dart';
+import '../game_page/disco/disco_game_page.dart';
+import '../game_page/four/four_game_page.dart';
+import '../game_page/movie/movie_game_page.dart';
+import '../game_page/musictitle/category_musictitle.dart';
+import '../game_page/tele/tele_game_page.dart';
+import '../game_page/telestration/telestration_game_page.dart';
 
 class GameOver extends StatefulWidget {
   final String gameName;
@@ -171,6 +172,26 @@ class _GameOverState extends State<GameOver> {
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (context) =>
                                           const MovieGamePage()));
+                                } else if (widget.gameName == 'churchCaptain') {
+                                  Navigator.popUntil(
+                                      context, ModalRoute.withName('/home'));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          const ChurchCaptainGame()));
+                                }
+                                else if (widget.gameName == 'churchFour') {
+                                  Navigator.popUntil(
+                                      context, ModalRoute.withName('/home'));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          const DiscoGamePage()));
+                                }
+                                else if (widget.gameName == 'churchDisco') {
+                                  Navigator.popUntil(
+                                      context, ModalRoute.withName('/home'));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          const DiscoGamePage()));
                                 }
                               },
                               style: ElevatedButton.styleFrom(

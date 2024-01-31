@@ -1,37 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
+import '../../game_contents.dart';
+import '../../card/card_app.dart';
+import '../../gameover/gameover_app.dart';
 
-import '../card/card_four_app.dart';
-import '../game_contents.dart';
-import '../gameover/gameover_app.dart';
-
-class FourAppGame extends StatefulWidget {
-  const FourAppGame({
-    super.key,
-  });
+class TeleAppGame extends StatefulWidget {
+  const TeleAppGame({super.key});
 
   @override
-  State<FourAppGame> createState() => _FourAppGameState();
+  State<TeleAppGame> createState() => _TeleAppGamePageState();
 }
 
-class _FourAppGameState extends State<FourAppGame> {
+class _TeleAppGamePageState extends State<TeleAppGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
-  List<GameCardFourApp> cards = []; // cards 변수를 초기화
+  List<GameCardApp> cards = []; // cards 변수를 초기화
   String setNumber = '';
   final random = Random();
   @override
   void initState() {
     super.initState();
 
-    final fourIndices = List<int>.generate(four.length, (i) => i)
+    final teleIndices = List<int>.generate(tele.length, (i) => i)
       ..shuffle(random);
-    final randomFour =
-        fourIndices.sublist(0, 10).map((index) => four[index]).toList();
+    final randomTele =
+        teleIndices.sublist(0, 10).map((index) => tele[index]).toList();
 
-    cards = randomFour
-        .map((gameContents) => GameCardFourApp(gameContents: gameContents))
+    cards = randomTele
+        .map((gameContents) => GameCardApp(gameContents: gameContents))
         .toList();
   }
 
@@ -44,17 +41,11 @@ class _FourAppGameState extends State<FourAppGame> {
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.only(
-            left: width * 0.075,
-            top: height * 0.073,
-            right: width * 0.0797,
-          ),
+          padding: const EdgeInsets.only(left: 29, top: 62, right: 29),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -81,9 +72,9 @@ class _FourAppGameState extends State<FourAppGame> {
                   fontSize: 34,
                 ),
               ),
-              SizedBox(height: height * 0.025),
+              const SizedBox(height: 10),
               Text(
-                '${currentCardIndex + 1} / ${cards.length}',
+                '${currentCardIndex + 1}/${cards.length}',
                 style: const TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Color.fromRGBO(255, 98, 211, 1),
@@ -139,8 +130,8 @@ class _FourAppGameState extends State<FourAppGame> {
                             ),
                           ),
                     SizedBox(
-                      width: width * 0.6,
-                      height: height * 0.3,
+                      width: 277,
+                      height: 200,
                       child: CardSwiper(
                         duration: const Duration(milliseconds: 0),
                         controller: controller,
@@ -153,6 +144,7 @@ class _FourAppGameState extends State<FourAppGame> {
                           verticalThresholdPercentage,
                         ) {
                           currentCardIndex = index;
+
                           return cards[index];
                         },
                         isDisabled: true,
@@ -169,7 +161,7 @@ class _FourAppGameState extends State<FourAppGame> {
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) => const GameOverApp(
-                                  gameName: 'four',
+                                  gameName: 'tele',
                                 ),
                               ),
                             );

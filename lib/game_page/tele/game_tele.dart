@@ -3,20 +3,20 @@ import 'package:flutter/services.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
 
-import '../game_contents.dart';
-import '../card/card.dart';
-import '../gameover/gameover_web.dart';
+import '../../game_contents.dart';
+import '../../card/card.dart';
+import '../../gameover/gameover_web.dart';
 
-class DiscoWebGame extends StatefulWidget {
-  const DiscoWebGame({
+class TeleWebGame extends StatefulWidget {
+  const TeleWebGame({
     super.key,
   });
 
   @override
-  State<DiscoWebGame> createState() => _DiscoWebGamePageState();
+  State<TeleWebGame> createState() => _TeleWebGamePageState();
 }
 
-class _DiscoWebGamePageState extends State<DiscoWebGame> {
+class _TeleWebGamePageState extends State<TeleWebGame> {
   FocusNode focusNode = FocusNode();
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
@@ -29,12 +29,12 @@ class _DiscoWebGamePageState extends State<DiscoWebGame> {
 
     // widget.id 값에 따라 cards 변수에 값을 할당
 
-    final discoIndices = List<int>.generate(disco.length, (i) => i)
+    final teleIndices = List<int>.generate(tele.length, (i) => i)
       ..shuffle(random);
-    final randomdisco =
-        discoIndices.sublist(0, 10).map((index) => disco[index]).toList();
+    final randomtele =
+        teleIndices.sublist(0, 10).map((index) => tele[index]).toList();
 
-    cards = randomdisco
+    cards = randomtele
         .map((gameContents) => GameCard(gameContents: gameContents))
         .toList();
   }
@@ -90,7 +90,7 @@ class _DiscoWebGamePageState extends State<DiscoWebGame> {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => const GameOver(
-                                gameName: 'disco',
+                                gameName: 'tele',
                               ),
                             ),
                           );
@@ -192,7 +192,7 @@ class _DiscoWebGamePageState extends State<DiscoWebGame> {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
                                       builder: (context) => const GameOver(
-                                        gameName: 'disco',
+                                        gameName: 'tele',
                                       ),
                                     ),
                                   );

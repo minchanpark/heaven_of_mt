@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
-import '../game_contents.dart';
-import '../gameover/gameover_app.dart';
-import '../image_card.dart';
+import '../../game_contents.dart';
+import '../../gameover/gameover_app.dart';
+import '../../image_card.dart';
 
 class PersonAppGame extends StatefulWidget {
   const PersonAppGame({super.key});

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../choi/choi_game_page.dart';
-import '../four/four_game_page.dart';
-import '../person/person_game_page.dart';
-import '../tele/tele_game_page.dart';
+import '../game_page/choi/choi_game_page.dart';
+import '../game_page/four/four_game_page.dart';
+import '../game_page/person/person_game_page.dart';
+import '../game_page/tele/tele_game_page.dart';
 
 class HomeApp extends StatelessWidget {
   const HomeApp({

@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
-import '../game_contents.dart';
-import '../card/card_app.dart';
-import '../gameover/gameover_app.dart';
 
-class TeleAppGame extends StatefulWidget {
-  const TeleAppGame({super.key});
+import '../../card/card_app.dart';
+import '../../game_contents.dart';
+import '../../gameover/gameover_app.dart';
+
+class ChoiAppGame extends StatefulWidget {
+  const ChoiAppGame({
+    super.key,
+  });
 
   @override
-  State<TeleAppGame> createState() => _TeleAppGamePageState();
+  State<ChoiAppGame> createState() => _ChoiAppGamePageState();
 }
 
-class _TeleAppGamePageState extends State<TeleAppGame> {
+class _ChoiAppGamePageState extends State<ChoiAppGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<GameCardApp> cards = []; // cards 변수를 초기화
@@ -22,12 +25,12 @@ class _TeleAppGamePageState extends State<TeleAppGame> {
   void initState() {
     super.initState();
 
-    final teleIndices = List<int>.generate(tele.length, (i) => i)
+    final choiIndices = List<int>.generate(choi.length, (i) => i)
       ..shuffle(random);
-    final randomTele =
-        teleIndices.sublist(0, 10).map((index) => tele[index]).toList();
+    final randomChoi =
+        choiIndices.sublist(0, 10).map((index) => choi[index]).toList();
 
-    cards = randomTele
+    cards = randomChoi
         .map((gameContents) => GameCardApp(gameContents: gameContents))
         .toList();
   }
@@ -41,6 +44,8 @@ class _TeleAppGamePageState extends State<TeleAppGame> {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: SafeArea(
@@ -130,8 +135,8 @@ class _TeleAppGamePageState extends State<TeleAppGame> {
                             ),
                           ),
                     SizedBox(
-                      width: 277,
-                      height: 200,
+                      width: width * 0.6,
+                      height: height * 0.3,
                       child: CardSwiper(
                         duration: const Duration(milliseconds: 0),
                         controller: controller,
@@ -161,7 +166,7 @@ class _TeleAppGamePageState extends State<TeleAppGame> {
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) => const GameOverApp(
-                                  gameName: 'tele',
+                                  gameName: 'choi',
                                 ),
                               ),
                             );

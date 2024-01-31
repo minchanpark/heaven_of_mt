@@ -3,25 +3,27 @@ import 'package:flutter/services.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
 
-import '../game_contents.dart';
-import '../card/card.dart';
-import '../gameover/gameover_web.dart';
+import '../../game_contents.dart';
+import '../../card/card.dart';
+import '../../gameover/gameover_web.dart';
 
-class TeleWebGame extends StatefulWidget {
-  const TeleWebGame({
-    super.key,
-  });
+class MusicTitleWebGame extends StatefulWidget {
+  final String generation;
+  const MusicTitleWebGame({super.key, required this.generation});
 
   @override
-  State<TeleWebGame> createState() => _TeleWebGamePageState();
+  State<MusicTitleWebGame> createState() => _MusicTitleWebGamePageState();
 }
 
-class _TeleWebGamePageState extends State<TeleWebGame> {
+class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
   FocusNode focusNode = FocusNode();
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
+  List<GameCard> answer_cards = [];
   final random = Random();
+  bool _isAnswered = false;
+  List<GameContents> randomMusicTitle = [];
   @override
   void initState() {
     super.initState();
@@ -29,13 +31,42 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
 
     // widget.id 값에 따라 cards 변수에 값을 할당
 
-    final teleIndices = List<int>.generate(tele.length, (i) => i)
-      ..shuffle(random);
-    final randomtele =
-        teleIndices.sublist(0, 10).map((index) => tele[index]).toList();
-
-    cards = randomtele
-        .map((gameContents) => GameCard(gameContents: gameContents))
+    if (widget.generation == '1990') {
+      final musicTitleIndices = List<int>.generate(music1990.length, (i) => i)
+        ..shuffle(random);
+      randomMusicTitle = musicTitleIndices
+          .sublist(0, 10)
+          .map((index) => music1990[index])
+          .toList();
+    } else if (widget.generation == '2000') {
+      final musicTitleIndices = List<int>.generate(music2000.length, (i) => i)
+        ..shuffle(random);
+      randomMusicTitle = musicTitleIndices
+          .sublist(0, 10)
+          .map((index) => music2000[index])
+          .toList();
+    } else if (widget.generation == '2010') {
+      final musicTitleIndices = List<int>.generate(music2010.length, (i) => i)
+        ..shuffle(random);
+      randomMusicTitle = musicTitleIndices
+          .sublist(0, 10)
+          .map((index) => music2010[index])
+          .toList();
+    } else if (widget.generation == '2020') {
+      final musicTitleIndices = List<int>.generate(music2020.length, (i) => i)
+        ..shuffle(random);
+      randomMusicTitle = musicTitleIndices
+          .sublist(0, 10)
+          .map((index) => music2020[index])
+          .toList();
+    }
+    cards = randomMusicTitle
+        .map((gameContents) =>
+            GameCard(gameContents: gameContents, fontSize: 100))
+        .toList();
+    answer_cards = randomMusicTitle
+        .map((gameContents) =>
+            GameCard(gameContents: gameContents, answer: true, fontSize: 100))
         .toList();
   }
 
@@ -76,9 +107,15 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
                     if (event is RawKeyDownEvent) {
                       if (event.logicalKey == LogicalKeyboardKey.escape) {
                         Navigator.of(context).pop();
+                      } else if (event.logicalKey == LogicalKeyboardKey.space ||
+                          event.logicalKey == LogicalKeyboardKey.enter) {
+                        setState(() {
+                          _isAnswered = !_isAnswered;
+                        });
                       } else if (event.logicalKey ==
                           LogicalKeyboardKey.arrowLeft) {
                         controller.undo();
+                        _isAnswered = false;
                         if (currentCardIndex == 0) {
                           setState(() {
                             isUndoButtonVisible = true;
@@ -86,11 +123,12 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
                         }
                       } else if (event.logicalKey ==
                           LogicalKeyboardKey.arrowRight) {
+                        _isAnswered = false;
                         if (currentCardIndex == 9) {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => const GameOver(
-                                gameName: 'tele',
+                                gameName: 'musictitle',
                               ),
                             ),
                           );
@@ -108,7 +146,7 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
                   child: Column(
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           IconButton(
                             onPressed: () {
@@ -140,7 +178,10 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
                           children: [
                             isUndoButtonVisible
                                 ? IconButton(
-                                    onPressed: controller.undo,
+                                    onPressed: () {
+                                      controller.undo();
+                                      _isAnswered = false;
+                                    },
                                     color: Colors.transparent,
                                     icon: const ImageIcon(
                                       AssetImage(
@@ -151,6 +192,7 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
                                 : IconButton(
                                     onPressed: () {
                                       controller.undo();
+                                      _isAnswered = false;
                                       if (currentCardIndex == 0) {
                                         setState(() {
                                           isUndoButtonVisible = true;
@@ -179,7 +221,9 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
                                   verticalThresholdPercentage,
                                 ) {
                                   currentCardIndex = index;
-                                  return cards[index];
+                                  return !_isAnswered
+                                      ? cards[index]
+                                      : answer_cards[index];
                                 },
                                 isDisabled: true,
                                 onSwipe: _onSwipe,
@@ -192,7 +236,7 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
                                       builder: (context) => const GameOver(
-                                        gameName: 'tele',
+                                        gameName: 'musicTitle',
                                       ),
                                     ),
                                   );
@@ -204,6 +248,7 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
                                     });
                                   }
                                 }
+                                _isAnswered = false;
                               },
                               color: Colors.transparent,
                               icon: const ImageIcon(
@@ -215,7 +260,34 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
                           ],
                         ),
                       ),
-                      const SizedBox(height: 87)
+                      SizedBox(
+                        width: 250,
+                        height: 71,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              _isAnswered = !_isAnswered;
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: _isAnswered
+                                ? Colors.white
+                                : const Color(0xffFF62D3),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12)),
+                          ),
+                          child: Text(
+                            _isAnswered ? '문제보기' : '정답보기',
+                            style: const TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              fontWeight: FontWeight.w400,
+                              fontSize: 42,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 110),
                     ],
                   ),
                 ),
