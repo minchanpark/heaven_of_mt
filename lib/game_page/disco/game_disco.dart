@@ -3,27 +3,25 @@ import 'package:flutter/services.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
 
-import '../game_contents.dart';
-import '../card/card.dart';
-import '../gameover/gameover_web.dart';
+import '../../game_contents.dart';
+import '../../card/card.dart';
+import '../../gameover/gameover_web.dart';
 
-class TelestrationWebGame extends StatefulWidget {
-  const TelestrationWebGame({
+class DiscoWebGame extends StatefulWidget {
+  const DiscoWebGame({
     super.key,
   });
 
   @override
-  State<TelestrationWebGame> createState() => _TelestrationWebGamePageState();
+  State<DiscoWebGame> createState() => _DiscoWebGamePageState();
 }
 
-class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
+class _DiscoWebGamePageState extends State<DiscoWebGame> {
   FocusNode focusNode = FocusNode();
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
   final random = Random();
-  bool _isAnswered = false;
-  List<GameContents> randomtelestration = [];
   @override
   void initState() {
     super.initState();
@@ -31,16 +29,13 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
 
     // widget.id 값에 따라 cards 변수에 값을 할당
 
-    final telestrationIndices =
-        List<int>.generate(telestration.length, (i) => i)..shuffle(random);
-    randomtelestration = telestrationIndices
-        .sublist(0, 10)
-        .map((index) => telestration[index])
-        .toList();
+    final discoIndices = List<int>.generate(disco.length, (i) => i)
+      ..shuffle(random);
+    final randomdisco =
+        discoIndices.sublist(0, 10).map((index) => disco[index]).toList();
 
-    cards = randomtelestration
-        .map((gameContents) =>
-            GameCard(gameContents: gameContents, fontSize: 140))
+    cards = randomdisco
+        .map((gameContents) => GameCard(gameContents: gameContents))
         .toList();
   }
 
@@ -81,15 +76,9 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
                     if (event is RawKeyDownEvent) {
                       if (event.logicalKey == LogicalKeyboardKey.escape) {
                         Navigator.of(context).pop();
-                      } else if (event.logicalKey == LogicalKeyboardKey.space ||
-                          event.logicalKey == LogicalKeyboardKey.enter) {
-                        setState(() {
-                          _isAnswered = !_isAnswered;
-                        });
                       } else if (event.logicalKey ==
                           LogicalKeyboardKey.arrowLeft) {
                         controller.undo();
-                        _isAnswered = false;
                         if (currentCardIndex == 0) {
                           setState(() {
                             isUndoButtonVisible = true;
@@ -97,12 +86,11 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
                         }
                       } else if (event.logicalKey ==
                           LogicalKeyboardKey.arrowRight) {
-                        _isAnswered = false;
                         if (currentCardIndex == 9) {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => const GameOver(
-                                gameName: 'telestration',
+                                gameName: 'disco',
                               ),
                             ),
                           );
@@ -120,7 +108,7 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
                   child: Column(
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           IconButton(
                             onPressed: () {
@@ -152,10 +140,7 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
                           children: [
                             isUndoButtonVisible
                                 ? IconButton(
-                                    onPressed: () {
-                                      controller.undo();
-                                      _isAnswered = false;
-                                    },
+                                    onPressed: controller.undo,
                                     color: Colors.transparent,
                                     icon: const ImageIcon(
                                       AssetImage(
@@ -166,7 +151,6 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
                                 : IconButton(
                                     onPressed: () {
                                       controller.undo();
-                                      _isAnswered = false;
                                       if (currentCardIndex == 0) {
                                         setState(() {
                                           isUndoButtonVisible = true;
@@ -181,7 +165,7 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
                                     iconSize: 90,
                                   ),
                             SizedBox(
-                              width: width * 0.7,
+                              width: width * 0.63,
                               height: height * 0.4,
                               child: CardSwiper(
                                 duration: const Duration(milliseconds: 0),
@@ -195,18 +179,7 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
                                   verticalThresholdPercentage,
                                 ) {
                                   currentCardIndex = index;
-                                  return !_isAnswered
-                                      ? cards[index]
-                                      : const Center(
-                                          child: Text(
-                                            '게임 진행 중 ...',
-                                            style: TextStyle(
-                                                fontFamily: 'DungGeunMo',
-                                                fontWeight: FontWeight.w400,
-                                                fontSize: 84,
-                                                color: Color(0xffFF62D3)),
-                                          ),
-                                        );
+                                  return cards[index];
                                 },
                                 isDisabled: true,
                                 onSwipe: _onSwipe,
@@ -219,7 +192,7 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
                                       builder: (context) => const GameOver(
-                                        gameName: 'telestration',
+                                        gameName: 'disco',
                                       ),
                                     ),
                                   );
@@ -231,7 +204,6 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
                                     });
                                   }
                                 }
-                                _isAnswered = false;
                               },
                               color: Colors.transparent,
                               icon: const ImageIcon(
@@ -243,34 +215,7 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
                           ],
                         ),
                       ),
-                      SizedBox(
-                        width: 250,
-                        height: 71,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              _isAnswered = !_isAnswered;
-                            });
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: _isAnswered
-                                ? Colors.white
-                                : const Color(0xffFF62D3),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12)),
-                          ),
-                          child: Text(
-                            _isAnswered ? '정답보기' : '가리기',
-                            style: const TextStyle(
-                              fontFamily: 'DungGeunMo',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 42,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 110),
+                      const SizedBox(height: 87)
                     ],
                   ),
                 ),

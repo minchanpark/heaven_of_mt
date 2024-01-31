@@ -3,28 +3,27 @@ import 'package:flutter/services.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
 
-import '../game_contents.dart';
-import '../card/card.dart';
-import '../gameover/gameover_web.dart';
+import '../../game_contents.dart';
+import '../../card/card.dart';
+import '../../gameover/gameover_web.dart';
 
-class CaptainWebGame extends StatefulWidget {
-  const CaptainWebGame({
+class TelestrationWebGame extends StatefulWidget {
+  const TelestrationWebGame({
     super.key,
   });
 
   @override
-  State<CaptainWebGame> createState() => _CaptainWebGamePageState();
+  State<TelestrationWebGame> createState() => _TelestrationWebGamePageState();
 }
 
-class _CaptainWebGamePageState extends State<CaptainWebGame> {
+class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
   FocusNode focusNode = FocusNode();
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
-  List<GameCard> answer_cards = [];
   final random = Random();
   bool _isAnswered = false;
-  List<GameContents> randomcaptain = [];
+  List<GameContents> randomtelestration = [];
   @override
   void initState() {
     super.initState();
@@ -32,18 +31,16 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
 
     // widget.id 값에 따라 cards 변수에 값을 할당
 
-    final captainIndices = List<int>.generate(captain.length, (i) => i)
-      ..shuffle(random);
-    randomcaptain =
-        captainIndices.sublist(0, 10).map((index) => captain[index]).toList();
-
-    cards = randomcaptain
-        .map((gameContents) =>
-            GameCard(gameContents: gameContents, fontSize: 84))
+    final telestrationIndices =
+        List<int>.generate(telestration.length, (i) => i)..shuffle(random);
+    randomtelestration = telestrationIndices
+        .sublist(0, 10)
+        .map((index) => telestration[index])
         .toList();
-    answer_cards = randomcaptain
+
+    cards = randomtelestration
         .map((gameContents) =>
-            GameCard(gameContents: gameContents, answer: true, fontSize: 84))
+            GameCard(gameContents: gameContents, fontSize: 140))
         .toList();
   }
 
@@ -65,7 +62,7 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/background_final.png'),
+                image: AssetImage("assets/images/background_final.png"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -105,7 +102,7 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => const GameOver(
-                                gameName: 'captain',
+                                gameName: 'telestration',
                               ),
                             ),
                           );
@@ -200,7 +197,16 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
                                   currentCardIndex = index;
                                   return !_isAnswered
                                       ? cards[index]
-                                      : answer_cards[index];
+                                      : const Center(
+                                          child: Text(
+                                            '게임 진행 중 ...',
+                                            style: TextStyle(
+                                                fontFamily: 'DungGeunMo',
+                                                fontWeight: FontWeight.w400,
+                                                fontSize: 84,
+                                                color: Color(0xffFF62D3)),
+                                          ),
+                                        );
                                 },
                                 isDisabled: true,
                                 onSwipe: _onSwipe,
@@ -213,7 +219,7 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
                                       builder: (context) => const GameOver(
-                                        gameName: 'captain',
+                                        gameName: 'telestration',
                                       ),
                                     ),
                                   );
@@ -254,7 +260,7 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
                                 borderRadius: BorderRadius.circular(12)),
                           ),
                           child: Text(
-                            _isAnswered ? '돌아가기' : '미션보기',
+                            _isAnswered ? '정답보기' : '가리기',
                             style: const TextStyle(
                               fontFamily: 'DungGeunMo',
                               fontWeight: FontWeight.w400,

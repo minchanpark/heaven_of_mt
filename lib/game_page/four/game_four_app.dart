@@ -2,36 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
 
-import '../card/card_app.dart';
-import '../game_contents.dart';
-import '../gameover/gameover_app.dart';
+import '../../card/card_four_app.dart';
+import '../../game_contents.dart';
+import '../../gameover/gameover_app.dart';
 
-class ChoiAppGame extends StatefulWidget {
-  const ChoiAppGame({
+class FourAppGame extends StatefulWidget {
+  const FourAppGame({
     super.key,
   });
 
   @override
-  State<ChoiAppGame> createState() => _ChoiAppGamePageState();
+  State<FourAppGame> createState() => _FourAppGameState();
 }
 
-class _ChoiAppGamePageState extends State<ChoiAppGame> {
+class _FourAppGameState extends State<FourAppGame> {
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
-  List<GameCardApp> cards = []; // cards 변수를 초기화
+  List<GameCardFourApp> cards = []; // cards 변수를 초기화
   String setNumber = '';
   final random = Random();
   @override
   void initState() {
     super.initState();
 
-    final choiIndices = List<int>.generate(choi.length, (i) => i)
+    final fourIndices = List<int>.generate(four.length, (i) => i)
       ..shuffle(random);
-    final randomChoi =
-        choiIndices.sublist(0, 10).map((index) => choi[index]).toList();
+    final randomFour =
+        fourIndices.sublist(0, 10).map((index) => four[index]).toList();
 
-    cards = randomChoi
-        .map((gameContents) => GameCardApp(gameContents: gameContents))
+    cards = randomFour
+        .map((gameContents) => GameCardFourApp(gameContents: gameContents))
         .toList();
   }
 
@@ -50,7 +50,11 @@ class _ChoiAppGamePageState extends State<ChoiAppGame> {
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.only(left: 29, top: 62, right: 29),
+          padding: EdgeInsets.only(
+            left: width * 0.075,
+            top: height * 0.073,
+            right: width * 0.0797,
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -77,9 +81,9 @@ class _ChoiAppGamePageState extends State<ChoiAppGame> {
                   fontSize: 34,
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: height * 0.025),
               Text(
-                '${currentCardIndex + 1}/${cards.length}',
+                '${currentCardIndex + 1} / ${cards.length}',
                 style: const TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Color.fromRGBO(255, 98, 211, 1),
@@ -149,7 +153,6 @@ class _ChoiAppGamePageState extends State<ChoiAppGame> {
                           verticalThresholdPercentage,
                         ) {
                           currentCardIndex = index;
-
                           return cards[index];
                         },
                         isDisabled: true,
@@ -166,7 +169,7 @@ class _ChoiAppGamePageState extends State<ChoiAppGame> {
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) => const GameOverApp(
-                                  gameName: 'choi',
+                                  gameName: 'four',
                                 ),
                               ),
                             );

@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-import '../captain/captain_game_page.dart';
-import '../choi/choi_game_page.dart';
-import '../disco/disco_game_page.dart';
-import '../four/four_game_page.dart';
-import '../movie/movie_game_page.dart';
-import '../musictitle/category_musictitle.dart';
-import '../tele/tele_game_page.dart';
-import '../telestration/telestration_game_page.dart';
+import '../game_page/captain/captain_game_page.dart';
+import '../game_page/choi/choi_game_page.dart';
+import '../game_page/disco/disco_game_page.dart';
+import '../game_page/four/four_game_page.dart';
+import '../game_page/movie/movie_game_page.dart';
+import '../game_page/musictitle/category_musictitle.dart';
+import '../game_page/tele/tele_game_page.dart';
+import '../game_page/telestration/telestration_game_page.dart';
 
 class GameOverApp extends StatefulWidget {
   final String gameName;

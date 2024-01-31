@@ -3,20 +3,20 @@ import 'package:flutter/services.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
 
-import '../game_contents.dart';
-import '../card/card.dart';
-import '../gameover/gameover_web.dart';
+import '../../game_contents.dart';
+import '../../card/card.dart';
+import '../../gameover/gameover_web.dart';
 
-class FourWebGame extends StatefulWidget {
-  const FourWebGame({
+class ChoiWebGame extends StatefulWidget {
+  const ChoiWebGame({
     super.key,
   });
 
   @override
-  State<FourWebGame> createState() => _FourWebGamePageState();
+  State<ChoiWebGame> createState() => _ChoiWebGamePageState();
 }
 
-class _FourWebGamePageState extends State<FourWebGame> {
+class _ChoiWebGamePageState extends State<ChoiWebGame> {
   FocusNode focusNode = FocusNode();
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
@@ -29,12 +29,12 @@ class _FourWebGamePageState extends State<FourWebGame> {
 
     // widget.id 값에 따라 cards 변수에 값을 할당
 
-    final fourIndices = List<int>.generate(four.length, (i) => i)
+    final choiIndices = List<int>.generate(choi.length, (i) => i)
       ..shuffle(random);
-    final randomfour =
-        fourIndices.sublist(0, 10).map((index) => four[index]).toList();
+    final randomchoi =
+        choiIndices.sublist(0, 10).map((index) => choi[index]).toList();
 
-    cards = randomfour
+    cards = randomchoi
         .map((gameContents) => GameCard(gameContents: gameContents))
         .toList();
   }
@@ -57,7 +57,7 @@ class _FourWebGamePageState extends State<FourWebGame> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/background_final.png"),
+                image: AssetImage('assets/images/background_final.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -90,7 +90,7 @@ class _FourWebGamePageState extends State<FourWebGame> {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => const GameOver(
-                                gameName: 'four',
+                                gameName: 'choi',
                               ),
                             ),
                           );
@@ -192,7 +192,7 @@ class _FourWebGamePageState extends State<FourWebGame> {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
                                       builder: (context) => const GameOver(
-                                        gameName: 'four',
+                                        gameName: 'choi',
                                       ),
                                     ),
                                   );
