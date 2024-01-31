@@ -143,7 +143,6 @@ class PersonOnboarding extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 10),
                 Text(
                   "인물의 이름을 맞춰 보세요.",
                   style: TextStyle(
@@ -278,7 +277,7 @@ class DiscoOnboarding extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  SizedBox(height: 10),
+
                   Text(
                     "노래를 한 소절 불러주세요.",
                     style: TextStyle(
@@ -320,7 +319,6 @@ class DiscoOnboarding extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 10),
                 Text(
                   "다른 노래를 한 소절씩 불러주세요.",
                   style: TextStyle(
@@ -361,7 +359,6 @@ class DiscoOnboarding extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 10),
                 Text(
                   "성공입니다!",
                   style: TextStyle(
@@ -545,7 +542,6 @@ class CaptainOnboarding extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 10),
                 Text(
                   "제시된 지문을 보고",
                   style: TextStyle(
@@ -555,7 +551,6 @@ class CaptainOnboarding extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 10),
                 Text(
                   "팀당 한 명씩 출전할 사람을 정해주세요!",
                   style: TextStyle(
@@ -746,7 +741,6 @@ class FourOnboarding extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 10),
                 Text(
                   "뒤에 이어질 두 글자를 답해주세요.",
                   style: TextStyle(
@@ -948,7 +942,6 @@ class WordTeleOnboarding extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 10),
                 Text(
                   "생각하세요.",
                   style: TextStyle(
@@ -989,7 +982,6 @@ class WordTeleOnboarding extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 10),
                 Text(
                   "이 때 뒤로 갈수록 그 단어의 물리적인",
                   style: TextStyle(
@@ -999,7 +991,6 @@ class WordTeleOnboarding extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 10),
                 Text(
                   "크기가 커져야 해요!",
                   style: TextStyle(
@@ -1161,7 +1152,6 @@ class TeleStrationOnboarding extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 10),
                 Text(
                   "사람들은 뒤돌아 주세요.",
                   style: TextStyle(
@@ -1202,7 +1192,6 @@ class TeleStrationOnboarding extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 10),
                 Text(
                   "종이를 다음 사람에게 전달해 주세요.",
                   style: TextStyle(
@@ -1243,7 +1232,6 @@ class TeleStrationOnboarding extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 10),
                 Text(
                   "후, 다음 사람에게 종이를 전달해 주세요.",
                   style: TextStyle(
@@ -1284,7 +1272,6 @@ class TeleStrationOnboarding extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 10),
                 Text(
                   "진행하고, 마지막 사람은 그림을 보고",
                   style: TextStyle(
@@ -1294,7 +1281,6 @@ class TeleStrationOnboarding extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 10),
                 Text(
                   "답을 맞추세요.",
                   style: TextStyle(
@@ -1427,7 +1413,6 @@ class ChoiOnboarding extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 10),
                 Text(
                   "몸으로 표현해 주세요.",
                   style: TextStyle(
@@ -1589,7 +1574,6 @@ class MusicOnboarding extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 10),
                 Text(
                   "맞는 노래를 맞춰 보세요.",
                   style: TextStyle(
@@ -1722,7 +1706,6 @@ class FamousLineOnboarding extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 10),
                 Text(
                   "대사를 실감 나게 연기해 주세요.",
                   style: TextStyle(
