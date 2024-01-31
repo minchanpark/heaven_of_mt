@@ -111,8 +111,8 @@ class _GameOverState extends State<GameOver> {
                         ),
                       ),
                       Positioned(
-                        bottom: 5,
-                        right: 44,
+                        bottom: -10,
+                        right: 35,
                         child: AnimatedOpacity(
                           duration:
                               const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
@@ -255,8 +255,8 @@ class _GameOverState extends State<GameOver> {
                         ),
                       ),
                       Positioned(
-                        bottom: 5,
-                        right: 80,
+                        bottom: -10,
+                        right: 71,
                         child: AnimatedOpacity(
                           duration:
                               const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
