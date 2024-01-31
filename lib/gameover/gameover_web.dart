@@ -1,8 +1,10 @@
 // ignore_for_file: unused_field
 
 import 'package:flutter/material.dart';
-import 'package:heaven_of_mt/church_game/church_captain.dart';
 
+import '../church_game/church_captain.dart';
+import '../church_game/church_disco.dart';
+import '../church_game/church_four.dart';
 import '../game_page/captain/captain_game_page.dart';
 import '../game_page/choi/choi_game_page.dart';
 import '../game_page/disco/disco_game_page.dart';
@@ -120,78 +122,80 @@ class _GameOverState extends State<GameOver> {
                           opacity: _opacity == 0 ? 1.0 : 0.0,
                           child: ElevatedButton(
                               onPressed: () {
-                                if (widget.gameName == 'person') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.pushNamed(context, '/person');
-                                } else if (widget.gameName == 'disco') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          const DiscoGamePage()));
-                                } else if (widget.gameName == 'captain') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          const CaptainGamePage()));
-                                } else if (widget.gameName == 'four') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          const FourGamePage()));
-                                } else if (widget.gameName == 'tele') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          const TeleGamePage()));
-                                } else if (widget.gameName == 'telestration') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          const TelestrationGamePage()));
-                                } else if (widget.gameName == 'choi') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          const ChoiGamePage()));
-                                } else if (widget.gameName == 'musictitle') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          const CategoryPage()));
-                                } else if (widget.gameName == 'movie') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          const MovieGamePage()));
-                                } else if (widget.gameName == 'churchCaptain') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          const ChurchCaptainGame()));
-                                }
-                                else if (widget.gameName == 'churchFour') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          const DiscoGamePage()));
-                                }
-                                else if (widget.gameName == 'churchDisco') {
-                                  Navigator.popUntil(
-                                      context, ModalRoute.withName('/home'));
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          const DiscoGamePage()));
+                                Navigator.popUntil(
+                                    context, ModalRoute.withName('/home'));
+                                switch (widget.gameName) {
+                                  case 'person':
+                                    Navigator.pushNamed(context, '/person');
+                                    break;
+                                  case 'disco':
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const DiscoGamePage()));
+                                    break;
+                                  case 'captain':
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const CaptainGamePage()));
+                                    break;
+                                  case 'four':
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const FourGamePage()));
+                                    break;
+                                  case 'tele':
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const TeleGamePage()));
+                                    break;
+                                  case 'telestration':
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const TelestrationGamePage()));
+                                    break;
+                                  case 'choi':
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const ChoiGamePage()));
+                                    break;
+                                  case 'musictitle':
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const CategoryPage()));
+                                    break;
+                                  case 'movie':
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const MovieGamePage()));
+                                    break;
+                                  case 'churchCaptain':
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const ChurchCaptainGame()));
+                                    break;
+                                  case 'churchFour':
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const ChurchFourGame()));
+                                    break;
+                                  case 'churchDisco':
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const ChurchDiscoGame()));
+                                    break;
+                                  default:
+                                    break;
                                 }
                               },
                               style: ElevatedButton.styleFrom(
