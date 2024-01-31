@@ -193,7 +193,7 @@ class _HomeWebState extends State<HomeWeb> {
                     height: height * 0.81,
                     child: CupertinoPicker(
                       // diameterRatio: 1.5,
-                      diameterRatio: 1000,
+                      diameterRatio: 500,
                       scrollController: scr,
                       // magnification: 1.22,
                       squeeze: 0.8,
