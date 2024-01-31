@@ -223,7 +223,6 @@ class _HomeWebState extends State<HomeWeb> {
                                         const SizedBox(width: 18),
                                         Container(
                                           width: 382,
-                                          height: 59,
                                           decoration: const BoxDecoration(
                                               color: Color(0xFFFF62D3)),
                                           child: Center(
@@ -248,8 +247,7 @@ class _HomeWebState extends State<HomeWeb> {
                                         fontFamily: 'DungGeunMo',
                                         fontSize: 44,
                                         fontWeight: FontWeight.w400,
-                                        color:
-                                            Colors.white.withOpacity(0.5))));
+                                        color: Colors.white.withOpacity(0.5))));
                       }),
                     ),
                   ),
