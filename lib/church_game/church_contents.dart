@@ -109,15 +109,15 @@ final List<GameContents> churchDisco = [
 final List<GameContents> churchCaptain = [
   GameContents(name: '커서 목사님\n될 것 같은 사람', index: '1'),
   GameContents(name: '기도하다가\n졸 것 같은 사람', index: '2'),
-  GameContents(name: '찬양할 때 칼로리 소모\n가장 많이 할 것 같은 사람', index: '3'), //
+  GameContents(name: '찬양할 때 칼로리 소모\n가장 많이 할 것 같은 사람', index: '3'),
   GameContents(name: '어릴 때 교회 선생님 속\n많이 썩였을 것 같은 사람', index: '4'),
   GameContents(name: '교회 엄친아/엄친딸\n일 것 같은 사람', index: '5'),
   GameContents(name: '밖에서 전도\n잘 할 것 같은 사람', index: '6'),
-  GameContents(name: '첫인상과 헌인상이\n가장 다른 사람', index: '7'),
+  GameContents(name: '첫인상과 지금이\n가장 다른 사람', index: '7'),
   GameContents(name: '교회와 집에서 모습이\n똑같을 것 같은 사람', index: '8'),
   GameContents(name: '교회 물건 가장 잘\n고장 낼 것 같은 사람', index: '9'),
-  GameContents(name: '어릴 때 교회누나/오빠 때문에\n교회 왔을 것 같은 사람', index: '10'),
-  GameContents(name: '본인이 생각하는 성경인물과\n가장 유사한 사람', index: '11'), //
+  GameContents(name: '어릴 때 교회누나/오빠 보러\n교회 왔을 것 같은 사람', index: '10'),
+  GameContents(name: '본인이 생각하는 성경인물과\n가장 유사한 사람', index: '11'),
   GameContents(name: '지금 제일 집가고\n싶어하는 것 같은 사람', index: '12'),
   GameContents(name: '교회올 때 가장 늦게\n일어날 것 같은 사람', index: '13'),
   GameContents(name: '예수님 안믿었으면\n큰일날 것 같은 사람', index: '14'),
@@ -127,5 +127,5 @@ final List<GameContents> churchCaptain = [
   GameContents(name: '학생 때 가장\n잘 놀았을 것 같은 사람', index: '18'),
   GameContents(name: '어릴 때 사고\n많이 쳤을 것 같은 사람', index: '19'),
   GameContents(name: '다니엘처럼 사자굴에서도\n기도할 것 같은 사람', index: '20'),
-  GameContents(name: '요나처럼 물고기 뱃속에서도\n잘 살 것 같은 사람', index: '21'), //
+  GameContents(name: '요나처럼 물고기 뱃속에서도\n잘 살 것 같은 사람', index: '21'),
 ];

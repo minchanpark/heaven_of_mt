@@ -41,7 +41,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
 
     cards = randomChurchCaptain
         .map((gameContents) =>
-            GameCard(gameContents: gameContents, fontSize: 84))
+            GameCard(gameContents: gameContents, fontSize: 76))
         .toList();
   }
 
@@ -196,7 +196,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                                   verticalThresholdPercentage,
                                 ) {
                                   currentCardIndex = index;
-                                  return !_isAnswered
+                                  return _isAnswered
                                       ? cards[index]
                                       : const Center(
                                           child: Text(
@@ -254,14 +254,14 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                             });
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: _isAnswered
+                            backgroundColor: !_isAnswered
                                 ? Colors.white
                                 : const Color(0xffFF62D3),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12)),
                           ),
                           child: Text(
-                            _isAnswered ? '정답보기' : '가리기',
+                            !_isAnswered ? '정답보기' : '가리기',
                             style: const TextStyle(
                               fontFamily: 'DungGeunMo',
                               fontWeight: FontWeight.w400,
