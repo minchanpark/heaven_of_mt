@@ -41,7 +41,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
 
     cards = randomChurchCaptain
         .map((gameContents) =>
-            GameCard(gameContents: gameContents, fontSize: 76))
+            GameCard(gameContents: gameContents, fontSize: 70))
         .toList();
   }
 
