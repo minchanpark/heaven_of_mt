@@ -1,7 +1,7 @@
 import 'dart:js' as js;
 
 import 'package:flutter/material.dart';
-import 'home/church_home.dart';
+import 'home/home_church.dart';
 import 'home/home.dart';
 import 'game_page/person/person_game_page.dart';
 import 'splash.dart';

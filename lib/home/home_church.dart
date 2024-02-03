@@ -1,68 +1,38 @@
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../game_page/captain/captain_game_page.dart';
-import '../game_page/disco/disco_game_page.dart';
-import '../game_page/movie/movie_game_page.dart';
-import '../game_page/musictitle/category_musictitle.dart';
-import '../game_page/choi/choi_game_page.dart';
-import '../game_page/four/four_game_page.dart';
-import '../onboarding.dart';
-import '../game_page/person/person_game_page.dart';
-import '../game_page/tele/tele_game_page.dart';
-import '../game_page/telestration/telestration_game_page.dart';
+import '../church_game/church_captain.dart';
+import '../church_game/church_disco.dart';
+import '../church_game/church_four.dart';
+import '../onboarding_church.dart';
 
-// 게임 이름 목록
-const List<String> _gameNames = <String>[
-  '인물퀴즈',
+final List<String> _gameNames = <String>[
   '디스코',
-  '대표게임',
+  '이미지게임',
   '네글자퀴즈',
-  '단어텔레파시',
-  '텔레스트레이션',
-  '액션초성게임',
-  '노래초성퀴즈',
-  '명대사퀴즈',
 ];
 
-// 게임 설명 목록
 List<Widget> contentList = [
-  const PersonOnboarding(),
-  const DiscoOnboarding(),
-  const CaptainOnboarding(),
-  const FourOnboarding(),
-  const WordTeleOnboarding(),
-  const TeleStrationOnboarding(),
-  const ChoiOnboarding(),
-  const MusicOnboarding(),
-  const FamousLineOnboarding(),
+  const ChurchDiscoOnboarding(),
+  const ChurchCaptainOnboarding(),
+  const ChurchFourOnboarding(),
 ];
 
-// 게임 페이지 묵룩
 List<Widget> pageList = [
-  const PersonGamePage(),
-  const DiscoGamePage(),
-  const CaptainGamePage(),
-  const FourGamePage(),
-  const TeleGamePage(),
-  const TelestrationGamePage(),
-  const ChoiGamePage(),
-  const CategoryPage(),
-  const MovieGamePage(),
+  const ChurchDiscoGame(),
+  const ChurchCaptainGame(),
+  const ChurchFourGame(),
 ];
 
-class HomeWeb extends StatefulWidget {
-  const HomeWeb({
-    super.key,
-  });
+class ChurchPage extends StatefulWidget {
+  const ChurchPage({super.key});
+
   @override
-  State<HomeWeb> createState() => _HomeWebState();
+  State<ChurchPage> createState() => _ChurchPageState();
 }
 
-class _HomeWebState extends State<HomeWeb> {
+class _ChurchPageState extends State<ChurchPage> {
   FocusNode focusNode = FocusNode();
   FixedExtentScrollController scr = FixedExtentScrollController();
   int _selectedGame = 0;
@@ -72,39 +42,17 @@ class _HomeWebState extends State<HomeWeb> {
     switch (_selectedGame + 1) {
       case 1:
         Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const PersonGamePage()));
+            MaterialPageRoute(builder: (context) => const ChurchDiscoGame()));
         break;
       case 2:
         Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const DiscoGamePage()));
+            MaterialPageRoute(builder: (context) => const ChurchCaptainGame()));
         break;
       case 3:
         Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const CaptainGamePage()));
+            MaterialPageRoute(builder: (context) => const ChurchFourGame()));
         break;
-      case 4:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const FourGamePage()));
-        break;
-      case 5:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const TeleGamePage()));
-        break;
-      case 6:
-        Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => const TelestrationGamePage()));
-        break;
-      case 7:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const ChoiGamePage()));
-        break;
-      case 8:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const CategoryPage()));
-        break;
-      case 9:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const MovieGamePage()));
+      default:
         break;
     }
   }
@@ -125,7 +73,7 @@ class _HomeWebState extends State<HomeWeb> {
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/background_final.png'),
+              image: AssetImage('assets/images/background_church.png'),
               fit: BoxFit.cover,
             ),
           ),
@@ -147,7 +95,7 @@ class _HomeWebState extends State<HomeWeb> {
               const Spacer(),
               GestureDetector(
                   onTap: () {
-                    Navigator.of(context).pushReplacementNamed('/church');
+                    Navigator.of(context).pushReplacementNamed('/home');
                   },
                   child: Container(
                       padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
@@ -156,11 +104,8 @@ class _HomeWebState extends State<HomeWeb> {
                           gradient: const LinearGradient(
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
-                              colors: [
-                                Color(0xff01DF4C),
-                                Color(0xffFFEB50)
-                              ])),
-                      child: const Text("교회 버전 바로가기",
+                              colors: [Color(0xffFF008E), Color(0xffFFEB50)])),
+                      child: const Text("엠티게임천국",
                           style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.black,
@@ -265,12 +210,12 @@ class _HomeWebState extends State<HomeWeb> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Image.asset("assets/images/left.png",
-                                            width: 24, height: 42),
+                                            width: 24, height: 42, color: const Color(0xffFFF27F),),
                                         const SizedBox(width: 18),
                                         Container(
                                           width: 382,
                                           decoration: const BoxDecoration(
-                                              color: Color(0xFFFF62D3)),
+                                              color: Color(0xFFFFF27F)),
                                           child: Center(
                                             child: Text(
                                               _gameNames[index],
@@ -278,13 +223,13 @@ class _HomeWebState extends State<HomeWeb> {
                                                   fontFamily: 'DungGeunMo',
                                                   fontSize: 54,
                                                   fontWeight: FontWeight.w400,
-                                                  color: Colors.white),
+                                                  color: Colors.black),
                                             ),
                                           ),
                                         ),
                                         const SizedBox(width: 18),
                                         Image.asset("assets/images/right.png",
-                                            width: 24, height: 42)
+                                            width: 24, height: 42, color: const Color(0xffFFF27F),)
                                       ],
                                     ),
                                   )
@@ -293,7 +238,7 @@ class _HomeWebState extends State<HomeWeb> {
                                         fontFamily: 'DungGeunMo',
                                         fontSize: 44,
                                         fontWeight: FontWeight.w400,
-                                        color: Colors.white.withOpacity(0.5))));
+                                        color: Colors.black.withOpacity(0.5))));
                       }),
                     ),
                   ),

@@ -4,7 +4,7 @@ import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
 
 import '../../card/card.dart';
-import '../../gameover/gameover_web.dart';
+import '../gameover/gameover_church.dart';
 import 'church_contents.dart';
 
 class ChurchFourGame extends StatefulWidget {
@@ -31,8 +31,10 @@ class _ChurchFourGamePageState extends State<ChurchFourGame> {
 
     final churchFourIndices = List<int>.generate(churchFour.length, (i) => i)
       ..shuffle(random);
-    final randomfour =
-        churchFourIndices.sublist(0, 10).map((index) => churchFour[index]).toList();
+    final randomfour = churchFourIndices
+        .sublist(0, 10)
+        .map((index) => churchFour[index])
+        .toList();
 
     cards = randomfour
         .map((gameContents) => GameCard(gameContents: gameContents))
@@ -57,7 +59,7 @@ class _ChurchFourGamePageState extends State<ChurchFourGame> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/background_final.png"),
+                image: AssetImage("assets/images/background_church.png"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -89,7 +91,7 @@ class _ChurchFourGamePageState extends State<ChurchFourGame> {
                         if (currentCardIndex == 9) {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => const GameOver(
+                              builder: (context) => const GameOverChurch(
                                 gameName: 'churchFour',
                               ),
                             ),
@@ -114,7 +116,7 @@ class _ChurchFourGamePageState extends State<ChurchFourGame> {
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
-                            color: Colors.white,
+                            color: Colors.black,
                             icon: const ImageIcon(
                                 AssetImage('assets/images/Exit.png')),
                             iconSize: 39,
@@ -124,7 +126,7 @@ class _ChurchFourGamePageState extends State<ChurchFourGame> {
                             '${currentCardIndex + 1}/${cards.length}',
                             style: const TextStyle(
                               fontFamily: 'DungGeunMo',
-                              color: Colors.white,
+                              color: Colors.black,
                               fontWeight: FontWeight.w400,
                               fontSize: 36,
                             ),
@@ -142,9 +144,10 @@ class _ChurchFourGamePageState extends State<ChurchFourGame> {
                                 ? IconButton(
                                     onPressed: controller.undo,
                                     color: Colors.transparent,
-                                    icon: const ImageIcon(
-                                      AssetImage(
+                                    icon: ImageIcon(
+                                      const AssetImage(
                                           'assets/images/icon_chevron_left.png'),
+                                      color: Colors.black.withOpacity(0.4),
                                     ),
                                     iconSize: 90,
                                   )
@@ -161,6 +164,7 @@ class _ChurchFourGamePageState extends State<ChurchFourGame> {
                                     icon: const ImageIcon(
                                       AssetImage(
                                           'assets/images/icon_chevron_left_white.png'),
+                                      color: Colors.black,
                                     ),
                                     iconSize: 90,
                                   ),
@@ -191,7 +195,7 @@ class _ChurchFourGamePageState extends State<ChurchFourGame> {
                                 if (currentCardIndex == 9) {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
-                                      builder: (context) => const GameOver(
+                                      builder: (context) => const GameOverChurch(
                                         gameName: 'four',
                                       ),
                                     ),
@@ -209,6 +213,7 @@ class _ChurchFourGamePageState extends State<ChurchFourGame> {
                               icon: const ImageIcon(
                                 AssetImage(
                                     'assets/images/icon_chevron_right.png'),
+                                color: Colors.black,
                               ),
                               iconSize: 90,
                             ),
