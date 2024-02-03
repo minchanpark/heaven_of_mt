@@ -2,24 +2,19 @@
 
 import 'package:flutter/material.dart';
 
-import '../game_page/captain/captain_game_page.dart';
-import '../game_page/choi/choi_game_page.dart';
-import '../game_page/disco/disco_game_page.dart';
-import '../game_page/four/four_game_page.dart';
-import '../game_page/movie/movie_game_page.dart';
-import '../game_page/musictitle/category_musictitle.dart';
-import '../game_page/tele/tele_game_page.dart';
-import '../game_page/telestration/telestration_game_page.dart';
+import '../church_game/church_captain.dart';
+import '../church_game/church_disco.dart';
+import '../church_game/church_four.dart';
 
-class GameOver extends StatefulWidget {
+class GameOverChurch extends StatefulWidget {
   final String gameName;
-  const GameOver({super.key, required this.gameName});
+  const GameOverChurch({super.key, required this.gameName});
 
   @override
-  State<GameOver> createState() => _GameOverState();
+  State<GameOverChurch> createState() => _GameOverChurchState();
 }
 
-class _GameOverState extends State<GameOver> {
+class _GameOverChurchState extends State<GameOverChurch> {
   String setNumber = '';
   @override
   void initState() {
@@ -40,7 +35,7 @@ class _GameOverState extends State<GameOver> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/background_final.png'),
+                image: AssetImage('assets/images/background_church.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -54,7 +49,7 @@ class _GameOverState extends State<GameOver> {
                   setNumber,
                   style: const TextStyle(
                     fontFamily: 'DungGeunMo',
-                    color: Colors.white,
+                    color: Colors.black,
                     fontWeight: FontWeight.w400,
                     fontSize: 48,
                   ),
@@ -64,7 +59,7 @@ class _GameOverState extends State<GameOver> {
                   '모든 문제를 완료했어요!',
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
-                    color: Colors.white,
+                    color: Colors.black,
                     fontWeight: FontWeight.w400,
                     fontSize: 48,
                   ),
@@ -103,7 +98,7 @@ class _GameOverState extends State<GameOver> {
                             'Play Again',
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 48,
                               fontWeight: FontWeight.w400,
                             ),
@@ -112,99 +107,57 @@ class _GameOverState extends State<GameOver> {
                       ),
                       Positioned(
                         bottom: -10,
-                        right: 35,
+                        right: 59,
                         child: AnimatedOpacity(
                           duration:
                               const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
                           opacity: _opacity == 0 ? 1.0 : 0.0,
-                          child: ElevatedButton(
-                              onPressed: () {
+                          child: GestureDetector(
+                              onTap: () {
                                 Navigator.popUntil(
-                                    context, ModalRoute.withName('/home'));
+                                    context, ModalRoute.withName('/church'));
                                 switch (widget.gameName) {
-                                  case 'person':
-                                    Navigator.pushNamed(context, '/person');
-                                    break;
-                                  case 'disco':
+                                  case 'churchCaptain':
                                     Navigator.of(context).push(
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                const DiscoGamePage()));
+                                                const ChurchCaptainGame()));
                                     break;
-                                  case 'captain':
+                                  case 'churchFour':
                                     Navigator.of(context).push(
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                const CaptainGamePage()));
+                                                const ChurchFourGame()));
                                     break;
-                                  case 'four':
+                                  case 'churchDisco':
                                     Navigator.of(context).push(
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                const FourGamePage()));
+                                                const ChurchDiscoGame()));
                                     break;
-                                  case 'tele':
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const TeleGamePage()));
-                                    break;
-                                  case 'telestration':
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const TelestrationGamePage()));
-                                    break;
-                                  case 'choi':
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const ChoiGamePage()));
-                                    break;
-                                  case 'musictitle':
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const CategoryPage()));
-                                    break;
-                                  case 'movie':
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const MovieGamePage()));
-                                    break;
-
                                   default:
                                     break;
                                 }
                               },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.transparent,
-                                disabledBackgroundColor: Colors.transparent,
-                                foregroundColor: Colors.transparent,
-                                shadowColor: Colors.transparent,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(11),
-                                ),
-                              ),
+                              
                               child: Row(
                                 children: [
                                   SizedBox(
                                       width: 32,
                                       height: 52,
                                       child: Image.asset(
-                                          'assets/images/gameover.png')),
+                                          'assets/images/gameover.png',
+                                          color: const Color(0xFFFFF27F))),
                                   const SizedBox(width: 10),
                                   Container(
-                                    color:
-                                        const Color.fromRGBO(255, 98, 211, 1),
+                                    color: const Color(0xFFFFF27F),
                                     child: const Padding(
                                       padding: EdgeInsets.only(bottom: 5),
                                       child: Text(
                                         'Play Again',
                                         style: TextStyle(
                                           fontFamily: 'DungGeunMo',
-                                          color: Colors.white,
+                                          color: Colors.black,
                                           fontSize: 48,
                                           fontWeight: FontWeight.w400,
                                         ),
@@ -252,7 +205,7 @@ class _GameOverState extends State<GameOver> {
                             'Go Home',
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 48,
                               fontWeight: FontWeight.w400,
                             ),
@@ -261,43 +214,35 @@ class _GameOverState extends State<GameOver> {
                       ),
                       Positioned(
                         bottom: -10,
-                        right: 71,
+                        right: 95,
                         child: AnimatedOpacity(
                           duration:
                               const Duration(milliseconds: 0), // 애니메이션 지속 시간 조절
                           opacity: _opacity1 == 0 ? 1.0 : 0.0,
-                          child: ElevatedButton(
-                              onPressed: () {
+                          child: GestureDetector(
+                              onTap: () {
                                 Navigator.popUntil(
-                                    context, ModalRoute.withName('/home'));
+                                    context, ModalRoute.withName('/church'));
                               },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.transparent,
-                                disabledBackgroundColor: Colors.transparent,
-                                foregroundColor: Colors.transparent,
-                                shadowColor: Colors.transparent,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(11),
-                                ),
-                              ),
+                              
                               child: Row(
                                 children: [
                                   SizedBox(
                                       width: 29,
                                       height: 51,
                                       child: Image.asset(
-                                          'assets/images/gameover.png')),
+                                          'assets/images/gameover.png',
+                                          color: const Color(0xFFFFF27F))),
                                   const SizedBox(width: 10),
                                   Container(
-                                    color:
-                                        const Color.fromRGBO(255, 98, 211, 1),
+                                    color: const Color(0xFFFFF27F),
                                     child: const Padding(
                                       padding: EdgeInsets.only(bottom: 5),
                                       child: Text(
                                         'Go Home',
                                         style: TextStyle(
                                           fontFamily: 'DungGeunMo',
-                                          color: Colors.white,
+                                          color: Colors.black,
                                           fontSize: 48,
                                           fontWeight: FontWeight.w400,
                                         ),

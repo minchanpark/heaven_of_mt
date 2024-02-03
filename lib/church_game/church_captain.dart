@@ -5,7 +5,7 @@ import 'dart:math';
 
 import '../../game_contents.dart';
 import '../../card/card.dart';
-import '../../gameover/gameover_web.dart';
+import '../gameover/gameover_church.dart';
 import 'church_contents.dart';
 
 class ChurchCaptainGame extends StatefulWidget {
@@ -63,7 +63,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/background_final.png"),
+                image: AssetImage("assets/images/background_church.png"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -102,7 +102,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                         if (currentCardIndex == 9) {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => const GameOver(
+                              builder: (context) => const GameOverChurch(
                                 gameName: 'churchCaptain',
                               ),
                             ),
@@ -127,7 +127,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
-                            color: Colors.white,
+                            color: Colors.black,
                             icon: const ImageIcon(
                                 AssetImage('assets/images/Exit.png')),
                             iconSize: 39,
@@ -137,7 +137,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                             '${currentCardIndex + 1}/${cards.length}',
                             style: const TextStyle(
                               fontFamily: 'DungGeunMo',
-                              color: Colors.white,
+                              color: Colors.black,
                               fontWeight: FontWeight.w400,
                               fontSize: 36,
                             ),
@@ -158,9 +158,10 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                                       _isAnswered = false;
                                     },
                                     color: Colors.transparent,
-                                    icon: const ImageIcon(
-                                      AssetImage(
+                                    icon: ImageIcon(
+                                      const AssetImage(
                                           'assets/images/icon_chevron_left.png'),
+                                      color: Colors.black.withOpacity(0.4),
                                     ),
                                     iconSize: 90,
                                   )
@@ -178,6 +179,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                                     icon: const ImageIcon(
                                       AssetImage(
                                           'assets/images/icon_chevron_left_white.png'),
+                                      color: Colors.black,
                                     ),
                                     iconSize: 90,
                                   ),
@@ -200,12 +202,13 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                                       ? cards[index]
                                       : const Center(
                                           child: Text(
-                                            '게임 진행 중 ...',
+                                            '버튼을 눌러서\n문제를 확인해보세요!',
+                                            textAlign: TextAlign.center,
                                             style: TextStyle(
                                                 fontFamily: 'DungGeunMo',
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 84,
-                                                color: Color(0xffFF62D3)),
+                                                color: Colors.black),
                                           ),
                                         );
                                 },
@@ -219,7 +222,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                                 if (currentCardIndex == 9) {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
-                                      builder: (context) => const GameOver(
+                                      builder: (context) => const GameOverChurch(
                                         gameName: 'churchCaptain',
                                       ),
                                     ),
@@ -238,6 +241,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                               icon: const ImageIcon(
                                 AssetImage(
                                     'assets/images/icon_chevron_right.png'),
+                                color: Colors.black,
                               ),
                               iconSize: 90,
                             ),
@@ -254,14 +258,14 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                             });
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: !_isAnswered
+                            backgroundColor: _isAnswered
                                 ? Colors.white
-                                : const Color(0xffFF62D3),
+                                : const Color(0xffFFF27F),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12)),
                           ),
                           child: Text(
-                            !_isAnswered ? '정답보기' : '가리기',
+                            !_isAnswered ? '문제보기' : '가리기',
                             style: const TextStyle(
                               fontFamily: 'DungGeunMo',
                               fontWeight: FontWeight.w400,
