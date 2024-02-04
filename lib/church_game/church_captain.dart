@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
@@ -29,6 +30,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
   void initState() {
     super.initState();
     focusNode.requestFocus();
+    FirebaseAnalytics.instance.setCurrentScreen(screenName: "교회_이미지게임");
 
     // widget.id 값에 따라 cards 변수에 값을 할당
 
@@ -222,7 +224,8 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                                 if (currentCardIndex == 9) {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
-                                      builder: (context) => const GameOverChurch(
+                                      builder: (context) =>
+                                          const GameOverChurch(
                                         gameName: 'churchCaptain',
                                       ),
                                     ),
