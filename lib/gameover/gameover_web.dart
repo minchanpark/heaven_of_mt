@@ -1,5 +1,6 @@
 // ignore_for_file: unused_field
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 
 import '../game_page/captain/captain_game_page.dart';
@@ -24,6 +25,7 @@ class _GameOverState extends State<GameOver> {
   @override
   void initState() {
     super.initState();
+    FirebaseAnalytics.instance.setCurrentScreen(screenName: "게임오버");
   }
 
   double _opacity = 0.5;

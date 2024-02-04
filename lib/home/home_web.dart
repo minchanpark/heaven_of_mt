@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -113,6 +114,7 @@ class _HomeWebState extends State<HomeWeb> {
   void initState() {
     super.initState();
     focusNode.requestFocus();
+    FirebaseAnalytics.instance.setCurrentScreen(screenName: "홈화면");
   }
 
   @override
@@ -156,10 +158,7 @@ class _HomeWebState extends State<HomeWeb> {
                           gradient: const LinearGradient(
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
-                              colors: [
-                                Color(0xff01DF4C),
-                                Color(0xffFFEB50)
-                              ])),
+                              colors: [Color(0xff01DF4C), Color(0xffFFEB50)])),
                       child: const Text("교회 버전 바로가기",
                           style: TextStyle(
                             fontFamily: 'DungGeunMo',

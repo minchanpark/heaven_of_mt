@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
@@ -25,6 +26,7 @@ class _MovieWebGameState extends State<MovieWebGame> {
   void initState() {
     super.initState();
     focusNode.requestFocus();
+    FirebaseAnalytics.instance.setCurrentScreen(screenName: "명대사퀴즈");
 
     final movieIndices = List<int>.generate(movie.length, (i) => i)
       ..shuffle(random);
