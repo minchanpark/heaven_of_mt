@@ -184,7 +184,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                                     iconSize: 90,
                                   ),
                             SizedBox(
-                              width: width * 0.7,
+                              width: width * 0.75,
                               height: height * 0.4,
                               child: CardSwiper(
                                 duration: const Duration(milliseconds: 0),
