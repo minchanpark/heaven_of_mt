@@ -239,17 +239,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                 ),
                 SizedBox(height: 5),
                 Text(
-                  "너무나 많이 ‘사랑'한 죄~",
-                  style: TextStyle(
-                    fontFamily: 'DungGeunMo',
-                    color: Colors.black,
-                    fontSize: 23,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                SizedBox(height: 5),
-                Text(
-                  ": FT아일랜드 - 사랑앓이",
+                  "예수 사랑 하심은~ 거룩하신 말일세~",
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,

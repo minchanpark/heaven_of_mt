@@ -37,7 +37,7 @@ class _ChurchDiscoGamePageState extends State<ChurchDiscoGame> {
         .toList();
 
     cards = randomdisco
-        .map((gameContents) => GameCard(gameContents: gameContents))
+        .map((gameContents) => GameCard(gameContents: gameContents, fontSize: 180))
         .toList();
   }
 
