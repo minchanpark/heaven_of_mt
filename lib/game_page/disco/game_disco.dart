@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
@@ -26,6 +27,7 @@ class _DiscoWebGamePageState extends State<DiscoWebGame> {
   void initState() {
     super.initState();
     focusNode.requestFocus();
+    FirebaseAnalytics.instance.setCurrentScreen(screenName: "디스코");
 
     // widget.id 값에 따라 cards 변수에 값을 할당
 
