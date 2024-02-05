@@ -23,6 +23,7 @@ class _DiscoWebGamePageState extends State<DiscoWebGame> {
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
   final random = Random();
+  List<GameContents> randomdisco = [];
   @override
   void initState() {
     super.initState();
@@ -33,12 +34,8 @@ class _DiscoWebGamePageState extends State<DiscoWebGame> {
 
     final discoIndices = List<int>.generate(disco.length, (i) => i)
       ..shuffle(random);
-    final randomdisco =
+    randomdisco =
         discoIndices.sublist(0, 10).map((index) => disco[index]).toList();
-
-    cards = randomdisco
-        .map((gameContents) => GameCard(gameContents: gameContents))
-        .toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -52,6 +49,10 @@ class _DiscoWebGamePageState extends State<DiscoWebGame> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+    cards = randomdisco
+        .map((gameContents) =>
+            GameCard(gameContents: gameContents, fontSize: width * 0.108))
+        .toList();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: Stack(
@@ -119,7 +120,7 @@ class _DiscoWebGamePageState extends State<DiscoWebGame> {
                             color: Colors.white,
                             icon: const ImageIcon(
                                 AssetImage('assets/images/Exit.png')),
-                            iconSize: 39,
+                            iconSize: width * 0.03,
                           ),
                           const Spacer(),
                           Text(
@@ -128,11 +129,11 @@ class _DiscoWebGamePageState extends State<DiscoWebGame> {
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
                               fontWeight: FontWeight.w400,
-                              fontSize: width * 0.028,
+                              fontSize: width * 0.033,
                             ),
                           ),
                           const Spacer(),
-                          const SizedBox(width: 50),
+                          SizedBox(width: width * 0.039),
                         ],
                       ),
                       Expanded(
@@ -148,7 +149,7 @@ class _DiscoWebGamePageState extends State<DiscoWebGame> {
                                       AssetImage(
                                           'assets/images/icon_chevron_left.png'),
                                     ),
-                                    iconSize: 90,
+                                    iconSize: width * 0.07,
                                   )
                                 : IconButton(
                                     onPressed: () {
@@ -164,7 +165,7 @@ class _DiscoWebGamePageState extends State<DiscoWebGame> {
                                       AssetImage(
                                           'assets/images/icon_chevron_left_white.png'),
                                     ),
-                                    iconSize: 90,
+                                    iconSize: width * 0.07,
                                   ),
                             SizedBox(
                               width: width * 0.63,
@@ -212,12 +213,12 @@ class _DiscoWebGamePageState extends State<DiscoWebGame> {
                                 AssetImage(
                                     'assets/images/icon_chevron_right.png'),
                               ),
-                              iconSize: 90,
+                              iconSize: width * 0.07,
                             ),
                           ],
                         ),
                       ),
-                      const SizedBox(height: 87)
+                      SizedBox(height: height * 0.1)
                     ],
                   ),
                 ),

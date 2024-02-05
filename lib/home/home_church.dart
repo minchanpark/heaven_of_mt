@@ -104,11 +104,11 @@ class _ChurchPageState extends State<ChurchPage> {
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
                               colors: [Color(0xffFF008E), Color(0xffFFEB50)])),
-                      child: const Text("엠티게임천국",
+                      child: Text("엠티게임천국 바로가기",
                           style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.black,
-                            fontSize: 18,
+                            fontSize: width * 0.0125,
                           )))),
               SizedBox(width: width * 0.015),
               GestureDetector(
@@ -121,11 +121,11 @@ class _ChurchPageState extends State<ChurchPage> {
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
                               colors: [Color(0xffFF008E), Color(0xffFFEB50)])),
-                      child: const Text("팀 소개",
+                      child: Text("팀 소개",
                           style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.black,
-                            fontSize: 18,
+                            fontSize: width * 0.0125,
                           )))),
               SizedBox(width: width * 0.075)
             ],
@@ -188,7 +188,7 @@ class _ChurchPageState extends State<ChurchPage> {
                       // magnification: 1.22,
                       squeeze: 0.8,
                       // useMagnifier: true,
-                      itemExtent: 59,
+                      itemExtent: width * 0.041,
                       onSelectedItemChanged: (int selectedItem) {
                         setState(() {
                           _selectedGame = selectedItem;
@@ -216,7 +216,7 @@ class _ChurchPageState extends State<ChurchPage> {
                                         ),
                                         const SizedBox(width: 18),
                                         Container(
-                                          width: 382,
+                                          width: width * 0.265,
                                           decoration: const BoxDecoration(
                                               color: Color(0xFFFFF27F)),
                                           child: Center(
@@ -224,7 +224,7 @@ class _ChurchPageState extends State<ChurchPage> {
                                               _gameNames[index],
                                               style: TextStyle(
                                                   fontFamily: 'DungGeunMo',
-                                                  fontSize: width * 0.042,
+                                                  fontSize: width * 0.0375,
                                                   fontWeight: FontWeight.w400,
                                                   color: Colors.black),
                                             ),
@@ -243,7 +243,7 @@ class _ChurchPageState extends State<ChurchPage> {
                                 : Text(_gameNames[index],
                                     style: TextStyle(
                                         fontFamily: 'DungGeunMo',
-                                        fontSize: 44,
+                                        fontSize: width * 0.03,
                                         fontWeight: FontWeight.w400,
                                         color: Colors.black.withOpacity(0.5))));
                       }),

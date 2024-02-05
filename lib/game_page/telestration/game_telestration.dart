@@ -54,7 +54,7 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
     var height = MediaQuery.of(context).size.height;
     cards = randomtelestration
         .map((gameContents) =>
-            GameCard(gameContents: gameContents, fontSize: width * 0.09))
+            GameCard(gameContents: gameContents, fontSize: width * 0.11))
         .toList();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
@@ -130,7 +130,7 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
                             color: Colors.white,
                             icon: const ImageIcon(
                                 AssetImage('assets/images/Exit.png')),
-                            iconSize: 39,
+                            iconSize: width * 0.03,
                           ),
                           const Spacer(),
                           Text(
@@ -139,11 +139,11 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
                               fontWeight: FontWeight.w400,
-                              fontSize: width * 0.028,
+                              fontSize: width * 0.033,
                             ),
                           ),
                           const Spacer(),
-                          const SizedBox(width: 50),
+                          SizedBox(width: width * 0.039),
                         ],
                       ),
                       Expanded(
@@ -192,13 +192,13 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
                                   currentCardIndex = index;
                                   return !_isAnswered
                                       ? cards[index]
-                                      : const Center(
+                                      : Center(
                                           child: Text(
                                             '게임 진행 중 ...',
                                             style: TextStyle(
                                                 fontFamily: 'DungGeunMo',
                                                 fontWeight: FontWeight.w400,
-                                                fontSize: 0.065,
+                                                fontSize: width * 0.06,
                                                 color: Color(0xffFF62D3)),
                                           ),
                                         );
@@ -253,16 +253,16 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
                           ),
                           child: Text(
                             _isAnswered ? '정답보기' : '가리기',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               fontWeight: FontWeight.w400,
-                              fontSize: 42,
+                              fontSize: width * 0.03,
                               color: Colors.black,
                             ),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 110),
+                      SizedBox(height: height * 0.1)
                     ],
                   ),
                 ),

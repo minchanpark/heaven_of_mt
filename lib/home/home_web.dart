@@ -154,7 +154,7 @@ class _HomeWebState extends State<HomeWeb> {
                           style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.black,
-                            fontSize: width * 0.014,
+                            fontSize: width * 0.0125,
                           )))),
               SizedBox(width: width * 0.015),
               GestureDetector(
@@ -171,7 +171,7 @@ class _HomeWebState extends State<HomeWeb> {
                           style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.black,
-                            fontSize: width * 0.014,
+                            fontSize: width * 0.0125,
                           )))),
               SizedBox(width: width * 0.075)
             ],
@@ -234,7 +234,7 @@ class _HomeWebState extends State<HomeWeb> {
                       // magnification: 1.22,
                       squeeze: 0.8,
                       // useMagnifier: true,
-                      itemExtent: width * 0.046,
+                      itemExtent: width * 0.041,
                       onSelectedItemChanged: (int selectedItem) {
                         setState(() {
                           _selectedGame = selectedItem;
@@ -258,7 +258,7 @@ class _HomeWebState extends State<HomeWeb> {
                                             width: 24, height: 42),
                                         const SizedBox(width: 18),
                                         Container(
-                                          width: width * 0.298,
+                                          width: width * 0.265,
                                           decoration: const BoxDecoration(
                                               color: Color(0xFFFF62D3)),
                                           child: Center(
@@ -266,7 +266,7 @@ class _HomeWebState extends State<HomeWeb> {
                                               _gameNames[index],
                                               style: TextStyle(
                                                   fontFamily: 'DungGeunMo',
-                                                  fontSize: width * 0.042,
+                                                  fontSize: width * 0.0375,
                                                   fontWeight: FontWeight.w400,
                                                   color: Colors.white),
                                             ),
@@ -281,7 +281,7 @@ class _HomeWebState extends State<HomeWeb> {
                                 : Text(_gameNames[index],
                                     style: TextStyle(
                                         fontFamily: 'DungGeunMo',
-                                        fontSize: width * 0.034,
+                                        fontSize: width * 0.03,
                                         fontWeight: FontWeight.w400,
                                         color: Colors.white.withOpacity(0.5))));
                       }),

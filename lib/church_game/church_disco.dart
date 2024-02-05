@@ -123,20 +123,20 @@ class _ChurchDiscoGamePageState extends State<ChurchDiscoGame> {
                             color: Colors.black,
                             icon: const ImageIcon(
                                 AssetImage('assets/images/Exit.png')),
-                            iconSize: 39,
+                            iconSize: width * 0.03,
                           ),
                           const Spacer(),
                           Text(
                             '${currentCardIndex + 1}/${cards.length}',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
                               fontWeight: FontWeight.w400,
-                              fontSize: 36,
+                              fontSize: width * 0.033,
                             ),
                           ),
                           const Spacer(),
-                          const SizedBox(width: 50),
+                          SizedBox(width: width * 0.039),
                         ],
                       ),
                       Expanded(
@@ -153,7 +153,7 @@ class _ChurchDiscoGamePageState extends State<ChurchDiscoGame> {
                                           'assets/images/icon_chevron_left.png'),
                                       color: Colors.black.withOpacity(0.4),
                                     ),
-                                    iconSize: 90,
+                                    iconSize: width * 0.07,
                                   )
                                 : IconButton(
                                     onPressed: () {
@@ -170,7 +170,7 @@ class _ChurchDiscoGamePageState extends State<ChurchDiscoGame> {
                                           'assets/images/icon_chevron_left_white.png'),
                                       color: Colors.black,
                                     ),
-                                    iconSize: 90,
+                                    iconSize: width * 0.07,
                                   ),
                             SizedBox(
                               width: width * 0.63,
@@ -220,12 +220,12 @@ class _ChurchDiscoGamePageState extends State<ChurchDiscoGame> {
                                     'assets/images/icon_chevron_right.png'),
                                 color: Colors.black,
                               ),
-                              iconSize: 90,
+                              iconSize: width * 0.07,
                             ),
                           ],
                         ),
                       ),
-                      const SizedBox(height: 87)
+                      SizedBox(height: height * 0.132),
                     ],
                   ),
                 ),

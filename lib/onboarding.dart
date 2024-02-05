@@ -44,7 +44,7 @@ class PersonOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -54,7 +54,7 @@ class PersonOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -64,7 +64,7 @@ class PersonOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -74,7 +74,7 @@ class PersonOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -99,7 +99,7 @@ class PersonOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -109,7 +109,7 @@ class PersonOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -128,7 +128,7 @@ class PersonOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -139,7 +139,7 @@ class PersonOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -148,7 +148,7 @@ class PersonOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -205,7 +205,7 @@ class DiscoOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -215,7 +215,7 @@ class DiscoOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -225,7 +225,7 @@ class DiscoOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -235,7 +235,7 @@ class DiscoOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -260,7 +260,7 @@ class DiscoOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -273,7 +273,7 @@ class DiscoOnboarding extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'DungGeunMo',
                       color: Colors.white,
-                      fontSize: width * 0.017,
+                      fontSize: width * 0.0159,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -282,7 +282,7 @@ class DiscoOnboarding extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'DungGeunMo',
                       color: Colors.white,
-                      fontSize: width * 0.017,
+                      fontSize: width * 0.0159,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -303,7 +303,7 @@ class DiscoOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -314,7 +314,7 @@ class DiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -323,7 +323,7 @@ class DiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -343,7 +343,7 @@ class DiscoOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -354,7 +354,7 @@ class DiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -363,7 +363,7 @@ class DiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -383,7 +383,7 @@ class DiscoOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -394,7 +394,7 @@ class DiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -404,7 +404,7 @@ class DiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -414,7 +414,7 @@ class DiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -471,7 +471,7 @@ class CaptainOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -481,7 +481,7 @@ class CaptainOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -491,7 +491,7 @@ class CaptainOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -501,7 +501,7 @@ class CaptainOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -526,7 +526,7 @@ class CaptainOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -537,7 +537,7 @@ class CaptainOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -546,7 +546,7 @@ class CaptainOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -555,7 +555,7 @@ class CaptainOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -575,7 +575,7 @@ class CaptainOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -585,7 +585,7 @@ class CaptainOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -641,7 +641,7 @@ class FourOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -651,7 +651,7 @@ class FourOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -661,7 +661,7 @@ class FourOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -671,7 +671,7 @@ class FourOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -696,7 +696,7 @@ class FourOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -706,7 +706,7 @@ class FourOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -725,7 +725,7 @@ class FourOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -736,7 +736,7 @@ class FourOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -745,7 +745,7 @@ class FourOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -765,7 +765,7 @@ class FourOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -776,7 +776,7 @@ class FourOnboarding extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'DungGeunMo',
                       color: Colors.white,
-                      fontSize: width * 0.017,
+                      fontSize: width * 0.0159,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -786,7 +786,7 @@ class FourOnboarding extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'DungGeunMo',
                       color: Colors.white,
-                      fontSize: width * 0.017,
+                      fontSize: width * 0.0159,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -842,7 +842,7 @@ class WordTeleOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -852,7 +852,7 @@ class WordTeleOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -862,7 +862,7 @@ class WordTeleOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -872,7 +872,7 @@ class WordTeleOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -897,7 +897,7 @@ class WordTeleOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -907,7 +907,7 @@ class WordTeleOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -926,7 +926,7 @@ class WordTeleOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -937,7 +937,7 @@ class WordTeleOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -946,7 +946,7 @@ class WordTeleOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -966,7 +966,7 @@ class WordTeleOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -977,7 +977,7 @@ class WordTeleOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -986,7 +986,7 @@ class WordTeleOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -995,7 +995,7 @@ class WordTeleOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1052,7 +1052,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1062,7 +1062,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1072,7 +1072,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1082,7 +1082,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1107,7 +1107,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1117,7 +1117,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1136,7 +1136,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1147,7 +1147,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1156,7 +1156,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1176,7 +1176,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1187,7 +1187,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1196,7 +1196,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1216,7 +1216,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1227,7 +1227,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1236,7 +1236,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1256,7 +1256,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1267,7 +1267,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1276,7 +1276,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1285,7 +1285,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1342,7 +1342,7 @@ class ChoiOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1352,7 +1352,7 @@ class ChoiOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1362,7 +1362,7 @@ class ChoiOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1372,7 +1372,7 @@ class ChoiOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1397,7 +1397,7 @@ class ChoiOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1408,7 +1408,7 @@ class ChoiOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1417,7 +1417,7 @@ class ChoiOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1437,7 +1437,7 @@ class ChoiOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1447,7 +1447,7 @@ class ChoiOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               )
@@ -1503,7 +1503,7 @@ class MusicOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1513,7 +1513,7 @@ class MusicOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1523,7 +1523,7 @@ class MusicOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1533,7 +1533,7 @@ class MusicOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1558,7 +1558,7 @@ class MusicOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1569,7 +1569,7 @@ class MusicOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1578,7 +1578,7 @@ class MusicOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1635,7 +1635,7 @@ class FamousLineOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1645,7 +1645,7 @@ class FamousLineOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1655,7 +1655,7 @@ class FamousLineOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1665,7 +1665,7 @@ class FamousLineOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1690,7 +1690,7 @@ class FamousLineOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1701,7 +1701,7 @@ class FamousLineOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1710,7 +1710,7 @@ class FamousLineOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),

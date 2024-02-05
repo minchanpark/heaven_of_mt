@@ -35,6 +35,7 @@ class _GameOverState extends State<GameOver> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.height;
     return Scaffold(
         body: SafeArea(
       child: Stack(
@@ -54,11 +55,11 @@ class _GameOverState extends State<GameOver> {
                 SizedBox(height: height * 0.191),
                 Text(
                   setNumber,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
                     fontWeight: FontWeight.w400,
-                    fontSize: 48,
+                    fontSize: width * 0.0375,
                   ),
                 ),
                 SizedBox(height: height * 0.048),

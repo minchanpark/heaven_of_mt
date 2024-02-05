@@ -44,7 +44,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -54,7 +54,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -64,7 +64,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -74,7 +74,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -99,7 +99,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -112,7 +112,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'DungGeunMo',
                       color: Colors.black,
-                      fontSize: width * 0.017,
+                      fontSize: width * 0.0159,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -121,7 +121,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'DungGeunMo',
                       color: Colors.black,
-                      fontSize: width * 0.017,
+                      fontSize: width * 0.0159,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -142,7 +142,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -153,7 +153,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -162,7 +162,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -182,7 +182,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -193,7 +193,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -202,7 +202,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -222,7 +222,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -233,7 +233,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -243,7 +243,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -300,7 +300,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -310,7 +310,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -320,7 +320,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -330,7 +330,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -355,7 +355,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -368,7 +368,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'DungGeunMo',
                       color: Colors.black,
-                      fontSize: width * 0.017,
+                      fontSize: width * 0.0159,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -389,7 +389,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -400,7 +400,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -409,7 +409,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -429,7 +429,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -440,7 +440,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -449,7 +449,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -469,7 +469,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -480,7 +480,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -489,7 +489,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -546,7 +546,7 @@ class ChurchFourOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -556,7 +556,7 @@ class ChurchFourOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -566,7 +566,7 @@ class ChurchFourOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -576,7 +576,7 @@ class ChurchFourOnboarding extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: width * 0.018,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -601,7 +601,7 @@ class ChurchFourOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -611,7 +611,7 @@ class ChurchFourOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -630,7 +630,7 @@ class ChurchFourOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: width * 0.017,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -641,7 +641,7 @@ class ChurchFourOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -650,7 +650,7 @@ class ChurchFourOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -670,7 +670,7 @@ class ChurchFourOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: width * 0.017,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -681,7 +681,7 @@ class ChurchFourOnboarding extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'DungGeunMo',
                       color: Colors.black,
-                      fontSize: width * 0.017,
+                      fontSize: width * 0.0159,
                       fontWeight: FontWeight.w400,
                     ),
                   ),

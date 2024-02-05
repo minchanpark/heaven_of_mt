@@ -130,7 +130,7 @@ class _MovieWebGameState extends State<MovieWebGame> {
                           color: Colors.white,
                           icon: const ImageIcon(
                               AssetImage('assets/images/Exit.png')),
-                          iconSize: 39,
+                          iconSize: width * 0.03,
                         ),
                         const Spacer(),
                         Text(
@@ -143,7 +143,7 @@ class _MovieWebGameState extends State<MovieWebGame> {
                           ),
                         ),
                         const Spacer(),
-                        const SizedBox(width: 50),
+                        SizedBox(width: width * 0.039),
                       ],
                     ),
                     Row(
@@ -240,8 +240,8 @@ class _MovieWebGameState extends State<MovieWebGame> {
                     ),
                     // SizedBox(height: height * 0.038),
                     SizedBox(
-                      width: 250,
-                      height: 71,
+                      width: width * 0.195,
+                      height: height * 0.085,
                       child: ElevatedButton(
                         onPressed: () {
                           setState(() {
@@ -257,10 +257,10 @@ class _MovieWebGameState extends State<MovieWebGame> {
                         ),
                         child: Text(
                           !_isAnswered ? '정답보기' : '문제보기',
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             fontWeight: FontWeight.w400,
-                            fontSize: 42,
+                            fontSize: width * 0.03,
                             color: Colors.black,
                           ),
                         ),

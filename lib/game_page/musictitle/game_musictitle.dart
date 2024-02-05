@@ -78,11 +78,11 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
     var height = MediaQuery.of(context).size.height;
     cards = randomMusicTitle
         .map((gameContents) =>
-            GameCard(gameContents: gameContents, fontSize: width * 0.078))
+            GameCard(gameContents: gameContents, fontSize: width * 0.07))
         .toList();
     answer_cards = randomMusicTitle
         .map((gameContents) => GameCard(
-            gameContents: gameContents, answer: true, fontSize: width * 0.078))
+            gameContents: gameContents, answer: true, fontSize: width * 0.07))
         .toList();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
@@ -158,20 +158,20 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
                             color: Colors.white,
                             icon: const ImageIcon(
                                 AssetImage('assets/images/Exit.png')),
-                            iconSize: 39,
+                            iconSize: width * 0.03,
                           ),
                           const Spacer(),
                           Text(
                             '${currentCardIndex + 1}/${cards.length}',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
                               fontWeight: FontWeight.w400,
-                              fontSize: 36,
+                              fontSize: width * 0.033,
                             ),
                           ),
                           const Spacer(),
-                          const SizedBox(width: 50),
+                          SizedBox(width: width * 0.039),
                         ],
                       ),
                       Expanded(
@@ -190,7 +190,7 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
                                       AssetImage(
                                           'assets/images/icon_chevron_left.png'),
                                     ),
-                                    iconSize: 90,
+                                    iconSize: width * 0.07,
                                   )
                                 : IconButton(
                                     onPressed: () {
@@ -207,7 +207,7 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
                                       AssetImage(
                                           'assets/images/icon_chevron_left_white.png'),
                                     ),
-                                    iconSize: 90,
+                                    iconSize: width * 0.07,
                                   ),
                             SizedBox(
                               width: width * 0.63,
@@ -258,14 +258,14 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
                                 AssetImage(
                                     'assets/images/icon_chevron_right.png'),
                               ),
-                              iconSize: 90,
+                              iconSize: width * 0.07,
                             ),
                           ],
                         ),
                       ),
                       SizedBox(
-                        width: 250,
-                        height: 71,
+                        width: width * 0.195,
+                        height: height * 0.085,
                         child: ElevatedButton(
                           onPressed: () {
                             setState(() {
@@ -281,16 +281,16 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
                           ),
                           child: Text(
                             _isAnswered ? '문제보기' : '정답보기',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               fontWeight: FontWeight.w400,
-                              fontSize: 42,
+                              fontSize: width * 0.03,
                               color: Colors.black,
                             ),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 110),
+                      SizedBox(height: height * 0.132),
                     ],
                   ),
                 ),
