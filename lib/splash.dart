@@ -4,6 +4,8 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'ready.dart';
+
 class SplashPage extends StatefulWidget {
   const SplashPage({
     super.key,
@@ -33,6 +35,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
+    if (width < 1126 || height < 627) return ReadyPage();
     return Scaffold(
       body: Stack(children: [
         Container(
