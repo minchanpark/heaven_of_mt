@@ -7,6 +7,7 @@ import 'dart:math';
 import '../../game_contents.dart';
 import '../../card/card.dart';
 import '../gameover/gameover_church.dart';
+import '../ready_church.dart';
 import 'church_contents.dart';
 
 class ChurchCaptainGame extends StatefulWidget {
@@ -58,6 +59,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
         .map((gameContents) =>
             GameCard(gameContents: gameContents, fontSize: width * 0.05))
         .toList();
+    if (width < 1126 || height < 627) return ReadyChurchPage();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: Stack(

@@ -7,6 +7,7 @@ import '../church_game/church_captain.dart';
 import '../church_game/church_disco.dart';
 import '../church_game/church_four.dart';
 import '../onboarding_church.dart';
+import '../ready_church.dart';
 
 final List<String> _gameNames = <String>[
   '디스코',
@@ -66,6 +67,7 @@ class _ChurchPageState extends State<ChurchPage> {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
+    if (width < 1126 || height < 627) return ReadyChurchPage();
     return Scaffold(
       body: Stack(children: [
         // 배경

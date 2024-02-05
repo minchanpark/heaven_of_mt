@@ -11,6 +11,7 @@ import '../game_page/movie/movie_game_page.dart';
 import '../game_page/musictitle/category_musictitle.dart';
 import '../game_page/tele/tele_game_page.dart';
 import '../game_page/telestration/telestration_game_page.dart';
+import '../ready.dart';
 
 class GameOver extends StatefulWidget {
   final String gameName;
@@ -36,6 +37,7 @@ class _GameOverState extends State<GameOver> {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.height;
+    if (width < 1126 || height < 627) return ReadyPage();
     return Scaffold(
         body: SafeArea(
       child: Stack(

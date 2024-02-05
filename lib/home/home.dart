@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../ready.dart';
 import 'home_app.dart';
 import 'home_web.dart';
 
@@ -15,12 +16,10 @@ class _MyHomeState extends State<MyHome> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    print(width);
-    print(height);
-    if (width > 30) {
-      return HomeWeb();
+    if (width < 1126 || height < 627) {
+      return const ReadyPage();
     } else {
-      return const HomeApp();
+      return HomeWeb();
     }
   }
 }

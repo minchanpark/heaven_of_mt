@@ -7,6 +7,7 @@ import 'dart:math';
 import '../../game_contents.dart';
 import '../../card/card.dart';
 import '../../gameover/gameover_web.dart';
+import '../../ready.dart';
 
 class MusicTitleWebGame extends StatefulWidget {
   final String generation;
@@ -84,6 +85,7 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
         .map((gameContents) => GameCard(
             gameContents: gameContents, answer: true, fontSize: width * 0.07))
         .toList();
+    if (width < 1126 || height < 627) return ReadyPage();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: Stack(

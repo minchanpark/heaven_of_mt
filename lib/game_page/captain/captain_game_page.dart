@@ -13,7 +13,6 @@ class CaptainGamePage extends StatefulWidget {
 class _CaptainGamePageState extends State<CaptainGamePage> {
   @override
   Widget build(BuildContext context) {
-    
     return const CaptainWebGame();
   }
 }

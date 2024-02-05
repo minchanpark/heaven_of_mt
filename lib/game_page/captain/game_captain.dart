@@ -7,6 +7,7 @@ import 'dart:math';
 import '../../game_contents.dart';
 import '../../card/card.dart';
 import '../../gameover/gameover_web.dart';
+import '../../ready.dart';
 
 class CaptainWebGame extends StatefulWidget {
   const CaptainWebGame({
@@ -58,6 +59,7 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
         .map((gameContents) => GameCard(
             gameContents: gameContents, answer: true, fontSize: width * 0.058))
         .toList();
+    if (width < 1126 || height < 627) return ReadyPage();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: Stack(

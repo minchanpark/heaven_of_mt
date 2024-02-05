@@ -5,6 +5,7 @@ import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
 import '../../game_contents.dart';
 import '../../gameover/gameover_web.dart';
+import '../../ready.dart';
 
 class PersonWebGame extends StatefulWidget {
   const PersonWebGame({super.key});
@@ -54,6 +55,7 @@ class _PersonWebGameState extends State<PersonWebGame> {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
 
+    if (width < 1126 || height < 627) return ReadyPage();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: Stack(

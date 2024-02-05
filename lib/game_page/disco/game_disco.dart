@@ -7,6 +7,7 @@ import 'dart:math';
 import '../../game_contents.dart';
 import '../../card/card.dart';
 import '../../gameover/gameover_web.dart';
+import '../../ready.dart';
 
 class DiscoWebGame extends StatefulWidget {
   const DiscoWebGame({
@@ -53,6 +54,7 @@ class _DiscoWebGamePageState extends State<DiscoWebGame> {
         .map((gameContents) =>
             GameCard(gameContents: gameContents, fontSize: width * 0.108))
         .toList();
+    if (width < 1126 || height < 627) return ReadyPage();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: Stack(

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../church_game/church_captain.dart';
 import '../church_game/church_disco.dart';
 import '../church_game/church_four.dart';
+import '../ready_church.dart';
 
 class GameOverChurch extends StatefulWidget {
   final String gameName;
@@ -31,6 +32,8 @@ class _GameOverChurchState extends State<GameOverChurch> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+    if (width < 1126 || height < 627) return ReadyChurchPage();
     return Scaffold(
         body: SafeArea(
       child: Stack(

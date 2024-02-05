@@ -61,9 +61,3 @@ Future<void> main() async {
     {"pluginKey": "4cf501ee-0328-4a70-af7e-edb184d5981f"}
   ]);
 }
-
-class GameOverArguments {
-  final String gameName;
-
-  GameOverArguments({required this.gameName});
-}
