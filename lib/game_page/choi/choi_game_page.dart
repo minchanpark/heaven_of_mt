@@ -14,6 +14,6 @@ class ChoiGamePage extends StatefulWidget {
 class _ChoiGamePageState extends State<ChoiGamePage> {
   @override
   Widget build(BuildContext context) {
-    return const ChoiAppGame();
+    return const ChoiWebGame();
   }
 }

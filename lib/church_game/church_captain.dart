@@ -242,7 +242,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                         ),
                       ),
                       SizedBox(
-                        width: width * 0.195,
+                        width: width * 0.173,
                         height: height * 0.085,
                         child: ElevatedButton(
                           onPressed: () {
@@ -262,13 +262,12 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               fontWeight: FontWeight.w400,
-                              fontSize: width * 0.033,
+                              fontSize: width * 0.03,
                               color: Colors.black,
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(height: height * 0.132),
                     ],
                   ),
                 ),
