@@ -1,11 +1,11 @@
 {
-    "name": "testes",
-    "short_name": "testes",
+    "name": "heaven_of_mt",
+    "short_name": "heaven_of_mt",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "공동체가 함께 즐기는 유쾌발랄 게임천국!",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
