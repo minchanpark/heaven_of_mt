@@ -242,7 +242,7 @@ class _MovieWebGameState extends State<MovieWebGame> {
                     ),
                     // SizedBox(height: height * 0.038),
                     SizedBox(
-                      width: width * 0.195,
+                      width: width * 0.173,
                       height: height * 0.085,
                       child: ElevatedButton(
                         onPressed: () {

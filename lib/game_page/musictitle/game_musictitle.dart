@@ -266,7 +266,7 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
                         ),
                       ),
                       SizedBox(
-                        width: width * 0.195,
+                        width: width * 0.173,
                         height: height * 0.085,
                         child: ElevatedButton(
                           onPressed: () {

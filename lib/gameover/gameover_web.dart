@@ -37,7 +37,6 @@ class _GameOverState extends State<GameOver> {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.height;
-    if (width < 1126 || height < 627) return ReadyPage();
     return Scaffold(
         body: SafeArea(
       child: Stack(

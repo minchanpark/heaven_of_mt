@@ -238,8 +238,8 @@ class _TelestrationWebGamePageState extends State<TelestrationWebGame> {
                         ),
                       ),
                       SizedBox(
-                        width: 250,
-                        height: 71,
+                        width: width * 0.173,
+                        height: height * 0.085,
                         child: ElevatedButton(
                           onPressed: () {
                             setState(() {

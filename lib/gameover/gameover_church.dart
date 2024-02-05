@@ -33,7 +33,6 @@ class _GameOverChurchState extends State<GameOverChurch> {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-    if (width < 1126 || height < 627) return ReadyChurchPage();
     return Scaffold(
         body: SafeArea(
       child: Stack(
