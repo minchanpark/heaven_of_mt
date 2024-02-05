@@ -32,6 +32,7 @@ Future<void> main() async {
       FirebaseAnalyticsObserver(analytics: analytics);
   runApp(
     MaterialApp(
+      title: 'heaven_of_mt',
       debugShowCheckedModeBanner: false,
       initialRoute: '/splash',
       routes: {
