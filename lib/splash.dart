@@ -35,7 +35,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-    if (width < 1126 || height < 627) return ReadyPage();
+    if (width < 1126) return ReadyPage();
     return Scaffold(
       body: Stack(children: [
         Container(
