@@ -63,6 +63,8 @@ class _ChurchPageState extends State<ChurchPage> {
     FirebaseAnalytics.instance.setCurrentScreen(screenName: "교회홈화면");
   }
 
+  bool _isHovering = false;
+  bool _isHovering2 = false;
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -98,37 +100,77 @@ class _ChurchPageState extends State<ChurchPage> {
                   onTap: () {
                     Navigator.of(context).pushReplacementNamed('/home');
                   },
-                  child: Container(
-                      padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          gradient: const LinearGradient(
+                  child: MouseRegion(
+                    onHover: (event) {
+                      setState(() {
+                        _isHovering = true;
+                      });
+                    },
+                    onExit: (event) {
+                      setState(() {
+                        _isHovering = false;
+                      });
+                    },
+                    child: Container(
+                        padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            gradient: LinearGradient(
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
-                              colors: [Color(0xffFF008E), Color(0xffFFEB50)])),
-                      child: Text("엠티게임천국 바로가기",
-                          style: TextStyle(
-                            fontFamily: 'DungGeunMo',
-                            color: Colors.black,
-                            fontSize: width * 0.0125,
-                          )))),
+                              colors: [
+                                _isHovering
+                                    ? Color(0xffFF46AD)
+                                    : Color(0xffFF008E),
+                                _isHovering
+                                    ? Color(0xffFFF07F)
+                                    : Color(0xffFFEB50)
+                              ],
+                            )),
+                        child: Text("엠티게임천국 바로가기",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.black,
+                              fontSize: width * 0.0125,
+                            ))),
+                  )),
               SizedBox(width: width * 0.015),
               GestureDetector(
                   onTap: () {},
-                  child: Container(
-                      padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          gradient: const LinearGradient(
+                  child: MouseRegion(
+                    onHover: (event) {
+                      setState(() {
+                        _isHovering2 = true;
+                      });
+                    },
+                    onExit: (event) {
+                      setState(() {
+                        _isHovering2 = false;
+                      });
+                    },
+                    child: Container(
+                        padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            gradient: LinearGradient(
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
-                              colors: [Color(0xffFF008E), Color(0xffFFEB50)])),
-                      child: Text("팀 소개",
-                          style: TextStyle(
-                            fontFamily: 'DungGeunMo',
-                            color: Colors.black,
-                            fontSize: width * 0.0125,
-                          )))),
+                              colors: [
+                                _isHovering2
+                                    ? Color(0xffFF46AD)
+                                    : Color(0xffFF008E),
+                                _isHovering2
+                                    ? Color(0xffFFF07F)
+                                    : Color(0xffFFEB50)
+                              ],
+                            )),
+                        child: Text("팀 소개",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.black,
+                              fontSize: width * 0.0125,
+                            ))),
+                  )),
               SizedBox(width: width * 0.075)
             ],
           ),

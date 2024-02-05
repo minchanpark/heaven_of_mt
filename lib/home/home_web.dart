@@ -108,6 +108,8 @@ class _HomeWebState extends State<HomeWeb> {
     FirebaseAnalytics.instance.setCurrentScreen(screenName: "홈화면");
   }
 
+  bool _isHovering = false;
+  bool _isHovering2 = false;
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -138,41 +140,99 @@ class _HomeWebState extends State<HomeWeb> {
                         width: width * 0.179, height: height * 0.047)),
               ),
               const Spacer(),
-              GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).pushReplacementNamed('/church');
-                  },
-                  child: Container(
-                      padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
-                      decoration: BoxDecoration(
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushReplacementNamed('/church');
+                    },
+                    child: MouseRegion(
+                      onHover: (event) {
+                        setState(() {
+                          _isHovering = true;
+                        });
+                      },
+                      onExit: (event) {
+                        setState(() {
+                          _isHovering = false;
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+                        decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
-                          gradient: const LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [Color(0xff01DF4C), Color(0xffFFEB50)])),
-                      child: Text("교회 버전 바로가기",
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              _isHovering
+                                  ? Color(0xff2AFF73)
+                                  : Color(0xff01DF4C),
+                              _isHovering
+                                  ? Color(0xffFFF4A0)
+                                  : Color(0xffFFEB50)
+                            ],
+                          ),
+                        ),
+                        child: Text(
+                          "교회 버전 바로가기",
                           style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.black,
                             fontSize: width * 0.0125,
-                          )))),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: -20,
+                    left: -35,
+                    child: Image.asset(
+                      "assets/images/beta.png",
+                      width: 74,
+                      height: 40,
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(width: width * 0.015),
               GestureDetector(
                   onTap: () {},
-                  child: Container(
-                      padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          gradient: const LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [Color(0xffFF008E), Color(0xffFFEB50)])),
-                      child: Text("팀 소개",
-                          style: TextStyle(
-                            fontFamily: 'DungGeunMo',
-                            color: Colors.black,
-                            fontSize: width * 0.0125,
-                          )))),
+                  child: MouseRegion(
+                    onHover: (event) {
+                      setState(() {
+                        _isHovering2 = true;
+                      });
+                    },
+                    onExit: (event) {
+                      setState(() {
+                        _isHovering2 = false;
+                      });
+                    },
+                    child: Container(
+                        padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  _isHovering2
+                                      ? Color(0xffFF48AE)
+                                      : Color(0xffFF008E),
+                                  _isHovering2
+                                      ? Color(0xffFFF5A9)
+                                      : Color(0xffFFEB50)
+                                ])),
+                        child: Text("팀 소개",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.black,
+                              fontSize: width * 0.0125,
+                            ))),
+                  )),
               SizedBox(width: width * 0.075)
             ],
           ),
