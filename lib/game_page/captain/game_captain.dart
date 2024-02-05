@@ -257,6 +257,7 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
                           ),
                         ),
                       ),
+                      SizedBox(height: height * 0.1),
                     ],
                   ),
                 ),

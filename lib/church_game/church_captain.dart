@@ -268,6 +268,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                           ),
                         ),
                       ),
+                      SizedBox(height: height * 0.1),
                     ],
                   ),
                 ),
