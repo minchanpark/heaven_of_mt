@@ -42,16 +42,13 @@ class _ChurchPageState extends State<ChurchPage> {
   void selectGame() {
     switch (_selectedGame + 1) {
       case 1:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const ChurchDiscoGame()));
+        Navigator.pushNamed(context, '/church_disco');
         break;
       case 2:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const ChurchCaptainGame()));
+        Navigator.pushNamed(context, '/church_captain');
         break;
       case 3:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const ChurchFourGame()));
+        Navigator.pushNamed(context, '/church_four');
         break;
       default:
         break;
