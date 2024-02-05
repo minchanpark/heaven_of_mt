@@ -38,15 +38,6 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
       ..shuffle(random);
     randomcaptain =
         captainIndices.sublist(0, 10).map((index) => captain[index]).toList();
-
-    cards = randomcaptain
-        .map((gameContents) =>
-            GameCard(gameContents: gameContents, fontSize: 84))
-        .toList();
-    answer_cards = randomcaptain
-        .map((gameContents) =>
-            GameCard(gameContents: gameContents, answer: true, fontSize: 84))
-        .toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -60,6 +51,14 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+    cards = randomcaptain
+        .map((gameContents) =>
+            GameCard(gameContents: gameContents, fontSize: width * 0.065))
+        .toList();
+    answer_cards = randomcaptain
+        .map((gameContents) => GameCard(
+            gameContents: gameContents, answer: true, fontSize: width * 0.065))
+        .toList();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: Stack(
@@ -139,11 +138,11 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
                           const Spacer(),
                           Text(
                             '${currentCardIndex + 1}/${cards.length}',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
                               fontWeight: FontWeight.w400,
-                              fontSize: 36,
+                              fontSize: width * 0.028,
                             ),
                           ),
                           const Spacer(),

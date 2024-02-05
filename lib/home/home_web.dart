@@ -17,7 +17,7 @@ import '../game_page/tele/tele_game_page.dart';
 import '../game_page/telestration/telestration_game_page.dart';
 
 // 게임 이름 목록
-const List<String> _gameNames = <String>[
+List<String> _gameNames = <String>[
   '인물퀴즈',
   '디스코',
   '대표게임',
@@ -31,15 +31,15 @@ const List<String> _gameNames = <String>[
 
 // 게임 설명 목록
 List<Widget> contentList = [
-  const PersonOnboarding(),
-  const DiscoOnboarding(),
-  const CaptainOnboarding(),
-  const FourOnboarding(),
-  const WordTeleOnboarding(),
-  const TeleStrationOnboarding(),
-  const ChoiOnboarding(),
-  const MusicOnboarding(),
-  const FamousLineOnboarding(),
+  PersonOnboarding(),
+  DiscoOnboarding(),
+  CaptainOnboarding(),
+  FourOnboarding(),
+  WordTeleOnboarding(),
+  TeleStrationOnboarding(),
+  ChoiOnboarding(),
+  MusicOnboarding(),
+  FamousLineOnboarding(),
 ];
 
 // 게임 페이지 묵룩
@@ -56,7 +56,7 @@ List<Widget> pageList = [
 ];
 
 class HomeWeb extends StatefulWidget {
-  const HomeWeb({
+  HomeWeb({
     super.key,
   });
   @override
@@ -150,11 +150,11 @@ class _HomeWebState extends State<HomeWeb> {
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
                               colors: [Color(0xff01DF4C), Color(0xffFFEB50)])),
-                      child: const Text("교회 버전 바로가기",
+                      child: Text("교회 버전 바로가기",
                           style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.black,
-                            fontSize: 18,
+                            fontSize: width * 0.014,
                           )))),
               SizedBox(width: width * 0.015),
               GestureDetector(
@@ -167,11 +167,11 @@ class _HomeWebState extends State<HomeWeb> {
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
                               colors: [Color(0xffFF008E), Color(0xffFFEB50)])),
-                      child: const Text("팀 소개",
+                      child: Text("팀 소개",
                           style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.black,
-                            fontSize: 18,
+                            fontSize: width * 0.014,
                           )))),
               SizedBox(width: width * 0.075)
             ],
@@ -234,7 +234,7 @@ class _HomeWebState extends State<HomeWeb> {
                       // magnification: 1.22,
                       squeeze: 0.8,
                       // useMagnifier: true,
-                      itemExtent: 59,
+                      itemExtent: width * 0.046,
                       onSelectedItemChanged: (int selectedItem) {
                         setState(() {
                           _selectedGame = selectedItem;
@@ -258,15 +258,15 @@ class _HomeWebState extends State<HomeWeb> {
                                             width: 24, height: 42),
                                         const SizedBox(width: 18),
                                         Container(
-                                          width: 382,
+                                          width: width * 0.298,
                                           decoration: const BoxDecoration(
                                               color: Color(0xFFFF62D3)),
                                           child: Center(
                                             child: Text(
                                               _gameNames[index],
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                   fontFamily: 'DungGeunMo',
-                                                  fontSize: 54,
+                                                  fontSize: width * 0.042,
                                                   fontWeight: FontWeight.w400,
                                                   color: Colors.white),
                                             ),
@@ -281,7 +281,7 @@ class _HomeWebState extends State<HomeWeb> {
                                 : Text(_gameNames[index],
                                     style: TextStyle(
                                         fontFamily: 'DungGeunMo',
-                                        fontSize: 44,
+                                        fontSize: width * 0.034,
                                         fontWeight: FontWeight.w400,
                                         color: Colors.white.withOpacity(0.5))));
                       }),

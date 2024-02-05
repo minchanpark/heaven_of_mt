@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ChurchDiscoOnboarding extends StatelessWidget {
-  const ChurchDiscoOnboarding({super.key});
+  ChurchDiscoOnboarding({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,42 +39,42 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "권장인원:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: width * 0.018,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "4-5명",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: width * 0.018,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.037),
-                          const Text(
+                          Text(
                             "난이도:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: width * 0.018,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "☆☆☆☆☆",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: width * 0.018,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -90,7 +90,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.299,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -99,7 +99,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: 23,
+                  fontSize: width * 0.017,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -112,7 +112,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'DungGeunMo',
                       color: Colors.black,
-                      fontSize: 23,
+                      fontSize: width * 0.017,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -121,7 +121,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'DungGeunMo',
                       color: Colors.black,
-                      fontSize: 23,
+                      fontSize: width * 0.017,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -133,7 +133,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.395,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -142,7 +142,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: 23,
+                  fontSize: width * 0.017,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -153,7 +153,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: 23,
+                    fontSize: width * 0.017,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -162,7 +162,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: 23,
+                    fontSize: width * 0.017,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -173,7 +173,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.49,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -182,7 +182,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: 23,
+                  fontSize: width * 0.017,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -193,7 +193,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: 23,
+                    fontSize: width * 0.017,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -202,7 +202,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: 23,
+                    fontSize: width * 0.017,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -213,7 +213,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.587,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -222,7 +222,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: 23,
+                  fontSize: width * 0.017,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -233,7 +233,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: 23,
+                    fontSize: width * 0.017,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -243,7 +243,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: 23,
+                    fontSize: width * 0.017,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -257,7 +257,7 @@ class ChurchDiscoOnboarding extends StatelessWidget {
 }
 
 class ChurchCaptainOnboarding extends StatelessWidget {
-  const ChurchCaptainOnboarding({super.key});
+  ChurchCaptainOnboarding({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -295,42 +295,42 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "권장인원:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: width * 0.018,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "5명",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: width * 0.018,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.037),
-                          const Text(
+                          Text(
                             "난이도:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: width * 0.018,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "☆",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: width * 0.018,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -346,7 +346,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.299,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -355,7 +355,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: 23,
+                  fontSize: width * 0.017,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -368,7 +368,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'DungGeunMo',
                       color: Colors.black,
-                      fontSize: 23,
+                      fontSize: width * 0.017,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -380,7 +380,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.355,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -389,7 +389,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: 23,
+                  fontSize: width * 0.017,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -400,7 +400,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: 23,
+                    fontSize: width * 0.017,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -409,7 +409,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: 23,
+                    fontSize: width * 0.017,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -420,7 +420,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.45,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -429,7 +429,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: 23,
+                  fontSize: width * 0.017,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -440,7 +440,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: 23,
+                    fontSize: width * 0.017,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -449,7 +449,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: 23,
+                    fontSize: width * 0.017,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -460,7 +460,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.545,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -469,7 +469,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: 23,
+                  fontSize: width * 0.017,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -480,7 +480,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: 23,
+                    fontSize: width * 0.017,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -489,7 +489,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: 23,
+                    fontSize: width * 0.017,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -503,7 +503,7 @@ class ChurchCaptainOnboarding extends StatelessWidget {
 }
 
 class ChurchFourOnboarding extends StatelessWidget {
-  const ChurchFourOnboarding({super.key});
+  ChurchFourOnboarding({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -541,42 +541,42 @@ class ChurchFourOnboarding extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "권장인원:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: width * 0.018,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "4-5명",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: width * 0.018,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.037),
-                          const Text(
+                          Text(
                             "난이도:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: width * 0.018,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "☆☆",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: width * 0.018,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -592,7 +592,7 @@ class ChurchFourOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.299,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -601,7 +601,7 @@ class ChurchFourOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: 23,
+                  fontSize: width * 0.017,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -611,7 +611,7 @@ class ChurchFourOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: 23,
+                  fontSize: width * 0.017,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -621,7 +621,7 @@ class ChurchFourOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.356,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -630,7 +630,7 @@ class ChurchFourOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.black,
-                  fontSize: 23,
+                  fontSize: width * 0.017,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -641,7 +641,7 @@ class ChurchFourOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: 23,
+                    fontSize: width * 0.017,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -650,7 +650,7 @@ class ChurchFourOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: 23,
+                    fontSize: width * 0.017,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -661,7 +661,7 @@ class ChurchFourOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.45,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -670,7 +670,7 @@ class ChurchFourOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.black,
-                    fontSize: 23,
+                    fontSize: width * 0.017,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -681,7 +681,7 @@ class ChurchFourOnboarding extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'DungGeunMo',
                       color: Colors.black,
-                      fontSize: 23,
+                      fontSize: width * 0.017,
                       fontWeight: FontWeight.w400,
                     ),
                   ),

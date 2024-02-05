@@ -40,11 +40,6 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
         .sublist(0, 10)
         .map((index) => churchCaptain[index])
         .toList();
-
-    cards = randomChurchCaptain
-        .map((gameContents) =>
-            GameCard(gameContents: gameContents, fontSize: 70))
-        .toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -58,6 +53,11 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+
+    cards = randomChurchCaptain
+        .map((gameContents) =>
+            GameCard(gameContents: gameContents, fontSize: width * 0.05))
+        .toList();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: Stack(

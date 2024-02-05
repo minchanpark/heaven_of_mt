@@ -63,14 +63,6 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
           .map((index) => music2020[index])
           .toList();
     }
-    cards = randomMusicTitle
-        .map((gameContents) =>
-            GameCard(gameContents: gameContents, fontSize: 100))
-        .toList();
-    answer_cards = randomMusicTitle
-        .map((gameContents) =>
-            GameCard(gameContents: gameContents, answer: true, fontSize: 100))
-        .toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -84,6 +76,14 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+    cards = randomMusicTitle
+        .map((gameContents) =>
+            GameCard(gameContents: gameContents, fontSize: width * 0.078))
+        .toList();
+    answer_cards = randomMusicTitle
+        .map((gameContents) => GameCard(
+            gameContents: gameContents, answer: true, fontSize: width * 0.078))
+        .toList();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: Stack(

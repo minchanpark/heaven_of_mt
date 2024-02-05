@@ -15,9 +15,9 @@ final List<String> _gameNames = <String>[
 ];
 
 List<Widget> contentList = [
-  const ChurchDiscoOnboarding(),
-  const ChurchCaptainOnboarding(),
-  const ChurchFourOnboarding(),
+  ChurchDiscoOnboarding(),
+  ChurchCaptainOnboarding(),
+  ChurchFourOnboarding(),
 ];
 
 List<Widget> pageList = [
@@ -222,9 +222,9 @@ class _ChurchPageState extends State<ChurchPage> {
                                           child: Center(
                                             child: Text(
                                               _gameNames[index],
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                   fontFamily: 'DungGeunMo',
-                                                  fontSize: 54,
+                                                  fontSize: width * 0.042,
                                                   fontWeight: FontWeight.w400,
                                                   color: Colors.black),
                                             ),

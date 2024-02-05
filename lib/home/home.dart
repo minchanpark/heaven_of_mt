@@ -14,8 +14,9 @@ class _MyHomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    if (width > 600) {
-      return const HomeWeb();
+    print(width);
+    if (width > 30) {
+      return HomeWeb();
     } else {
       return const HomeApp();
     }

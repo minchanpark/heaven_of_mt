@@ -132,11 +132,11 @@ class _PersonWebGameState extends State<PersonWebGame> {
                         const Spacer(),
                         Text(
                           '${currentCardIndex + 1}/${cards.length}',
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.white,
                             fontWeight: FontWeight.w400,
-                            fontSize: 42,
+                            fontSize: width * 0.032,
                           ),
                         ),
                         const Spacer(),

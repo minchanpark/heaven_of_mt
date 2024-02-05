@@ -89,12 +89,12 @@ class _SplashPageState extends State<SplashPage> {
                     child: AnimatedOpacity(
                       opacity: _isVisible ? 1.0 : 0.1,
                       duration: const Duration(seconds: 1),
-                      child: const Text(
+                      child: Text(
                         "Game Start",
                         style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             fontWeight: FontWeight.w400,
-                            fontSize: 72,
+                            fontSize: width * 0.056,
                             color: Colors.white),
                       ),
                     ),

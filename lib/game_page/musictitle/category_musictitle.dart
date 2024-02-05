@@ -177,9 +177,9 @@ class _CategoryPageState extends State<CategoryPage> {
             ),
             Text(
               label,
-              style: const TextStyle(
+              style: TextStyle(
                 fontFamily: 'DungGeunMo',
-                fontSize: 40,
+                fontSize: width * 0.031,
                 fontWeight: FontWeight.w400,
                 color: Colors.white,
               ),

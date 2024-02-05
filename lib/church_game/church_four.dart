@@ -5,6 +5,7 @@ import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
 
 import '../../card/card.dart';
+import '../game_contents.dart';
 import '../gameover/gameover_church.dart';
 import 'church_contents.dart';
 
@@ -23,6 +24,7 @@ class _ChurchFourGamePageState extends State<ChurchFourGame> {
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
   final random = Random();
+  List<GameContents> randomfour = [];
   @override
   void initState() {
     super.initState();
@@ -37,10 +39,6 @@ class _ChurchFourGamePageState extends State<ChurchFourGame> {
         .sublist(0, 10)
         .map((index) => churchFour[index])
         .toList();
-
-    cards = randomfour
-        .map((gameContents) => GameCard(gameContents: gameContents))
-        .toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -54,6 +52,10 @@ class _ChurchFourGamePageState extends State<ChurchFourGame> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+    cards = randomfour
+        .map((gameContents) =>
+            GameCard(gameContents: gameContents, fontSize: width * 0.14))
+        .toList();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: Stack(

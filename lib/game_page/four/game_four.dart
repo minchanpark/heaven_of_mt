@@ -124,11 +124,11 @@ class _FourWebGamePageState extends State<FourWebGame> {
                           const Spacer(),
                           Text(
                             '${currentCardIndex + 1}/${cards.length}',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
                               fontWeight: FontWeight.w400,
-                              fontSize: 36,
+                              fontSize: width * 0.028,
                             ),
                           ),
                           const Spacer(),

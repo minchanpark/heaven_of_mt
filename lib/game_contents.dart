@@ -611,16 +611,14 @@ final List<GameContents> movie = [
   GameContents(name: 'assets/movie/타짜2.png', answer: '쏠 수 있어!', index: '11'),
   GameContents(name: 'assets/movie/최고의 사랑.png', answer: '극 뽁 ~', index: '12'),
   GameContents(
-      name: 'assets/movie/어게인 마이 라이프.png',
-      answer: '진행시켜.',
-      index: '13'),
+      name: 'assets/movie/어게인마이라이프.png', answer: '진행시켜.', index: '13'),
   GameContents(name: 'assets/movie/야인시대.png', answer: '4딸라', index: '14'),
   GameContents(
       name: 'assets/movie/기생충.png', answer: '너는 다 계획이 있구나', index: '15'),
   GameContents(
-      name: 'assets/movie/친구.png', answer: '느그 아부지 머하시노.', index: '16'),
+      name: 'assets/movie/친 구.png', answer: '느그 아부지 머하시노.', index: '16'),
   GameContents(
-      name: 'assets/movie/사랑했나봐.png',
+      name: 'assets/movie/사랑 했나봐.png',
       answer: '예나.. 선정이 딸이에요',
       index: '17'),
   GameContents(
