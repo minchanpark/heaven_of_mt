@@ -7,6 +7,7 @@ import 'dart:math';
 import '../../game_contents.dart';
 import '../../card/card.dart';
 import '../../gameover/gameover_web.dart';
+import '../../main.dart';
 
 class CaptainWebGame extends StatefulWidget {
   const CaptainWebGame({
@@ -211,6 +212,12 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
                             IconButton(
                               onPressed: () {
                                 if (currentCardIndex == 9) {
+                                  // Navigator.pushNamed(
+                                  //   context,
+                                  //   '/gameover',
+                                  //   arguments:
+                                  //       GameOverArguments(gameName: 'captain'),
+                                  // );
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
                                       builder: (context) => const GameOver(

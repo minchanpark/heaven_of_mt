@@ -29,7 +29,8 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
   void initState() {
     super.initState();
     focusNode.requestFocus();
-    FirebaseAnalytics.instance.setCurrentScreen(screenName: "노래초성퀴즈");
+    FirebaseAnalytics.instance
+        .setCurrentScreen(screenName: "${widget.generation} 노래초성퀴즈");
 
     // widget.id 값에 따라 cards 변수에 값을 할당
 

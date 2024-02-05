@@ -72,40 +72,31 @@ class _HomeWebState extends State<HomeWeb> {
   void selectGame() {
     switch (_selectedGame + 1) {
       case 1:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const PersonGamePage()));
+        Navigator.pushNamed(context, '/person');
         break;
       case 2:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const DiscoGamePage()));
+        Navigator.pushNamed(context, '/disco');
         break;
       case 3:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const CaptainGamePage()));
+        Navigator.pushNamed(context, '/captain');
         break;
       case 4:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const FourGamePage()));
+        Navigator.pushNamed(context, '/four');
         break;
       case 5:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const TeleGamePage()));
+        Navigator.pushNamed(context, '/tele');
         break;
       case 6:
-        Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => const TelestrationGamePage()));
+        Navigator.pushNamed(context, '/telestration');
         break;
       case 7:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const ChoiGamePage()));
+        Navigator.pushNamed(context, '/choi');
         break;
       case 8:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const CategoryPage()));
+        Navigator.pushNamed(context, '/category');
         break;
       case 9:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const MovieGamePage()));
+        Navigator.pushNamed(context, '/movie');
         break;
     }
   }
