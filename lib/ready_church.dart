@@ -25,7 +25,7 @@ class _ReadyChurchPageState extends State<ReadyChurchPage> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/home.gif'),
+            image: AssetImage('assets/images/background_church.png'),
             fit: BoxFit.cover,
           ),
         ),
