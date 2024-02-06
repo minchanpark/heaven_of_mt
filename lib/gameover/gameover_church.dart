@@ -1,5 +1,6 @@
 // ignore_for_file: unused_field
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 
 import '../church_game/church_captain.dart';
@@ -16,9 +17,11 @@ class GameOverChurch extends StatefulWidget {
 
 class _GameOverChurchState extends State<GameOverChurch> {
   String setNumber = '';
+
   @override
   void initState() {
     super.initState();
+    FirebaseAnalytics.instance.setCurrentScreen(screenName: "게임오버_교회");
   }
 
   double _opacity = 0.5;
@@ -139,7 +142,6 @@ class _GameOverChurchState extends State<GameOverChurch> {
                                     break;
                                 }
                               },
-                              
                               child: Row(
                                 children: [
                                   SizedBox(
@@ -224,7 +226,6 @@ class _GameOverChurchState extends State<GameOverChurch> {
                                 Navigator.popUntil(
                                     context, ModalRoute.withName('/church'));
                               },
-                              
                               child: Row(
                                 children: [
                                   SizedBox(

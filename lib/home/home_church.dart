@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -61,6 +62,7 @@ class _ChurchPageState extends State<ChurchPage> {
   void initState() {
     super.initState();
     focusNode.requestFocus();
+    FirebaseAnalytics.instance.setCurrentScreen(screenName: "교회홈화면");
   }
 
   @override
@@ -209,8 +211,12 @@ class _ChurchPageState extends State<ChurchPage> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        Image.asset("assets/images/left.png",
-                                            width: 24, height: 42, color: const Color(0xffFFF27F),),
+                                        Image.asset(
+                                          "assets/images/left.png",
+                                          width: 24,
+                                          height: 42,
+                                          color: const Color(0xffFFF27F),
+                                        ),
                                         const SizedBox(width: 18),
                                         Container(
                                           width: 382,
@@ -228,8 +234,12 @@ class _ChurchPageState extends State<ChurchPage> {
                                           ),
                                         ),
                                         const SizedBox(width: 18),
-                                        Image.asset("assets/images/right.png",
-                                            width: 24, height: 42, color: const Color(0xffFFF27F),)
+                                        Image.asset(
+                                          "assets/images/right.png",
+                                          width: 24,
+                                          height: 42,
+                                          color: const Color(0xffFFF27F),
+                                        )
                                       ],
                                     ),
                                   )
