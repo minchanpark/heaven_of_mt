@@ -7,6 +7,7 @@ import '../church_game/church_captain.dart';
 import '../church_game/church_disco.dart';
 import '../church_game/church_four.dart';
 import '../onboarding_church.dart';
+import '../ready_church.dart';
 
 final List<String> _gameNames = <String>[
   '디스코',
@@ -15,9 +16,9 @@ final List<String> _gameNames = <String>[
 ];
 
 List<Widget> contentList = [
-  const ChurchDiscoOnboarding(),
-  const ChurchCaptainOnboarding(),
-  const ChurchFourOnboarding(),
+  ChurchDiscoOnboarding(),
+  ChurchCaptainOnboarding(),
+  ChurchFourOnboarding(),
 ];
 
 List<Widget> pageList = [
@@ -42,16 +43,13 @@ class _ChurchPageState extends State<ChurchPage> {
   void selectGame() {
     switch (_selectedGame + 1) {
       case 1:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const ChurchDiscoGame()));
+        Navigator.pushNamed(context, '/church_disco');
         break;
       case 2:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const ChurchCaptainGame()));
+        Navigator.pushNamed(context, '/church_captain');
         break;
       case 3:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const ChurchFourGame()));
+        Navigator.pushNamed(context, '/church_four');
         break;
       default:
         break;
@@ -65,10 +63,13 @@ class _ChurchPageState extends State<ChurchPage> {
     FirebaseAnalytics.instance.setCurrentScreen(screenName: "교회홈화면");
   }
 
+  bool _isHovering = false;
+  bool _isHovering2 = false;
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
+    if (width < 1126 || height < 627) return const ReadyChurchPage();
     return Scaffold(
       body: Stack(children: [
         // 배경
@@ -99,37 +100,77 @@ class _ChurchPageState extends State<ChurchPage> {
                   onTap: () {
                     Navigator.of(context).pushReplacementNamed('/home');
                   },
-                  child: Container(
-                      padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          gradient: const LinearGradient(
+                  child: MouseRegion(
+                    onHover: (event) {
+                      setState(() {
+                        _isHovering = true;
+                      });
+                    },
+                    onExit: (event) {
+                      setState(() {
+                        _isHovering = false;
+                      });
+                    },
+                    child: Container(
+                        padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            gradient: LinearGradient(
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
-                              colors: [Color(0xffFF008E), Color(0xffFFEB50)])),
-                      child: const Text("엠티게임천국 바로가기",
-                          style: TextStyle(
-                            fontFamily: 'DungGeunMo',
-                            color: Colors.black,
-                            fontSize: 18,
-                          )))),
+                              colors: [
+                                _isHovering
+                                    ? const Color(0xffFF46AD)
+                                    : const Color(0xffFF008E),
+                                _isHovering
+                                    ? const Color(0xffFFF07F)
+                                    : const Color(0xffFFEB50)
+                              ],
+                            )),
+                        child: Text("엠티게임천국 바로가기",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.black,
+                              fontSize: width * 0.0125,
+                            ))),
+                  )),
               SizedBox(width: width * 0.015),
               GestureDetector(
                   onTap: () {},
-                  child: Container(
-                      padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          gradient: const LinearGradient(
+                  child: MouseRegion(
+                    onHover: (event) {
+                      setState(() {
+                        _isHovering2 = true;
+                      });
+                    },
+                    onExit: (event) {
+                      setState(() {
+                        _isHovering2 = false;
+                      });
+                    },
+                    child: Container(
+                        padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            gradient: LinearGradient(
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
-                              colors: [Color(0xffFF008E), Color(0xffFFEB50)])),
-                      child: const Text("팀 소개",
-                          style: TextStyle(
-                            fontFamily: 'DungGeunMo',
-                            color: Colors.black,
-                            fontSize: 18,
-                          )))),
+                              colors: [
+                                _isHovering2
+                                    ? const Color(0xffFF46AD)
+                                    : const Color(0xffFF008E),
+                                _isHovering2
+                                    ? const Color(0xffFFF07F)
+                                    : const Color(0xffFFEB50)
+                              ],
+                            )),
+                        child: Text("팀 소개",
+                            style: TextStyle(
+                              fontFamily: 'DungGeunMo',
+                              color: Colors.black,
+                              fontSize: width * 0.0125,
+                            ))),
+                  )),
               SizedBox(width: width * 0.075)
             ],
           ),
@@ -191,7 +232,7 @@ class _ChurchPageState extends State<ChurchPage> {
                       // magnification: 1.22,
                       squeeze: 0.8,
                       // useMagnifier: true,
-                      itemExtent: 59,
+                      itemExtent: width * 0.041,
                       onSelectedItemChanged: (int selectedItem) {
                         setState(() {
                           _selectedGame = selectedItem;
@@ -219,15 +260,15 @@ class _ChurchPageState extends State<ChurchPage> {
                                         ),
                                         const SizedBox(width: 18),
                                         Container(
-                                          width: 382,
+                                          width: width * 0.265,
                                           decoration: const BoxDecoration(
                                               color: Color(0xFFFFF27F)),
                                           child: Center(
                                             child: Text(
                                               _gameNames[index],
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                   fontFamily: 'DungGeunMo',
-                                                  fontSize: 54,
+                                                  fontSize: width * 0.0375,
                                                   fontWeight: FontWeight.w400,
                                                   color: Colors.black),
                                             ),
@@ -246,7 +287,7 @@ class _ChurchPageState extends State<ChurchPage> {
                                 : Text(_gameNames[index],
                                     style: TextStyle(
                                         fontFamily: 'DungGeunMo',
-                                        fontSize: 44,
+                                        fontSize: width * 0.03,
                                         fontWeight: FontWeight.w400,
                                         color: Colors.black.withOpacity(0.5))));
                       }),

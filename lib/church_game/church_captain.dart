@@ -7,6 +7,7 @@ import 'dart:math';
 import '../../game_contents.dart';
 import '../../card/card.dart';
 import '../gameover/gameover_church.dart';
+import '../ready_church.dart';
 import 'church_contents.dart';
 
 class ChurchCaptainGame extends StatefulWidget {
@@ -40,11 +41,6 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
         .sublist(0, 10)
         .map((index) => churchCaptain[index])
         .toList();
-
-    cards = randomChurchCaptain
-        .map((gameContents) =>
-            GameCard(gameContents: gameContents, fontSize: 70))
-        .toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -58,6 +54,12 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+
+    cards = randomChurchCaptain
+        .map((gameContents) =>
+            GameCard(gameContents: gameContents, fontSize: width * 0.05))
+        .toList();
+    if (width < 1126 || height < 627) return ReadyChurchPage();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: Stack(
@@ -132,20 +134,20 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                             color: Colors.black,
                             icon: const ImageIcon(
                                 AssetImage('assets/images/Exit.png')),
-                            iconSize: 39,
+                            iconSize: width * 0.03,
                           ),
                           const Spacer(),
                           Text(
                             '${currentCardIndex + 1}/${cards.length}',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
                               fontWeight: FontWeight.w400,
-                              fontSize: 36,
+                              fontSize: width * 0.033,
                             ),
                           ),
                           const Spacer(),
-                          const SizedBox(width: 50),
+                          SizedBox(width: width * 0.039),
                         ],
                       ),
                       Expanded(
@@ -154,21 +156,17 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             isUndoButtonVisible
-                                ? IconButton(
-                                    onPressed: () {
+                                ? GestureDetector(
+                                    onTap: () {
                                       controller.undo();
                                       _isAnswered = false;
                                     },
-                                    color: Colors.transparent,
-                                    icon: ImageIcon(
-                                      const AssetImage(
-                                          'assets/images/icon_chevron_left.png'),
-                                      color: Colors.black.withOpacity(0.4),
-                                    ),
-                                    iconSize: 90,
-                                  )
-                                : IconButton(
-                                    onPressed: () {
+                                    child: Image.asset(
+                                      'assets/images/icon_chevron_left.png',
+                                      height: width * 0.07,
+                                    ))
+                                : GestureDetector(
+                                    onTap: () {
                                       controller.undo();
                                       _isAnswered = false;
                                       if (currentCardIndex == 0) {
@@ -177,14 +175,10 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                                         });
                                       }
                                     },
-                                    color: Colors.transparent,
-                                    icon: const ImageIcon(
-                                      AssetImage(
-                                          'assets/images/icon_chevron_left_white.png'),
-                                      color: Colors.black,
-                                    ),
-                                    iconSize: 90,
-                                  ),
+                                    child: Image.asset(
+                                      'assets/images/icon_chevron_left_white.png',
+                                      height: width * 0.07,
+                                    )),
                             SizedBox(
                               width: width * 0.75,
                               height: height * 0.4,
@@ -202,14 +196,14 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                                   currentCardIndex = index;
                                   return _isAnswered
                                       ? cards[index]
-                                      : const Center(
+                                      : Center(
                                           child: Text(
                                             '버튼을 눌러서\n문제를 확인해보세요!',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                                 fontFamily: 'DungGeunMo',
                                                 fontWeight: FontWeight.w400,
-                                                fontSize: 84,
+                                                fontSize: width * 0.058,
                                                 color: Colors.black),
                                           ),
                                         );
@@ -219,41 +213,37 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                                 onUndo: _onUndo,
                               ),
                             ),
-                            IconButton(
-                              onPressed: () {
-                                if (currentCardIndex == 9) {
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          const GameOverChurch(
-                                        gameName: 'churchCaptain',
+                            GestureDetector(
+                                onTap: () {
+                                  if (currentCardIndex == 9) {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const GameOverChurch(
+                                          gameName: 'churchCaptain',
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                } else {
-                                  controller.swipeLeft();
-                                  if (currentCardIndex != 2) {
-                                    setState(() {
-                                      isUndoButtonVisible = false;
-                                    });
+                                    );
+                                  } else {
+                                    controller.swipeLeft();
+                                    if (currentCardIndex != 2) {
+                                      setState(() {
+                                        isUndoButtonVisible = false;
+                                      });
+                                    }
                                   }
-                                }
-                                _isAnswered = false;
-                              },
-                              color: Colors.transparent,
-                              icon: const ImageIcon(
-                                AssetImage(
-                                    'assets/images/icon_chevron_right.png'),
-                                color: Colors.black,
-                              ),
-                              iconSize: 90,
-                            ),
+                                  _isAnswered = false;
+                                },
+                                child: Image.asset(
+                                  'assets/images/icon_chevron_right.png',
+                                  height: width * 0.07,
+                                ))
                           ],
                         ),
                       ),
                       SizedBox(
-                        width: 250,
-                        height: 71,
+                        width: width * 0.173,
+                        height: height * 0.085,
                         child: ElevatedButton(
                           onPressed: () {
                             setState(() {
@@ -269,16 +259,16 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                           ),
                           child: Text(
                             !_isAnswered ? '문제보기' : '가리기',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               fontWeight: FontWeight.w400,
-                              fontSize: 42,
+                              fontSize: width * 0.03,
                               color: Colors.black,
                             ),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 110),
+                      SizedBox(height: height * 0.1),
                     ],
                   ),
                 ),

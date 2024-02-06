@@ -5,6 +5,7 @@ import 'dart:math';
 import '../../card/card_app.dart';
 import '../../game_contents.dart';
 import '../../gameover/gameover_app.dart';
+import '../../ready.dart';
 
 class ChoiAppGame extends StatefulWidget {
   const ChoiAppGame({
@@ -46,6 +47,7 @@ class _ChoiAppGamePageState extends State<ChoiAppGame> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+    if (width < 1126 || height < 627) return ReadyPage();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: SafeArea(

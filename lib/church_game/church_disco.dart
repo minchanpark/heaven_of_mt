@@ -5,7 +5,9 @@ import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
 
 import '../../card/card.dart';
+import '../game_contents.dart';
 import '../gameover/gameover_church.dart';
+import '../ready_church.dart';
 import 'church_contents.dart';
 
 class ChurchDiscoGame extends StatefulWidget {
@@ -23,6 +25,7 @@ class _ChurchDiscoGamePageState extends State<ChurchDiscoGame> {
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
   final random = Random();
+  List<GameContents> randomdisco = [];
   @override
   void initState() {
     super.initState();
@@ -33,7 +36,7 @@ class _ChurchDiscoGamePageState extends State<ChurchDiscoGame> {
 
     final churchDiscoIndices = List<int>.generate(churchDisco.length, (i) => i)
       ..shuffle(random);
-    final randomdisco = churchDiscoIndices
+    randomdisco = churchDiscoIndices
         .sublist(0, 10)
         .map((index) => churchDisco[index])
         .toList();
@@ -54,6 +57,11 @@ class _ChurchDiscoGamePageState extends State<ChurchDiscoGame> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+    cards = randomdisco
+        .map((gameContents) =>
+            GameCard(gameContents: gameContents, fontSize: width * 0.14))
+        .toList();
+    if (width < 1126 || height < 627) return ReadyChurchPage();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: Stack(
@@ -121,20 +129,20 @@ class _ChurchDiscoGamePageState extends State<ChurchDiscoGame> {
                             color: Colors.black,
                             icon: const ImageIcon(
                                 AssetImage('assets/images/Exit.png')),
-                            iconSize: 39,
+                            iconSize: width * 0.03,
                           ),
                           const Spacer(),
                           Text(
                             '${currentCardIndex + 1}/${cards.length}',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.black,
                               fontWeight: FontWeight.w400,
-                              fontSize: 36,
+                              fontSize: width * 0.033,
                             ),
                           ),
                           const Spacer(),
-                          const SizedBox(width: 50),
+                          SizedBox(width: width * 0.039),
                         ],
                       ),
                       Expanded(
@@ -151,7 +159,7 @@ class _ChurchDiscoGamePageState extends State<ChurchDiscoGame> {
                                           'assets/images/icon_chevron_left.png'),
                                       color: Colors.black.withOpacity(0.4),
                                     ),
-                                    iconSize: 90,
+                                    iconSize: width * 0.07,
                                   )
                                 : IconButton(
                                     onPressed: () {
@@ -168,7 +176,7 @@ class _ChurchDiscoGamePageState extends State<ChurchDiscoGame> {
                                           'assets/images/icon_chevron_left_white.png'),
                                       color: Colors.black,
                                     ),
-                                    iconSize: 90,
+                                    iconSize: width * 0.07,
                                   ),
                             SizedBox(
                               width: width * 0.63,
@@ -218,12 +226,12 @@ class _ChurchDiscoGamePageState extends State<ChurchDiscoGame> {
                                     'assets/images/icon_chevron_right.png'),
                                 color: Colors.black,
                               ),
-                              iconSize: 90,
+                              iconSize: width * 0.07,
                             ),
                           ],
                         ),
                       ),
-                      const SizedBox(height: 87)
+                      SizedBox(height: height * 0.132),
                     ],
                   ),
                 ),

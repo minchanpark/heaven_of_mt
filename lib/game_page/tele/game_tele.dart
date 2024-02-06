@@ -7,6 +7,7 @@ import 'dart:math';
 import '../../game_contents.dart';
 import '../../card/card.dart';
 import '../../gameover/gameover_web.dart';
+import '../../ready.dart';
 
 class TeleWebGame extends StatefulWidget {
   const TeleWebGame({
@@ -23,6 +24,7 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
   final CardSwiperController controller = CardSwiperController();
   List<GameCard> cards = []; // cards 변수를 초기화
   final random = Random();
+  List<GameContents> randomtele = [];
   @override
   void initState() {
     super.initState();
@@ -32,12 +34,8 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
 
     final teleIndices = List<int>.generate(tele.length, (i) => i)
       ..shuffle(random);
-    final randomtele =
+    randomtele =
         teleIndices.sublist(0, 10).map((index) => tele[index]).toList();
-
-    cards = randomtele
-        .map((gameContents) => GameCard(gameContents: gameContents))
-        .toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -51,6 +49,11 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+    cards = randomtele
+        .map((gameContents) =>
+            GameCard(gameContents: gameContents, fontSize: width * 0.108))
+        .toList();
+    if (width < 1126 || height < 627) return ReadyPage();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: Stack(
@@ -118,20 +121,20 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
                             color: Colors.white,
                             icon: const ImageIcon(
                                 AssetImage('assets/images/Exit.png')),
-                            iconSize: 39,
+                            iconSize: width * 0.03,
                           ),
                           const Spacer(),
                           Text(
                             '${currentCardIndex + 1}/${cards.length}',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
                               fontWeight: FontWeight.w400,
-                              fontSize: 36,
+                              fontSize: width * 0.028,
                             ),
                           ),
                           const Spacer(),
-                          const SizedBox(width: 50),
+                          SizedBox(width: width * 0.039),
                         ],
                       ),
                       Expanded(
@@ -147,7 +150,7 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
                                       AssetImage(
                                           'assets/images/icon_chevron_left.png'),
                                     ),
-                                    iconSize: 90,
+                                    iconSize: width * 0.07,
                                   )
                                 : IconButton(
                                     onPressed: () {
@@ -163,7 +166,7 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
                                       AssetImage(
                                           'assets/images/icon_chevron_left_white.png'),
                                     ),
-                                    iconSize: 90,
+                                    iconSize: width * 0.07,
                                   ),
                             SizedBox(
                               width: width * 0.63,
@@ -211,12 +214,12 @@ class _TeleWebGamePageState extends State<TeleWebGame> {
                                 AssetImage(
                                     'assets/images/icon_chevron_right.png'),
                               ),
-                              iconSize: 90,
+                              iconSize: width * 0.07,
                             ),
                           ],
                         ),
                       ),
-                      const SizedBox(height: 87)
+                      SizedBox(height: height * 0.1)
                     ],
                   ),
                 ),

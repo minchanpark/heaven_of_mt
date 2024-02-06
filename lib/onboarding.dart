@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PersonOnboarding extends StatelessWidget {
-  const PersonOnboarding({super.key});
+  PersonOnboarding({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,42 +39,42 @@ class PersonOnboarding extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "권장인원:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "4-5명",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.037),
-                          const Text(
+                          Text(
                             "난이도:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "☆☆",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -90,7 +90,7 @@ class PersonOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.299,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -99,7 +99,7 @@ class PersonOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -109,7 +109,7 @@ class PersonOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -119,7 +119,7 @@ class PersonOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.356,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -128,7 +128,7 @@ class PersonOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -139,7 +139,7 @@ class PersonOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -148,7 +148,7 @@ class PersonOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -162,7 +162,7 @@ class PersonOnboarding extends StatelessWidget {
 }
 
 class DiscoOnboarding extends StatelessWidget {
-  const DiscoOnboarding({super.key});
+  DiscoOnboarding({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -200,42 +200,42 @@ class DiscoOnboarding extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "권장인원:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "4-5명",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.037),
-                          const Text(
+                          Text(
                             "난이도:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "☆☆☆☆☆",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -251,7 +251,7 @@ class DiscoOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.299,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -260,7 +260,7 @@ class DiscoOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -273,17 +273,16 @@ class DiscoOnboarding extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'DungGeunMo',
                       color: Colors.white,
-                      fontSize: 23,
+                      fontSize: width * 0.0159,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-
                   Text(
                     "노래를 한 소절 불러주세요.",
                     style: TextStyle(
                       fontFamily: 'DungGeunMo',
                       color: Colors.white,
-                      fontSize: 23,
+                      fontSize: width * 0.0159,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -295,7 +294,7 @@ class DiscoOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.395,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -304,7 +303,7 @@ class DiscoOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -315,7 +314,7 @@ class DiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -324,7 +323,7 @@ class DiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -335,7 +334,7 @@ class DiscoOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.49,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -344,7 +343,7 @@ class DiscoOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -355,7 +354,7 @@ class DiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -364,7 +363,7 @@ class DiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -375,7 +374,7 @@ class DiscoOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.587,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -384,7 +383,7 @@ class DiscoOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -395,7 +394,7 @@ class DiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -405,7 +404,7 @@ class DiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -415,7 +414,7 @@ class DiscoOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -429,7 +428,7 @@ class DiscoOnboarding extends StatelessWidget {
 }
 
 class CaptainOnboarding extends StatelessWidget {
-  const CaptainOnboarding({super.key});
+  CaptainOnboarding({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -467,42 +466,42 @@ class CaptainOnboarding extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "권장인원:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "5명",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.037),
-                          const Text(
+                          Text(
                             "난이도:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "☆",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -518,7 +517,7 @@ class CaptainOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.299,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -527,7 +526,7 @@ class CaptainOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -538,7 +537,7 @@ class CaptainOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -547,7 +546,7 @@ class CaptainOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -556,7 +555,7 @@ class CaptainOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -565,9 +564,9 @@ class CaptainOnboarding extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: height * 0.43,
+          top: height * 0.44,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -576,7 +575,7 @@ class CaptainOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -586,7 +585,7 @@ class CaptainOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -599,7 +598,7 @@ class CaptainOnboarding extends StatelessWidget {
 }
 
 class FourOnboarding extends StatelessWidget {
-  const FourOnboarding({super.key});
+  FourOnboarding({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -637,42 +636,42 @@ class FourOnboarding extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "권장인원:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "4-5명",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.037),
-                          const Text(
+                          Text(
                             "난이도:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "☆☆",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -688,7 +687,7 @@ class FourOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.299,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -697,7 +696,7 @@ class FourOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -707,7 +706,7 @@ class FourOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -717,7 +716,7 @@ class FourOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.356,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -726,7 +725,7 @@ class FourOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -737,7 +736,7 @@ class FourOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -746,7 +745,7 @@ class FourOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -757,7 +756,7 @@ class FourOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.45,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -766,7 +765,7 @@ class FourOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -777,7 +776,7 @@ class FourOnboarding extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'DungGeunMo',
                       color: Colors.white,
-                      fontSize: 23,
+                      fontSize: width * 0.0159,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -787,7 +786,7 @@ class FourOnboarding extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'DungGeunMo',
                       color: Colors.white,
-                      fontSize: 23,
+                      fontSize: width * 0.0159,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -800,7 +799,7 @@ class FourOnboarding extends StatelessWidget {
 }
 
 class WordTeleOnboarding extends StatelessWidget {
-  const WordTeleOnboarding({super.key});
+  WordTeleOnboarding({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -838,42 +837,42 @@ class WordTeleOnboarding extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "권장인원:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "4-5명",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.037),
-                          const Text(
+                          Text(
                             "난이도:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "☆☆☆☆",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -889,7 +888,7 @@ class WordTeleOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.299,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -898,7 +897,7 @@ class WordTeleOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -908,7 +907,7 @@ class WordTeleOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -918,7 +917,7 @@ class WordTeleOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.356,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -927,7 +926,7 @@ class WordTeleOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -938,7 +937,7 @@ class WordTeleOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -947,7 +946,7 @@ class WordTeleOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -958,7 +957,7 @@ class WordTeleOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.45,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -967,7 +966,7 @@ class WordTeleOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -978,7 +977,7 @@ class WordTeleOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -987,7 +986,7 @@ class WordTeleOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -996,7 +995,7 @@ class WordTeleOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1010,7 +1009,7 @@ class WordTeleOnboarding extends StatelessWidget {
 }
 
 class TeleStrationOnboarding extends StatelessWidget {
-  const TeleStrationOnboarding({super.key});
+  TeleStrationOnboarding({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -1048,42 +1047,42 @@ class TeleStrationOnboarding extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "권장인원:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "4-5명",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.037),
-                          const Text(
+                          Text(
                             "난이도:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "☆☆☆",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1099,7 +1098,7 @@ class TeleStrationOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.299,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1108,7 +1107,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1118,7 +1117,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1128,7 +1127,7 @@ class TeleStrationOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.356,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1137,7 +1136,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1148,7 +1147,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1157,7 +1156,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1168,7 +1167,7 @@ class TeleStrationOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.45,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1177,7 +1176,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1188,7 +1187,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1197,7 +1196,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1208,7 +1207,7 @@ class TeleStrationOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.55,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1217,7 +1216,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1228,7 +1227,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1237,7 +1236,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1248,7 +1247,7 @@ class TeleStrationOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.645,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1257,7 +1256,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1268,7 +1267,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1277,7 +1276,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1286,7 +1285,7 @@ class TeleStrationOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1300,7 +1299,7 @@ class TeleStrationOnboarding extends StatelessWidget {
 }
 
 class ChoiOnboarding extends StatelessWidget {
-  const ChoiOnboarding({super.key});
+  ChoiOnboarding({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -1338,42 +1337,42 @@ class ChoiOnboarding extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "권장인원:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "4-5명",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.037),
-                          const Text(
+                          Text(
                             "난이도:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "☆☆☆",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1389,7 +1388,7 @@ class ChoiOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.299,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1398,7 +1397,7 @@ class ChoiOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1409,7 +1408,7 @@ class ChoiOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1418,7 +1417,7 @@ class ChoiOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1429,7 +1428,7 @@ class ChoiOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.395,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1438,7 +1437,7 @@ class ChoiOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1448,7 +1447,7 @@ class ChoiOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               )
@@ -1461,7 +1460,7 @@ class ChoiOnboarding extends StatelessWidget {
 }
 
 class MusicOnboarding extends StatelessWidget {
-  const MusicOnboarding({super.key});
+  MusicOnboarding({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -1499,42 +1498,42 @@ class MusicOnboarding extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "권장인원:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "4-5명",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.037),
-                          const Text(
+                          Text(
                             "난이도:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "☆☆☆☆☆",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1550,7 +1549,7 @@ class MusicOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.299,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1559,7 +1558,7 @@ class MusicOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1570,7 +1569,7 @@ class MusicOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1579,7 +1578,7 @@ class MusicOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1593,7 +1592,7 @@ class MusicOnboarding extends StatelessWidget {
 }
 
 class FamousLineOnboarding extends StatelessWidget {
-  const FamousLineOnboarding({super.key});
+  FamousLineOnboarding({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -1631,42 +1630,42 @@ class FamousLineOnboarding extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "권장인원:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "4-5명",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.037),
-                          const Text(
+                          Text(
                             "난이도:",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: height * 0.01),
-                          const Text(
+                          Text(
                             "☆☆☆☆",
                             style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: width * 0.016,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -1682,7 +1681,7 @@ class FamousLineOnboarding extends StatelessWidget {
         Positioned(
           top: height * 0.299,
           left: width * 0.028,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1691,7 +1690,7 @@ class FamousLineOnboarding extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'DungGeunMo',
                   color: Colors.white,
-                  fontSize: 23,
+                  fontSize: width * 0.0159,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -1702,7 +1701,7 @@ class FamousLineOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -1711,7 +1710,7 @@ class FamousLineOnboarding extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'DungGeunMo',
                     color: Colors.white,
-                    fontSize: 23,
+                    fontSize: width * 0.0159,
                     fontWeight: FontWeight.w400,
                   ),
                 ),

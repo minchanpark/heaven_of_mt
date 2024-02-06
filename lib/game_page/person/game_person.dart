@@ -5,6 +5,7 @@ import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
 import '../../game_contents.dart';
 import '../../gameover/gameover_web.dart';
+import '../../ready.dart';
 
 class PersonWebGame extends StatefulWidget {
   const PersonWebGame({super.key});
@@ -54,6 +55,7 @@ class _PersonWebGameState extends State<PersonWebGame> {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
 
+    if (width < 1126 || height < 627) return ReadyPage();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: Stack(
@@ -127,20 +129,20 @@ class _PersonWebGameState extends State<PersonWebGame> {
                           color: Colors.white,
                           icon: const ImageIcon(
                               AssetImage('assets/images/Exit.png')),
-                          iconSize: 39,
+                          iconSize: width * 0.03,
                         ),
                         const Spacer(),
                         Text(
                           '${currentCardIndex + 1}/${cards.length}',
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.white,
                             fontWeight: FontWeight.w400,
-                            fontSize: 42,
+                            fontSize: width * 0.033,
                           ),
                         ),
                         const Spacer(),
-                        const SizedBox(width: 50),
+                        SizedBox(width: width * 0.039),
                       ],
                     ),
                     Row(
@@ -158,7 +160,7 @@ class _PersonWebGameState extends State<PersonWebGame> {
                                   AssetImage(
                                       'assets/images/icon_chevron_left.png'),
                                 ),
-                                iconSize: 90,
+                                iconSize: width * 0.07,
                               )
                             : IconButton(
                                 onPressed: () {
@@ -175,7 +177,7 @@ class _PersonWebGameState extends State<PersonWebGame> {
                                   AssetImage(
                                       'assets/images/icon_chevron_left_white.png'),
                                 ),
-                                iconSize: 90,
+                                iconSize: width * 0.07,
                               ),
                         SizedBox(
                           width: width * 0.57, // 최대 가로 크기를 설정할 수도 있습니다.
@@ -227,15 +229,15 @@ class _PersonWebGameState extends State<PersonWebGame> {
                           icon: const ImageIcon(
                             AssetImage('assets/images/icon_chevron_right.png'),
                           ),
-                          iconSize: 90,
+                          iconSize: width * 0.07,
                         ),
                       ],
                     ),
                     // SizedBox(height: height * 0.038),
                     !_isAnswered
                         ? SizedBox(
-                            width: 250,
-                            height: 71,
+                            width: width * 0.195,
+                            height: height * 0.085,
                             child: ElevatedButton(
                                 onPressed: () {
                                   setState(() {
@@ -247,12 +249,12 @@ class _PersonWebGameState extends State<PersonWebGame> {
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(12))),
-                                child: const Text(
+                                child: Text(
                                   '정답보기',
                                   style: TextStyle(
                                       fontFamily: 'DungGeunMo',
                                       fontWeight: FontWeight.w400,
-                                      fontSize: 42,
+                                      fontSize: width * 0.03,
                                       color: Colors.black),
                                 )),
                           )
@@ -263,10 +265,10 @@ class _PersonWebGameState extends State<PersonWebGame> {
                               });
                             },
                             child: Text(personName,
-                                style: const TextStyle(
+                                style: TextStyle(
                                     fontFamily: 'DungGeunMo',
                                     fontWeight: FontWeight.w400,
-                                    fontSize: 72,
+                                    fontSize: width * 0.056,
                                     color: Color(0xffFF62D3))),
                           ),
                   ],
