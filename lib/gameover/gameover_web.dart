@@ -310,9 +310,9 @@ class _GameOverState extends State<GameOver> {
                 const Spacer(),
                 GestureDetector(
                   onTap: () async {
-                    Uri url = Uri.parse('https://walla.my/survey/onEFdA9teaAwJGTkveRz');
-                    if (await canLaunchUrl(url)) {
-                      await launchUrl(url);
+                    const url = 'https://walla.my/survey/onEFdA9teaAwJGTkveRz';
+                    if (await canLaunch(url)) {
+                      await launch(url);
                     } else {
                       throw 'Could not launch $url';
                     }
