@@ -105,7 +105,7 @@ class _ChurchPageState extends State<ChurchPage> {
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
                               colors: [Color(0xffFF008E), Color(0xffFFEB50)])),
-                      child: const Text("엠티게임천국",
+                      child: const Text("엠티게임천국 바로가기",
                           style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             color: Colors.black,
