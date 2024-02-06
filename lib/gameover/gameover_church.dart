@@ -34,7 +34,7 @@ class _GameOverChurchState extends State<GameOverChurch> {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-    if (width < 1126 || height < 627) return ReadyChurchPage();
+    if (width < 1126 || height < 627) return const ReadyChurchPage();
     return Scaffold(
         body: SafeArea(
       child: Stack(
@@ -254,9 +254,9 @@ class _GameOverChurchState extends State<GameOverChurch> {
                 const Spacer(),
                 GestureDetector(
                   onTap: () async {
-                    const url = 'https://walla.my/survey/fdLq6GUHt5S7kNbDMZsj';
-                    if (await canLaunch(url)) {
-                      await launch(url);
+                    Uri url = Uri.parse('https://walla.my/survey/fdLq6GUHt5S7kNbDMZsj');
+                    if (await canLaunchUrl(url)) {
+                      await launchUrl(url);
                     } else {
                       throw 'Could not launch $url';
                     }
@@ -273,7 +273,7 @@ class _GameOverChurchState extends State<GameOverChurch> {
                     ),
                   ),
                 ),
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
               ],
             ),
           ),

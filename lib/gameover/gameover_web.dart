@@ -38,7 +38,7 @@ class _GameOverState extends State<GameOver> {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-    if (width < 1126 || height < 627) return ReadyPage();
+    if (width < 1126 || height < 627) return const ReadyPage();
     return Scaffold(
         body: SafeArea(
       child: Stack(
@@ -310,9 +310,9 @@ class _GameOverState extends State<GameOver> {
                 const Spacer(),
                 GestureDetector(
                   onTap: () async {
-                    const url = 'https://walla.my/survey/onEFdA9teaAwJGTkveRz';
-                    if (await canLaunch(url)) {
-                      await launch(url);
+                    Uri url = Uri.parse('https://walla.my/survey/onEFdA9teaAwJGTkveRz');
+                    if (await canLaunchUrl(url)) {
+                      await launchUrl(url);
                     } else {
                       throw 'Could not launch $url';
                     }
@@ -329,7 +329,7 @@ class _GameOverState extends State<GameOver> {
                     ),
                   ),
                 ),
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
               ],
             ),
           ),

@@ -2,6 +2,7 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../church_game/church_captain.dart';
 import '../church_game/church_disco.dart';
@@ -136,7 +137,15 @@ class _ChurchPageState extends State<ChurchPage> {
                   )),
               SizedBox(width: width * 0.015),
               GestureDetector(
-                  onTap: () {},
+                  onTap: () async {
+                    Uri url = Uri.parse(
+                        'https://hguhimin.notion.site/db18a79dd2bd45208f55b1ca515647b8?pvs=4');
+                    if (await canLaunchUrl(url)) {
+                      await launchUrl(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
                   child: MouseRegion(
                     onHover: (event) {
                       setState(() {

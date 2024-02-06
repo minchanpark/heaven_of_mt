@@ -4,6 +4,7 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../game_page/captain/captain_game_page.dart';
 import '../game_page/disco/disco_game_page.dart';
@@ -167,11 +168,11 @@ class _HomeWebState extends State<HomeWeb> {
                             end: Alignment.bottomCenter,
                             colors: [
                               _isHovering
-                                  ? Color(0xff2AFF73)
-                                  : Color(0xff01DF4C),
+                                  ? const Color(0xff2AFF73)
+                                  : const Color(0xff01DF4C),
                               _isHovering
-                                  ? Color(0xffFFF4A0)
-                                  : Color(0xffFFEB50)
+                                  ? const Color(0xffFFF4A0)
+                                  : const Color(0xffFFEB50)
                             ],
                           ),
                         ),
@@ -199,7 +200,15 @@ class _HomeWebState extends State<HomeWeb> {
               ),
               SizedBox(width: width * 0.015),
               GestureDetector(
-                  onTap: () {},
+                  onTap: () async {
+                    Uri url = Uri.parse(
+                        'https://hguhimin.notion.site/db18a79dd2bd45208f55b1ca515647b8?pvs=4');
+                    if (await canLaunchUrl(url)) {
+                      await launchUrl(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
                   child: MouseRegion(
                     onHover: (event) {
                       setState(() {
@@ -220,11 +229,11 @@ class _HomeWebState extends State<HomeWeb> {
                                 end: Alignment.bottomCenter,
                                 colors: [
                                   _isHovering2
-                                      ? Color(0xffFF48AE)
-                                      : Color(0xffFF008E),
+                                      ? const Color(0xffFF48AE)
+                                      : const Color(0xffFF008E),
                                   _isHovering2
-                                      ? Color(0xffFFF5A9)
-                                      : Color(0xffFFEB50)
+                                      ? const Color(0xffFFF5A9)
+                                      : const Color(0xffFFEB50)
                                 ])),
                         child: Text("팀 소개",
                             style: TextStyle(
