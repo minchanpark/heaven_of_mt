@@ -4,6 +4,7 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../game_page/captain/captain_game_page.dart';
 import '../game_page/disco/disco_game_page.dart';
@@ -199,7 +200,15 @@ class _HomeWebState extends State<HomeWeb> {
               ),
               SizedBox(width: width * 0.015),
               GestureDetector(
-                  onTap: () {},
+                  onTap: () async {
+                    const url =
+                        'https://hguhimin.notion.site/db18a79dd2bd45208f55b1ca515647b8';
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
                   child: MouseRegion(
                     onHover: (event) {
                       setState(() {
