@@ -7,6 +7,7 @@ import 'dart:math';
 import '../../game_contents.dart';
 import '../../card/card.dart';
 import '../../gameover/gameover_web.dart';
+import '../../ready.dart';
 
 class MusicTitleWebGame extends StatefulWidget {
   final String generation;
@@ -29,7 +30,8 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
   void initState() {
     super.initState();
     focusNode.requestFocus();
-    FirebaseAnalytics.instance.setCurrentScreen(screenName: "노래초성퀴즈");
+    FirebaseAnalytics.instance
+        .setCurrentScreen(screenName: "${widget.generation} 노래초성퀴즈");
 
     // widget.id 값에 따라 cards 변수에 값을 할당
 
@@ -62,14 +64,6 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
           .map((index) => music2020[index])
           .toList();
     }
-    cards = randomMusicTitle
-        .map((gameContents) =>
-            GameCard(gameContents: gameContents, fontSize: 100))
-        .toList();
-    answer_cards = randomMusicTitle
-        .map((gameContents) =>
-            GameCard(gameContents: gameContents, answer: true, fontSize: 100))
-        .toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -83,6 +77,15 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+    cards = randomMusicTitle
+        .map((gameContents) =>
+            GameCard(gameContents: gameContents, fontSize: width * 0.07))
+        .toList();
+    answer_cards = randomMusicTitle
+        .map((gameContents) => GameCard(
+            gameContents: gameContents, answer: true, fontSize: width * 0.07))
+        .toList();
+    if (width < 1126 || height < 627) return ReadyPage();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: Stack(
@@ -157,20 +160,20 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
                             color: Colors.white,
                             icon: const ImageIcon(
                                 AssetImage('assets/images/Exit.png')),
-                            iconSize: 39,
+                            iconSize: width * 0.03,
                           ),
                           const Spacer(),
                           Text(
                             '${currentCardIndex + 1}/${cards.length}',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
                               fontWeight: FontWeight.w400,
-                              fontSize: 36,
+                              fontSize: width * 0.033,
                             ),
                           ),
                           const Spacer(),
-                          const SizedBox(width: 50),
+                          SizedBox(width: width * 0.039),
                         ],
                       ),
                       Expanded(
@@ -189,7 +192,7 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
                                       AssetImage(
                                           'assets/images/icon_chevron_left.png'),
                                     ),
-                                    iconSize: 90,
+                                    iconSize: width * 0.07,
                                   )
                                 : IconButton(
                                     onPressed: () {
@@ -206,7 +209,7 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
                                       AssetImage(
                                           'assets/images/icon_chevron_left_white.png'),
                                     ),
-                                    iconSize: 90,
+                                    iconSize: width * 0.07,
                                   ),
                             SizedBox(
                               width: width * 0.63,
@@ -257,14 +260,14 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
                                 AssetImage(
                                     'assets/images/icon_chevron_right.png'),
                               ),
-                              iconSize: 90,
+                              iconSize: width * 0.07,
                             ),
                           ],
                         ),
                       ),
                       SizedBox(
-                        width: 250,
-                        height: 71,
+                        width: width * 0.173,
+                        height: height * 0.085,
                         child: ElevatedButton(
                           onPressed: () {
                             setState(() {
@@ -280,16 +283,16 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
                           ),
                           child: Text(
                             _isAnswered ? '문제보기' : '정답보기',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               fontWeight: FontWeight.w400,
-                              fontSize: 42,
+                              fontSize: width * 0.03,
                               color: Colors.black,
                             ),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 110),
+                      SizedBox(height: height * 0.132),
                     ],
                   ),
                 ),

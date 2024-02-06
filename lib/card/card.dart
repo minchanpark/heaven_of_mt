@@ -19,9 +19,7 @@ class GameCard extends StatelessWidget {
       child: Transform.translate(
         offset: const Offset(0, -10), // 위로 이동할 양을 조정하십시오.
         child: Text(
-          !answer
-          ? gameContents.name
-          : gameContents.answer,
+          !answer ? gameContents.name : gameContents.answer,
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'DungGeunMo',

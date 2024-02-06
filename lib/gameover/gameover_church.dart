@@ -2,10 +2,12 @@
 
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../church_game/church_captain.dart';
 import '../church_game/church_disco.dart';
 import '../church_game/church_four.dart';
+import '../ready_church.dart';
 
 class GameOverChurch extends StatefulWidget {
   final String gameName;
@@ -31,6 +33,8 @@ class _GameOverChurchState extends State<GameOverChurch> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+    if (width < 1126 || height < 627) return ReadyChurchPage();
     return Scaffold(
         body: SafeArea(
       child: Stack(
@@ -38,8 +42,8 @@ class _GameOverChurchState extends State<GameOverChurch> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/background_church.png'),
-                fit: BoxFit.cover,
+                image: AssetImage('assets/images/feedback_church.gif'),
+                fit: BoxFit.fill,
               ),
             ),
           ),
@@ -47,17 +51,7 @@ class _GameOverChurchState extends State<GameOverChurch> {
             width: double.infinity,
             child: Column(
               children: [
-                SizedBox(height: height * 0.191),
-                Text(
-                  setNumber,
-                  style: const TextStyle(
-                    fontFamily: 'DungGeunMo',
-                    color: Colors.black,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 48,
-                  ),
-                ),
-                SizedBox(height: height * 0.048),
+                SizedBox(height: height * 0.187),
                 const Text(
                   '모든 문제를 완료했어요!',
                   style: TextStyle(
@@ -67,7 +61,7 @@ class _GameOverChurchState extends State<GameOverChurch> {
                     fontSize: 48,
                   ),
                 ),
-                SizedBox(height: height * 0.1695),
+                SizedBox(height: height * 0.188),
                 MouseRegion(
                   cursor: SystemMouseCursors.click, // 마우스 커서를 클릭 스타일로 설정
                   onEnter: (_) {
@@ -173,7 +167,7 @@ class _GameOverChurchState extends State<GameOverChurch> {
                     ],
                   ),
                 ),
-                SizedBox(height: height * 0.048),
+                SizedBox(height: height * 0.044),
                 MouseRegion(
                   cursor: SystemMouseCursors.click, // 마우스 커서를 클릭 스타일로 설정
                   onEnter: (_) {
@@ -257,6 +251,29 @@ class _GameOverChurchState extends State<GameOverChurch> {
                     ],
                   ),
                 ),
+                const Spacer(),
+                GestureDetector(
+                  onTap: () async {
+                    const url = 'https://walla.my/survey/fdLq6GUHt5S7kNbDMZsj';
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
+                  child: Text(
+                    '의견보내기',
+                    style: TextStyle(
+                      fontFamily: 'DungGeunMo',
+                      color: Colors.white,
+                      fontSize: width * 0.025,
+                      fontWeight: FontWeight.w400,
+                      decoration: TextDecoration.underline,
+                      decorationColor: Colors.white,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 50),
               ],
             ),
           ),

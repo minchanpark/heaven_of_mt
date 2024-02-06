@@ -3,6 +3,9 @@ import 'dart:async';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import 'ready.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({
@@ -19,6 +22,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     focusNode.requestFocus();
+    FirebaseAnalytics.instance.setCurrentScreen(screenName: "스플래쉬");
 
     // Start a timer to toggle visibility every 1 second
     Timer.periodic(const Duration(seconds: 1), (timer) {
@@ -32,6 +36,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
+    if (width < 1126) return ReadyPage();
     return Scaffold(
       body: Stack(children: [
         Container(
@@ -89,12 +94,12 @@ class _SplashPageState extends State<SplashPage> {
                     child: AnimatedOpacity(
                       opacity: _isVisible ? 1.0 : 0.1,
                       duration: const Duration(seconds: 1),
-                      child: const Text(
+                      child: Text(
                         "Game Start",
                         style: TextStyle(
                             fontFamily: 'DungGeunMo',
                             fontWeight: FontWeight.w400,
-                            fontSize: 72,
+                            fontSize: width * 0.056,
                             color: Colors.white),
                       ),
                     ),
@@ -112,7 +117,7 @@ class _SplashPageState extends State<SplashPage> {
                 ),
               ],
             ),
-          )
+          ),
         ]),
       ]),
     );

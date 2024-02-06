@@ -2,6 +2,7 @@
 
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../game_page/captain/captain_game_page.dart';
 import '../game_page/choi/choi_game_page.dart';
@@ -11,6 +12,7 @@ import '../game_page/movie/movie_game_page.dart';
 import '../game_page/musictitle/category_musictitle.dart';
 import '../game_page/tele/tele_game_page.dart';
 import '../game_page/telestration/telestration_game_page.dart';
+import '../ready.dart';
 
 class GameOver extends StatefulWidget {
   final String gameName;
@@ -35,6 +37,8 @@ class _GameOverState extends State<GameOver> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+    if (width < 1126 || height < 627) return ReadyPage();
     return Scaffold(
         body: SafeArea(
       child: Stack(
@@ -42,8 +46,8 @@ class _GameOverState extends State<GameOver> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/background_final.png'),
-                fit: BoxFit.cover,
+                image: AssetImage('assets/images/feedback.gif'),
+                fit: BoxFit.fill,
               ),
             ),
           ),
@@ -51,17 +55,7 @@ class _GameOverState extends State<GameOver> {
             width: double.infinity,
             child: Column(
               children: [
-                SizedBox(height: height * 0.191),
-                Text(
-                  setNumber,
-                  style: const TextStyle(
-                    fontFamily: 'DungGeunMo',
-                    color: Colors.white,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 48,
-                  ),
-                ),
-                SizedBox(height: height * 0.048),
+                SizedBox(height: height * 0.187),
                 const Text(
                   '모든 문제를 완료했어요!',
                   style: TextStyle(
@@ -71,7 +65,7 @@ class _GameOverState extends State<GameOver> {
                     fontSize: 48,
                   ),
                 ),
-                SizedBox(height: height * 0.1695),
+                SizedBox(height: height * 0.188),
                 MouseRegion(
                   cursor: SystemMouseCursors.click, // 마우스 커서를 클릭 스타일로 설정
                   onEnter: (_) {
@@ -220,7 +214,7 @@ class _GameOverState extends State<GameOver> {
                     ],
                   ),
                 ),
-                SizedBox(height: height * 0.048),
+                SizedBox(height: height * 0.044),
                 MouseRegion(
                   cursor: SystemMouseCursors.click, // 마우스 커서를 클릭 스타일로 설정
                   onEnter: (_) {
@@ -313,6 +307,29 @@ class _GameOverState extends State<GameOver> {
                     ],
                   ),
                 ),
+                const Spacer(),
+                GestureDetector(
+                  onTap: () async {
+                    const url = 'https://walla.my/survey/onEFdA9teaAwJGTkveRz';
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
+                  child: Text(
+                    '의견보내기',
+                    style: TextStyle(
+                      fontFamily: 'DungGeunMo',
+                      color: Colors.white,
+                      fontSize: width * 0.025,
+                      fontWeight: FontWeight.w400,
+                      decoration: TextDecoration.underline,
+                      decorationColor: Colors.white,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 50),
               ],
             ),
           ),

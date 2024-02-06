@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -18,6 +19,7 @@ class _CategoryPageState extends State<CategoryPage> {
   void initState() {
     super.initState();
     focusNode.requestFocus();
+    FirebaseAnalytics.instance.setCurrentScreen(screenName: "노래 카테고리");
   }
 
   void _handleHover(int category) {
@@ -175,9 +177,9 @@ class _CategoryPageState extends State<CategoryPage> {
             ),
             Text(
               label,
-              style: const TextStyle(
+              style: TextStyle(
                 fontFamily: 'DungGeunMo',
-                fontSize: 40,
+                fontSize: width * 0.031,
                 fontWeight: FontWeight.w400,
                 color: Colors.white,
               ),

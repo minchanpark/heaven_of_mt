@@ -7,6 +7,7 @@ import 'dart:math';
 import '../../game_contents.dart';
 import '../../card/card.dart';
 import '../../gameover/gameover_web.dart';
+import '../../ready.dart';
 
 class CaptainWebGame extends StatefulWidget {
   const CaptainWebGame({
@@ -37,15 +38,6 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
       ..shuffle(random);
     randomcaptain =
         captainIndices.sublist(0, 10).map((index) => captain[index]).toList();
-
-    cards = randomcaptain
-        .map((gameContents) =>
-            GameCard(gameContents: gameContents, fontSize: 84))
-        .toList();
-    answer_cards = randomcaptain
-        .map((gameContents) =>
-            GameCard(gameContents: gameContents, answer: true, fontSize: 84))
-        .toList();
   }
 
   bool isUndoButtonVisible = true;
@@ -59,6 +51,15 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+    cards = randomcaptain
+        .map((gameContents) =>
+            GameCard(gameContents: gameContents, fontSize: width * 0.058))
+        .toList();
+    answer_cards = randomcaptain
+        .map((gameContents) => GameCard(
+            gameContents: gameContents, answer: true, fontSize: width * 0.058))
+        .toList();
+    if (width < 1126 || height < 627) return ReadyPage();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),
       body: Stack(
@@ -133,20 +134,20 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
                             color: Colors.white,
                             icon: const ImageIcon(
                                 AssetImage('assets/images/Exit.png')),
-                            iconSize: 39,
+                            iconSize: width * 0.03,
                           ),
                           const Spacer(),
                           Text(
                             '${currentCardIndex + 1}/${cards.length}',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               color: Colors.white,
                               fontWeight: FontWeight.w400,
-                              fontSize: 36,
+                              fontSize: width * 0.033,
                             ),
                           ),
                           const Spacer(),
-                          const SizedBox(width: 50),
+                          SizedBox(width: width * 0.039),
                         ],
                       ),
                       Expanded(
@@ -155,20 +156,17 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             isUndoButtonVisible
-                                ? IconButton(
-                                    onPressed: () {
+                                ? GestureDetector(
+                                    onTap: () {
                                       controller.undo();
                                       _isAnswered = false;
                                     },
-                                    color: Colors.transparent,
-                                    icon: const ImageIcon(
-                                      AssetImage(
-                                          'assets/images/icon_chevron_left.png'),
-                                    ),
-                                    iconSize: 90,
-                                  )
-                                : IconButton(
-                                    onPressed: () {
+                                    child: Image.asset(
+                                      'assets/images/icon_chevron_left.png',
+                                      height: width * 0.07,
+                                    ))
+                                : GestureDetector(
+                                    onTap: () {
                                       controller.undo();
                                       _isAnswered = false;
                                       if (currentCardIndex == 0) {
@@ -177,13 +175,10 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
                                         });
                                       }
                                     },
-                                    color: Colors.transparent,
-                                    icon: const ImageIcon(
-                                      AssetImage(
-                                          'assets/images/icon_chevron_left_white.png'),
-                                    ),
-                                    iconSize: 90,
-                                  ),
+                                    child: Image.asset(
+                                      'assets/images/icon_chevron_left_white.png',
+                                      height: width * 0.07,
+                                    )),
                             SizedBox(
                               width: width * 0.7,
                               height: height * 0.4,
@@ -208,39 +203,36 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
                                 onUndo: _onUndo,
                               ),
                             ),
-                            IconButton(
-                              onPressed: () {
-                                if (currentCardIndex == 9) {
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                      builder: (context) => const GameOver(
-                                        gameName: 'captain',
+                            GestureDetector(
+                                onTap: () {
+                                  if (currentCardIndex == 9) {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) => const GameOver(
+                                          gameName: 'captain',
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                } else {
-                                  controller.swipeLeft();
-                                  if (currentCardIndex != 2) {
-                                    setState(() {
-                                      isUndoButtonVisible = false;
-                                    });
+                                    );
+                                  } else {
+                                    controller.swipeLeft();
+                                    if (currentCardIndex != 2) {
+                                      setState(() {
+                                        isUndoButtonVisible = false;
+                                      });
+                                    }
                                   }
-                                }
-                                _isAnswered = false;
-                              },
-                              color: Colors.transparent,
-                              icon: const ImageIcon(
-                                AssetImage(
-                                    'assets/images/icon_chevron_right.png'),
-                              ),
-                              iconSize: 90,
-                            ),
+                                  _isAnswered = false;
+                                },
+                                child: Image.asset(
+                                  'assets/images/icon_chevron_right.png',
+                                  height: width * 0.07,
+                                ))
                           ],
                         ),
                       ),
                       SizedBox(
-                        width: 250,
-                        height: 71,
+                        width: width * 0.173,
+                        height: height * 0.085,
                         child: ElevatedButton(
                           onPressed: () {
                             setState(() {
@@ -256,16 +248,16 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
                           ),
                           child: Text(
                             _isAnswered ? '돌아가기' : '미션보기',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontFamily: 'DungGeunMo',
                               fontWeight: FontWeight.w400,
-                              fontSize: 42,
+                              fontSize: width * 0.03,
                               color: Colors.black,
                             ),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 110),
+                      SizedBox(height: height * 0.1),
                     ],
                   ),
                 ),
