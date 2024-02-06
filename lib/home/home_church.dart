@@ -2,6 +2,7 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../church_game/church_captain.dart';
 import '../church_game/church_disco.dart';
@@ -69,7 +70,7 @@ class _ChurchPageState extends State<ChurchPage> {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-    if (width < 1126 || height < 627) return ReadyChurchPage();
+    if (width < 1126 || height < 627) return const ReadyChurchPage();
     return Scaffold(
       body: Stack(children: [
         // 배경
@@ -120,11 +121,11 @@ class _ChurchPageState extends State<ChurchPage> {
                               end: Alignment.bottomCenter,
                               colors: [
                                 _isHovering
-                                    ? Color(0xffFF46AD)
-                                    : Color(0xffFF008E),
+                                    ? const Color(0xffFF46AD)
+                                    : const Color(0xffFF008E),
                                 _isHovering
-                                    ? Color(0xffFFF07F)
-                                    : Color(0xffFFEB50)
+                                    ? const Color(0xffFFF07F)
+                                    : const Color(0xffFFEB50)
                               ],
                             )),
                         child: Text("엠티게임천국 바로가기",
@@ -136,7 +137,15 @@ class _ChurchPageState extends State<ChurchPage> {
                   )),
               SizedBox(width: width * 0.015),
               GestureDetector(
-                  onTap: () {},
+                  onTap: () async {
+                    Uri url = Uri.parse(
+                        'https://hguhimin.notion.site/db18a79dd2bd45208f55b1ca515647b8?pvs=4');
+                    if (await canLaunchUrl(url)) {
+                      await launchUrl(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
                   child: MouseRegion(
                     onHover: (event) {
                       setState(() {
@@ -157,11 +166,11 @@ class _ChurchPageState extends State<ChurchPage> {
                               end: Alignment.bottomCenter,
                               colors: [
                                 _isHovering2
-                                    ? Color(0xffFF46AD)
-                                    : Color(0xffFF008E),
+                                    ? const Color(0xffFF46AD)
+                                    : const Color(0xffFF008E),
                                 _isHovering2
-                                    ? Color(0xffFFF07F)
-                                    : Color(0xffFFEB50)
+                                    ? const Color(0xffFFF07F)
+                                    : const Color(0xffFFEB50)
                               ],
                             )),
                         child: Text("팀 소개",

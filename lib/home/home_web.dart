@@ -168,11 +168,11 @@ class _HomeWebState extends State<HomeWeb> {
                             end: Alignment.bottomCenter,
                             colors: [
                               _isHovering
-                                  ? Color(0xff2AFF73)
-                                  : Color(0xff01DF4C),
+                                  ? const Color(0xff2AFF73)
+                                  : const Color(0xff01DF4C),
                               _isHovering
-                                  ? Color(0xffFFF4A0)
-                                  : Color(0xffFFEB50)
+                                  ? const Color(0xffFFF4A0)
+                                  : const Color(0xffFFEB50)
                             ],
                           ),
                         ),
@@ -205,6 +205,7 @@ class _HomeWebState extends State<HomeWeb> {
                         'https://hguhimin.notion.site/db18a79dd2bd45208f55b1ca515647b8';
                     if (await canLaunch(url)) {
                       await launch(url);
+                   
                     } else {
                       throw 'Could not launch $url';
                     }
@@ -229,11 +230,11 @@ class _HomeWebState extends State<HomeWeb> {
                                 end: Alignment.bottomCenter,
                                 colors: [
                                   _isHovering2
-                                      ? Color(0xffFF48AE)
-                                      : Color(0xffFF008E),
+                                      ? const Color(0xffFF48AE)
+                                      : const Color(0xffFF008E),
                                   _isHovering2
-                                      ? Color(0xffFFF5A9)
-                                      : Color(0xffFFEB50)
+                                      ? const Color(0xffFFF5A9)
+                                      : const Color(0xffFFEB50)
                                 ])),
                         child: Text("팀 소개",
                             style: TextStyle(

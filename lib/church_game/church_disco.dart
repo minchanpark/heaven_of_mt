@@ -40,6 +40,10 @@ class _ChurchDiscoGamePageState extends State<ChurchDiscoGame> {
         .sublist(0, 10)
         .map((index) => churchDisco[index])
         .toList();
+
+    cards = randomdisco
+        .map((gameContents) => GameCard(gameContents: gameContents, fontSize: 140))
+        .toList();
   }
 
   bool isUndoButtonVisible = true;
