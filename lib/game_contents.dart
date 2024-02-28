@@ -157,29 +157,41 @@ final List<GameContents> disco = [
 ];
 
 final List<GameContents> captain = [
-  GameContents(name: '가장 유연할\n것 같은 사람', answer: '다리찢기', index: '1'),
+  GameContents(
+      name: '가장 유연할\n것 같은 사람', answer: '옆사람과 다리찢기\n가위바위보 해서 이기기', index: '1'),
   GameContents(name: '가장 노래를 잘\n부를 것 같은 사람', answer: '절대음감', index: '2'),
   GameContents(name: '대머리가 제일 잘\n어울릴 것 같은 사람', answer: '이마 길이 재기', index: '3'),
-  GameContents(name: '공부 제일 잘할\n것 같은 사람', answer: '구구단', index: '4'),
+  GameContents(name: '공부 제일 잘할\n것 같은 사람', answer: '구구단 10문제 맞추기', index: '4'),
   GameContents(name: '가장 춤 잘출\n것 같은 사람', answer: '포스트잇 빨리 떼기', index: '5'),
   GameContents(name: '가장 운동 잘할\n것 같은 사람', answer: '한 발 들고\n오래 버티기', index: '6'),
-  GameContents(name: '수업 시간에 졸\n것 같은 사람', answer: '눈싸움', index: '7'),
-  GameContents(name: '고등학생 때 담 넘어봤을\n것 같은 사람', answer: '멀리뛰기', index: '8'),
-  GameContents(name: '정색 가장 잘할\n것 같은 사람', answer: '웃음 참기 게임', index: '9'),
-  GameContents(name: '가장 당당해 보이는 사람', answer: '당연하지 게임', index: '10'),
+  GameContents(name: '수업 시간에 졸\n것 같은 사람', answer: '옆사람과 눈싸움해서 이기기', index: '7'),
+  GameContents(
+      name: '고등학생 때 담 넘어봤을\n것 같은 사람', answer: '멀리뛰기 \n가장 멀리뛰기', index: '8'),
+  GameContents(name: '정색 가장 잘할\n것 같은 사람', answer: '1분 동안 웃음 참기', index: '9'),
+  GameContents(
+      name: '가장 당당해 보이는 사람', answer: '옆사람과 당연하지 게임 해서 이기기', index: '10'),
   GameContents(name: '사회생활 잘할 \n것 같은 사람', answer: '눈치게임', index: '11'),
   GameContents(name: '눈물 많을\n것 같은 사람', answer: '눈물 빨리 흘리기', index: '12'),
   GameContents(
-      name: '무인도에서 살아남을 수\n있을 것 같은 사람', answer: '물 빨리 마시기', index: '13'),
+      name: '무인도에서 살아남을 수\n있을 것 같은 사람',
+      answer: '무인도에 가져갈 물건 사람들 앞에서 PT하고 납득시키기',
+      index: '13'),
   GameContents(
       name: '과자를 가장 많이 먹을\n것 같은 사람', answer: '과자 부스러기 보고\n과자 맞추기', index: '14'),
   GameContents(name: '요리 잘 할\n것 같은 사람', answer: '후라이펜 놀이', index: '15'),
   GameContents(name: '끈기 있는 사람', answer: '페트병 빨리 세우기', index: '16'),
-  GameContents(name: '문자보다 전화를 더 좋아할 것 같은 사람', answer: '콜백 챌린지', index: '17'),
-  GameContents(name: 'SNS 가장 많이 할\n것 같은 사람', answer: '눈 감고 타자 치기', index: '18'),
   GameContents(
-      name: '감수성이 가장 풍부할\n것 같은 사람', answer: '이름으로 삼행시 짓기', index: '19'),
-  GameContents(name: '다정한 말 못하는 사람', answer: '옆사람 칭찬해주기', index: '20'),
+      name: '문자보다 전화를 더 좋아할 것 같은 사람',
+      answer: '가장 최근 연락한 사람에게 전화해서 칭찬 듣기',
+      index: '17'),
+  GameContents(
+      name: 'SNS 가장 많이 할\n것 같은 사람',
+      answer: '눈 감고 오늘 자신의 TMI를 타자로 치기',
+      index: '18'),
+  GameContents(
+      name: '감수성이 가장 풍부할\n것 같은 사람', answer: '자신의 이름으로 삼행시 짓기', index: '19'),
+  GameContents(
+      name: '연애 제일 많이 해봤을거 같은 사람', answer: '가족에게 전화해서 사랑한다고 말하기', index: '20'),
 ];
 
 final List<GameContents> choi = [
@@ -423,11 +435,13 @@ final List<GameContents> telestration = [
 ];
 
 final List<GameContents> music1990 = [
-  GameContents(name: 'ㄴㅂ', answer: '나비', index: '1'),
-  GameContents(name: 'ㅅㄹㅎㅇ', answer: '사랑해요', index: '2'),
-  GameContents(name: 'ㅅㄹㅇ\nㅇㅅㅇ ㅇㅇㄷㅁ', answer: '사랑에\n연습이 있었다면', index: '3'),
-  GameContents(name: 'ㄴ ㅇㅇㅇ', answer: '난 알아요', index: '4'),
-  GameContents(name: 'ㄱ ㅈㅇ\nㄱㄷㄹ ㅁㄴ', answer: '그 중에\n그대를 만나', index: '5'),
+  GameContents(name: 'ㄴㅂ - ㅈㅇㅍ', answer: '나비 - 조용필', index: '1'),
+  GameContents(name: 'ㅅㄹㅎㅇ - ㄱㅇㅅ', answer: '사랑해요 - 김완선', index: '2'),
+  GameContents(
+      name: 'ㅅㄹㅇ ㅇㅅㅇ \nㅇㅇㄷㅁ - ㅇㅈㅂ', answer: '사랑에\n연습이 있었다면 - 임재범', index: '3'),
+  GameContents(name: 'ㄴ ㅇㅇㅇ \n- ㅅㅌㅈ', answer: '난 알아요 - 서태지', index: '4'),
+  GameContents(
+      name: 'ㄱ ㅈㅇ ㄱㄷㄹ\n ㅁㄴ - ㅇㅅㅎ', answer: '그 중에 그대를 \n 만나 - 이선희', index: '5'),
   GameContents(name: 'ㅎㅂㄹㄱ', answer: '해바라기', index: '6'),
   GameContents(name: 'ㅈㅁㄷ ㅁㄴ', answer: '잘못된 만남', index: '7'),
   GameContents(name: 'ㄱㄹ ㅅㄹ\nㄸ ㅇㅅㄴㅅ', answer: '그런 사람\n또 없습니다', index: '8'),
