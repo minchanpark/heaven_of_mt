@@ -5,6 +5,7 @@ import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
 
 import '../../card/card.dart';
+import '../card/card_church.dart';
 import '../game_contents.dart';
 import '../gameover/gameover_church.dart';
 import '../ready_church.dart';
@@ -23,7 +24,7 @@ class _ChurchDiscoGamePageState extends State<ChurchDiscoGame> {
   FocusNode focusNode = FocusNode();
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
-  List<GameCard> cards = []; // cards 변수를 초기화
+  List<ChurchGameCard> cards = []; // cards 변수를 초기화
   final random = Random();
   List<GameContents> randomdisco = [];
   @override
@@ -42,7 +43,8 @@ class _ChurchDiscoGamePageState extends State<ChurchDiscoGame> {
         .toList();
 
     cards = randomdisco
-        .map((gameContents) => GameCard(gameContents: gameContents, fontSize: 140))
+        .map((gameContents) =>
+            ChurchGameCard(gameContents: gameContents, fontSize: 140))
         .toList();
   }
 
@@ -59,7 +61,7 @@ class _ChurchDiscoGamePageState extends State<ChurchDiscoGame> {
     var height = MediaQuery.of(context).size.height;
     cards = randomdisco
         .map((gameContents) =>
-            GameCard(gameContents: gameContents, fontSize: width * 0.14))
+            ChurchGameCard(gameContents: gameContents, fontSize: width * 0.14))
         .toList();
     if (width < 1126 || height < 627) return ReadyChurchPage();
     return Scaffold(
