@@ -265,11 +265,11 @@ class _GameOverChurchState extends State<GameOverChurch> {
                     '의견보내기',
                     style: TextStyle(
                       fontFamily: 'DungGeunMo',
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: width * 0.025,
                       fontWeight: FontWeight.w400,
                       decoration: TextDecoration.underline,
-                      decorationColor: Colors.white,
+                      decorationColor: Colors.black,
                     ),
                   ),
                 ),
