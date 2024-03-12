@@ -201,10 +201,11 @@ class _HomeWebState extends State<HomeWeb> {
               SizedBox(width: width * 0.015),
               GestureDetector(
                   onTap: () async {
-                    Uri url = Uri.parse(
-                        'https://hguhimin.notion.site/db18a79dd2bd45208f55b1ca515647b8?pvs=4');
-                    if (await canLaunchUrl(url)) {
-                      await launchUrl(url);
+                    const url =
+                        'https://hguhimin.notion.site/db18a79dd2bd45208f55b1ca515647b8';
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                   
                     } else {
                       throw 'Could not launch $url';
                     }
