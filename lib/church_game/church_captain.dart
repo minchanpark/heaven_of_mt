@@ -6,6 +6,7 @@ import 'dart:math';
 
 import '../../game_contents.dart';
 import '../../card/card.dart';
+import '../card/card_church.dart';
 import '../gameover/gameover_church.dart';
 import '../ready_church.dart';
 import 'church_contents.dart';
@@ -23,7 +24,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
   FocusNode focusNode = FocusNode();
   int currentCardIndex = 0; // 현재 카드의 인덱스를 저장할 변수
   final CardSwiperController controller = CardSwiperController();
-  List<GameCard> cards = []; // cards 변수를 초기화
+  List<ChurchGameCard> cards = []; // cards 변수를 초기화
   final random = Random();
   bool _isAnswered = false;
   List<GameContents> randomChurchCaptain = [];
@@ -57,7 +58,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
 
     cards = randomChurchCaptain
         .map((gameContents) =>
-            GameCard(gameContents: gameContents, fontSize: width * 0.05))
+            ChurchGameCard(gameContents: gameContents, fontSize: width * 0.05))
         .toList();
     if (width < 1126 || height < 627) return ReadyChurchPage();
     return Scaffold(
@@ -156,31 +157,35 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             isUndoButtonVisible
-                                ? GestureDetector(
-                                    onTap: () {
+                                ? IconButton(
+                                    onPressed: controller.undo,
+                                    color: Colors.transparent,
+                                    icon: ImageIcon(
+                                      const AssetImage(
+                                          'assets/images/icon_chevron_left.png'),
+                                      color: Colors.black.withOpacity(0.4),
+                                    ),
+                                    iconSize: width * 0.07,
+                                  )
+                                : IconButton(
+                                    onPressed: () {
                                       controller.undo();
-                                      _isAnswered = false;
-                                    },
-                                    child: Image.asset(
-                                      'assets/images/icon_chevron_left.png',
-                                      height: width * 0.07,
-                                    ))
-                                : GestureDetector(
-                                    onTap: () {
-                                      controller.undo();
-                                      _isAnswered = false;
                                       if (currentCardIndex == 0) {
                                         setState(() {
                                           isUndoButtonVisible = true;
                                         });
                                       }
                                     },
-                                    child: Image.asset(
-                                      'assets/images/icon_chevron_left_white.png',
-                                      height: width * 0.07,
-                                    )),
+                                    color: Colors.transparent,
+                                    icon: const ImageIcon(
+                                      AssetImage(
+                                          'assets/images/icon_chevron_left_white.png'),
+                                      color: Colors.black,
+                                    ),
+                                    iconSize: width * 0.07,
+                                  ),
                             SizedBox(
-                              width: width * 0.75,
+                              width: width * 0.7,
                               height: height * 0.4,
                               child: CardSwiper(
                                 duration: const Duration(milliseconds: 0),
@@ -203,7 +208,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                                             style: TextStyle(
                                                 fontFamily: 'DungGeunMo',
                                                 fontWeight: FontWeight.w400,
-                                                fontSize: width * 0.058,
+                                                fontSize: width * 0.05,
                                                 color: Colors.black),
                                           ),
                                         );
@@ -236,6 +241,7 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
                                 },
                                 child: Image.asset(
                                   'assets/images/icon_chevron_right.png',
+                                  color: Colors.black,
                                   height: width * 0.07,
                                 ))
                           ],
