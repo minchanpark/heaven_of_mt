@@ -254,9 +254,9 @@ class _GameOverChurchState extends State<GameOverChurch> {
                 const Spacer(),
                 GestureDetector(
                   onTap: () async {
-                    Uri url = Uri.parse('https://walla.my/survey/fdLq6GUHt5S7kNbDMZsj');
-                    if (await canLaunchUrl(url)) {
-                      await launchUrl(url);
+                    const url = 'https://walla.my/survey/fdLq6GUHt5S7kNbDMZsj';
+                    if (await canLaunch(url)) {
+                      await launch(url);
                     } else {
                       throw 'Could not launch $url';
                     }
