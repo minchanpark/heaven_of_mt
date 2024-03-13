@@ -56,7 +56,7 @@ class _ChurchFourGamePageState extends State<ChurchFourGame> {
     var height = MediaQuery.of(context).size.height;
     cards = randomfour
         .map((gameContents) =>
-            ChurchGameCard(gameContents: gameContents, fontSize: width * 0.108))
+            ChurchGameCard(gameContents: gameContents, fontSize: width * 0.108, answer: true,))
         .toList();
     if (width < 1126 || height < 627) return ReadyChurchPage();
     return Scaffold(

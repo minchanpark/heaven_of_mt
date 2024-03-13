@@ -5,7 +5,6 @@ import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
 
 import '../../game_contents.dart';
-import '../../card/card.dart';
 import '../card/card_church.dart';
 import '../gameover/gameover_church.dart';
 import '../ready_church.dart';
@@ -57,8 +56,8 @@ class _ChurchCaptainGamePageState extends State<ChurchCaptainGame> {
     var height = MediaQuery.of(context).size.height;
 
     cards = randomChurchCaptain
-        .map((gameContents) =>
-            ChurchGameCard(gameContents: gameContents, fontSize: width * 0.05))
+        .map((gameContents) => ChurchGameCard(
+            gameContents: gameContents, fontSize: width * 0.05, answer: false,))
         .toList();
     if (width < 1126 || height < 627) return ReadyChurchPage();
     return Scaffold(
