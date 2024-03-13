@@ -79,11 +79,11 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
     var height = MediaQuery.of(context).size.height;
     cards = randomMusicTitle
         .map((gameContents) =>
-            GameCard(gameContents: gameContents, fontSize: width * 0.07))
+            GameCard(gameContents: gameContents, fontSize: width * 0.065))
         .toList();
     answer_cards = randomMusicTitle
         .map((gameContents) => GameCard(
-            gameContents: gameContents, answer: true, fontSize: width * 0.07))
+            gameContents: gameContents, answer: true, fontSize: width * 0.065))
         .toList();
     if (width < 1126 || height < 627) return ReadyPage();
     return Scaffold(
@@ -213,7 +213,7 @@ class _MusicTitleWebGamePageState extends State<MusicTitleWebGame> {
                                   ),
                             SizedBox(
                               width: width * 0.63,
-                              height: height * 0.4,
+                              height: height * 0.6,
                               child: CardSwiper(
                                 duration: const Duration(milliseconds: 0),
                                 controller: controller,

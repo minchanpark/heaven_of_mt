@@ -204,7 +204,7 @@ class _MovieWebGameState extends State<MovieWebGame> {
                                         style: TextStyle(
                                             fontFamily: 'DungGeunMo',
                                             fontWeight: FontWeight.w400,
-                                            fontSize: width * 0.065,
+                                            fontSize: width * 0.06,
                                             color: Color(0xffFF62D3)),
                                       ),
                                     );
