@@ -19,11 +19,11 @@ class ChurchGameCard extends StatelessWidget {
       child: Transform.translate(
         offset: const Offset(0, -10), // 위로 이동할 양을 조정하십시오.
         child: Text(
-          !answer ? gameContents.name : gameContents.answer,
+          answer ? gameContents.name : gameContents.answer,
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'DungGeunMo',
-            color: !answer ? Colors.black :  Colors.white,
+            color: !answer ? Colors.white :  Colors.black,
             fontWeight: FontWeight.w400,
             fontSize: fontSize,
             height: 1.286,
