@@ -23,7 +23,7 @@ class ChurchGameCard extends StatelessWidget {
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'DungGeunMo',
-            color: !answer ? Colors.white : const Color(0xffFF62D3),
+            color: !answer ? Colors.black :  Colors.white,
             fontWeight: FontWeight.w400,
             fontSize: fontSize,
             height: 1.286,
