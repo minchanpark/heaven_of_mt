@@ -1,16 +1,24 @@
-# heaven_of_mt
+# 엠티 게임 천국 서비스 소개
 
-공동체가 함께 즐기는 유쾌발랄 게임천국!
+제가 현재 속해 있는 '소다'라는 한동대학교 앱 개발-디자인 학회에서 시작한 프로젝트입니다. 
+엠티를 할 때 사용되는 여러 가지 게임들과 그 ppt를 제공하여서 엠티를 준비하는데 드는 어려움을 조금은 줄일 수 있도록 이 프로젝트를 시작하였습니다. 
+기존에 프로젝트를 진행하던 개발자분 중 한 분께서 개인적인 사정으로 프로젝트를 계속 하실 수 없게 되어서 제가 합류하여서 진행하였습니다. 
 
-## Getting Started
+## 엠티 게임 천국 서비스 개요
 
-This project is a starting point for a Flutter application.
+### 1. 서비스 목적
 
-A few resources to get you started if this is your first Flutter project:
+MT 준비.. 매번 게임짜기 어렵고🥺 귀찮은데🤯,,, 누가 대신 해주라,,
+MT 날이 며칠 남지 않은 시점,,💥
+??: 엠티 갈 때마다 게임 제작하기 너무 힘들다… 이럴 때 쉽게 만들고 모두가 즐길 수 있는 서비스 없나..
+MT를 준비하면서, 매번 게임짜기 어렵고🥺 귀찮은데🤯,,, 누가 좀 대신 해주면 안되나? 라는 생각에서 시작된 엠티게임천국!
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+엠티게임천국 프로젝트 노션 페이지에 있는 설명 글을 가지고 왔습니다. 
+엠티를 준비하는데 매번 게임을 구성하고 생각하고 ppt를 만드는 데 어려움을 겪는 친구들을 여럿 보았기에 엠티 개임을 모아서 제공하는 서비스를 시작하였습니다. 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 2. 서비스 설명
+
+계속 반복되는 내용이 많지만 이 서비스는 엠티를 준비하고 ppt를 만드는데 도움을 주기 위해서 시작된 서비스입니다. 
+엠티게임천국 페이지에 들어가면 알 수 있지만 게임과 같은 디자인으로 질리지 않고 멋있는 디자인으로 기존에 ppt를 만들고 꾸미는데 어려움을 겪는 사람들의 
+수고로움을 덜어줄 수 있습니다!
+
