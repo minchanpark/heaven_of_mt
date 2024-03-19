@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'dart:math';
 
-import '../../card/card.dart';
 import '../card/card_church.dart';
 import '../game_contents.dart';
 import '../gameover/gameover_church.dart';
@@ -44,7 +43,7 @@ class _ChurchDiscoGamePageState extends State<ChurchDiscoGame> {
 
     cards = randomdisco
         .map((gameContents) =>
-            ChurchGameCard(gameContents: gameContents, fontSize: 140))
+            ChurchGameCard(gameContents: gameContents, fontSize: 140, answer: true,))
         .toList();
   }
 
@@ -59,10 +58,6 @@ class _ChurchDiscoGamePageState extends State<ChurchDiscoGame> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    cards = randomdisco
-        .map((gameContents) =>
-            ChurchGameCard(gameContents: gameContents, fontSize: width * 0.14))
-        .toList();
     if (width < 1126 || height < 627) return ReadyChurchPage();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(14, 25, 62, 1),

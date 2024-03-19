@@ -4,7 +4,7 @@ class GameContents {
   String answer;
 
   GameContents({
-    required this.name,
+    this.name = '',
     required this.index,
     this.answer = '',
   });
