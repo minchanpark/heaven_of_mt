@@ -166,7 +166,7 @@ final List<GameContents> captain = [
   GameContents(name: '가장 운동 잘할\n것 같은 사람', answer: '한 발 들고\n오래 버티기', index: '6'),
   GameContents(name: '수업 시간에 졸\n것 같은 사람', answer: '옆사람과 눈싸움해서 이기기', index: '7'),
   GameContents(
-      name: '고등학생 때 담 넘어봤을\n것 같은 사람', answer: '멀리뛰기 \n가장 멀리뛰기', index: '8'),
+      name: '고등학생 때 담 넘어봤을 것 같은 사람', answer: '멀리뛰기 \n가장 멀리뛰기', index: '8'),
   GameContents(name: '정색 가장 잘할\n것 같은 사람', answer: '1분 동안 웃음 참기', index: '9'),
   GameContents(
       name: '가장 당당해 보이는 사람', answer: '옆사람과 당연하지 게임 해서 이기기', index: '10'),

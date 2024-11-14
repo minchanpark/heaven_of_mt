@@ -29,10 +29,9 @@ class _FourWebGamePageState extends State<FourWebGame> {
   void initState() {
     super.initState();
     focusNode.requestFocus();
-    FirebaseAnalytics.instance.setCurrentScreen(screenName: "네글자퀴즈");
+    FirebaseAnalytics.instance.logScreenView(screenName: "네글자퀴즈");
 
     // widget.id 값에 따라 cards 변수에 값을 할당
-
     final fourIndices = List<int>.generate(four.length, (i) => i)
       ..shuffle(random);
     randomfour =
