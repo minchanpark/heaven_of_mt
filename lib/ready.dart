@@ -16,7 +16,8 @@ class _ReadyPageState extends State<ReadyPage> {
   @override
   void initState() {
     super.initState();
-    FirebaseAnalytics.instance.setCurrentScreen(screenName: "준비중페이지");
+
+    FirebaseAnalytics.instance.logScreenView(screenName: "준비중페이지");
   }
 
   @override

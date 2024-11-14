@@ -16,7 +16,8 @@ class _ReadyChurchPageState extends State<ReadyChurchPage> {
   @override
   void initState() {
     super.initState();
-    FirebaseAnalytics.instance.setCurrentScreen(screenName: "교회_준비중페이지");
+
+    FirebaseAnalytics.instance.logScreenView(screenName: "교회_준비중페이지");
   }
 
   @override

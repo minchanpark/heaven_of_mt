@@ -104,7 +104,8 @@ class _HomeWebState extends State<HomeWeb> {
   void initState() {
     super.initState();
     focusNode.requestFocus();
-    FirebaseAnalytics.instance.setCurrentScreen(screenName: "홈화면");
+
+    FirebaseAnalytics.instance.logScreenView(screenName: "홈화면");
   }
 
   bool _isHovering = false;

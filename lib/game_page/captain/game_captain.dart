@@ -31,7 +31,7 @@ class _CaptainWebGamePageState extends State<CaptainWebGame> {
   void initState() {
     super.initState();
     focusNode.requestFocus();
-    FirebaseAnalytics.instance.setCurrentScreen(screenName: "대표게임");
+    FirebaseAnalytics.instance.logScreenView(screenName: "대표게임");
     // widget.id 값에 따라 cards 변수에 값을 할당
 
     final captainIndices = List<int>.generate(captain.length, (i) => i)

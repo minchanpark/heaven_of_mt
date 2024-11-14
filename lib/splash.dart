@@ -22,7 +22,8 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     focusNode.requestFocus();
-    FirebaseAnalytics.instance.setCurrentScreen(screenName: "스플래쉬");
+
+    FirebaseAnalytics.instance.logScreenView(screenName: "스플래쉬");
 
     // Start a timer to toggle visibility every 1 second
     Timer.periodic(const Duration(seconds: 1), (timer) {
